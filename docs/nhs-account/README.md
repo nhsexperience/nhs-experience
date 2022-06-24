@@ -53,7 +53,13 @@
 
 ## Idempotency
 
+## Commands
+
 ## Event Sourcing / CQRS
+
+### Event Store
+
+## Message Bus
 
 ## Distributed Actor
 
@@ -66,3 +72,17 @@
 
 ### Support RESTful Endeavour (Promise) Pattern
 - Utilise Event Sourcing and 202 / 201 HTTP Status codes instead of just a POST returning a 200.
+
+## Monitoring and Metrics
+
+### The Four Golden Signals
+The four golden signals of monitoring are latency, traffic, errors, and saturation. If you can only measure four metrics of your user-facing system, focus on these four.
+
+- Latency
+- Traffic
+- Errors
+- Saturation
+
+https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals
+
+## Logging 
