@@ -2,16 +2,11 @@
 |--| 
 |⚠️ **Draft Documents**: May not represent real world scenarios or be accurate|
 
+# Architectural Guidelines
 
-# Digital Health Check
+# APIs
+## Performance
 
-## Mandate - Why this is being done?
+# UIs
 
-
-## Discovery
-
-## Alpha
-
-## Beta
-
-## Production
+# Services
