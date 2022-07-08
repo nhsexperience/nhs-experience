@@ -1,3 +1,8 @@
+---
+title: What is account
+layout: page
+---
+
 > ⚠️ **Warning**
 >  
 > **Draft Documents**: May not represent real world scenarios or be fully accurate.

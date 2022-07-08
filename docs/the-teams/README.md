@@ -1,5 +1,6 @@
 ---
 title: The teams
+layout: page
 ---
 
 # Home
