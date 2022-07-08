@@ -1,9 +1,15 @@
-|**Warning**|
-|--| 
-|⚠️ **Draft Documents**: May not represent real world scenarios or be accurate|
+> ⚠️ **Warning**
+>  
+> **Draft Documents**: May not represent real world scenarios or be fully accurate.
+>
+> Please contact the author for more information.
 
 
 # NHS Account
+
+[What is account?][what-is-account]
+
+
 
 # Defining Problem Statement
 
@@ -85,3 +91,6 @@ The four golden signals of monitoring are latency, traffic, errors, and saturati
 https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals
 
 ## Logging 
+
+
+[what-is-account]: docs/nhs-account/what-is-account.md "What is account"
