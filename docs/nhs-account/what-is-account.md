@@ -1,11 +1,13 @@
 ---
 title: What is account
 layout: page
+permalink: /account/what-it-is.html
 ---
+
 
 > ⚠️ **Warning**
 >  
-> **Draft Documents**: May not represent real world scenarios or be fully accurate.
+> **Draft Documents**: May not represent real world scenarios, may not be fully accurate or complete.
 >
 > Please contact the author for more information.
 

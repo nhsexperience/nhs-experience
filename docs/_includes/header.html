@@ -1,0 +1,20 @@
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+
+   
+
+
+    {%- if page_paths -%}
+    {% include automenu url='/' sort="url" reverse=false all=false %}
+  
+      <nav class="site-nav">
+       
+      </nav>
+    {%- endif -%}
+  </div>
+</header>
