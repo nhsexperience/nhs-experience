@@ -1,13 +1,24 @@
+PATH
+  remote: /home/rb/source/jekyll-drawio
+  specs:
+    jekyll-drawio (0.0.6)
+      erb (~> 2.2)
+      jekyll (~> 4.2)
+      nokogiri (~> 1.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    cgi (0.1.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
+    erb (2.2.3)
+      cgi
     eventmachine (1.2.7)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
@@ -31,8 +42,6 @@ GEM
       terminal-table (~> 2.0)
     jekyll-feed (0.16.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-menus (0.6.1)
-      jekyll (>= 3.6, < 5.0)
     jekyll-sass-converter (2.2.0)
       sassc (> 2.0.1, < 3.0)
     jekyll-seo-tag (2.8.0)
@@ -52,9 +61,12 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
+    nokogiri (1.13.6-x86_64-linux)
+      racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.7)
+    racc (1.4.16)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -73,8 +85,8 @@ PLATFORMS
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
+  jekyll-drawio (~> 0.0.6)!
   jekyll-feed (~> 0.12)
-  jekyll-menus
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data

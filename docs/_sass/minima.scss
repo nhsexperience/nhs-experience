@@ -43,10 +43,24 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-
+a.site-title{
+  display: block;
+}
+div.nav{
+  clear: both;
+ // float: left;
+//  display: block;
+  //width: 100%;
+}
+ul.menu{
+ // float: left;
+ // display: block;
+ // width: 100%;
+}
 ul.menu > li {
-  float: left;
-  padding-right: 30px;
+ // display: block;
+//  float: left;
+ // padding-right: 30px;
   list-style-type: image;
   font-weight: normal;
   font-style: normal;

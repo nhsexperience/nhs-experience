@@ -10,6 +10,8 @@ permalink: /account/
 >
 > Please contact the author for more information.
 
+![alt text](/nhs-account/nhs-account.svg)
+
 - [NHS Account](#nhs-account)
 - [Defining Problem Statement](#defining-problem-statement)
   - [What's the current state?](#whats-the-current-state)

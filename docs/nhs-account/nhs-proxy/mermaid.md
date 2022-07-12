@@ -1,8 +1,8 @@
 ---
 title: NHS Account Proxy Mer
 layout: page
-permalink: /account/p/diag.html
-
+permalink: /account/p/diag/
+mermaid: true
 ---
 
 > ⚠️ **Warning**
