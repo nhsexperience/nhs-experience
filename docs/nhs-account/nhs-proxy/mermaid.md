@@ -1,8 +1,11 @@
 ---
 title: NHS Account Proxy Mer
 layout: page
-permalink: /account/p/diag/
+permalink: /account/p/diag.html
 mermaid: true
+parent: NHS Account Proxy
+grand_parent: NHS Account
+nav_order: 4
 ---
 
 > ⚠️ **Warning**

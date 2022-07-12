@@ -1,7 +1,10 @@
 ---
 title: NHS Account Proxy DrawIOer
 layout: page
-permalink: /account/p/drawio/
+permalink: /account/p/drawio.html
+parent: NHS Account Proxy
+grand_parent: NHS Account
+nav_order: 3
 ---
 
 > ⚠️ **Warning**
@@ -14,6 +17,3 @@ permalink: /account/p/drawio/
 # Draw IO
 
 ![alt text](/nhs-account/nhs-proxy/nhs-proxy.svg)
-
-{% drawio path="nhs-account/nhs-proxy/nhs-proxy.drawio" page_number=0 height=800 %}
-

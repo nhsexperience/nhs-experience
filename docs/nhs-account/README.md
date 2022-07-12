@@ -2,6 +2,7 @@
 title: NHS Account
 layout: page
 permalink: /account/
+has_children: true
 ---
 
 > ⚠️ **Warning**

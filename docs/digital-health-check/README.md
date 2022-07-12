@@ -2,6 +2,7 @@
 title: NHS Digital Health Check
 layout: page
 permalink: /healthcheck/index.html
+has_children: true
 ---
 
 > ⚠️ **Warning**
@@ -15,8 +16,14 @@ permalink: /healthcheck/index.html
 
 ## Mandate - Why this is being done?
 
+## Current Status
+
+| Stage     | Date Started | Est End Date | End Date |
+| --------- | ------------ | ------------ | -------- |
+| Discovery | June 2022    | August 2022  |          |
 
 ## Discovery
+
 
 ## Alpha
 
