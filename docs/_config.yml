@@ -18,10 +18,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+<<<<<<< HEAD
 title: NHS Citizen Experience
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
     NHS Citizen Experience, NHS Transformation Directorate, NHS England and Improvement. Give patients, service users and carers the tools to access information and services directly 
+=======
+title: NHS Citizen Experience.
+email: 
+description: >- # this means to ignore newlines until "baseurl:"
+    NHS Transformation Directorate, NHS England and Improvement. Giving patients, service users and carers the tools to access information and services directly.
+>>>>>>> main
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
