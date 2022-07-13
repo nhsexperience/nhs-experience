@@ -2,6 +2,7 @@
 title: Reference Architecture
 layout: page
 permalink: /ref-arch/
+nav_order: 4
 ---
 
 

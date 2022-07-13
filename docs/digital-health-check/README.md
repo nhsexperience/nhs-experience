@@ -3,6 +3,7 @@ title: NHS Digital Health Check
 layout: page
 permalink: /healthcheck/index.html
 has_children: true
+nav_order: 3
 ---
 
 > ⚠️ **Warning**
