@@ -1,9 +1,11 @@
 ---
-title: Personal Data Store
+title: Relationships
 layout: page
-parent: NHS Account
-nav_order: 5
+grand_parent: NHS Account
+parent:  Verifyable Credentials
+nav_order: 4.1
 ---
+
 > ⚠️ **Warning**
 >  
 > **Draft Documents**: May not represent real world scenarios, may not be fully accurate or complete.
