@@ -6,4 +6,7 @@
 
 # Citizen Experience
 
-[See docs](/docs/README.md)
+
+
+- [Documentation (built source)](https://zealous-beach-05e189903.1.azurestaticapps.net/)
+- [Documentation Source](/docs/README.md)
