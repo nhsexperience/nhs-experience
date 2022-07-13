@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: nhsexperience-latest (ZEALOUS_BEACH) Azure Static Web Apps CI/CD
 
 on:
   push:
