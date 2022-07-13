@@ -30,7 +30,7 @@ nav_order: 1
 | Latest Stable Release Tag | n/a                                                                 |
 
 - [Latest Release](https://github.com/RossBugginsNHS/nhs-experience/releases/latest)
-- ![Azure CI/CD](https://github.com/RossBugginsNHS/nhs-experience/actions/workflows/azure-static-web-apps-blue-beach-03e72e403.yml/badge.svg?branch=initial-setup)
+- ![Azure CI/CD](https://github.com/RossBugginsNHS/nhs-experience/actions/workflows/azure-static-web-apps-blue-beach-03e72e403.yml/badge.svg?branch=v0.1.2-alpha)
 
 # Open Source **Thought**
 - Open Source is not just software

@@ -1,6 +1,6 @@
 ---
-title: Authorisation
+title: Personal Data Store
 layout: page
 parent: NHS Account
-nav_order: 6
+nav_order: 5
 ---
