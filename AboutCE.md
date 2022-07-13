@@ -4,6 +4,5 @@
 >
 > Please contact the author for more information.
 
-# Citizen Experience
 
-[See docs](/docs/README.md)
+# About Citizen Experience
