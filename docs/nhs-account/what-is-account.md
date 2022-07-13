@@ -14,7 +14,6 @@ nav_order: 2
 > Please contact the author for more information.
 
 
-
 # NHS Account: The problem we are trying to solve [^nhs-account-briefing-paper]
 
 The services which people require are disjointed with little information sharing. There is no digital support for some key services. People often have to repeat difficult conversations, or put in the same information (e.g. Contact details, NHS Number, date of birth etc.. ) for various services. We, as an organisation cannot look to deliver a personalised and dynamic service if we do not know about the people we are meant to serve. 
