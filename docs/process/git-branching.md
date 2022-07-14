@@ -1,7 +1,7 @@
 ---
-title: Git
+title: Git Branching Strategy
 layout: home
-nav_order: 14
+nav_order: 100
 parent: Contributing
 ---
 > ⚠️ **Warning**
@@ -12,4 +12,11 @@ parent: Contributing
 > 
 
 
-# Git
+Main Repo
+https://github.com/nhsexperience/nhs-experience
+
+# Main Branch
+
+# Releases
+
+# Builds

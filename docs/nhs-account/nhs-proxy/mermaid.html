@@ -1,7 +1,6 @@
 ---
 title: NHS Account Proxy Mer
 layout: page
-permalink: /account/p/diag.html
 mermaid: true
 parent: NHS Account Proxy
 grand_parent: NHS Account
@@ -19,10 +18,16 @@ nav_order: 4
 
 # Mermaid
 
-<div class="mermaid">
- graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+<div class="mermaid" markdown="0" >
+    graph TD;
+    A[Client] -->|tcp_123| B(Load Balancer);
+    B -->|tcp_456| C[Server1];
+    B -->|tcp_456| D[Server2];
 </div>
+
+<div class="mermaid" markdown="0" >
+    C4Context;
+    title System Context diagram for Internet Banking System;
+</div>
+
+

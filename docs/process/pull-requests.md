@@ -1,7 +1,7 @@
 ---
-title: Git
+title: Pull Requests
 layout: home
-nav_order: 14
+nav_order: 15
 parent: Contributing
 ---
 > ⚠️ **Warning**
@@ -12,4 +12,4 @@ parent: Contributing
 > 
 
 
-# Git
+# Pull Requests

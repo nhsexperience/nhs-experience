@@ -1,9 +1,10 @@
 ---
-title: Git
-layout: home
-nav_order: 14
+title: Ready to go
+layout: page
+nav_order: 1.1
 parent: Contributing
 ---
+
 > ⚠️ **Warning**
 >  
 > **Draft Documents**: May not represent real world scenarios, may not be fully accurate or complete.
@@ -11,5 +12,4 @@ parent: Contributing
 > Please contact the author for more information.
 > 
 
-
-# Git
+# Quick checklist if you get git already
