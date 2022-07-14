@@ -1,11 +1,9 @@
 ---
-title: The teams
+title: VS Code
 layout: page
-nav_order: 90
-has_children: true
+nav_order: 12.1
+parent: Contributing
 ---
-
-# Home
 
 > ⚠️ **Warning**
 >  
@@ -13,10 +11,5 @@ has_children: true
 >
 > Please contact the author for more information.
 
-# Citizen Experience
 
-## Digital Channels
-
-## NHS Account
-
-## Wellness and Prevention
+# VS Code

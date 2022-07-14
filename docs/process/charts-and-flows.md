@@ -1,5 +1,5 @@
 ---
-title: Charts
+title: Charts - Mermaid Diagrams
 layout: page
 nav_order: 10
 parent: Contributing
