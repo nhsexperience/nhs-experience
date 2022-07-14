@@ -1,9 +1,10 @@
 ---
-title: Identity
+title: NHSLogin
 layout: page
-parent: NHS Account
-has_children: true
-nav_order: 8
+grand_parent: NHS Account
+parent: Identity
+
+nav_order: 8.1
 ---
 > ⚠️ **Warning**
 >  
@@ -12,5 +13,3 @@ nav_order: 8
 > Please contact the author for more information.
 
 # NHS Login
-
-# CIS2
