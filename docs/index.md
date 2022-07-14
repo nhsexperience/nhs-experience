@@ -12,7 +12,7 @@ nav_order: 1
 > ⚠️ **Warning**
 >  
 > **FORK**: This is a fork of https://github.com/nhsexperience/nhs-experience.
-> 
+> - [Origin github - https://github.com/RossBugginsNHS/nhs-experience/tree/v0.1.2-alpha](https://github.com/RossBugginsNHS/nhs-experience/tree/v0.1.2-alpha)
 > - [Upstream site - https://zealous-beach-05e189903.1.azurestaticapps.net](https://zealous-beach-05e189903.1.azurestaticapps.net)
 > - [Upstream github - https://github.com/nhsexperience/nhs-experience](https://github.com/nhsexperience/nhs-experience)
 >
@@ -22,9 +22,16 @@ nav_order: 1
 # Todo:
 
 - Auto build .drawio to .svg
+- OpenAPI support
+- Add items to todo
 
 # Citizen Experience
+## What is Citizen Experience?
 
+---
+
+# Source and build details
+  
 ## Fork Open Source Location
 
 
@@ -33,7 +40,7 @@ nav_order: 1
 | Owner                     | RossBugginsNHS                                                      |
 | Repo                      | nhs-experience                                                      |
 | Branch                    | initial-setup                                                       |
-| Link                      | https://github.com/RossBugginsNHS/nhs-experience/tree/initial-setup |
+| Link                      | https://github.com/RossBugginsNHS/nhs-experience/tree/v0.1.2-alpha |
 | Site                      | https://blue-beach-03e72e403.1.azurestaticapps.net/                 |
 | Latest Release            | Test release v0.1.0-alpha                                           |
 | Latest Release Tag        | v0.1.0-alpha                                                        |
