@@ -3,6 +3,7 @@ title: GP Integration
 layout: page
 parent: NHS Digital Health Check
 nav_order: 3
+has_children: true
 ---
 
 > ⚠️ **Warning**
@@ -76,7 +77,9 @@ Would they do it?
 Is there value for them in entering “untrusted data” into a record
 Who is liable for errors / non factual data?
 
-### Pull Based Model
+
+
+### [Pull not Push Pull Based Model]({% link digital-health-check/gp-integration-pull.md %})
 GPs have a way to access patient generated data, via different system.
 
 Integrate CIS2 OpenId as an additional identity provider alongside NHS Login. This would then allow GP’s to login to access data, rather than pulls.
