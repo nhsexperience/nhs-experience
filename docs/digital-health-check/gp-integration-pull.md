@@ -16,7 +16,7 @@ mermaid: true
 
 # Pull not Push - NHS Login / CIS2 OpenId
 
-# Notes
+# Temp Notes
 - Identity 
   - CIS2 Login
   - NHS Login
@@ -28,27 +28,29 @@ mermaid: true
 - OpenId
 - Scopes / claims
 
-<div class="mermaid">
-graph LR;
-    Citizen --> App;
-    Citizen --> NHSLogin;
-    Citizen --> IdentityServer;
-    IdentityServer --> NHSLogin;
-    IdentityServer --> CIS2;
-    App --> Api;
-    Pro --> WebApp;
-    Pro  --> CIS2;
-    Pro --> IdentityServer;
-    WebApp --> Api;
-    Api --> Authorisation;
-    Api --> DataStore
-    Authorisation --> IdentityServer;
-    DataStore --> ServiceRoleBasedAccess;
-</div>
+$ \int\_a^b f(x)\,dx. $
 
-# Review Paper
+```mermaid!
+graph LR;
+    Citizen -->App;
+    Citizen -->NHSLogin;
+    Citizen -->IdentityServer;
+    IdentityServer -->NHSLogin;
+    IdentityServer -->CIS2;
+    App -->Api;
+    Pro -->WebApp;
+    Pro  -->CIS2;
+    Pro -->IdentityServer;
+    WebApp -->Api;
+    Api -->Authorisation;
+    Api -->DataStore
+    Authorisation -->IdentityServer;
+    DataStore -->ServiceRoleBasedAccess;
+```
+
+# Review Paper - NHS Identity Providers and Authorization
 ## Abstract
-- Review
+- provide short summary. 
 
 ## Summary
 - If it is hard to push structured data in to GP Systems, then provide a way to allow GPs to pull the data.
@@ -57,7 +59,17 @@ graph LR;
   - id server with multiple id providers
   - auth 
   - would it be useful?
-  - 
+
+### Aims
+- Proof of concept investigations into using an existing Authorisation platform with two NHS Identity providers, NHS Login and CIS2.
+
+### Why is needed?
+- To Architect solutions for Alpha / Beta / Production, there are standards that shouldn't need to be revisited each time. 
+- Separate review into these can be reused
+
+### Other possible outcomes / benefits 
+- NHS app review / targets - a want for adoption of NHS App & Login to increase
+  - Makes sure its easy for third parties / suppliers to integrate
 
 > ***What should summary contain*** [^what-in-summary]
 > 
@@ -83,6 +95,9 @@ If a system is available and there is an easy enough way for GPs to access Digit
 ### CIS2 
 ### Azure B2C
 #### NHS Login
+
+##### Custom Profile 
+<script src="https://gist.github.com/RossBugginsNHS/e7af078259395f92753706bbe6a820ef.js"></script>
 #### CIS2
 
 

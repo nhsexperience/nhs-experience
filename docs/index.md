@@ -2,6 +2,7 @@
 title: Home
 layout: home
 nav_order: 1
+last_modified_date: Jul 15 2022 at 03:39 PM
 ---
 > ⚠️ **Warning**
 >  
@@ -26,6 +27,18 @@ nav_order: 1
 - Add items to todo
 
 # Citizen Experience
+
+{% if
+    site.gh_edit_link and
+    site.gh_edit_link_text and
+    site.gh_edit_repository and
+    site.gh_edit_branch and
+    site.gh_edit_view_mode
+%}
+[Get started now](/contributing.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}){: .btn .fs-5 .mb-4 .mb-md-0 }
+{% endif %}
+
+
 ## What is Citizen Experience?
 
 ---

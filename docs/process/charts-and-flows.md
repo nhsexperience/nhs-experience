@@ -13,3 +13,5 @@ parent: Contributing
 
 
 # Mermaid Diagrams
+
+Use plugin https://github.com/jeffreytse/jekyll-spaceship
