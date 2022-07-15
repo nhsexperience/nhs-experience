@@ -2,6 +2,7 @@
 title: Open Source Thought
 layout: home
 nav_order: 1.1
+has_children: true
 ---
 > ⚠️ **Warning**
 >  
