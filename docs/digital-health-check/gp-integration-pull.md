@@ -51,7 +51,13 @@ graph LR;
 - Review
 
 ## Summary
-If it is hard to push structured data in to GP Systems, then provide a way to allow GPs to pull the data.
+- If it is hard to push structured data in to GP Systems, then provide a way to allow GPs to pull the data.
+- Whats been done in the past / now?
+- Questions to be asked?
+  - id server with multiple id providers
+  - auth 
+  - would it be useful?
+  - 
 
 > ***What should summary contain*** [^what-in-summary]
 > 
@@ -73,6 +79,17 @@ If a system is available and there is an easy enough way for GPs to access Digit
 
 ## Methods
 
+### NHS Login
+### CIS2 
+### Azure B2C
+#### NHS Login
+#### CIS2
+
+
+### Identity Server 4
+#### NHS Login
+#### CIS2
+
 ## Results
 
 ## Conclusion
@@ -84,6 +101,7 @@ If a system is available and there is an easy enough way for GPs to access Digit
 [^what-in-summary]: Components of a scientific paper
 
     - Reference: [Components of a scientific paper][what-in-summary]
+    - Type: Website
     - Last Checked: 15/07/2022
 
 

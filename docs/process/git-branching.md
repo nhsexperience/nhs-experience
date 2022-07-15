@@ -31,3 +31,6 @@ graph LR;
 - 
 # Releases
 - Will be tagged with v[M].[m].[r]-[prerelease] in accordance with semantic versioning
+
+# Feature branches
+?? If join collaboration on a specific area is in progress, please request a branch to be created in the upstream repo for this development work.??
