@@ -18,7 +18,7 @@ has_children: true
 -	Big backlog for GP IT to implement changes
 -	No RESTful API for GP connect
 
-GP System Suppliers are able to be resistant to change. To be a GP supplier, there are certain APIs you must expose for GP Connect to call. However, there are no versions / expir dates on these, so whenever GP connect wants to add new functionality, it is then about entering negotiations with suppliers to expose new apis themselves that implement that required change.
+*Need Reference* GP System Suppliers are able to be resistant to change. To be a GP supplier, there are certain APIs you must expose for GP Connect to call. However, there are no versions / expir dates on these, so whenever GP connect wants to add new functionality, it is then about entering negotiations with suppliers to expose new apis themselves that implement that required change.
 
 ## Current Landscape
 ### GP Connect Summary
