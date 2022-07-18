@@ -95,17 +95,23 @@ This research looks at using two identity providers, NHS Login and CIS 2, with t
 ### What is NHS Login?
 NHS Login is an OpenId identity provider for Citizens to use. It has 3 levels of identity proof, P0, P5 and P9 [^nhs-login-trust-vectors].
 
-| Level                                      | Description                                                                |
-| ------------------------------------------ | -------------------------------------------------------------------------- |
-| **Low (P0)**  Low identity proofing        | A user has verified ownership of an email address and mobile phone number. |
-| **Medium (P5)** Basic identity information | The user has provided some information that has been checked to correspond to a record on PDS. This maps to ‘Verification – Medium’ within DCB3051|
-|**High (P9)** Physical comparison	|The user has completed an online or offline identity verification process where physical comparison between the photographic identity and the person asserting their identity has occurred. This maps to ‘Verification – High’ within DCB3051|
+| Level                                      | Description                                                                                                                                                                                                                                   |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Low (P0)**  Low identity proofing        | A user has verified ownership of an email address and mobile phone number.                                                                                                                                                                    |
+| **Medium (P5)** Basic identity information | The user has provided some information that has been checked to correspond to a record on PDS. This maps to ‘Verification – Medium’ within DCB3051                                                                                            |
+| **High (P9)** Physical comparison          | The user has completed an online or offline identity verification process where physical comparison between the photographic identity and the person asserting their identity has occurred. This maps to ‘Verification – High’ within DCB3051 |
 
-### Client Secret, Token Signing & Key Size
-NHS Login **does not support the use of a client secret** for client authentication.
+### Client Secret, Token (JWT) Signing & Key Size
+NHS Login **does not support the use of a client secret** for client authentication. Instead calls to the token endpoint requires the private_key_jwt method [^private-key-jwt].
+
+The key must be in RSA512 format. Note, many authorisation providers that support JWT signing default to expecting RSA256 key size.
 
 
-
+> | Attribute                   | Required | Description                                                                                                                                  |
+> | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+> | **token_signing_algorithm** | No       | Specifies the signing algorithm to use when token_endpoint_auth_method is set to private_key_jwt. Possible values: RS256 (default) or RS512. |
+> 
+> *Azure AD B2C custom policy - Token endpoint metadata* [^azure-b2c-token-endpoint]
 
 
 
@@ -145,5 +151,20 @@ NHS Login **does not support the use of a client secret** for client authenticat
     - Type: Website
     - Last Checked: 18/07/2022
 
+[^private-key-jwt]: OpenId Client Authentication
+    - Reference: [OpenId Client Authentication][private-key-jwt]
+    - Type: Website
+    - Last Checked: 18/07/2022
+
+[^azure-b2c-token-endpoint]: Token endpoint metadata
+    - Reference: [Define an OAuth2 technical profile in an Azure Active Directory B2C custom policy - Token endpoint metadata][azure-b2c-token-endpoint]
+    - Type: Website
+    - Last Checked: 18/07/2022
+
+<!---
+Hyperlinks should all be below here.
+-->
 [what-in-summary]: https://researchguides.library.vanderbilt.edu/c.php?g=69346&p=831743 "BSCI 1510L Literature and Stats Guide: 3.2 Components of a scientific paper"
 [nhs-login-trust-vectors]: https://nhsconnect.github.io/nhslogin/vectors-of-trust/ "Introduction to Vectors of Trust"
+[private-key-jwt]: https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication "OpenId Client Authentication"
+[azure-b2c-token-endpoint]: https://docs.microsoft.com/en-us/azure/active-directory-b2c/oauth2-technical-profile#token-endpoint-metadata "Define an OAuth2 technical profile in an Azure Active Directory B2C custom policy - Token endpoint metadata"
