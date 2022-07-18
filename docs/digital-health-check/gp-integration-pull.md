@@ -90,6 +90,27 @@ If a system is available and there is an easy enough way for GPs to access Digit
 - Independent variable: Method of access to system
 
 ## Methods
+This research looks at using two identity providers, NHS Login and CIS 2, with two different Authorisation providers - Azure B2C and IdentityServer4.
+
+### What is NHS Login?
+NHS Login is an OpenId identity provider for Citizens to use. It has 3 levels of identity proof, P0, P5 and P9 [^nhs-login-trust-vectors].
+
+| Level                                      | Description                                                                |
+| ------------------------------------------ | -------------------------------------------------------------------------- |
+| **Low (P0)**  Low identity proofing        | A user has verified ownership of an email address and mobile phone number. |
+| **Medium (P5)** Basic identity information | The user has provided some information that has been checked to correspond to a record on PDS. This maps to ‘Verification – Medium’ within DCB3051|
+|**High (P9)** Physical comparison	|The user has completed an online or offline identity verification process where physical comparison between the photographic identity and the person asserting their identity has occurred. This maps to ‘Verification – High’ within DCB3051|
+
+### Client Secret, Token Signing & Key Size
+NHS Login **does not support the use of a client secret** for client authentication.
+
+
+
+
+
+
+
+
 
 ### NHS Login
 ### CIS2 
@@ -119,5 +140,10 @@ If a system is available and there is an easy enough way for GPs to access Digit
     - Type: Website
     - Last Checked: 15/07/2022
 
+[^nhs-login-trust-vectors]: Introduction to Vectors of Trust
+    - Reference: [Introduction to Vectors of Trust][nhs-login-trust-vectors]
+    - Type: Website
+    - Last Checked: 18/07/2022
 
 [what-in-summary]: https://researchguides.library.vanderbilt.edu/c.php?g=69346&p=831743 "BSCI 1510L Literature and Stats Guide: 3.2 Components of a scientific paper"
+[nhs-login-trust-vectors]: https://nhsconnect.github.io/nhslogin/vectors-of-trust/ "Introduction to Vectors of Trust"
