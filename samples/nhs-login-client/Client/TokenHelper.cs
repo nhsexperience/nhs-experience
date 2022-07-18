@@ -1,4 +1,4 @@
-// Program.cs - nhs-login-client
+//  nhs-login-client
 //  Open Government Licence 3.0 
 // 
 //   You must, acknowledge the source of the Information in your product or application by including or linking to any attribution statement 

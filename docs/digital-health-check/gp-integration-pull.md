@@ -60,6 +60,10 @@ graph LR;
   - auth 
   - would it be useful?
 
+Any system would need an authorisation platform, and should use existing identity providers. Initial research indicated that both NHS Login and CIS2 may have long signup processes that would need to be started early to ensure they are ready for an Alpha or Beta stages.
+
+Concerns over how to implement authorisation and Identity **should not need to be** part of any Alpha or Beta (or production) project, it should, be "ready out of the box". However, there are limited available resources that provide an authorisation server with full configuration for both NHS Login and CIS2 as an identity provider. This research should be able to be used not only for digital health check, but all other projects requiring identity and authorisation for both citizens and health professionals.
+
 ### Aims
 - Proof of concept investigations into using an existing Authorisation platform with two NHS Identity providers, NHS Login and CIS2.
 
@@ -90,7 +94,7 @@ If a system is available and there is an easy enough way for GPs to access Digit
 - Independent variable: Method of access to system
 
 ## Methods
-This research looks at using two identity providers, NHS Login and CIS 2, with two different Authorisation providers - Azure B2C and IdentityServer4.
+This research looks at using two identity providers, NHS Login and CIS 2, with two different Authorisation providers - Azure B2C and IdentityServer4.https://www.dropbox.com/sh/uf8vw706zd9geae/AACVrTwZrbni324QbXyXORHJa?dl=0
 
 ### NHS Login
 NHS Login is an OpenId identity provider for Citizens to use. It has 3 levels of identity proof, P0, P5 and P9 [^nhs-login-trust-vectors].
@@ -134,273 +138,34 @@ The key must be in RSA512 format. Note, many authorisation providers that suppor
 
 
 ### Managing Signed JWT in C#
-Once a PEM has been generated, this can be used in C# to sign the token.
+Once a PEM has been generated, this can be used in C# to sign the token. The following sections are excerpts from the **nhs-login-client sample project**.
 
-  <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client" id="edit-this-page">See full sample project</a>
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client/Client){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-```cs
-// Program.cs - nhs-login-client
-//  Open Government Licence 3.0 
-// 
-//   You must, acknowledge the source of the Information in your product or application by including or linking to any attribution statement 
-//  specified by the Information Provider(s) and, where  possible, provide a link to this licence;  If the Information Provider does not 
-//  provide a specific attribution statement, you must use  the following:   Contains public sector information licensed under the Open 
-//  Government Licence v3.0.  If you are using Information from several Information Providers and listing multiple attributions is not 
-//  practical in your product or application, you may  include a URI or hyperlink to a resource that contains the required attribution 
-//  statements.  These are important conditions of this licence and if you fail to comply with them the rights granted to you under this
-//   licence, or any similar licence granted by the  Licensor, will end automatically.
-
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.IO;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-
-namespace NHS.Login.Client
-{
-    public class TokenHelper
-    {
-        private static TimeSpan Expiry = TimeSpan.FromHours(1);
-        Lazy<RSA> _rsa;
-
-        private RSA CreateCreds()
-        {
-            var keyStr = File.ReadAllText(_settings.PrivateKeyFile);
-            var rsa = RSA.Create();
-            rsa.ImportFromPem(keyStr);
-            return rsa;
-        }
-
-        NHSLoginSettings _settings;
-        public TokenHelper(NHSLoginSettings settings)
-        {
-            _settings = settings;
-            var creds = CreateCreds();
-            _rsa = new Lazy<RSA>(creds);
-        }
-
-        public string CreateClientAuthJwt()
-        {
-            var claims = new List<Claim>()
-            {
-              new Claim("sub", _settings.Subject),
-              new Claim("jti", Guid.NewGuid().ToString()),
-            };
-            var payload = new JwtPayload(
-              _settings.Issuer,
-              _settings.Audience,
-              claims,
-              null,
-              DateTime.Now.Add(Expiry),
-              DateTime.Now);
-            var credentials = new SigningCredentials(
-              new RsaSecurityKey(_rsa.Value),
-              SecurityAlgorithms.RsaSha512);
-            var header = new JwtHeader(credentials);
-            var token = new JwtSecurityToken(header, payload);
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-    }
-}
-```
+<script src="https://gist.github.com/RossBugginsNHS/88bb46720c52456590ecfe77eae5307d.js"></script>
 
 ### Using TokenHelper
-```cs
-// Program.cs - nhs-login-client
-//  Open Government Licence 3.0 
-// 
-//   You must, acknowledge the source of the Information in your product or application by including or linking to any attribution statement 
-//  specified by the Information Provider(s) and, where  possible, provide a link to this licence;  If the Information Provider does not 
-//  provide a specific attribution statement, you must use  the following:   Contains public sector information licensed under the Open 
-//  Government Licence v3.0.  If you are using Information from several Information Providers and listing multiple attributions is not 
-//  practical in your product or application, you may  include a URI or hyperlink to a resource that contains the required attribution 
-//  statements.  These are important conditions of this licence and if you fail to comply with them the rights granted to you under this
-//   licence, or any similar licence granted by the  Licensor, will end automatically.
-
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using NHS.Login.Client;
-
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class NHSOpenIdOptionsExtentionMethods
-    {
-        private static NHSLoginSettings _settings;
-        private const string _assertionType = "urn:ietf:params:oauth:client-assertion-type:jwt-bearer";
-        private const string _responseType = "code";
-        private const string _responseMode = "form_post";
-        private const string _vtrName = "vtr";
-
-        public static AuthenticationBuilder AddNhsLoginOpenId(this AuthenticationBuilder authenticationBuilder, NHSLoginSettings settings)
-        {
-            _settings = settings;
-            authenticationBuilder.AddOpenIdConnect(options =>
-            {
-                SetOptions(options, settings);
-            });
-            return authenticationBuilder;
-        }
-
-        public static void SetOptions(OpenIdConnectOptions options, NHSLoginSettings settings)
-        {
-            options.RequireHttpsMetadata = true;
-            options.ClientId = settings.ClientId;
-            options.Authority = settings.Authority;
-            options.ResponseType = _responseType;
-            options.ResponseMode = _responseMode;
-            options.Scope.Clear();
-            foreach (var scope in settings.Scopes)
-                options.Scope.Add(scope);
-            options.SaveTokens = true;
-            options.Events = CreateOpenIdConnectEvents(settings);
-        }
-
-        private static OpenIdConnectEvents CreateOpenIdConnectEvents(NHSLoginSettings settings)
-        {
-            var tokenHelper = new TokenHelper(settings);
-            return new OpenIdConnectEvents
-            {
-                OnRedirectToIdentityProvider = Redirect,
-                OnAuthorizationCodeReceived = context => { return AuthorizationCodeReceived(context, tokenHelper); }
-            };
-        }
-
-        private static Task Redirect(RedirectContext context)
-        {
-            var vtr = _settings.Vtr;
-            if (context.ProtocolMessage.RequestType == OpenIdConnectRequestType.Authentication)
-                context.ProtocolMessage.Parameters.Add(_vtrName, vtr);
-            return Task.CompletedTask;
-        }
-
-        private static Task AuthorizationCodeReceived(AuthorizationCodeReceivedContext context, TokenHelper tokenHelper)
-        {
-            if (context.TokenEndpointRequest?.GrantType == OpenIdConnectGrantTypes.AuthorizationCode)
-            {
-                context.TokenEndpointRequest.ClientAssertionType = _assertionType;
-                context.TokenEndpointRequest.ClientAssertion = tokenHelper.CreateClientAuthJwt();
-            }
-            return Task.CompletedTask;
-        }
-    }
-}
-```
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client/Client){: .btn .fs-5 .mb-4 .mb-md-0 }
+<script src="https://gist.github.com/RossBugginsNHS/e4559f15cb66a2fa7503f9e554b6aee7.js"></script>
 
 ### Using NHSLoginOpenId Extension Method
-```cs
-// Program.cs - nhs-login-client
-//  Open Government Licence 3.0 
-// 
-//   You must, acknowledge the source of the Information in your product or application by including or linking to any attribution statement 
-//  specified by the Information Provider(s) and, where  possible, provide a link to this licence;  If the Information Provider does not 
-//  provide a specific attribution statement, you must use  the following:   Contains public sector information licensed under the Open 
-//  Government Licence v3.0.  If you are using Information from several Information Providers and listing multiple attributions is not 
-//  practical in your product or application, you may  include a URI or hyperlink to a resource that contains the required attribution 
-//  statements.  These are important conditions of this licence and if you fail to comply with them the rights granted to you under this
-//   licence, or any similar licence granted by the  Licensor, will end automatically.
-
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using NHS.Login.Client;
-
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class NHSLoginExtensionMethods
-    {
-        public static WebApplicationBuilder AddNHSLogin(this WebApplicationBuilder builder )
-        {
-            builder.Services.AddHttpClient();
-            builder.Services.Configure<NHSLoginSettings>(builder.Configuration.GetSection(NHSLoginSettings.Name));
-            builder.Services.AddTransient<ClaimsReader>();
-            var conf = new NHSLoginSettings();
-            builder.Configuration.Bind(NHSLoginSettings.Name, conf);
-
-            builder.Services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
-            builder.Services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
-            })
-            .AddCookie()
-            .AddNhsLoginOpenId(conf);
-            return builder;
-        }
-    }
-}
-```
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client/Client){: .btn .fs-5 .mb-4 .mb-md-0 }
+<script src="https://gist.github.com/RossBugginsNHS/2153cf67afd6a5decfaf7a479ef70010.js"></script>
 
 ### Using AddNHSLogin
-```cs
-// Program.cs - nhs-login-client
-//  Open Government Licence 3.0 
-// 
-//   You must, acknowledge the source of the Information in your product or application by including or linking to any attribution statement 
-//  specified by the Information Provider(s) and, where  possible, provide a link to this licence;  If the Information Provider does not 
-//  provide a specific attribution statement, you must use  the following:   Contains public sector information licensed under the Open 
-//  Government Licence v3.0.  If you are using Information from several Information Providers and listing multiple attributions is not 
-//  practical in your product or application, you may  include a URI or hyperlink to a resource that contains the required attribution 
-//  statements.  These are important conditions of this licence and if you fail to comply with them the rights granted to you under this
-//   licence, or any similar licence granted by the  Licensor, will end automatically.
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client){: .btn .fs-5 .mb-4 .mb-md-0 }
+<script src="https://gist.github.com/RossBugginsNHS/29bc731ccf78dbcce3ba98ee9039da56.js"></script>
 
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using Microsoft.Extensions.Configuration;
-using NHS.Login.Dotnet.Core6.Sample;
+## CIS2 
+Desktop Identity Client for smart cards
+https://www.dropbox.com/sh/uf8vw706zd9geae/AACVrTwZrbni324QbXyXORHJa?dl=0
 
-var builder = WebApplication.CreateBuilder(args);
+## Azure B2C
 
-builder.AddNHSLogin();
-
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddControllers();
-
-var app = builder.Build();
-
-app.UseDeveloperExceptionPage();
-app.UseHttpsRedirection();
-
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-app.UseCookiePolicy();
-
-app.UseEndpoints(endpoints =>
-{
-endpoints.MapControllerRoute(
-name: "default",
-pattern: "{controller=Home}/{action=Get}/{id?}");
-endpoints.MapControllers();
-});
-
-app.Run();
-
-```
-### CIS2 
-### Azure B2C
-#### NHS Login
 
 ##### Custom Profile 
 <script src="https://gist.github.com/RossBugginsNHS/e7af078259395f92753706bbe6a820ef.js"></script>
+
 #### CIS2
 
 
