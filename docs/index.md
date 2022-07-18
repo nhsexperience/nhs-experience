@@ -42,40 +42,50 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 ## What is Citizen Experience?
 
 ---
-
+# Posts
+<ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{post.date| date: "%-d %B %Y" }}: {{post.author }} - {{ post.title }}</a>
+      </li>
+    {% endfor %}
+</ul>
 # Source and build details
   
-## Fork Open Source Location
+  
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client/Client){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 
-|                           | Source and build details                                            |
-| :------------------------ | :------------------------------------------------------------------ |
-| Owner                     | RossBugginsNHS                                                      |
-| Repo                      | nhs-experience                                                      |
-| Branch                    | initial-setup                                                       |
-| Link                      | https://github.com/RossBugginsNHS/nhs-experience/tree/v0.1.2-alpha |
-| Site                      | https://blue-beach-03e72e403.1.azurestaticapps.net/                 |
-| Latest Release            | Test release v0.1.0-alpha                                           |
-| Latest Release Tag        | v0.1.0-alpha                                                        |
-| Latest Stable Release     | n/a                                                                 |
-| Latest Stable Release Tag | n/a                                                                 |
+## Open Source Location
 
-- [Latest Release](https://github.com/RossBugginsNHS/nhs-experience/releases/latest)
-- ![Azure CI/CD](https://github.com/RossBugginsNHS/nhs-experience/actions/workflows/azure-static-web-apps-blue-beach-03e72e403.yml/badge.svg?branch=v0.1.2-alpha)
+
+|                           | Source and build details                                                             |
+| :------------------------ | :----------------------------------------------------------------------------------- |
+| Repo                      | {{ site.gh_edit_repository }}                                                        |
+| Branch                    | {{ site.gh_edit_branch }}                                                            |
+| Link                      | {{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }} |
+| Site                      | {{ site.published_url }}                                                             |
+| Latest Release            | Test release v0.1.0-alpha                                                            |
+| Latest Release Tag        | v0.1.0-alpha                                                                         |
+| Latest Stable Release     | n/a                                                                                  |
+| Latest Stable Release Tag | n/a                                                                                  |
+
+- [Latest Release]({{ site.gh_edit_repository }}/releases/latest)
+- ![Azure CI/CD]({{ site.gh_edit_repository }}/actions/workflows/{{ site.gh_action_build_file_name }}/badge.svg?branch={{ site.gh_edit_branch }})
 
 ## Upstream Open Source Location
 
-|                           | Source and build details                               |
-| :------------------------ | :----------------------------------------------------- |
-| Owner                     | nhsexperience                                          |
-| Repo                      | nhs-experience                                         |
-| Branch                    | main                                                   |
-| Link                      | https://github.com/nhsexperience/nhs-experience        |
+|                           | Source and build details                              |
+| :------------------------ | :---------------------------------------------------- |
+| Owner                     | nhsexperience                                         |
+| Repo                      | nhs-experience                                        |
+| Branch                    | main                                                  |
+| Link                      | https://github.com/nhsexperience/nhs-experience       |
 | Site                      | https://zealous-beach-05e189903.1.azurestaticapps.net |
-| Latest Release            | Test release v0.1.0-alpha                              |
-| Latest Release Tag        | v0.1.0-alpha                                           |
-| Latest Stable Release     | n/a                                                    |
-| Latest Stable Release Tag | n/a                                                    |
+| Latest Release            | Test release v0.1.0-alpha                             |
+| Latest Release Tag        | v0.1.0-alpha                                          |
+| Latest Stable Release     | n/a                                                   |
+| Latest Stable Release Tag | n/a                                                   |
 
 - [Latest Release](https://github.com/nhsexperience/nhs-experience/releases/latest)
 - ![Azure CI/CD](https://github.com/nhsexperience/nhs-experience/actions/workflows/azure-static-web-apps-zealous-beach-05e189903.yml/badge.svg?branch=main)

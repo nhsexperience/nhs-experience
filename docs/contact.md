@@ -1,5 +1,5 @@
 ---
-title: Collaborate and contact
+title: Communicate
 layout: page
 nav_order: 101
 ---
