@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% if
+    site.gh_edit_link and
+    site.gh_edit_link_text and
+    site.gh_edit_repository and
+    site.gh_edit_branch and
+    site.gh_edit_view_mode
+  %}
+    <p class="text-small text-grey-dk-000 mb-0">
+      <a href="{{ site.gh_edit_repository }}/commits/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}" id="edit-this-page">🧾 View History</a>
+    </p>
+  {% endif %}
+
+  {{ content }}

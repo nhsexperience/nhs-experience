@@ -158,7 +158,12 @@ The key must be in RSA512 format. Note, many authorisation providers that suppor
 
 
 ### Managing Signed JWT in C#
-Once a PEM has been generated, this can be used in C# to sign the token. The following sections are excerpts from the **nhs-login-client sample project**. This project is a rewaorked dotnet 6 sample project, using all in built dotnet libraries where possible.
+Once a PEM has been generated, this can be used in C# to sign the token. The following sections are excerpts from the **nhs-login-client sample project**.
+
+
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+This project is a rewaorked dotnet 6 sample project, using all in built dotnet libraries where possible.
 
 [View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-client/Client){: .btn .fs-5 .mb-4 .mb-md-0 }
 
@@ -177,6 +182,9 @@ Once a PEM has been generated, this can be used in C# to sign the token. The fol
 <script src="https://gist.github.com/RossBugginsNHS/29bc731ccf78dbcce3ba98ee9039da56.js"></script>
 
 ## CIS2 
+
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/cis2-login-client){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 Desktop Identity Client for smart cards
 https://www.dropbox.com/sh/uf8vw706zd9geae/AACVrTwZrbni324QbXyXORHJa?dl=0
 
