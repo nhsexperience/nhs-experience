@@ -101,9 +101,19 @@ NHS Login is an OpenId identity provider for Citizens to use. It has 3 levels of
 ![NHS Login Onboarding](../assets/nhs-login-integration-process-21.svg) 
 *NHS Login onboarding process [^nhs-login-onboarding]*
 
+[The application form (Excel document) can be found here](https://digital.nhs.uk/binaries/content/assets/website-assets/services/nhs-login/nhs-login-application-form-v0.4-20211130.xlsx) which should be send to (engage.nhslogin@nhs.net)[mailto:engage.nhslogin@nhs.net].
+
+The current restrictions are:
+- serve patients that are registered at a GP practice in England, and/or are receiving NHS services in England
+- be patient facing
+- offer a health or social care benefit
+- be commissioned (contracted) or sponsored in development by an NHS organsiation (such as a CCG, ICS or General Practice) or Local Authority.
+- be free to the patient at the point of delivery (excluding any NHS levied charges such as prescription charges)
+
 This research utilised the already started, but not used, NHS Login application for NHS Wellness and Prevention. This allowed stage 1, apply, to be skipped.
 
 ### Developing in the NHS Login Sandpit
+
 
 Pre requisites:
 - generate RSA 512 public/private key pair
@@ -114,9 +124,6 @@ Needed for submission to NHSLogin:
 
 Provided by NHSLogin:
 - Client ID
-
-
-
 
 ### Client Secret, Token (JWT) Signing & Key Size
 NHS Login **does not support the use of a client secret** for client authentication. Instead calls to the token endpoint requires the private_key_jwt method [^private-key-jwt].
