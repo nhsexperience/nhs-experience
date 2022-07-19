@@ -1,8 +1,9 @@
 ---
-title: Cornwall
+title: Southwark
 layout: page
-parent: NHS Digital Health Check
-nav_order: 4
+parent: DHC Discovery - Technical
+grand_parent: NHS Digital Health Check
+nav_order: 20
 ---
 
 > ⚠️ **Warning**

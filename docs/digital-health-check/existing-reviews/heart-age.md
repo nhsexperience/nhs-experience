@@ -1,8 +1,9 @@
 ---
 title: Heart Age Tool
 layout: page
-parent: NHS Digital Health Check
-nav_order: 4.1
+parent: DHC Discovery - Technical
+grand_parent: NHS Digital Health Check
+nav_order: 40
 ---
 
 > ⚠️ **Warning**

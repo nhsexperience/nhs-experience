@@ -1,9 +1,9 @@
 ---
 title: DHC Discovery - Technical
 layout: page
-permalink: /healthcheck/discovery-technical.html
 parent: NHS Digital Health Check
 nav_order: 2
+has_children: true
 mermaid: true
 ---
 
@@ -14,12 +14,4 @@ mermaid: true
 > Please contact the author for more information.
 
 
-
-
-<div class="mermaid">
-C4Context;
-    Person(role_operator, Operator, "A coll");
-    System(tooling, Tooling, "Set of tools");
-    Rel(role_operator, tooling, Prepares, "configures");
-</div>
 

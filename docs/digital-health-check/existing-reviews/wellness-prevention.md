@@ -1,8 +1,9 @@
 ---
-title: Southwark
+title: Wellness & Prevention Tool
 layout: page
-parent: NHS Digital Health Check
-nav_order: 5
+parent: DHC Discovery - Technical
+grand_parent: NHS Digital Health Check
+nav_order: 30
 ---
 
 > ⚠️ **Warning**

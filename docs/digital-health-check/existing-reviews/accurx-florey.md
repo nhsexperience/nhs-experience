@@ -1,8 +1,9 @@
 ---
 title: Accurx Florey
 layout: page
-parent: NHS Digital Health Check
-nav_order: 4.11
+parent: DHC Discovery - Technical
+grand_parent: NHS Digital Health Check
+nav_order: 50
 ---
 
 > ⚠️ **Warning**

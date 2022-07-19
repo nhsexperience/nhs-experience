@@ -1,8 +1,9 @@
 ---
-title: Wellness & Prevention Tool
+title: Cornwall
 layout: page
-parent: NHS Digital Health Check
-nav_order: 4.2
+parent: DHC Discovery - Technical
+grand_parent: NHS Digital Health Check
+nav_order: 10
 ---
 
 > ⚠️ **Warning**
