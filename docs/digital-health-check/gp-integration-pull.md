@@ -33,19 +33,29 @@ mermaid: true
 - provide short summary. 
 
 ## Summary
-- If it is hard to push structured data in to GP Systems, then provide a way to allow GPs to pull the data.
+This research is based upon an initial discovery into Digital NHS Health Checks, and how data can be sent to GPs.
+
+Areas not covered in this paper:
+- Existing GP IT integration options
+- Details of NHS Health Check / Digital NHS Health Check
+- Control of User Generated Data, through API Resources, OAuth scopes / claims etc
+
+If it is hard to push structured data in to GP Systems, then provide a way to allow GPs to pull the data?
 - Whats been done in the past / now?
 - Questions to be asked?
   - id server with multiple id providers
   - auth 
   - would it be useful?
 
+There should also be a question asked, - should Digital Health Check data be available only to GP's? Should we approach user generated data in a different way, and not look to push it to specific systems for the current use case, but make it available to what ever health care professionals that the citizen choses?
+
 Any system would need an authorisation platform, and should use existing identity providers. Initial research indicated that both NHS Login and CIS2 may have long signup processes that would need to be started early to ensure they are ready for an Alpha or Beta stages.
 
 Concerns over how to implement authorisation and Identity **should not need to be** part of any Alpha or Beta (or production) project, it should, be "ready out of the box". However, there are limited available resources that provide an authorisation server with full configuration for both NHS Login and CIS2 as an identity provider. This research should be able to be used not only for digital health check, but all other projects requiring identity and authorisation for both citizens and health professionals.
 
+This research looks to ensure possible solutions are documented, available to all and not silo'd.
 
-### Aims
+### Aim of this research
 - Proof of concept investigations into using an existing Authorisation platform with two NHS Identity providers, NHS Login and CIS2.
 
 ### Why is needed?
@@ -54,7 +64,13 @@ Concerns over how to implement authorisation and Identity **should not need to b
 
 ### Other possible outcomes / benefits 
 - NHS app review / targets - a want for adoption of NHS App & Login to increase
-  - Makes sure its easy for third parties / suppliers to integrate
+- Makes sure its easy for third parties / suppliers to integrate
+
+### Future Work
+Complete research into:
+- Technical Control of User Generated Data, through API Resources, OAuth scopes / claims etc
+- User research, wider context of user generated data, perceptions over ownerships and sharing
+
 
 ### Components Integration
 ```mermaid!
@@ -186,8 +202,33 @@ This project is a rewaorked dotnet 6 sample project, using all in built dotnet l
 [View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/cis2-login-client){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 Desktop Identity Client for smart cards
-https://www.dropbox.com/sh/uf8vw706zd9geae/AACVrTwZrbni324QbXyXORHJa?dl=0
+### Health Realm
+- Smarkt cards can work on a VM / through RDP.
 
+#### Smart Card Pre requisites
+
+- Dev Environment Smartcard - physical card, UUID and passcode
+- IA and Middleware - https://www.dropbox.com/sh/uf8vw706zd9geae/AACVrTwZrbni324QbXyXORHJa?dl=0
+- Credential Manager - https://www.dropbox.com/sh/cpeta1u8mlr153l/AAB3eK5W4twSWr3jSjIZh9yfa?dl=0
+
+#### Environment
+- Azure Windows 10 Virtual Machine
+- Microsoft Remote Desktop
+- Omnikey 3121 USB card Reader
+#### Install and setup Process
+
+#### Install Order
+1. Add Windows Features - DotNet Framework 3.5
+2. https://www.dropbox.com/sh/uf8vw706zd9geae/AACpS7hRxADteQyfzsUH2LiZa/NHS-Digital-Identity-Agent-2.3.2.0.msi?dl=0
+3. https://www.dropbox.com/sh/uf8vw706zd9geae/AADPR6R096nmmGvmM3OdhVbya/Oberthur_Middleware_SR8_Installers_and_Documentation.zip?dl=0
+4. https://www.dropbox.com/sh/cpeta1u8mlr153l/AAA6RmtFb4xYEYylnpEZOyPCa/NHS.CredentialManagement.Setup-1.1.0.0.msi?dl=0
+5. https://chrome.google.com/webstore/detail/smart-card-connector/khpfeaanjngmcnplbdlpegiifgpfgdco?hl=en
+
+#### Attempt 1 - 19 July 2022
+
+**Result:** Activation in Progress, Unable to Connect to Remote Server
+
+I’m using a Dev smartcard (I’m testing out CIS2 Dev environments), and have installed IA, Cred Mng and middleware tools in the Azure Virtual Machine (VM) I am using (only has standard internet).  I’m connecting to the VM using Remote Desktop. The smartcard reader is being passed through to the VM ok, and when I put the smart card in, the IA pops up asking for the passcode. I put the code for the card in, however, the IA stops at Activation in Progress, and after a while it says Unable to Connect to Remote Server.
 ## Azure B2C
 
 
