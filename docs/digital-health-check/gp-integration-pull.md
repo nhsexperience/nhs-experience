@@ -102,6 +102,20 @@ If a system is available and there is an easy enough way for GPs to access Digit
 ## Methods
 This research looks at using two identity providers, NHS Login and CIS 2, with two different Authorisation providers - Azure B2C and IdentityServer4.
 
+**Scenarios to explore**
+
+| Idp       | IdP Environment          | Client           | Authentication Method |
+| --------- | ------------------------ | ---------------- | --------------------- |
+| NHS Login | Sandpit                  | dotnet 6 asp.net | username and password |
+| NHS Login | Sandpit                  | Azure B2C        | username and password |
+| CIS2      | Development              | dotnet 6 asp.net | username and password |
+| CIS2      | Development Health Realm | dotnet 6 asp.net | dev smart card        |
+| CIS2      | Development              | Azure B2C        | username and password |
+| CIS2      | Development Health Realm | Azure B2C        | dev smart card        |
+| NHS Login | Sandpit                  | IdentityServer4  | username and password |
+| CIS2      | Development              | IdentityServer4  | username and password |
+| CIS2      | Development Health Realm | IdentityServer4  | dev smart card        |
+
 ### NHS Login
 NHS Login is an OpenId identity provider for Citizens to use. It has 3 levels of identity proof, P0, P5 and P9 [^nhs-login-trust-vectors].
 
@@ -199,11 +213,16 @@ This project is a rewaorked dotnet 6 sample project, using all in built dotnet l
 
 ## CIS2 
 
+CIS2 Provides two Development environments, one in xxxxxx realm and one in Health Realm.
+
+### C# dotnet6 asp.net OpenId client example code
 [View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/cis2-login-client){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-Desktop Identity Client for smart cards
+
 ### Health Realm
-- Smarkt cards can work on a VM / through RDP.
+**Desktop Identity Client for smart cards**
+
+- Smart cards can work on a VM / through RDP.
 
 #### Smart Card Pre requisites
 
@@ -258,6 +277,17 @@ Start with the template custom profile.
 
 ## Results
 
+| Idp       | IdP Environment          | Client           | Authentication Method | Result        |
+| --------- | ------------------------ | ---------------- | --------------------- | ------------- |
+| NHS Login | Sandpit                  | dotnet 6 asp.net | username and password | success ✅     |
+| NHS Login | Sandpit                  | Azure B2C        | username and password | success ✅     |
+| CIS2      | Development              | dotnet 6 asp.net | username and password | success ✅     |
+| CIS2      | Development Health Realm | dotnet 6 asp.net | dev smart card        | in progress ⚠️ |
+| CIS2      | Development              | Azure B2C        | username and password | todo 🕐        |
+| CIS2      | Development Health Realm | Azure B2C        | dev smart card        | todo 🕐        |
+| NHS Login | Sandpit                  | IdentityServer4  | username and password | todo 🕐        |
+| CIS2      | Development              | IdentityServer4  | username and password | todo 🕐        |
+| CIS2      | Development Health Realm | IdentityServer4  | dev smart card        | todo 🕐        |
 ## Conclusion
 
 ## Evaluation

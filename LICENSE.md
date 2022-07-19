@@ -6,7 +6,7 @@ Contains public sector information licensed under the Open Government Licence v3
 http://www.nationalarchives.gov.uk/doc/open-government-licence/) provided by Citizen Experience, Transformation Directorate 
 NHS England and Improvement, containing data and software made available at
 https://github.com/nhsexperience/nhs-experience and at https://zealous-beach-05e189903.1.azurestaticapps.net/. The full 
-licence can be found at https://github.com/RossBugginsNHS/nhs-experience/blob/main/LICENSE.md
+licence can be found at https://github.com/nhsexperience/nhs-experience/blob/main/LICENSE.md
 
 
 ## Open Government Licence v3.0
