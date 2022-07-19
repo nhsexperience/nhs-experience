@@ -229,10 +229,24 @@ Desktop Identity Client for smart cards
 **Result:** Activation in Progress, Unable to Connect to Remote Server
 
 I’m using a Dev smartcard (I’m testing out CIS2 Dev environments), and have installed IA, Cred Mng and middleware tools in the Azure Virtual Machine (VM) I am using (only has standard internet).  I’m connecting to the VM using Remote Desktop. The smartcard reader is being passed through to the VM ok, and when I put the smart card in, the IA pops up asking for the passcode. I put the code for the card in, however, the IA stops at Activation in Progress, and after a while it says Unable to Connect to Remote Server.
+
 ## Azure B2C
+Azure B2C is a Authorisation service that allows multiple custom external Identity Providers (IdPs) to be registered. By default it supports any OpenId complicant provider without complex configuration required.
+
+However, due to NHS Login requiring signed JWT tokens, and RSA512, a Custom Profile is required. Custom profiles are formatted as XML, and provide all of the required Token, Claim and Endpoint configuration required for the OpenId Provider.
+
+### Initial Problems with Azure B2C Custom Profile
+Start with the template custom profile.
+
+- Used OpenId as the protocol for both Claims and ????
+- This needs to be OAuth for Claims.
 
 
-##### Custom Profile 
+
+### Working NHS Login Azure B2C Custom Profile 
+
+[View it on GitHub]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}/samples/nhs-login-azure-b2c-custom-profile){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <script src="https://gist.github.com/RossBugginsNHS/e7af078259395f92753706bbe6a820ef.js"></script>
 
 #### CIS2
