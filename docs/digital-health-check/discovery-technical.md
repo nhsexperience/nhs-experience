@@ -13,5 +13,15 @@ mermaid: true
 >
 > Please contact the author for more information.
 
+# Digital Health Check - Discovery - Technical
+
+| Todo                                  | Status    |
+| ------------------------------------- | --------- |
+| Previous System's Architecture Review | 🕐 Pending |
+| GP Integration Options                | 🕐 Pending |
+| Scope Required Data Model             | 🕐 Pending |
+| Identity / Authorisation Options      | 🕐 Pending |
+
+
 
 
