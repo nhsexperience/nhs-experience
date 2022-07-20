@@ -21,6 +21,16 @@ has_children: true
 *Need Reference* GP System Suppliers are able to be resistant to change. To be a GP supplier, there are certain APIs you must expose for GP Connect to call. However, there are no versions / expir dates on these, so whenever GP connect wants to add new functionality, it is then about entering negotiations with suppliers to expose new apis themselves that implement that required change.
 
 ## Current Landscape
+
+| Option                           | Viability | Review Status |
+| -------------------------------- | --------- | ------------- |
+| Send Doc API - Unstructured data | 😫         | 🕗             |
+| Client Side integration          | 😣         | 🕗             |
+| Pull not Push                    | 🤔         | 🕗             |
+| NRL                              | ❓         | 🕗             |
+| No direct access for GP          | 🤯         | 🕗             |
+| Wait for GPIT / GP Connect vNext | 🕤         | 🕗             |
+
 ### GP Connect Summary
 GP Connect designed to be platform agnostic interface to those systems
 However, its not a silver bullet:
@@ -28,7 +38,7 @@ However, its not a silver bullet:
 GP Connect is FHIR STU3. Goes through SPINE security proxy, not API Management. It is an RPC style call, not RESTful API.
 
 - Authentication and Authorisation uses TLS Mutual Auth 
-- A ll offloaded to the client - ie a client is trusted to do anything
+- All offloaded to the client - ie a client is trusted to do anything
 - Spine Security Proxy - All wildcarded - all can see all
 - Machine to Machine - 
 - IM1 - functional standard, not technical
@@ -39,8 +49,8 @@ Its planned / wished for a full re write to be RESTful APIs - however, no time f
 
 ## SendDoc API Versions
 ### Version 1.5.1 
-IS NOT AVAILABLE AND SHOULDN’T BE PUBLIC
-Versions 1.4 and 1.5 of the Send/Update should not have been published and they should be getting puled, the FHIR profiles haven’t been curated/validated by IOPS and the architecture hasn’t been reviewed by either myself or TRG.  
+IS NOT AVAILABLE
+Versions 1.4 and 1.5 of the Send/Update should not have been published and they should be getting puled, the FHIR profiles haven’t been curated/validated by IOPS and the architecture hasn’t been reviewed by TRG.  
  Version 1.3 is what is actually there and available.
 
 ### Version 1.3
@@ -77,12 +87,15 @@ Would they do it?
 Is there value for them in entering “untrusted data” into a record
 Who is liable for errors / non factual data?
 
-
-
 ### [Pull not Push Pull Based Model]({% link digital-health-check/gp-integration-pull.md %})
+
 GPs have a way to access patient generated data, via different system.
 
 Integrate CIS2 OpenId as an additional identity provider alongside NHS Login. This would then allow GP’s to login to access data, rather than pulls.
+
+### Client Side GP Integration
+- App runs on each GP desktop
+- This receives health check data and writes it to that GP's system
 
 ### No direct access
 Data kept in patients account, they shared when physically in with GP?
@@ -91,8 +104,8 @@ Data kept in patients account, they shared when physically in with GP?
 Is this possible?
 
 ### Benefits of NOT pushing data to GPs, but GP’s pulling data
-⦁	Data stays in control of the patient
-⦁	Single source of truth maintained
+- Data stays in control of the patient
+- Single source of truth maintained
 
 ### Other Ongoing Work in this Area
 NHS D are also looking a GP integration for their BP collection. JV at D has created options paper. 
