@@ -1,7 +1,8 @@
 ---
 title: Data Store
 layout: page
-parent: NHS Digital Health Check
+grand_parent: NHS Digital Health Check
+parent: Architecture
 nav_order: 8
 ---
 

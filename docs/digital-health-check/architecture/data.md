@@ -1,7 +1,8 @@
 ---
 title: Data
 layout: page
-parent: NHS Digital Health Check
+grand_parent: NHS Digital Health Check
+parent: Architecture
 nav_order: 7
 ---
 
@@ -23,5 +24,9 @@ classDiagram
     class Observations
 ```
 
-<iframe src="https://app.swaggerhub.com/apis-docs/RossBugginsNHS/RESTfulEndeavour/0.1">
+[View Swaggerhub OpenAPI v3]({% link digital-health-check/data-swagger/html2/index.html %})
+
+[Swaggerhub Source](https://app.swaggerhub.com/apis/RossBugginsNHS/hc1/v0.1#/)
+
+<iframe width="100%" height="1000px" src="/digital-health-check/data-swagger/html2/">
 </iframe>
