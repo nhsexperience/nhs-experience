@@ -17,3 +17,13 @@ nav_order: 2
 # What is NHS Proxy?
 
 
+## Definitions
+
+Identity / Authentication vs Authorisation
+
+Proxy - "Imitating the Identity"
+
+Delegated Access
+
+Role Based Access
+
