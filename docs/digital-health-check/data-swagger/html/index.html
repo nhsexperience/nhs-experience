@@ -193,7 +193,54 @@
 
   <h3>Table of Contents </h3>
   <div class="method-summary"></div>
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  <li><a href="#helloworldGet"><code><span class="http-method">get</span> /helloworld</code></a></li>
+  </ul>
 
+  <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="helloworldGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /helloworld</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">helloworldGet</span>)</div>
+    <div class="method-notes">hi</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#UserProfile">UserProfile</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "DateOfBirth" : "2000-01-23",
+  "FirstName" : "FirstName",
+  "SurName" : "SurName"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#UserProfile">UserProfile</a>
+  </div> <!-- method -->
+  <hr/>
 
   <h2><a name="__Models">Models</a></h2>
   [ Jump to <a href="#__Methods">Methods</a> ]
