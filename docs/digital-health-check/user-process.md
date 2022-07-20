@@ -25,41 +25,55 @@ flowchart TB
     end
 
     subgraph HCP
-        Prelim -->Cardio
-        Cardio -->Physical
-        Physical -->Alcohol
-        subgraph Prelim[Prelim Details]
-            direction TB
-            ConfirmA[Confirm Age] -->Gender[Record Gender]
-            Gender-->Ethnicity
-            Ethnicity-->Smoking
-            Smoking-->FamilyCardio
-        end        
-        
-        subgraph Cardio[Cardio Test]
-            direction TB
-            StartCardio{Start Cardio} -->BMI
-            BMI-->Colesterol
-            Colesterol-->BP
-            BP -->EndCario{End Cardio}
-        
+        direction TB
+        Stage1 -->Stage2
+        subgraph Stage1
+            direction LR
+            Prelim -->Cardio
+            Cardio -->Physical
+            Physical -->Alcohol        
+            subgraph Prelim[Prelim Details]
+                direction TB
+                ConfirmA[Confirm Age] -->Gender[Record Gender]
+                Gender-->Ethnicity
+                Ethnicity-->Smoking
+                Smoking-->FamilyCardio
+            end        
+            subgraph Cardio[Cardio Test]
+                direction TB
+                StartCardio[Start Cardio] -->BMI[Calculate BMI]
+                BMI-->Cholesterol[Test cholesterol]
+                Cholesterol <-->|Meets HR criteria|ColRefToPrim((refer to primary))
+                Cholesterol-->BP
+                BP <-->|Meets HR criteria|BPRefToPrim((refer to primary))
+                BP -->EndCario[End Cardio, Move to Physical]          
+            end
+            subgraph Physical
+                direction TB
+                StartPhysical[Start Physical] -->AssessPhysical
+                AssessPhysical -->ConsiderExercise
+                AssessPhysical -->PhysicalAdvice
+                AssessPhysical --> EndPhysical
+                ConsiderExercise --> EndPhysical
+                PhysicalAdvice --> EndPhysical
+                EndPhysical[End Physical]
+            end
+            subgraph Alcohol
+                direction TB
+                AssessAlcoholRisk
+            end            
         end
-
-        subgraph Physical
-            direction TB
-            StartPhysical{Start Physical} -->AssessPhysical
-            AssessPhysical -->ConsiderExcecise
-            AssessPhysical -->PhysicalAdvice
-            AssessPhysical --> EndPhysical
-            ConsiderExcecise --> EndPhysical
-            PhysicalAdvice --> EndPhysical
-            EndPhysical{End Physical}
+        subgraph Stage2
+            direction LR
+            Diabetic -->Dementia
+            subgraph Diabetic
+                direction TB
+                AssessDiabetic
+            end 
+            subgraph Dementia
+                direction TB
+                AssessDementia
+            end 
         end
-
-        subgraph Alcohol
-            direction TB
-            AssessAlcoholRisk
-            
-        end        
     end
 ```

@@ -16,6 +16,19 @@ nav_order: 2
 
 # What is NHS Proxy?
 
+## To Architect
+  
+
+  
+- Authentication
+- Authorisation
+- Data model of credentials and presentations
+- Proxy relationship establishment application
+- Credential validation service
+- Decentralised identifier (DID) documents
+- Trust framework system
+- Credential gateway
+
 
 ## Definitions
 
