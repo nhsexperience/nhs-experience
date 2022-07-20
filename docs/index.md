@@ -13,7 +13,7 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 > ⚠️ **Warning**
 >  
 > **FORK**: This is a fork of https://github.com/nhsexperience/nhs-experience.
-> - [Origin github - https://github.com/RossBugginsNHS/nhs-experience/tree/v0.1.2-alpha](https://github.com/RossBugginsNHS/nhs-experience/tree/v0.1.2-alpha)
+> - [Origin github - {{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }})
 > - [Upstream site - https://zealous-beach-05e189903.1.azurestaticapps.net](https://zealous-beach-05e189903.1.azurestaticapps.net)
 > - [Upstream github - https://github.com/nhsexperience/nhs-experience](https://github.com/nhsexperience/nhs-experience)
 >
