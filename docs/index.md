@@ -10,16 +10,25 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 >
 > Please contact the author for more information.
 
-> ⚠️ **Warning**
->  
-> **FORK**: This is a fork of https://github.com/nhsexperience/nhs-experience.
-> - [Origin github - {{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }})
-> - [Upstream site - https://zealous-beach-05e189903.1.azurestaticapps.net](https://zealous-beach-05e189903.1.azurestaticapps.net)
-> - [Upstream github - https://github.com/nhsexperience/nhs-experience](https://github.com/nhsexperience/nhs-experience)
->
-> [Fork Etiquette](/process/fork-etiquette.html)
-> 
-> Please contact the author for more information.
+{% if site.source_gh_edit_repository <> site.gh_edit_repository %}
+  > ⚠️ **Warning**
+  >  
+  > **FORK**: This is a fork of [{{ site.source_gh_edit_repository }}]({{ site.source_gh_edit_repository }}).
+  >
+  > [View Original Site]({{ site.source_published_url }})
+  >
+  > **What is a fork?**
+  >
+  > A fork is a copy, that can be used to prepare changes that can be submitted to be accepted into the source site (the upstream).
+  > - [Origin site - {{ site.published_url }}]({{ site.published_url }})
+  > - [Origin github - {{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }})
+  > - [Upstream site - {{ site.source_published_url }}]({{ site.source_published_url }})
+  > - [Upstream github - {{ site.source_gh_edit_repository }}]({{ site.source_gh_edit_repository }})
+  >
+  > [Fork Etiquette](/process/fork-etiquette.html)
+  > 
+  > Please contact the author for more information.
+{% endif %}
 # Todo:
 
 - Auto build .drawio to .svg
