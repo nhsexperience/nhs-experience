@@ -1,6 +1,6 @@
 ---
 title: Glossary
-layout: home
+layout: page
 nav_order: 500
 ---
 > ⚠️ **Warning**

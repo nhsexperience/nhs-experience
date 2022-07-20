@@ -1,6 +1,6 @@
 ---
 title: Posts
-layout: home
+layout: page
 nav_order: 600
 ---
 > ⚠️ **Warning**

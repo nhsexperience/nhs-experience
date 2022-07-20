@@ -1,7 +1,7 @@
 ---
 title: Open Source Software
 parent: Open Source Thought
-layout: home
+layout: page
 nav_order: 1.1
 ---
 > ⚠️ **Warning**

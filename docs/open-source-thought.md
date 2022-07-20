@@ -1,6 +1,6 @@
 ---
 title: Open Source Thought
-layout: home
+layout: page
 nav_order: 1.1
 has_children: true
 ---
