@@ -18,7 +18,8 @@ has_children: true
         IdentityCred -->Cit2
         RelationshipAToBCred -->Cit1
         AllEligabilitiesCred -->Cit1
-        Cit1 <-->|BundlesCreds and is issued|NHSProxyCred
+        Cit1 ---->|BundlesCreds|NHSProxyCred
+        NHSProxyCred ----> |Creds Issued|Cit1
 
         subgraph Citizens    
             Cit1
@@ -50,10 +51,10 @@ has_children: true
                 end
                 
             end
-            subgraph Eligability
-                NoCourtRestrictions -->AllEligabilitiesCred
-                NoLocalCouncilRestrictions -->AllEligabilitiesCred
-                AllEligabilitiesCred
+            subgraph Eligibility
+                NoCourtRestrictions -->AllEligibilitiesCred
+                NoLocalCouncilRestrictions -->AllEligibilitiesCred
+                AllEligibilitiesCred
             end
         end
         subgraph NHS Citizen Authorisation
