@@ -11,13 +11,33 @@ has_children: true
 >
 > Please contact the author for more information.
 
+# What do we need Proving to allow access?
+
+## Access to own records
+
+## Access to anther's records
+
+We need proved:
+- The targets identity
+- The accessors identity
+- The relationship
+- That there are no "Restrictions" in places
+
+### What relationships are there?
+- Parent to Child
+- Power of Attorney
+### What are restrictions?
+- Court Orders
+- GP Objections?
+- 
+
 ## Dependency on external issuers for proof of identity, relationships and eligibility restrictions.
 ```mermaid!
     graph LR
         IdentityCred -->Cit1
         IdentityCred -->Cit2
         RelationshipAToBCred -->Cit1
-        AllEligabilitiesCred -->Cit1
+        AllEligibilitiesCred -->Cit1
         Cit1 ---->|BundlesCreds|NHSProxyCred
         NHSProxyCred ----> |Creds Issued|Cit1
 
