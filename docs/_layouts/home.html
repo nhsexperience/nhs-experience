@@ -1,0 +1,9 @@
+---
+layout: default
+---
+{% if site.source_gh_edit_repository <> site.gh_edit_repository %}
+<p class="text-small text-grey-dk-000 mb-0">
+  ⚠️🍴 This site is a fork of <a href="{{ site.source_gh_edit_repository }}">{{ site.source_gh_edit_repository }}</a>
+  </p>
+{% endif %}
+{{ content }}

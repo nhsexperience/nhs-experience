@@ -25,19 +25,7 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 >
 > Please contact the author for more information.
 
-{% if site.source_gh_edit_repository <> site.gh_edit_repository %}
-  > ⚠️ **Warning: Fork**
-  >  
-  > This is a fork of [{{ site.source_gh_edit_repository }}]({{ site.source_gh_edit_repository }}).
-  >
-  > [View Original Site]({{ site.source_published_url }})
-  >
-  > **What is a fork?**
-  >
-  > A fork is a copy, that can be used to prepare changes that can be submitted to be accepted into the source site (the upstream).
 
-  > [Fork Etiquette](/process/fork-etiquette.html). Please contact the author for more information.
-{% endif %}
 # Todo:
 
 - Auto build .drawio to .svg

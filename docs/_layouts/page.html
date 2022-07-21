@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% if site.source_gh_edit_repository <> site.gh_edit_repository %}
+<p class="text-small text-grey-dk-000 mb-0">
+  ⚠️🍴 This site is a fork of <a href="{{ site.source_gh_edit_repository }}">{{ site.source_gh_edit_repository }}</a>
+  </p>
+{% endif %}
+
 {% assign wordWarning = 200 %} {% assign wordCount = content | number_of_words
 %} {% assign readTime = wordCount | divided_by: 100.0 | ceil %}
 
@@ -24,6 +30,13 @@ layout: default
    {% if wordCount < wordWarning %} 
    <p class="text-small text-grey-dk-000 mb-0">
     🚧 This page has less that {{wordWarning}} words. So it looks like this page is still under construction.
+  </p>
+    {% endif %}
+
+    {% if page.is_not_draft %} 
+    {% else %}
+   <p class="text-small text-grey-dk-000 mb-0">
+    🌧🚼 This page is draft and is subject to rapid change, and may not be fully accurate or complete.
   </p>
     {% endif %}
 
