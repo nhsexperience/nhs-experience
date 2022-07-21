@@ -1,7 +1,6 @@
 ---
 title: NHS Account Proxy
 layout: page
-permalink: /account/p/
 has_children: true
 parent: NHS Account
 nav_order: 2

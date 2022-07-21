@@ -1,25 +1,55 @@
 ---
 layout: default
 ---
-{% assign wordCount = content | number_of_words %}
-{% assign readTime = wordCount | divided_by: 100.0 | ceil   %}
 
+{% assign wordWarning = 200 %} {% assign wordCount = content | number_of_words
+%} {% assign readTime = wordCount | divided_by: 100.0 | ceil %}
 
-  <h1>{{page.title}}</h1>
-  <div class="reading-time">
-    <p class="text-small text-grey-dk-000 mb-0">📑 {{ wordCount }} words | ⏱ {{readTime}} mins
-      {% if
-        site.gh_edit_link and
-        site.gh_edit_link_text and
-        site.gh_edit_repository and
-        site.gh_edit_branch and
-        site.gh_edit_view_mode
-      %}
-       
-          | <a href="{{ site.gh_edit_repository }}/commits/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}" id="edit-this-page">🧾 View History</a>
-      
-      {% endif %}
-    </p>
-  </div>
-  {{ content }}
+<h1>{{page.title}}</h1>
 
+<div class="reading-time">
+  <p class="text-small text-grey-dk-000 mb-0">
+    📑 {{ wordCount }} words | ⏱ {{readTime}} mins 
+    {% if site.gh_edit_link and
+    site.gh_edit_link_text and site.gh_edit_repository and site.gh_edit_branch
+    and site.gh_edit_view_mode %} |
+    <a
+      href="{{ site.gh_edit_repository }}/commits/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}"
+      id="edit-this-page"
+      >🧾 View History</a
+    >
+
+    {% endif %}
+  </p>
+   {% if wordCount < wordWarning %} 
+   <p class="text-small text-grey-dk-000 mb-0">
+    🚧 This page has less that {{wordWarning}} words. So it looks like this page is still under construction.
+  </p>
+    {% endif %}
+
+</div>
+
+<div class="page-info">
+  {% if page.last_modified_date %}
+  <p class="text-small text-grey-dk-000 mb-0">
+    Last Modified: {{ page.last_modified_date | date: "%-d %B %Y %H:%M"}} 
+  </p>
+  {% else %}
+  <p class="text-small text-grey-dk-000 mb-0">
+    Last Modified: 01 July 2022 12:00 (default)
+ </p>  
+  {% endif %}
+
+  {% if page.author %}
+  <p class="text-small text-grey-dk-000 mb-0">
+     Author: {{page.author}}
+  </p>
+  {% else %}
+  <p class="text-small text-grey-dk-000 mb-0">
+    Author: Ross Buggins (default)
+ </p>
+{% endif %}
+
+</div>
+
+{{ content }}

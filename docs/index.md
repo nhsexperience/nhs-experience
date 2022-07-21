@@ -4,6 +4,21 @@ layout: home
 nav_order: 1
 last_modified_date: Jul 15 2022 at 03:39 PM
 ---
+
+
+{% capture pgs %}
+  {% for pg in site.pages %}
+    {% assign ext = pg.url | split: "." | last %}
+    {% if ext == "html" %}
+      |{{ pg.content | number_of_words  | prepend: '00000000' | slice: -8, 8 }}#{{ pg.title }}#{{ pg.content | number_of_words }}#{{pg.url}}#{{ext}}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign sortedpgs = pgs | split: '|' | sort %}
+
+
+
 > ⚠️ **Warning**
 >  
 > **Draft Documents**: May not represent real world scenarios, may not be fully accurate or complete.
@@ -11,23 +26,17 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 > Please contact the author for more information.
 
 {% if site.source_gh_edit_repository <> site.gh_edit_repository %}
-  > ⚠️ **Warning**
+  > ⚠️ **Warning: Fork**
   >  
-  > **FORK**: This is a fork of [{{ site.source_gh_edit_repository }}]({{ site.source_gh_edit_repository }}).
+  > This is a fork of [{{ site.source_gh_edit_repository }}]({{ site.source_gh_edit_repository }}).
   >
   > [View Original Site]({{ site.source_published_url }})
   >
   > **What is a fork?**
   >
   > A fork is a copy, that can be used to prepare changes that can be submitted to be accepted into the source site (the upstream).
-  > - [Origin site - {{ site.published_url }}]({{ site.published_url }})
-  > - [Origin github - {{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}]({{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }})
-  > - [Upstream site - {{ site.source_published_url }}]({{ site.source_published_url }})
-  > - [Upstream github - {{ site.source_gh_edit_repository }}]({{ site.source_gh_edit_repository }})
-  >
-  > [Fork Etiquette](/process/fork-etiquette.html)
-  > 
-  > Please contact the author for more information.
+
+  > [Fork Etiquette](/process/fork-etiquette.html). Please contact the author for more information.
 {% endif %}
 # Todo:
 
@@ -59,6 +68,17 @@ last_modified_date: Jul 15 2022 at 03:39 PM
       </li>
     {% endfor %}
 </ul>
+
+# Page List
+<div>
+<ul>
+{% for pg in sortedpgs reversed %}
+    {% assign pgitems = pg | split: '#' %}
+    <li><a href="{{pgitems[3]}}">{{ pgitems[2] }} words : {{ pgitems[1] }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
 # Source and build details
   
   
