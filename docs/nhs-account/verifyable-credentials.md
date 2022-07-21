@@ -26,10 +26,12 @@ We need proved:
 ### What relationships are there?
 - Parent to Child
 - Power of Attorney
+  
 ### What are restrictions?
 - Court Orders
 - GP Objections?
-- 
+
+
 
 ## Dependency on external issuers for proof of identity, relationships and eligibility restrictions.
 ```mermaid!
