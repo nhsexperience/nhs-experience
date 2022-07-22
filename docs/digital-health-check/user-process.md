@@ -35,6 +35,7 @@ flowchart TB
         HCPFinishHC ---->postHC
         direction TB
         subgraph CompleteHC
+            direction TB
             Stage1 -->Stage2
             subgraph Stage1
                 direction LR    

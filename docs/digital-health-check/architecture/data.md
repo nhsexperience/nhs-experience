@@ -4,6 +4,10 @@ layout: page
 grand_parent: NHS Digital Health Check
 parent: Architecture
 nav_order: 7
+todo:
+    - Complete Data Classes
+    - Complete Data to snowmed mapping table
+    - 
 ---
 
 > ⚠️ **Warning**
@@ -12,21 +16,135 @@ nav_order: 7
 >
 > Please contact the author for more information.
 
+# Health Check Data Classes
 ```mermaid!
 classDiagram
-    Citizen <|-- Demographics
-    Citizen <|-- Observations
-    class Citizen
+    Citizen "1"-->"*"  HealthCheck
+    Citizen "1"-->"1"  Demographics
+    Citizen "1"-->"1" Observations
+    Observations "1"-->"*" Observation
+    HeartRisk "1"-->"1" QRisk2
+    HeartRisk "1"-->"1" QRisk3
+    HealthCheck "1"-->"1" BasicObs
+    HealthCheck "1"-->"1" HeartRisk
+
+    class Citizen{
+        +Demographics Demographics
+        +Observations Observations
+        +List~HealthCheck~ HealthChecks
+    }
     class Demographics{
         +string Name
         +int Age
     }
-    class Observations
+    class Observations{
+         +List~Observation~ Observations
+    }
+    
+    class Observation{
+        
+    }
+
+    class HealthCheck{
+        + BasicObs BasicObs
+        + HeartRisk HeartRisk
+    }
+
+    class BasicObs{
+        + distance Height
+        + mass Weight
+        + distance WaistCircumference
+    }
+
+    class HeartRisk{
+    + qrisk2 QRisk2
+    + qrisk3 QRisk3
+    }
+
+    class QRisk2{
+    + int HeartAge
+    + int RiskScore
+    }
+
+    class QRisk3{
+    + int HeartAge
+    + int RiskScore
+    }    
 ```
 
 [View Swaggerhub OpenAPI v3]({% link digital-health-check/data-swagger/html2/index.html %})
 
 [Swaggerhub Source](https://app.swaggerhub.com/apis/RossBugginsNHS/hc1/v0.1#/)
 
-<iframe width="100%" height="1000px" src="/digital-health-check/data-swagger/html2/">
-</iframe>
+## Data Mapping to SNOWMED Codes
+
+| Data Model Class | Health Check Area              | SNOMED Code        | SNOWMED Name                                                                                            |
+| :--------------- | :----------------------------- | :----------------- | :------------------------------------------------------------------------------------------------------ |
+| QRisk2                 | QRISK score                    | 810931000000108    | QRISK2 calculated heart age (observable entity)                                                         |
+| QRisk2                 | QRISK score                    | 718087004          | QRISK2 cardiovascular disease 10 year risk score (observable entity)                                    |
+| QRisk3                 | QRISK score                    | 1325531000000100   | QRISK3 Healthy Heart Age (observable entity)                                                            |
+| QRisk3                 | QRISK score                    | 1085871000000100   | QRISK3 cardiovascular disease 10 year risk calculator score (observable entity)                         |
+|                  | Family history CHD             | 515741000000106    | Family history of myocardial infarction in first degree relative less than 60 years (situation)         |
+| BasicObs         | Height                         | 1153637007         | Body height (observable entity)                                                                         |
+| BasicObs         | Weight                         | 27113001           | Body weight (observable entity)                                                                         |
+|                  | Body Mass Index                | 60621009           | Body mass index (observable entity)                                                                     |
+| BasicObs         | Waist                          | 276361009          | Waist circumference (observable entity)                                                                 |
+|                  | Smoking Status                 | 8517006            | Ex-smoker (finding)                                                                                     |
+|                  | Smoking Status                 | 56771006           | Heavy smoker (over 20 per day) (finding)                                                                |
+|                  | Smoking Status                 | 160605003          | Heavy cigarette smoker (20-39 cigs/day)                                                                 |
+|                  | Smoking Status                 | 160606002          | Very heavy cigarette smoker (40+ cigs/day)                                                              |
+|                  | Smoking Status                 | 160603005          | Light cigarette smoker (1-9 cigs/day) (finding)                                                         |
+|                  | Smoking Status                 | 160604004          | Moderate cigarette smoker (10-19 cigs/day) (finding)                                                    |
+|                  | Smoking Status                 | 8392000            | Non-smoker                                                                                              |
+|                  | Smoking Status                 | 266919005          | Never smoked tobacco (finding)                                                                          |
+|                  | Total Cholesterol              | 853681000000104    | Total cholesterol level (observable entity)                                                             |
+|                  | Total Cholesterol              | 853681000000104    | Serum total cholesterol level                                                                           |
+|                  | HDL                            | 1005681000000100   | Serum high density lipoprotein cholesterol level (observable entity)                                    |
+|                  | Non-HDL                        | 1030411000000100   | Non high density lipoprotein cholesterol level (observable entity)                                      |
+|                  | HDL/Chol ratio                 | 1028551000000100   | Total cholesterol: high lipoprotein ratio (observable entity)                                           |
+|                  | Triglycerides                  | ? 850991000000104  | ? Triglyceride level (observable entity)                                                                |
+|                  | Triglycerides                  | ? 1026501000000104 | ? Serum random triglyceride level (observable entity)                                                   |
+|                  | HbA1c                          | 1003671000000100   | Haemoglobin A1c level (observable entity)                                                               |
+|                  | FPG                            | 1003141000000100   | Plasma fasting glucose level (observable entity)                                                        |
+|                  | SystolicBP1                    | 271649006          | Systolic blood pressure (observable entity)                                                             |
+|                  | DiastolicBP1                   | 271650006          | Diastolic blood pressure (observable entity)                                                            |
+|                  | Alcohol AUDIT                  | 763256006          | Alcohol Use Disorders Identification Test - Consumption score (observable entity)                       |
+|                  | Alcohol FAST                   | 1084601000000100   | Fast Alcohol Screening Test score (observable entity)                                                   |
+|                  | Physical activity GPPAQ        | 895951000000106    | General Practice Physical Activity Questionnaire declined (situation)                                   |
+|                  | Physical activity GPPAQ        | 366241000000106    | General practice physical activity questionnaire physical activity index: active (finding)              |
+|                  | Physical activity GPPAQ        | 366121000000108    | General practice physical activity questionnaire physical activity index: inactive (finding)            |
+|                  | Physical activity GPPAQ        | 366211000000105    | General practice physical activity questionnaire physical activity index: moderately active (finding)   |
+|                  | Physical activity GPPAQ        | 366171000000107    | General practice physical activity questionnaire physical activity index: moderately inactive (finding) |
+|                  | Smoking intervention           | 225323000          | Smoking cessation education (procedure)                                                                 |
+|                  | Smoking intervention           | 225324006          | Smoking effects education (procedure)                                                                   |
+|                  | Smoking intervention           | 771155005          | Brief intervention for smoking cessation (procedure)                                                    |
+|                  | Smoking intervention           | 1084381000000100   | Signposting to smoking cessation service (procedure)                                                    |
+|                  | Smoking intervention           | 871661000000106    | Referral to smoking cessation service (procedure)                                                       |
+|                  | Diabetes intervention          | 699826006          | Lifestyle education regarding risk of diabetes (procedure)                                              |
+|                  | Diabetes intervention          | 1106151000000100   | Referral for lifestyle education regarding risk of diabetes (procedure)                                 |
+|                  | Diabetes intervention          | 1025321000000100   | Referral to NHS Diabetes Prevention Programme (procedure)                                               |
+|                  | Diabetes intervention          | 1025301000000100   | Referral to NHS Diabetes Prevention Programme declined (situation)                                      |
+|                  | Blood pressure intervention    | ? 443402002        | ? Lifestyle education regarding hypertension                                                            |
+|                  | Weight management intervention | 698471002          | Patient advised about weight management (situation)                                                     |
+|                  | Weight management intervention | 1083431000000100   | Signposting to weight management service (procedure)                                                    |
+|                  | Weight management intervention | 1326201000000100   | Referral to weight management service (procedure)                                                       |
+|                  | Weight management intervention | 506171000000109    | Referral to weight management service declined (situation)                                              |
+|                  | Diet intervention              | 11816003           | Diet education (procedure)                                                                              |
+|                  | Diet intervention              | 306163007          | Referral to dietetics service (procedure)                                                               |
+|                  | Physical activity intervention | 819961005          | Physical activity guidance (procedure)                                                                  |
+|                  | Physical activity intervention | 526371000000102    | Physical activity opportunity signposted (situation)                                                    |
+|                  | Physical activity intervention | 375031000000109    | Brief intervention for physical activity completed (situation)                                          |
+|                  | Physical activity intervention | 755541000000109    | Brief intervention for physical activity declined (situation)                                           |
+|                  | Lifestyle intervention         | 313204009          | Lifestyle education (procedure)                                                                         |
+|                  | Lifestyle intervention         | 1097171000000100   | Referral for lifestyle education (procedure)                                                            |
+|                  | Lifestyle intervention         | 892281000000101    | Referral to healthy lifestyle programme (procedure)                                                     |
+|                  | Alcohol intervention           | 21121000175100     | Alcohol use education declined (situation)                                                              |
+|                  | Alcohol intervention           | 281078001          | Education about alcohol consumption (procedure)                                                         |
+|                  | Alcohol intervention           | 1084171000000100   | Signposting to alcohol misuse service (procedure)                                                       |
+|                  | Alcohol intervention           | 366371000000105    | Brief intervention for excessive alcohol consumption completed (situation)                              |
+|                  | Alcohol intervention           | 379411000000105    | Brief intervention for excessive alcohol consumption declined (situation)                               |
+|                  | Alcohol intervention           | 376401000000103    | Referral to alcohol brief intervention service (procedure)                                              |
+|                  | Alcohol intervention           | 1099141000000100   | Referral to alcohol misuse service (procedure)                                                          |
+|                  | Dementia signposting           | 1083391000000100   | Signposting to dementia support service (procedure)                                                     |
+|                  | Dementia awareness             | 870991000000101    | National Health Service Health Check raising awareness about dementia and memory clinics (procedure)    |
+|                  |                                |                    |                                                                                                         |
