@@ -2,8 +2,7 @@
 title: NHS Account Proxy
 layout: page
 has_children: true
-parent: NHS Account
-nav_order: 2
+nav_order: 2.1
 ---
 
 

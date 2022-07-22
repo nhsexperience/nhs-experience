@@ -1,8 +1,7 @@
 ---
 title: NHS Account Discovery Report
 layout: page
-parent: NHS Account Proxy
-grand_parent: NHS Account
+parent: NHS Account
 nav_order: 1
 author: Sitekit
 last_modified_date: Jul 22 2022 at 07:51 AM

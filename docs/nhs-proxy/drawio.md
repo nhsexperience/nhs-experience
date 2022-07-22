@@ -1,8 +1,7 @@
 ---
 title: Proxy DrawIO
 layout: page
-parent: NHS Account Proxy
-grand_parent: NHS Account
+parent: NHS Account
 nav_order: 3
 ---
 
