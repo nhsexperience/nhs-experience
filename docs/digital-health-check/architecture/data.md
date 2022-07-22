@@ -16,6 +16,41 @@ todo:
 >
 > Please contact the author for more information.
 
+
+# Interactions
+```mermaid!
+flowchart TB
+    Cohort --> Notify
+    Notify --> DHC
+    DHC --> HC
+    DHC --> SendToGp
+    WebClientApi --> Account
+
+    subgraph DHC
+    WebApp -->WebClientApi
+    
+    end
+
+    subgraph Account
+    NHSLogin
+    API
+    DataStore
+
+    end
+```
+# Sequence
+```mermaid!
+sequenceDiagram
+    NHS->>Citizen: Invite
+    Citizen->>HP: Complete HC
+    HP->>GP: SendResults
+    HP-->Citizen: Send for furthur
+    Citizen-->Pro: Furthur Screening
+    GP->>Record: Update Details
+    GP->>HP: Send update
+    HP->>Citizen: Discuss Results
+```
+
 # Health Check Data Classes
 ```mermaid!
 classDiagram
@@ -23,11 +58,17 @@ classDiagram
     Citizen "1"-->"1"  Demographics
     Citizen "1"-->"1" Observations
     Observations "1"-->"*" Observation
+    BasicObs "1"-->"1" BMI
     HeartRisk "1"-->"1" QRisk2
     HeartRisk "1"-->"1" QRisk3
     HealthCheck "1"-->"1" BasicObs
     HealthCheck "1"-->"1" HeartRisk
-
+    HealthCheck "1"-->"1" FamilyHistory
+    HealthCheck "1"-->"1" SmokingStatus
+    HealthCheck "1"-->"1" Cholesterol
+    HealthCheck "1"-->"1" Sugar
+    HealthCheck "1"-->"1" Bp
+    HealthCheck "1"-->"1" Alcohol
     class Citizen{
         +Demographics Demographics
         +Observations Observations
@@ -48,28 +89,82 @@ classDiagram
     class HealthCheck{
         + BasicObs BasicObs
         + HeartRisk HeartRisk
+        + FamilyHistory FamilyHistory
+        + SmokingStatus SmokingStatus
+        + SmokingStatus SmokingStatus
+        + Cholesterol Cholesterol
+        + Sugar Sugar      
+        + Bp Bp  
+        + Alcohol Alcohol
     }
 
     class BasicObs{
         + distance Height
         + mass Weight
         + distance WaistCircumference
+        + BMI Bmi
+
+    }
+
+    class BMI {
+        + int Value
     }
 
     class HeartRisk{
-    + qrisk2 QRisk2
-    + qrisk3 QRisk3
+        + qrisk2 QRisk2
+        + qrisk3 QRisk3
     }
 
     class QRisk2{
-    + int HeartAge
-    + int RiskScore
+        + int HeartAge
+        + int RiskScore
     }
 
     class QRisk3{
-    + int HeartAge
-    + int RiskScore
+        + int HeartAge
+        + int RiskScore
     }    
+
+    class FamilyHistory{
+     + string History?
+    }   
+
+    class SmokingStatus{
+        + bool Ex
+        + bool Heavy
+        + bool HeavyCig
+        + bool VeryHeavy
+        + bool Light
+        + bool Moderate
+        + bool Non
+        + bool Never
+    }
+
+    class Cholesterol{
+        + int total
+        + int TotalSerum
+        + int HDL
+        + int noHDL
+        + int Ration
+    }
+
+    class Sugar{
+        + int Triglycerides
+        + int SerumTriglycerides
+        + int hb1
+        + int fpg
+    }
+
+    class Bp{
+        + int Systolic
+        + int Diastolic
+    }
+
+    class Alcohol{
+        + int ConsumtionScore
+        + int ScreeningTestScore
+    }
+
 ```
 
 [View Swaggerhub OpenAPI v3]({% link digital-health-check/data-swagger/html2/index.html %})
@@ -80,34 +175,34 @@ classDiagram
 
 | Data Model Class | Health Check Area              | SNOMED Code        | SNOWMED Name                                                                                            |
 | :--------------- | :----------------------------- | :----------------- | :------------------------------------------------------------------------------------------------------ |
-| QRisk2                 | QRISK score                    | 810931000000108    | QRISK2 calculated heart age (observable entity)                                                         |
-| QRisk2                 | QRISK score                    | 718087004          | QRISK2 cardiovascular disease 10 year risk score (observable entity)                                    |
-| QRisk3                 | QRISK score                    | 1325531000000100   | QRISK3 Healthy Heart Age (observable entity)                                                            |
-| QRisk3                 | QRISK score                    | 1085871000000100   | QRISK3 cardiovascular disease 10 year risk calculator score (observable entity)                         |
-|                  | Family history CHD             | 515741000000106    | Family history of myocardial infarction in first degree relative less than 60 years (situation)         |
+| QRisk2           | QRISK score                    | 810931000000108    | QRISK2 calculated heart age (observable entity)                                                         |
+| QRisk2           | QRISK score                    | 718087004          | QRISK2 cardiovascular disease 10 year risk score (observable entity)                                    |
+| QRisk3           | QRISK score                    | 1325531000000100   | QRISK3 Healthy Heart Age (observable entity)                                                            |
+| QRisk3           | QRISK score                    | 1085871000000100   | QRISK3 cardiovascular disease 10 year risk calculator score (observable entity)                         |
+| FamilyHistory    | Family history CHD             | 515741000000106    | Family history of myocardial infarction in first degree relative less than 60 years (situation)         |
 | BasicObs         | Height                         | 1153637007         | Body height (observable entity)                                                                         |
 | BasicObs         | Weight                         | 27113001           | Body weight (observable entity)                                                                         |
-|                  | Body Mass Index                | 60621009           | Body mass index (observable entity)                                                                     |
+| BasicObs         | Body Mass Index                | 60621009           | Body mass index (observable entity)                                                                     |
 | BasicObs         | Waist                          | 276361009          | Waist circumference (observable entity)                                                                 |
-|                  | Smoking Status                 | 8517006            | Ex-smoker (finding)                                                                                     |
-|                  | Smoking Status                 | 56771006           | Heavy smoker (over 20 per day) (finding)                                                                |
-|                  | Smoking Status                 | 160605003          | Heavy cigarette smoker (20-39 cigs/day)                                                                 |
-|                  | Smoking Status                 | 160606002          | Very heavy cigarette smoker (40+ cigs/day)                                                              |
-|                  | Smoking Status                 | 160603005          | Light cigarette smoker (1-9 cigs/day) (finding)                                                         |
-|                  | Smoking Status                 | 160604004          | Moderate cigarette smoker (10-19 cigs/day) (finding)                                                    |
-|                  | Smoking Status                 | 8392000            | Non-smoker                                                                                              |
-|                  | Smoking Status                 | 266919005          | Never smoked tobacco (finding)                                                                          |
-|                  | Total Cholesterol              | 853681000000104    | Total cholesterol level (observable entity)                                                             |
-|                  | Total Cholesterol              | 853681000000104    | Serum total cholesterol level                                                                           |
-|                  | HDL                            | 1005681000000100   | Serum high density lipoprotein cholesterol level (observable entity)                                    |
-|                  | Non-HDL                        | 1030411000000100   | Non high density lipoprotein cholesterol level (observable entity)                                      |
-|                  | HDL/Chol ratio                 | 1028551000000100   | Total cholesterol: high lipoprotein ratio (observable entity)                                           |
-|                  | Triglycerides                  | ? 850991000000104  | ? Triglyceride level (observable entity)                                                                |
-|                  | Triglycerides                  | ? 1026501000000104 | ? Serum random triglyceride level (observable entity)                                                   |
-|                  | HbA1c                          | 1003671000000100   | Haemoglobin A1c level (observable entity)                                                               |
-|                  | FPG                            | 1003141000000100   | Plasma fasting glucose level (observable entity)                                                        |
-|                  | SystolicBP1                    | 271649006          | Systolic blood pressure (observable entity)                                                             |
-|                  | DiastolicBP1                   | 271650006          | Diastolic blood pressure (observable entity)                                                            |
+| SmokingStatus    | Smoking Status                 | 8517006            | Ex-smoker (finding)                                                                                     |
+| SmokingStatus    | Smoking Status                 | 56771006           | Heavy smoker (over 20 per day) (finding)                                                                |
+| SmokingStatus    | Smoking Status                 | 160605003          | Heavy cigarette smoker (20-39 cigs/day)                                                                 |
+| SmokingStatus    | Smoking Status                 | 160606002          | Very heavy cigarette smoker (40+ cigs/day)                                                              |
+| SmokingStatus    | Smoking Status                 | 160603005          | Light cigarette smoker (1-9 cigs/day) (finding)                                                         |
+| SmokingStatus    | Smoking Status                 | 160604004          | Moderate cigarette smoker (10-19 cigs/day) (finding)                                                    |
+| SmokingStatus    | Smoking Status                 | 8392000            | Non-smoker                                                                                              |
+| SmokingStatus    | Smoking Status                 | 266919005          | Never smoked tobacco (finding)                                                                          |
+| Cholesterol      | Total Cholesterol              | 853681000000104    | Total cholesterol level (observable entity)                                                             |
+| Cholesterol      | Total Cholesterol              | 853681000000104    | Serum total cholesterol level                                                                           |
+| Cholesterol      | HDL                            | 1005681000000100   | Serum high density lipoprotein cholesterol level (observable entity)                                    |
+| Cholesterol      | Non-HDL                        | 1030411000000100   | Non high density lipoprotein cholesterol level (observable entity)                                      |
+| Cholesterol      | HDL/Chol ratio                 | 1028551000000100   | Total cholesterol: high lipoprotein ratio (observable entity)                                           |
+| Sugar            | Triglycerides                  | ? 850991000000104  | ? Triglyceride level (observable entity)                                                                |
+| Sugar            | Triglycerides                  | ? 1026501000000104 | ? Serum random triglyceride level (observable entity)                                                   |
+| Sugar            | HbA1c                          | 1003671000000100   | Haemoglobin A1c level (observable entity)                                                               |
+| Sugar            | FPG                            | 1003141000000100   | Plasma fasting glucose level (observable entity)                                                        |
+| Bp               | SystolicBP1                    | 271649006          | Systolic blood pressure (observable entity)                                                             |
+| Bp               | DiastolicBP1                   | 271650006          | Diastolic blood pressure (observable entity)                                                            |
 |                  | Alcohol AUDIT                  | 763256006          | Alcohol Use Disorders Identification Test - Consumption score (observable entity)                       |
 |                  | Alcohol FAST                   | 1084601000000100   | Fast Alcohol Screening Test score (observable entity)                                                   |
 |                  | Physical activity GPPAQ        | 895951000000106    | General Practice Physical Activity Questionnaire declined (situation)                                   |
