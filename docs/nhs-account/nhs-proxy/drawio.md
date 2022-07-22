@@ -1,7 +1,6 @@
 ---
-title: NHS Account Proxy DrawIOer
+title: Proxy DrawIO
 layout: page
-permalink: /account/p/drawio.html
 parent: NHS Account Proxy
 grand_parent: NHS Account
 nav_order: 3

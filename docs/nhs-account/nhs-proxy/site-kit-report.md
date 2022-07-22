@@ -1,18 +1,30 @@
 ---
-title: Sitekit report
+title: NHS Account Discovery Report
 layout: page
 parent: NHS Account Proxy
 grand_parent: NHS Account
 nav_order: 3.5
+author: Sitekit
+last_modified_date: Jul 22 2022 at 07:51 AM
+tags: 
+    - report 
+    - external 
+    - proxy
+description: A discovery into the possibilities for NHS Account Proxy, authored by Sitekit, April 2022. Focussing on the identification of relationships between people and how Verifiable Credentials could be utilised.
+todo:
+    - images to extract and add
+    - additional tables are missing
 ---
 
-# NHS Account Discovery Report
 
-Version 2.0
-
-**Table of Contents**
-
-[TOC]
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 # Executive Summary
 ## Introduction
@@ -24,7 +36,7 @@ The NHS does not currently have a digital proxy service that can meet the needs 
    2. digitally demonstrate their proxy relationship in a physical care setting so that they can make decisions with the service and receive information on behalf of the subject. 
 
 2. A **DESIGNATED HEALTH OR SOCIAL CARE PROFESSIONAL** cannot currently access all or part of someone’s digital NHS Account when or how it is deemed in their best interests by their organisation.
-3. An approved<sup>#</sup> representative of an **AUTHORISED<sup>##</sup> HEALTH AND SOCIAL CARE INSTITUTION **cannot currently digitally issue and revoke proxy access to a person’s records within or across care settings where it is deemed through formal routes to be in the best interests of the patient.
+3. An approved<sup>#</sup> representative of an **AUTHORISED<sup>##</sup> HEALTH AND SOCIAL CARE INSTITUTION**cannot currently digitally issue and revoke proxy access to a person’s records within or across care settings where it is deemed through formal routes to be in the best interests of the patient.
 
 **An approved representative is a person within an organisation who has been granted administration rights over issuing proxy access e.g. a Care Home manager.**
 
@@ -1237,7 +1249,7 @@ The Use an LPA service is an additional means of sharing the details of an L
 
 **The availability of the tool therefore means that the OPG has a repository of registered LPAs plus a register of those who have created an account and who wish to use a digital LPA. However, the coverage of all LPAs is still partial (although being extended gradually) and not all of those who have an LPA in place will register for its online use**[^2]**.
 
-**This partial coverage means that the OPG LPA registry is not a candidate for the Alpha build of an NHS Proxy Access Service. This is also the case as there is a currently a consultation out on the digital tool and how to improve it which is due to report in Spring 2022. **
+**This partial coverage means that the OPG LPA registry is not a candidate for the Alpha build of an NHS Proxy Access Service. This is also the case as there is a currently a consultation out on the digital tool and how to improve it which is due to report in Spring 2022.**
 
 The consultation will look at: 
 
@@ -1367,7 +1379,7 @@ During this phase of the programme we have identified the concept of Onward Gran
 
 ## Onward Granting of Proxy Access
 
-**Onward granting **is the granting of proxy access to the subject’s record by the proxy to a second proxy, known as the second degree proxy.
+**Onward granting** is the granting of proxy access to the subject’s record by the proxy to a second proxy, known as the second degree proxy.
 
 
 ![alt_text](images/image15.png "image_tooltip")
