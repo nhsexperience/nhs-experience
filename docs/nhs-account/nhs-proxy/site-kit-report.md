@@ -3,7 +3,7 @@ title: NHS Account Discovery Report
 layout: page
 parent: NHS Account Proxy
 grand_parent: NHS Account
-nav_order: 3.5
+nav_order: 1
 author: Sitekit
 last_modified_date: Jul 22 2022 at 07:51 AM
 tags: 
@@ -12,8 +12,10 @@ tags:
     - proxy
 description: A discovery into the possibilities for NHS Account Proxy, authored by Sitekit, April 2022. Focussing on the identification of relationships between people and how Verifiable Credentials could be utilised.
 todo:
+    - verify docx export to markdown
     - images to extract and add
     - additional tables are missing
+
 ---
 
 
