@@ -15,6 +15,7 @@ todo:
     - verify docx export to markdown
     - images to extract and add
     - additional tables are missing
+    - All claims made in the report are yet to be independently verified
 
 ---
 
