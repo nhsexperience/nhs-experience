@@ -34,7 +34,7 @@ plugins:
   - jekyll-spaceship
 
 aux_links:
-  "NHS Experience  on GitHub":
+  "Citizen Experience on GitHub":
     - "//github.com/nhsexperience/nhs-experience"
     
 footer_content: "Distributed by an <a href=\"https://github.com/nhsexperience/nhs-experience/blob/main/LICENSE.md\">Open Government Licence v3.0</a>"

@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
+{% if page.is_not_draft %}{% else %}
+{% assign is_draft = true %}
+{% endif %}
+
+{% assign wordWarning = 200 %} {% assign wordCount = content | number_of_words%} 
+{% assign readTime = wordCount | divided_by: 100.0 | ceil %}
 
 {% if site.source_gh_edit_repository <> site.gh_edit_repository %}
 <p class="text-small text-grey-dk-000 mb-0">
   ⚠️🍴 This site is a fork of <a href="{{ site.source_gh_edit_repository }}">{{ site.source_gh_edit_repository }}</a>
   </p>
 {% endif %}
-
-{% assign wordWarning = 200 %} {% assign wordCount = content | number_of_words
-%} {% assign readTime = wordCount | divided_by: 100.0 | ceil %}
 
 <h1>{{page.title}}</h1>
 
@@ -58,9 +61,7 @@ layout: default
 <p class="text-nhs-mid-grey mb-0"><i>{{page.description}}</i></p>
 {% endif %}
 
-
-
-{% if page.todo %}
+{% if page.todo or is_draft %}
 <p class="text-small text-nhs-mid-grey mb-0"><b>Known Issues</b></p>
 
 <ul>
