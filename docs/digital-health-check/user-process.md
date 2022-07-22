@@ -18,8 +18,19 @@ last_modified_date: Jul 21 2022 at 03:39 PM
 Diagram being built from https://github.com/RossBugginsNHS/nhs-experience/issues/1
 
 ```mermaid!
+%%{init: 
+    { 
+        "theme": "dark", 
+        "flowchart": 
+        {
+            "curve": "stepAfter",
+            "rightAngles": "false",
+            "wrap": "true",
+            "diagramPadding": "50"
+        }
+    } 
+}%%
 flowchart TB
-    
     Ready-->HCP
     HCP --> |ReqestUpdate|GP
     GP --> |ConfirmedUpdate|HCP
@@ -29,7 +40,6 @@ flowchart TB
     end
     
     subgraph HCP
-        
         HCPStartsCheck -->CompleteHC
         CompleteHC --> HCPFinishHC
         HCPFinishHC ---->postHC

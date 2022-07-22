@@ -20,6 +20,7 @@ todo:
 # Interactions
 ```mermaid!
 flowchart TB
+    linkStyle default interpolate basis
     Cohort --> Notify
     Notify --> DHC
     DHC --> HC
@@ -53,7 +54,20 @@ sequenceDiagram
 
 # Health Check Data Classes
 ```mermaid!
-classDiagram
+%%{init: 
+    { 
+        "theme": "dark",
+        "flowchart": 
+        {
+            "curve": "linear",
+            "rightAngles": "false",
+            "wrap": "true",
+            "diagramPadding": "50"
+        }
+    } 
+}%%
+classDiagram-v2
+    direction LR
     Citizen "1"-->"*"  HealthCheck
     Citizen "1"-->"1"  Demographics
     Citizen "1"-->"1" Observations
@@ -61,14 +75,29 @@ classDiagram
     BasicObs "1"-->"1" BMI
     HeartRisk "1"-->"1" QRisk2
     HeartRisk "1"-->"1" QRisk3
+    HealthCheck "1"-->"1" HealthCheckStatuses
+    HealthCheck "1"-->"1" HealthCheckInterventions
     HealthCheck "1"-->"1" BasicObs
-    HealthCheck "1"-->"1" HeartRisk
     HealthCheck "1"-->"1" FamilyHistory
-    HealthCheck "1"-->"1" SmokingStatus
-    HealthCheck "1"-->"1" Cholesterol
-    HealthCheck "1"-->"1" Sugar
-    HealthCheck "1"-->"1" Bp
-    HealthCheck "1"-->"1" Alcohol
+    HealthCheckStatuses "1"-->"1" HeartRisk
+    HealthCheckStatuses "1"-->"1" SmokingStatus
+    HealthCheckStatuses "1"-->"1" Cholesterol
+    HealthCheckStatuses "1"-->"1" Sugar
+    HealthCheckStatuses "1"-->"1" Bp
+    HealthCheckStatuses "1"-->"1" Alcohol
+    HealthCheckStatuses "1"-->"1" PhysicalActivity
+
+    HealthCheckInterventions "1"-->"1" SmokingIntervention
+    HealthCheckInterventions "1"-->"1" DiabetesIntervention
+    HealthCheckInterventions "1"-->"1" BpIntervention
+    HealthCheckInterventions "1"-->"1" WeightIntervention
+    HealthCheckInterventions "1"-->"1" DietIntervention
+    HealthCheckInterventions "1"-->"1" PhysicalActivityIntervention
+    HealthCheckInterventions "1"-->"1" LifestyleIntervention
+    HealthCheckInterventions "1"-->"1" AlcoholIntervention
+    HealthCheckInterventions "1"-->"1" DementiaIntervention
+
+
     class Citizen{
         +Demographics Demographics
         +Observations Observations
@@ -88,14 +117,30 @@ classDiagram
 
     class HealthCheck{
         + BasicObs BasicObs
-        + HeartRisk HeartRisk
         + FamilyHistory FamilyHistory
-        + SmokingStatus SmokingStatus
+        + HealthCheckStatuses HealthCheckStatuses
+    }
+
+    class HealthCheckStatuses{
+        + HeartRisk HeartRisk
         + SmokingStatus SmokingStatus
         + Cholesterol Cholesterol
         + Sugar Sugar      
         + Bp Bp  
         + Alcohol Alcohol
+        +PhysicalActivity PhysicalActivity
+    }
+
+    class HealthCheckInterventions{
+        + SmokingIntervention SmokingIntervention
+        + DiabetesIntervention DiabetesIntervention
+        + BpIntervention BpIntervention
+        + WeightIntervention WeightIntervention
+        + DietIntervention DietIntervention
+        + PhysicalActivityIntervention PhysicalActivityIntervention
+        + LifestyleIntervention LifestyleIntervention
+        + AlcoholIntervention AlcoholIntervention
+        + DementiaIntervention DementiaIntervention
     }
 
     class BasicObs{
@@ -164,6 +209,73 @@ classDiagram
         + int ConsumtionScore
         + int ScreeningTestScore
     }
+
+    class PhysicalActivity{
+        + bool Declined
+        + bool Active
+        + bool Inactive
+        + bool ModeratelyActive
+        + bool ModeratelyInactive
+    }
+
+    class SmokingIntervention{
+        + bool CessationEducation
+        + bool EffectsEducation
+        + bool BriefIntervention
+        + bool Signposting
+        + bool Referral
+    }   
+
+    class DiabetesIntervention{
+        + bool ReferralLifeStyle
+        + bool ReferralPrevention
+        + bool referralPreventionDeclined
+    } 
+
+    class BpIntervention{
+        + bool LifestyleEducation
+    }
+
+    class WeightIntervention{
+        + bool Advised
+        + bool Signposts
+        + bool Intervention
+        + bool InterventionDeclined
+        
+    }
+
+    class DietIntervention{
+        + bool Education
+        + bool Referral
+    }
+
+    class PhysicalActivityIntervention{
+        + bool guidance
+        + bool Signposted
+        + bool Intervention
+        + bool InterventionDeclined        
+    }
+
+    class LifestyleIntervention{
+        + bool Education
+        + bool ReferralEducation
+        + bool ReferralProgram
+    }
+
+    class AlcoholIntervention{
+        + bool EducationDeclined
+        + bool Education
+        + bool Signposting
+        + bool Intervention
+        + bool InterventionDeclined
+        + bool Referral
+    }
+
+    class DementiaIntervention{
+        + bool Signposted
+        + bool Awareness
+    }
+
 
 ```
 
