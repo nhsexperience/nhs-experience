@@ -27,6 +27,12 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  nhsexperience
 
+
+collections:
+  projects: 
+    output: false
+
+
 # Build settings
 theme: just-the-docs
 plugins:
