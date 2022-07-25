@@ -56,7 +56,6 @@ sequenceDiagram
 ```mermaid!
 %%{init: 
     { 
-        "theme": "dark",
         "flowchart": 
         {
             "curve": "linear",
