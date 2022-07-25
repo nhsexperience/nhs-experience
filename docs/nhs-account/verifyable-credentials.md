@@ -4,6 +4,8 @@ layout: page
 parent: NHS Account
 nav_order: 4
 has_children: true
+todo:
+  - Investigate VC for children who do not have Digital Wallets
 ---
 > ⚠️ **Warning**
 >  
@@ -30,6 +32,22 @@ We need proved:
 ### What are restrictions?
 - Court Orders
 - GP Objections?
+
+### Identifiers
+- NHS - NHS Numbers
+
+## Verifiable Credentials for Children - No Digital Wallet
+A child (the subject) needs a digital verfiable credential. But without a digital wallet, it needs to be held by someone else (the holder).
+
+https://sphereon.com/verifiable-credentials-example/
+
+Anand is still a toddler and does not have his own digital wallet to hold his Verifiable Credentials. That is not a problem in the W3C Digital Identities system, as it accommodates the concept of Guardianship for minors or incapacitated individuals.
+
+### dId's
+A portable URL-based identifier, also known as a DID, associated with an entity. These identifiers are most often used in a verifiable credential and are associated with subjects such that a verifiable credential itself can be easily ported from one repository to another without the need to reissue the credential. An example of a DID is did:example:123456abcdef.
+
+https://www.w3.org/TR/vc-data-model/#dfn-decentralized-identifiers
+
 
 
 

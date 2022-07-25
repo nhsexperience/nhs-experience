@@ -27,7 +27,7 @@ flowchart TB
     DHC --> SendToGp
     WebClientApi --> Account
 
-    subgraph DHC
+    subgraph DHC[Digital Health Check]
     WebApp -->WebClientApi
     
     end
@@ -36,7 +36,10 @@ flowchart TB
     NHSLogin
     API
     DataStore
+    end
 
+    subgraph Intervention
+    OfferedInterventions
     end
 ```
 # Sequence
