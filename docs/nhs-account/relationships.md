@@ -2,7 +2,7 @@
 title: Relationships
 layout: page
 grand_parent: NHS Account
-parent:  Verifyable Credentials
+parent:  Verifiable Credentials
 nav_order: 4.1
 author: Ross Buggins
 last_modified_date: Jul 21 2022 at 11:59 PM

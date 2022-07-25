@@ -2,7 +2,7 @@
 title: Relationships - Parent Child
 layout: page
 grand_parent: NHS Account
-parent:  Verifyable Credentials
+parent:  Verifiable Credentials
 nav_order: 4.12
 author: Ross Buggins
 last_modified_date: Jul 21 2022 at 11:59 PM
@@ -83,7 +83,9 @@ If you are not married to the father of your child and your child was born on or
 - Adoption
 - Married non-biological Fathers ?
 - Children born before 2003
-
+- divorce
+- Court Orders PR
+- Court Orders removing PR
 
 [^mothers]: Parental Responsibility
 
