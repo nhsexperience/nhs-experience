@@ -14,6 +14,17 @@ last_modified_date: Jul 21 2022 at 11:59 PM
 >
 > Please contact the author for more information.
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<hr/>
+
 ## Relationships for Medical Record Access
 
 |                                                             | From                                 | To    | Proof                                          | Issuer |
@@ -48,7 +59,28 @@ Birth -.->MothersRight
 MothersRight -.->Female
 MothersRight -.->Child
 ```
-*Figure [^motherFatherUnmarried].  Unmarried Mother and Father* 
+*Figure [^motherFatherUnmarried].  Unmarried Mother and Father  (child born after 2003)* 
+
+
+```mermaid!
+sequenceDiagram
+    autonumber
+    Male->Female: Conception
+
+    Female->>Child: Gives Birth
+    Female-->>Child: Gains Parental Responsibility of
+    par Birth Registration
+        Child->>Registrar: 
+    and 
+        Male->>Registrar: 
+    and
+        Female->>Registrar: 
+    end  
+    Male-->>Child: Gains Parental Responsibility of
+```
+*Figure [^motherFatherUnmarried].  Sequence Diagram for Unmarried Mother and Father  (child born after 2003)* 
+
+
 
 ---
 ```mermaid!
@@ -142,7 +174,41 @@ FathersRights -.->Child
 ```
 *Figure [^motherFatherUnmarried-with-birth-cert].  Unmarried Mother and Father with birth certificate* 
 
-[^motherFatherUnmarried]: Unmarried Mother and Father
+---
+```mermaid!
+flowchart LR
+
+Male
+Female
+AdoptedParent1((AdoptedParent1))
+AdoptedParent2((AdoptedParent2))
+Adoption
+Child{Child}
+MothersRight{{Mothers Parental Responsibility}}
+FathersRight{{Fathers Parental Responsibility}}
+
+Male -->Child
+Female -->Child
+MothersRight -.->Child
+FathersRight -.->Child
+Child -->Adoption
+Male -->Adoption
+Female -->Adoption
+
+FathersRight -.->AdoptedParent1
+MothersRight -.->AdoptedParent2
+Adoption-.->MothersRight
+Adoption-.->FathersRight
+```
+*Figure [^adopted].  Child Adopted after birth* 
+
+
+
+
+
+
+[^motherFatherUnmarried]: Unmarried Mother and Father (child born after 2003)
 [^marriedmotherandfather]: Married Mother and biological Father
 [^marriedmotherandotherfather]: Married Mother and other biological Father
 [^motherFatherUnmarried-with-birth-cert]:  Unmarried Mother and Father with birth certificate
+[^adopted]:  Child adopted after birth, adopted parents have PR

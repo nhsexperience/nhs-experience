@@ -13,6 +13,17 @@ todo:
 >
 > Please contact the author for more information.
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<hr/>
+
 # What do we need Proving to allow access?
 
 ## Access to own records

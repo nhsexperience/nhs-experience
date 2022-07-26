@@ -14,6 +14,17 @@ last_modified_date: Jul 21 2022 at 11:59 PM
 >
 > Please contact the author for more information.
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<hr/>
+
 # Parent - Child Relationship
 
 - many different "proofs" for a valid parent child relationship - ie where there is parental responsibility

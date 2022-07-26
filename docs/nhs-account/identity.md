@@ -11,6 +11,17 @@ nav_order: 8
 >
 > Please contact the author for more information.
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<hr/>
+
 # Verifiable Creds
 
 ## Unique Identifiers
