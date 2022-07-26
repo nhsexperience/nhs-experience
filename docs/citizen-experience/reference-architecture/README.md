@@ -20,3 +20,6 @@ nav_order: 4
 # UIs
 
 # Services
+
+# OAuth Openid connect
+![](https://www.youtube.com/watch?v=t18YB3xDfXI)

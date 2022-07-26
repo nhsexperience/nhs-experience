@@ -27,7 +27,7 @@ nav_order: 2
   - [Back End Design](#back-end-design)
   - [Authentication](#authentication)
   - [Authorisation](#authorisation)
-  - [Decentralised Identity / Verifyable Credentials](#decentralised-identity--verifyable-credentials)
+  - [Decentralised Identity / Verifyable Credentials](#decentralised-identity--verifiable-credentials)
   - [API Management](#api-management)
   - [API Resource Design](#api-resource-design)
   - [Resource User Access Control](#resource-user-access-control)
@@ -87,7 +87,7 @@ Web
 
 ## Authorisation
 
-## Decentralised Identity / Verifyable Credentials
+## Decentralised Identity / Verifiable Credentials
 
 ## API Management
 

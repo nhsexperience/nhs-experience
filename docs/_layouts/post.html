@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{% assign wordCount = content | number_of_words %}
+{% assign readTime = wordCount | divided_by: 100.0 | ceil   %}
+{% if site.source_gh_edit_repository <> site.gh_edit_repository %}
+<p class="text-small text-grey-dk-000 mb-0">
+  ⚠️🍴 This site is a fork of <a href="{{ site.source_gh_edit_repository }}">{{ site.source_gh_edit_repository }}</a> and can be viewed at <a href="{{ site.gh_edit_repository }}">{{ site.gh_edit_repository }}</a>
+  </p>
+{% endif %}
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<h1>{{ page.title }}</h1>
+<div class="reading-time">
+  <p class="text-small text-grey-dk-000 mb-0">📑 {{ wordCount }} words | ⏱ {{readTime}} mins
+    {% if
+      site.gh_edit_link and
+      site.gh_edit_link_text and
+      site.gh_edit_repository and
+      site.gh_edit_branch and
+      site.gh_edit_view_mode
+    %}
+     
+        | <a href="{{ site.gh_edit_repository }}/commits/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}" id="edit-this-page">🧾 View History</a>
+    
+    {% endif %}
+  </p></div>
+<p class="view">by {{ page.author | default: site.author }}</p>
+
+{{content}}
+
+
+<h2>Other Posts</h2> 
+<ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{post.date| date: "%-d %B %Y" }} {{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  
+{% if page.tags %}
+<small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}

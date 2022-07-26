@@ -1,0 +1,51 @@
+//Other colours at https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/
+
+$blue-nhs-blue: #005EB8;
+$blue-nhs-dark-blue: #003087;
+$blue-nhs-bright-blue: #0072CE;
+$blue-nhs-light-blue: #41B6E6;
+$blue-nhs-aqua-blue: #00A9CE;
+
+$grey-nhs-mid-grey: #768692;
+$grey-nhs-pale-grey: #E8EDEE;
+
+$header-height: 100px;
+$content-width: 1200px;
+$nav-width: 300px;
+$nav-width-md: 248px;
+
+$media-queries: (
+  xs: 320px,
+  sm: 500px,
+  md: 800px, //$content-width,
+  lg: $content-width + $nav-width,
+  xl: 1800px,
+);
+
+.site-fork-warning {
+  width: 100%;
+  padding-left: 30px;
+  @include mq(lg) {
+    width: $nav-width;
+  }
+}
+
+.site-fork-warning {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+$link-color: $blue-nhs-blue;
+$btn-primary-color: $blue-nhs-bright-blue;
+$base-button-color: $grey-nhs-pale-grey;
+$nav-child-link-color: $grey-nhs-mid-grey;
+$body-heading-color: $blue-nhs-dark-blue;
+
+//$body-font-family: Frutiger, Arial;
+
+
+.text-nhs-mid-grey {
+    color: $grey-nhs-mid-grey !important;
+  }
