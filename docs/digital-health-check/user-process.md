@@ -13,9 +13,28 @@ last_modified_date: Jul 21 2022 at 03:39 PM
 >
 > Please contact the author for more information.
 
-
 # Health Check User Flow
 Diagram being built from https://github.com/RossBugginsNHS/nhs-experience/issues/1
+
+```mermaid!
+sequenceDiagram
+    autonumber
+    Cohort System->>Invite System: Identify citizens for HC
+    Invite System->>Citizen: Invitation to HC Sent
+    Citizen->>DHC: Starts HC
+    Citizen->>DHC: Completes basics vitals
+    Citizen->>DHC: Apply for test at home kit
+    Lab->>Citizen: Send kit
+    Citizen->>Citizen: Completes Tests
+    Citizen->>Lab: Sends kit
+    Lab->>DHC: Updates results
+    DHC->>Citizen: Gives results
+    DHC->>GP: Sends results
+    GP->>Citizen: Books in face to face
+    Citizen->>GP: Attends appointment
+    GP->>Referral: Makes referral
+    Citizen->>Referral: Attends appointment
+```
 
 ```mermaid!
 %%{init: 

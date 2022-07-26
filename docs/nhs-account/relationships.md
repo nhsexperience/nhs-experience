@@ -65,18 +65,21 @@ MothersRight -.->Child
 ```mermaid!
 sequenceDiagram
     autonumber
-    Male->Female: Conception
+    Father->Mother: Conception
 
-    Female->>Child: Gives Birth
-    Female-->>Child: Gains Parental Responsibility of
+    Mother->>Child: Gives Birth to
+    Mother-->>Child: Gains Parental Responsibility of
+    
+    Midwife->>NHS Birth Service: Registers child to mother
+    NHS Birth Service->>Child: Allocated NHS Number
     par Birth Registration
-        Child->>Registrar: 
+        Child->Registrar: Subject of Birth Certificate 
     and 
-        Male->>Registrar: 
+        Father->>Registrar: Father added to Birth Certificate
     and
-        Female->>Registrar: 
+        Mother->>Registrar: Mother added to Birth Certificate
     end  
-    Male-->>Child: Gains Parental Responsibility of
+    Father-->>Child: Gains Parental Responsibility of
 ```
 *Figure [^motherFatherUnmarried].  Sequence Diagram for Unmarried Mother and Father  (child born after 2003)* 
 
