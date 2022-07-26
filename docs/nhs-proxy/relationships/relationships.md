@@ -1,7 +1,7 @@
 ---
 title: Relationships
 layout: page
-grand_parent: NHS Account
+grand_parent: NHS Account Proxy
 parent:  Verifiable Credentials
 nav_order: 4.1
 author: Ross Buggins
@@ -27,13 +27,13 @@ last_modified_date: Jul 21 2022 at 11:59 PM
 
 ## Relationships for Medical Record Access
 
-|                                                             | From                                 | To    | Proof                                          | Issuer |
-| ----------------------------------------------------------- | ------------------------------------ | ----- | ---------------------------------------------- | ------ |
-| [🔗]({% link nhs-account/relationships-parent-child.md %}) | Biological Mother                    | Child | NHS "At Birth"                                 | NHS    |
-|                                                             | Parent                               | Child | Birth Certificate                              | GRO    |
-|                                                             | Parent                               | Child | Adoption Certificate                           | GRO    |
-|                                                             | Guardian                             | Child | Guardianship                                   | ???    |
-|                                                             | Married Partner of Biological Mother | Child | Marriage Certificate + (Mother to Child Proof) | GRO    |
+|                                                                         | From                                 | To    | Proof                                          | Issuer |
+| ----------------------------------------------------------------------- | ------------------------------------ | ----- | ---------------------------------------------- | ------ |
+| [🔗]({% link nhs-proxy/relationships/relationships-parent-child.md %}) | Biological Mother                    | Child | NHS "At Birth"                                 | NHS    |
+|                                                                         | Parent                               | Child | Birth Certificate                              | GRO    |
+|                                                                         | Parent                               | Child | Adoption Certificate                           | GRO    |
+|                                                                         | Guardian                             | Child | Guardianship                                   | ???    |
+|                                                                         | Married Partner of Biological Mother | Child | Marriage Certificate + (Mother to Child Proof) | GRO    |
 
 # Diagrams of Parental Responsibility
 **Key**

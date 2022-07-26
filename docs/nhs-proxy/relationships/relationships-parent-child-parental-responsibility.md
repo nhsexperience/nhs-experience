@@ -1,7 +1,7 @@
 ---
 title: Parental Responsibility
 layout: page
-grand_parent: NHS Account
+grand_parent: NHS Account Proxy
 parent:  Verifiable Credentials
 nav_order: 4.13
 author: Ross Buggins

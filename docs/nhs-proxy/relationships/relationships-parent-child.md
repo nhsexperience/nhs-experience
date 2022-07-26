@@ -1,7 +1,7 @@
 ---
 title: Relationships - Parent Child
 layout: page
-grand_parent: NHS Account
+grand_parent: NHS Account Proxy
 parent:  Verifiable Credentials
 nav_order: 4.12
 author: Ross Buggins

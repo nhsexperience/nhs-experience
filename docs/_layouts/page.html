@@ -10,7 +10,7 @@ layout: default
 
 {% if site.source_gh_edit_repository <> site.gh_edit_repository %}
 <p class="text-small text-grey-dk-000 mb-0">
-  ⚠️🍴 This site is a fork of <a href="{{ site.source_gh_edit_repository }}">{{ site.source_gh_edit_repository }}</a>
+  ⚠️🍴 This site is a fork of <a href="{{ site.source_gh_edit_repository }}">{{ site.source_gh_edit_repository }}</a> and can be viewed at <a href="{{ site.gh_edit_repository }}">{{ site.gh_edit_repository }}</a>
   </p>
 {% endif %}
 
@@ -65,7 +65,7 @@ layout: default
 <p class="text-small text-nhs-mid-grey mb-0"><b>Known Issues / Todo</b></p>
 
 <ul>
-  {% if page.is_not_draft %}{% else %}<li class="text-small text-nhs-mid-grey mb-0">⛅ This page is draft and is subject to rapid change, and may not be fully accurate or complete</li>{% endif %}
+  {% if page.is_not_draft %}{% else %}<li class="text-small text-nhs-mid-grey mb-0">⛅ <b>This page is draft</b> and is subject to rapid change, and may not be fully accurate or complete</li>{% endif %}
   {% for todo in page.todo %}<li class="text-small text-nhs-mid-grey mb-0">{{todo}}</li>{% endfor %}  
 </ul>
 {% endif %}

@@ -22,6 +22,21 @@ $media-queries: (
   xl: 1800px,
 );
 
+.site-fork-warning {
+  width: 100%;
+  padding-left: 30px;
+  @include mq(lg) {
+    width: $nav-width;
+  }
+}
+
+.site-fork-warning {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
 $link-color: $blue-nhs-blue;
 $btn-primary-color: $blue-nhs-bright-blue;
 $base-button-color: $grey-nhs-pale-grey;

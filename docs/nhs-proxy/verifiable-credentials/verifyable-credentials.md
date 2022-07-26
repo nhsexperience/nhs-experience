@@ -1,7 +1,7 @@
 ---
 title: Verifiable Credentials
 layout: page
-parent: NHS Account
+parent: NHS Account Proxy
 nav_order: 4
 has_children: true
 todo:
