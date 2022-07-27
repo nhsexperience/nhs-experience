@@ -43,6 +43,20 @@ sequenceDiagram
     Invite System->>Citizen: Invitation to DHC Sent
     Invite System->>Eligibility System: Mark as "invited"
     Citizen->>DHC: Starts DHC
+    opt Pre populate and update
+        DHC->>NHS Account: Get Demographics Data to pre-populate DHC
+        Citizen->> DHC: Make any changes to pre-populated demographic data
+        opt if required
+            DHC->>NHS Account: Update demographic account
+            NHS Account->>PDS: Update core PDS demographic
+        end
+        opt if available
+            DHC->>Account: Get Recent Citizen Generate Observation data to pre-populate DHC
+        end
+        opt if available
+            DHC->>GPConnect: Get Recent GP Generated Observation data to pre-populate DHC
+        end        
+    end
     DHC->>Eligibility System: Mark as "Started DHC"
     Citizen->>DHC: Completes basics vitals
     alt Test at Home
@@ -60,12 +74,13 @@ sequenceDiagram
     DHC Results Service->>Eligibility System: Mark as DHC "completed"
     DHC Results Service->>Citizen: Notify results available
     Citizen->> DHC Results Service: Gets DHC results
+    Citizen-->> Signposted Service: Visit Signposted Services (if supplied with results)
     DHC Results Service->>GP: Notify results available
     GP->> DHC Results Service: Gets DHC results
     GP->>Citizen: Invite for Clinical Assessment
     Citizen->>GP: Attends Clinical Assessment
     GP->> DHC Results Service: Updates with any face to face results and that in face appointment has happened
-    GP->>Referral: Makes referral
+    GP->>Referral: Makes referral(s)
     Referral->>Citizen: Gets appointment
     Citizen->>Referral: Attends appointment
 ```
