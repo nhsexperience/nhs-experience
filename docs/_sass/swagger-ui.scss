@@ -3,6 +3,12 @@
   /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
   font-family: sans-serif;
 }
+
+.swagger-ui code {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 .swagger-ui html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
