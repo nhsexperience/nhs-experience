@@ -16,23 +16,57 @@ last_modified_date: Jul 21 2022 at 03:39 PM
 # Health Check User Flow
 Diagram being built from https://github.com/RossBugginsNHS/nhs-experience/issues/1
 
+## Current Health Check User Process 01
 ```mermaid!
 sequenceDiagram
     autonumber
-    Cohort System->>Invite System: Identify citizens for HC
-    Invite System->>Citizen: Invitation to HC Sent
-    Citizen->>DHC: Starts HC
-    Citizen->>DHC: Completes basics vitals
-    Citizen->>DHC: Apply for test at home kit
-    Lab->>Citizen: Send kit
-    Citizen->>Citizen: Completes Tests
-    Citizen->>Lab: Sends kit
-    Lab->>DHC: Updates results
-    DHC->>Citizen: Gives results
-    DHC->>GP: Sends results
+
+    GP->>Citizen: Invitation to HC Sent
+    Citizen->>Health Pro: Books in face to face
+    Citizen->>Health Pro: Attends appointment
+    Health Pro->>GP: Gives results
     GP->>Citizen: Books in face to face
     Citizen->>GP: Attends appointment
+    GP->>Citizen: Gives results
     GP->>Referral: Makes referral
+    Citizen->>Referral: Attends appointment
+```
+
+## Proposed Flow 01
+```mermaid!
+sequenceDiagram
+    autonumber
+    Eligibility System->>PDS: Get all people 40-75
+    Eligibility System->>GPConnect: Get GP Record and Exclude not eligible
+    Eligibility System->>GP: Identify citizens for DHC
+    GP->>Invite System: Select citizens for DHC
+    Invite System->>Citizen: Invitation to DHC Sent
+    Invite System->>Eligibility System: Mark as "invited"
+    Citizen->>DHC: Starts DHC
+    DHC->>Eligibility System: Mark as "Started DHC"
+    Citizen->>DHC: Completes basics vitals
+    alt Test at Home
+        Citizen->>DHC: Apply for test at home kit
+        DHC->>Lab: Notify to Send kit
+        Lab->>Citizen: Send kit
+        Citizen->>Citizen: Completes Tests
+        Citizen->>Lab: Sends kit
+        Lab->>DHC: Updates results
+    else Test at Location
+        Citizen->>Bio Provider: Do tests
+        Bio Provider->>DHC: Updates results
+    end
+    DHC->>DHC Results Service: Sends DHC results
+    DHC Results Service->>Eligibility System: Mark as DHC "completed"
+    DHC Results Service->>Citizen: Notify results available
+    Citizen->> DHC Results Service: Gets DHC results
+    DHC Results Service->>GP: Notify results available
+    GP->> DHC Results Service: Gets DHC results
+    GP->>Citizen: Invite for Clinical Assessment
+    Citizen->>GP: Attends Clinical Assessment
+    GP->> DHC Results Service: Updates with any face to face results and that in face appointment has happened
+    GP->>Referral: Makes referral
+    Referral->>Citizen: Gets appointment
     Citizen->>Referral: Attends appointment
 ```
 
