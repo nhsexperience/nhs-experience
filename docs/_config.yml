@@ -55,15 +55,15 @@ last_edit_timestamp: true # show or hide edit time - page must have `last_modifi
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 # Change the below based on the forked repo's details
-published_url: "https://zealous-beach-05e189903.1.azurestaticapps.net/"
-gh_action_build_file_name: "azure-static-web-apps-zealous-beach-05e189903.yml"
+published_url: "https://blue-beach-03e72e403.1.azurestaticapps.net"
+gh_action_build_file_name: "azure-static-web-apps-blue-beach-03e72e403.yml"
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/nhsexperience/nhs-experience" # the github URL for your repo
-gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_repository: "https://github.com/RossBugginsNHS/nhs-experience" # the github URL for your repo
+gh_edit_branch: "latest" # the branch that your docs is served from
 gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
-gh_repo_owner: "NHS Experience"
+gh_repo_owner: "Ross Buggins"
 
 
 # Do not change the below
