@@ -14,4 +14,4 @@ nav_order: 3
 
 # Draw IO
 
-![alt text](/nhs-account/nhs-proxy/nhs-proxy.svg)
+![alt text](/nhs-proxy/nhs-proxy.svg)
