@@ -12,5 +12,7 @@ nav_order: 10
 >
 > Please contact the author for more information.
 
-
-[https://raw.githubusercontent.com/RossBugginsNHS/nhs-experience/swaggerhub-digital-health-check-api/src/projects/digital-health-check/api/design/swagger.yaml](https://editor.swagger.io/?url=https://raw.githubusercontent.com/RossBugginsNHS/nhs-experience/swaggerhub-digital-health-check-api/src/projects/digital-health-check/api/design/swagger.yaml)
+<div id="swagger-ui"></div>
+<script src="/swagger-ui/swagger-ui-bundle.js" charset="UTF-8"> </script>
+<script src="/swagger-ui/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+<script src="api.js" charset="UTF-8"> </script>
