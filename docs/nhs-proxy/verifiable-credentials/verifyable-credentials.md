@@ -50,6 +50,7 @@ sequenceDiagram
     Note over Mother,Mother: Issuer: Mother. Credential Type: Relationship
     Note over Mother,Mother:  Holder: Mother. Subject: Mother
     Note over Mother,Mother:  Claims: Relationship=Biological Mother,From=Mother,To=Child
+    Note over Mother,Mother:  Warning: "Self Issued" - will not be trusted elsewhere
 
     Midwife->>+BNS: Registers Child, assigns Mother
     
@@ -68,49 +69,56 @@ sequenceDiagram
     Note over NHSNno,Mother: Holder: Mother. Subject: Mother
     Note over NHSNno,Mother: Claims: Relationship=Biological Mother,From=Mother,To=Child
 
-    par Birth Registration
-        Child->>Registrar : Seen by VC
-        Mother->>Registrar : Shared Identity VC
-        Father->>Registrar : Shared Identity VC
-        Registrar->>Registrar: Validates Identities
+    par Paper Based Birth Registration
+        Child->>Registrar : Registrar Sees the Child
+        Mother->>Registrar : Registrar sees Mothers Paper Id
+        Father->>Registrar : Registrar sees Fathers Paper Id
+        Registrar->>Registrar: Validates Identities 
+        Registrar->>+GRO : Submits Birth Registration
+        GRO-->>Child: Birth Cert no Assigned
+        GRO->>-Registrar: Issues Birth Certificate                   
     end
-    Registrar->>+GRO : Submits Birth Registration
-    GRO-->>Child: Birth Cert no Assigned
-    GRO->>-Registrar: Issues Birth Certificate
+
+
+
 
     par Mother Issued GRO Credentials
-        Mother->>+Registrar: Shares Credential
-        Note over Mother,Registrar: Issuer: DVLA. Credential Type: Identity        
-        Registrar->>Registrar: Generate Credential
-        Registrar-->>-Mother : Issues Credential
-        Note over Registrar,Mother: Issuer: GRO. Credential Type: Identity
-        Note over Registrar,Mother: Holder: Mother. Subject: Child
-        Note over Registrar,Mother: Claims: Name, Date of Birth, Birth Location 
+        Registrar->>+ GRO: Registrar Starts Process with GRO System
+        Mother->>GRO: Mother Shares Identity Credential with GRO
+        Note over Mother,GRO: Issuer: DVLA. Credential Type: Identity        
+        GRO->>GRO: Generate Credential
+        GRO-->>-Mother : GRO Issues Child Identity Credential for Mother to hold
+        Note over GRO,Mother: Issuer: GRO. Credential Type: Identity
+        Note over GRO,Mother: Holder: Mother. Subject: Child
+        Note over GRO,Mother: Claims: Name, Date of Birth, Birth Location 
 
-        Mother->>+Registrar: Shares Credential
-        Note over Mother,Registrar: Issuer: DVLA. Credential Type: Identity        
-        Registrar->>Registrar: Generate Credential  
-        Registrar-->>-Mother : Issues Credential
-        Note over Registrar,Mother: Issuer: GRO. Credential Type: Relationship
-        Note over Registrar,Mother: Holder: Mother. Subject: Mother
-        Note over Registrar,Mother: Claims: Relationship=ParentChild,From=Mother,To=Child         
+        Registrar->>+ GRO: Registrar Starts Process with GRO System
+        Mother->>GRO: Mother Shares Identity Credential with GRO
+        Note over Mother,GRO: Issuer: DVLA. Credential Type: Identity        
+        GRO->>GRO: Generate Credential  
+        GRO-->>-Mother : GRO Issues ParentChild Relationship Credential for Mother
+        Note over GRO,Mother: Issuer: GRO. Credential Type: Relationship
+        Note over GRO,Mother: Holder: Mother. Subject: Mother
+        Note over GRO,Mother: Claims: Relationship=ParentChild,From=Mother,To=Child         
 
-    and Father Issued GRO Credentials
-        Father->>+Registrar: Shares Credential
-        Note over Father,Registrar: Issuer: Passport Office. Credential Type: Identity       
-        Registrar->>Registrar: Generate Credential
-        Registrar-->>-Father : Issues Credential
-        Note over Registrar,Father: Issuer: GRO. Credential Type: Identity
-        Note over Registrar,Father: Holder: Father. Subject: Child
-        Note over Registrar,Father: Claims: Name, Date of Birth, Birth Location  
+        and Father Issued GRO Credentials
+        Registrar->>+ GRO: Registrar Starts Process with GRO System
+        Father->>GRO: Father Shares Identity Credential with GRO
+        Note over Father,GRO: Issuer: Passport Office. Credential Type: Identity        
+        GRO->>GRO: Generate Credential
+        GRO-->>-Father : GRO Issues Child Identity Credential for Father to hold
+        Note over GRO,Father: Issuer: GRO. Credential Type: Identity
+        Note over GRO,Father: Holder: Father. Subject: Child
+        Note over GRO,Father: Claims: Name, Date of Birth, Birth Location 
 
-        Father->>+Registrar: Shares Credential
-        Note over Father,Registrar: Issuer: Passport Office. Credential Type: Identity        
-        Registrar->>Registrar: Generate Credential
-        Registrar-->>-Father : Issues Credential
-        Note over Registrar,Father: Issuer: GRO. Credential Type: Relationship
-        Note over Registrar,Father: Holder: Father. Subject: Father
-        Note over Registrar,Father: Claims: Relationship=ParentChild,From=Father,To=Child                      
+        Registrar->>+ GRO: Registrar Starts Process with GRO System
+        Father->>GRO: Father Shares Identity Credential with GRO
+        Note over Father,GRO: Issuer: Passport Office. Credential Type: Identity        
+        GRO->>GRO: Generate Credential  
+        GRO-->>-Father : GRO Issues ParentChild Relationship Credential for Father
+        Note over GRO,Father: Issuer: GRO. Credential Type: Relationship
+        Note over GRO,Father: Holder: Father. Subject: Father
+        Note over GRO,Father: Claims: Relationship=ParentChild,From=Father,To=Child             
     end 
 
     Father->>+PR: Father Applies for PR of Child
@@ -120,10 +128,10 @@ sequenceDiagram
         Note over Father,PR: Issuer: DVLA. Credential Type: Identity
     and Child Identity
         Father->>PR: Shares Credential      
-        Note over Father,PR: Issuer: NHS. Credential Type: Identity   
+        Note over Father,PR: Issuer: GRO. Credential Type: Identity
     and ParentChild Relationship
         Father->>PR: Shares Credential      
-        Note over Father,PR: Issuer: NHS. Credential Type: Relationship                
+        Note over Father,PR: Issuer: GRO. Credential Type: Relationship                
     end
     PR->>PR: Generate Credential
     PR->>-Father: Issues Credential
@@ -138,14 +146,14 @@ sequenceDiagram
         Note over Father,NHSProxy: Issuer: DVLA. Credential Type: Identity
     and Child Identity
         Father->>NHSProxy: Shares Credential      
-        Note over NHSProxy,PR: Issuer: GRO. Credential Type: Identity   
+        Note over Father,NHSProxy: Issuer: GRO. Credential Type: Identity   
     and Parental Responsibility Relationship
         Father->>NHSProxy: Shares Credential      
         Note over Father,NHSProxy: Issuer: PR Office. Credential Type: Relationship                
     end
     NHSProxy->>NHSProxy: Generate Credential
     NHSProxy->>-Father: Issues Credential
-    Note over NHSProxy,Father: Issuer: PR VC. Credential Type: Relationship
+    Note over NHSProxy,Father: Issuer: PR Office. Credential Type: Relationship
     Note over NHSProxy,Father: Holder: Father. Subject: Father
     Note over NHSProxy,Father: Claims: Relationship=ParentalResponsibility,From=Father,To=Child    
 
