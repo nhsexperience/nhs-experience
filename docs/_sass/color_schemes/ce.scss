@@ -39,6 +39,17 @@ $media-queries: (
   }
 }
 
+
+blockquote {
+  border-left-color: $blue-nhs-dark-blue;
+  border-left-style: solid;
+  border-left-width: thick;
+  padding-left: 20px;
+  background-color:$grey-nhs-mid-grey;
+  color: $grey-nhs-pale-grey;
+  font-style: italic;
+}
+
 $link-color: $blue-nhs-blue;
 $btn-primary-color: $blue-nhs-bright-blue;
 $base-button-color: $grey-nhs-pale-grey;
