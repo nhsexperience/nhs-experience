@@ -55,7 +55,7 @@ last_edit_timestamp: true # show or hide edit time - page must have `last_modifi
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 # Change the below based on the forked repo's details
-published_url: "https://blue-beach-03e72e403.1.azurestaticapps.net"
+published_url: "https://rossbuggins.nhsei.xyz"
 gh_action_build_file_name: "azure-static-web-apps-blue-beach-03e72e403.yml"
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
@@ -67,7 +67,7 @@ gh_repo_owner: "Ross Buggins"
 
 
 # Do not change the below
-source_published_url: "https://zealous-beach-05e189903.1.azurestaticapps.net/"
+source_published_url: "https://ce.nhsei.xyz"
 source_gh_action_build_file_name: "azure-static-web-apps-zealous-beach-05e189903.yml"
 source_gh_edit_link: true # show or hide edit this page link
 source_gh_edit_link_text: "Edit this page on GitHub"

@@ -37,7 +37,15 @@ For VC's to be truly useful, the current issuer of traditional proofs of identit
 | NHS     | Child Birth             | Identity     |                                            |             |
 | UK Gov? | Parental Responsibility | Relationship |                                            |             |
 | MoJ     | Court Orders            | Relationship |                                            |             |
-|         |                         |              |                                            |             |
+| NHS     | Proxy Access            | Relationship |                                            |             |
+| NHS     | NHS Citizen ID          | Identity     |                                            |             |
+| NHS     | Digital Staff Passport  | Identity     |                                            |             |
+
+## Cross Department / Office / Agencies Collaboration
+- Get involvement with other government offices
+- Pan Government working group
+- NHS is already doing this for Staff Digital Passports
+
 
 # Example of VC in use
 
