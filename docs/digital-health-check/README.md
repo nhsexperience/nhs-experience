@@ -17,6 +17,8 @@ nav_order: 3
 
 ## Mandate - Why this is being done?
 
+### What is a NHS Health Check
+![Health Check](healthcheck.png)
 ## Current Status
 
 | Stage     | Date Started | Est End Date | End Date |
