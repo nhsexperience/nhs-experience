@@ -19,5 +19,3 @@ nav_order: 30.1
 - [Discovery Findings](phe-20200330-discovery-findings.pdf) does not contain any architecture reference.
 - Recommendations for next phase (NHS Health Check _ Alpha 1 handover _ Recommendations and Appendices.docx) contains some but limited technical evaluation
 
-
-

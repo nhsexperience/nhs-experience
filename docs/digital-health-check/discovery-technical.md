@@ -26,15 +26,15 @@ has_children: true
 
 ## Status
 
-| Todo                                                          | Status        |
-| ------------------------------------------------------------- | ------------- |
-| Previous System's Architecture Review                         | ⚠️ in progress |
-| Scope Required Data Model                                     | ⚠️ in progress |
-| Identity / Authorisation Options                              | ⚠️ in progress |
-| Any Future Questions for User Research                        | 🕐 Pending     |
-| Identify any technical hurdles                                | 🕐 Pending     |
-| Propose any technical patterns that could /should be followed | 🕐 Pending     |
-
+| Todo                                                                | Status        |
+| ------------------------------------------------------------------- | ------------- |
+| Previous System's Architecture Review                               | ⚠️ in progress |
+| Scope Required Data Model                                           | ⚠️ in progress |
+| Identity / Authorisation Options                                    | ⚠️ in progress |
+| Any Future Questions for User Research                              | 🕐 Pending     |
+| Identify any technical hurdles                                      | 🕐 Pending     |
+| Propose any technical patterns that could /should be followed       | 🕐 Pending     |
+| Identify how DHC could be broken down into separate systems/modules | 🕐 Pending     |
 
 ### Technical Hurdles
 

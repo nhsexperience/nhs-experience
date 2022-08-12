@@ -26,6 +26,8 @@ This is a major achievement, however, it does also mean that there is potential 
 the programme by implementing new approaches which will enable take up of offers to 
 go beyond the current level of 48%.
 
+[Health Check Best Practice guide](20200417-NHS-Health-Check-Best-Practice-Guidance-2019_update.pdf)
+
 ![Health Check](healthcheck.png)
 
 ![Stats](stats-2012-2018.png)
