@@ -3,7 +3,7 @@ title: Git Branching Strategy
 layout: home
 nav_order: 100
 parent: Contributing
-mermaid: true
+
 ---
 > ⚠️ **Warning**
 >  

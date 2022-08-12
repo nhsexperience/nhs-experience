@@ -50,6 +50,19 @@ blockquote {
   font-style: italic;
 }
 
+blockquote th{
+  background-color:$blue-nhs-dark-blue;
+}
+
+blockquote td{
+  background-color:$grey-nhs-mid-grey;
+}
+
+blockquote code{
+  color:$grey-nhs-mid-grey;
+}
+
+
 $link-color: $blue-nhs-blue;
 $btn-primary-color: $blue-nhs-bright-blue;
 $base-button-color: $grey-nhs-pale-grey;

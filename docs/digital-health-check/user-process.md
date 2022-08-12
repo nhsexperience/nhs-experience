@@ -17,7 +17,7 @@ last_modified_date: Jul 21 2022 at 03:39 PM
 Diagram being built from https://github.com/RossBugginsNHS/nhs-experience/issues/1
 
 ## Current Health Check User Process 01
-```mermaid!
+```mermaid
 sequenceDiagram
     autonumber
 
@@ -33,7 +33,7 @@ sequenceDiagram
 ```
 
 ## Proposed Flow 01
-```mermaid!
+```mermaid
 sequenceDiagram
     autonumber
     Eligibility System->>PDS: Get all people 40-75
@@ -85,7 +85,7 @@ sequenceDiagram
     Citizen->>Referral: Attends appointment
 ```
 
-```mermaid!
+```mermaid
 %%{init: 
     { 
         "theme": "dark", 

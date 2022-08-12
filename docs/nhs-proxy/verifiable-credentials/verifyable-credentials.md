@@ -85,7 +85,7 @@ For VC's to be truly useful, the current issuer of traditional proofs of identit
 ## A Lifetime of credentials
 Mapping out where credentials could be issued and by who
 
-```mermaid!
+```mermaid
 sequenceDiagram
     actor Child as Child (Subject)
     actor Mother as Mother
@@ -261,7 +261,7 @@ https://www.w3.org/TR/vc-data-model/#dfn-decentralized-identifiers
 
 
 ## Dependency on external issuers for proof of identity, relationships and eligibility restrictions.
-```mermaid!
+```mermaid
     graph LR
         IdentityCred -->Cit1
         IdentityCred -->Cit2

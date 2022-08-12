@@ -18,7 +18,7 @@ todo:
 
 
 # Interactions
-```mermaid!
+```mermaid
 flowchart TB
     linkStyle default interpolate basis
     Cohort --> Notify
@@ -43,7 +43,7 @@ flowchart TB
     end
 ```
 # Sequence
-```mermaid!
+```mermaid
 sequenceDiagram
     NHS->>Citizen: Invite
     Citizen->>HP: Complete HC
@@ -56,7 +56,7 @@ sequenceDiagram
 ```
 
 # Health Check Data Classes
-```mermaid!
+```mermaid
 %%{init: 
     { 
         "flowchart": 
