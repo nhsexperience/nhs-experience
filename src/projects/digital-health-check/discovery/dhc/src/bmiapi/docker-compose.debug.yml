@@ -1,0 +1,17 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  bmiapi:
+    image: bmiapi
+    build:
+      context: ../
+      dockerfile: ./bmiapi/Dockerfile
+    ports:
+      - 5116:5116
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS:=http://localhost:5116
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
