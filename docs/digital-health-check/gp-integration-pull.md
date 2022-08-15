@@ -75,7 +75,7 @@ Complete research into:
 
 ### Components Integration
 ```mermaid
-graph LR;
+flowchart LR;
     Citizen -->App;
     Citizen -->NHSLogin;
     Citizen -->IdentityServer;

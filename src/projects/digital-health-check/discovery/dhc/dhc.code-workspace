@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Project root"
+		},
+		{
+			"path": "src"
+		},
+		{
+			"path": "src/dhc"
+		},
+		{
+			"path": "src/tests"
+		},
+		{
+			"path": "src/bmiapi"
+		}
+	],
+	"settings": {}
+}

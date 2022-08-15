@@ -262,7 +262,7 @@ https://www.w3.org/TR/vc-data-model/#dfn-decentralized-identifiers
 
 ## Dependency on external issuers for proof of identity, relationships and eligibility restrictions.
 ```mermaid
-    graph LR
+    flowchart LR
         IdentityCred -->Cit1
         IdentityCred -->Cit2
         RelationshipAToBCred -->Cit1

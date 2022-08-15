@@ -19,7 +19,7 @@ https://github.com/nhsexperience/nhs-experience
 ## Suggested use of fork branches
 
 <div class="mermaid">
-graph LR;
+flowchart LR;
     nhsexperience/nhs-experience:main-->|Fork|myuser/nhs-experience:main;
     myuser/nhs-experience:main-->|upstream fetch, upstream pull|myuser/nhs-experience:main;
     myuser/nhs-experience:main-->|Branch|myuser/nhs-experience:my-edit-branch;

@@ -90,7 +90,7 @@ Many NHS digital programme requirements start with statements such as "must inte
 At its core, a Digital Health Check is nothing more than:
 
 ```mermaid
-graph LR;
+flowchart LR;
     In[Data In]
     Process{Process Data}
     Out[Data Out]
@@ -102,8 +102,34 @@ Event if an alpha achieves nothing more than this process being made available i
 
 The perceived complexities for a Digital health Check come from where the "Data In" will come from, and where the "Data Out" will go.
 
+At its most basic, it should be a simple idempotent library. 
+Note for idempotent methods, thought should be given to not using variable types such as Dates, instead age in days should be used - ensuring that the same data payload always returns the same result, no matter what the date is today.
+
+```csharp
+public static HealthCheckResult CalclateHealthCheck(HealthCheckData value)
+{
+    //Calculate health check and return result.
+    throw new NotImplementedException();
+}
+```
+
+### Incremental Health Check Library Development, Possible Routes
+- Start with just basic checks - add more data over time?
+- Require all data for a result vs Can give result with partial data?
+- Should some be separate libraries / APIs? BMI for example? Blood pressure result?
+- 
+
 ## Digital Health Check Tool API 
 The development of an API first designed system that is just a simple Tool for returning the results of a full set of Health Check data. This will be stateless and can be used by the Digital Health Check Service, both internally and externally. This is a key concept to allowing the DHC work to be reused, and re worked, in the future.
+
+```mermaid
+flowchart LR;
+    In(Data In & Out)
+    API(API)
+    Process{Process Data}
+    In <----> API
+    API --> Process
+```
 
 ## Key considerations for all APIs
 - Easy data model, including for those who are not Health IT Professionals 
@@ -127,3 +153,8 @@ The DHC API will require .....
 
 ## Open Source
 All development work should be open source from the very start of any beta stage.
+
+## Development Recommendations
+- VSCode remote development containers for each project
+- Docker build and deploy files
+- API first, use swagggerhub for api design and bolilerplate 
