@@ -1,6 +1,6 @@
 namespace dhc;
 
-public record Bmi(decimal bmi)
+public record Bmi(double bmi)
 {
     public BmiEnum Result => BmiResultConverter.GetResult(bmi);
 

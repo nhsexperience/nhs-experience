@@ -6,7 +6,7 @@ public class HealthCheckTests
     public void Test1()
     {
         //arrange
-        var data = new HealthCheckData(new Mass(100), new Height(100), new Age(10));
+        var data = new HealthCheckData(Mass.FromKilograms(100), Length.FromCentimeters(180), new Age(10));
         
         //act
         var result = HealthCheck.CheckHealth(data);

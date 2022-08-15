@@ -1,11 +1,7 @@
 {
 	"folders": [
 		{
-			"path": ".",
-			"name": "Project root"
-		},
-		{
-			"path": "src"
+			"path": "src/bmiapi"
 		},
 		{
 			"path": "src/dhc"
@@ -14,8 +10,12 @@
 			"path": "src/tests"
 		},
 		{
-			"path": "src/bmiapi"
+			"path": "src/sln"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"omnisharp.projects": [
+			"src/sln/dhc.sln"
+		]
+	}
 }

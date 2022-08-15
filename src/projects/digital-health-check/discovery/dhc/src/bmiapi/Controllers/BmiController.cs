@@ -13,10 +13,12 @@ public class BmiController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetBmiDescription")]
-    public string Get(decimal bmi)
+    [HttpGet("{bmi}/description", Name = "GetBmiDescription")]
+    public string Get([FromRoute]double bmi)
     {
-        return BmiResultConverter.GetResult(bmi).ToString();
+        var result= BmiResultConverter.GetResult(bmi).ToString();
+        _logger.LogTrace("Description of {result} for {bmi}", result, bmi);
+        return result;
        
     }
 }

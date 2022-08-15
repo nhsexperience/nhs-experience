@@ -7,8 +7,8 @@ public class BmiProviderTests
     public void TestBmi()
     {
         //arrange
-        var mass = new Mass(100000);
-        var height = new Height(180);
+        var mass = Mass.FromKilograms(100);
+        var height = Length.FromCentimeters(180);
         var consoleLogger = LoggerFactory.Create(loggingBuilder => loggingBuilder
             .AddConsole()
             .AddDebug()

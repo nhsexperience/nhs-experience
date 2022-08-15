@@ -15,10 +15,14 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
-		"vscode": {	
+		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"ms-dotnettools.csharp"
+				"ms-dotnettools.csharp",
+				"formulahendry.dotnet-test-explorer",
+				"hbenl.vscode-test-explorer",
+				"fernandoescolar.vscode-solution-explorer",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},

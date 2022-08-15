@@ -1,3 +1,3 @@
 namespace dhc;
 
-public record HealthCheckData(Mass mass, Height height, Age age);
+public record HealthCheckData(Mass mass, Length height, Age age);

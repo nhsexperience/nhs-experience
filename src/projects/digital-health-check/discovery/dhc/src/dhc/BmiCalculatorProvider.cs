@@ -11,12 +11,12 @@ public class BmiCalculatorProvider
         _logger = logger;
     }
 
-    public Bmi CalculateBmi(Height height, Mass mass)
+    public Bmi CalculateBmi(Length height, Mass mass)
     {
-        _logger.LogDebug("Height {heightcm} cm", height.cm);
-        _logger.LogDebug("Mass {massg} g", mass.grams);        
-        var heightM = (decimal)height.cm / (decimal)100;
-        var massKg = (decimal)mass.grams / (decimal)1000;
+        _logger.LogDebug("Height {heightcm} cm", height.Centimeters);
+        _logger.LogDebug("Mass {massg} g", mass.Grams);        
+        var heightM = (decimal)height.Meters;
+        var massKg = (decimal)mass.Kilograms;
         _logger.LogDebug("Height {heightM} m", heightM);
         _logger.LogDebug("Mass {massKg} kg", massKg);
         var bmi = BmiCalculator.Calculate(height, mass);

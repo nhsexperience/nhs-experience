@@ -6,7 +6,7 @@ public class BmiTests
     public void TestBmi30Obese()
     {
         //arrange
-        var bmiNumber = 30m;
+        var bmiNumber = 30;
 
         //act
         var bmi = new Bmi(bmiNumber);
@@ -42,7 +42,6 @@ public class BmiTests
 
         //act
         var bmi = new Bmi(bmiNumber);
-
         //assert
         var result = bmi.Result;
         var expected =  BmiEnum.Underweight;
@@ -58,7 +57,7 @@ public class BmiTests
 
         //act
         var bmi = new Bmi(bmiNumber);
-
+        
         //assert
         var result = bmi.Result;
         var expected =  BmiEnum.Overweight;

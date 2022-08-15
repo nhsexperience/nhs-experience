@@ -1,11 +1,13 @@
+
+
 namespace dhc;
 
 public static class BmiCalculator
 {
-    public static decimal Calculate (Height height, Mass mass)
+    public static double Calculate (Length height, Mass mass)
     {
-        var heightM = (decimal)height.cm / (decimal)100;
-        var massKg = (decimal)mass.grams / (decimal)1000;   
+        var heightM = height.Meters;
+        var massKg = mass.Kilograms;
         var bmi = massKg / (heightM * heightM);     
         return bmi;
     }
