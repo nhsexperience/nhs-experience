@@ -4,14 +4,14 @@ version: '3.4'
 
 services:
   bmiapi:
-    image: bmiapi
+    image: bpapi
     build:
       context: ../
-      dockerfile: ./bmiapi/Dockerfile
+      dockerfile: ./bpapi/Dockerfile
     ports:
-      - 5116:5116
+      - 5117:5117
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:5116
+      - ASPNETCORE_URLS=http://+:5117
     volumes:
       - ~/.vsdbg:/remote_debugger:rw

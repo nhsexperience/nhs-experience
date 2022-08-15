@@ -3,6 +3,16 @@
 version: '3.4'
 
 services:
+  bpapi:
+    image: bpapi
+    build:
+      context: ../
+      dockerfile: ./bpapi/Dockerfile
+    ports:
+      - 5117:5117
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development    
+      - ASPNETCORE_URLS=http://+:5117
   bmiapi:
     image: bmiapi
     build:
@@ -12,4 +22,4 @@ services:
       - 5116:5116
     environment:
       - ASPNETCORE_ENVIRONMENT=Development    
-      - ASPNETCORE_URLS=http://+:5116
+      - ASPNETCORE_URLS=http://+:5116      
