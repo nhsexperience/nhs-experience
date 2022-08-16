@@ -36,6 +36,23 @@
                 "${workspaceFolder}/bpapi.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "swagger-gen",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "swagger",
+                "tofile",
+                "--output",
+                "${workspaceFolder}/swagger-v0.1.json",
+                "${workspaceFolder}/bin/Debug/net6.0/bpapi.dll",
+                "v0.1"
+            ],
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
         }
     ]
 }

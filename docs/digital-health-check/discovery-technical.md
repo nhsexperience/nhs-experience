@@ -149,7 +149,11 @@ FHIR has a key place in inter health system communication, but it is likely to b
 
 The DHC API will require .....
 
-
+## Capacity and Scale Discovery
+NEED TO :
+- Find out how many health checks per day
+- How many NHS Logins
+- How much use if only invite vs accessible to all
 
 ## Open Source
 All development work should be open source from the very start of any beta stage.

@@ -92,6 +92,23 @@
             "netCore": {
                 "appProject": "${workspaceFolder}/bmiapi.csproj"
             }
+        },
+        {
+            "label": "swagger-gen",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "swagger",
+                "tofile",
+                "--output",
+                "${workspaceFolder}/swagger.json",
+                "${workspaceFolder}/bin/Debug/net6.0/bmiapi.dll",
+                "v0.1"
+            ],
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
         }
     ]
 }

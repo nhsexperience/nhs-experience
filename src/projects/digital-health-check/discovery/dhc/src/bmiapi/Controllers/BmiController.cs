@@ -3,7 +3,9 @@ using dhc;
 namespace bmiapi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[ApiVersion("0.1")]
+[ApiVersion("0.2")]
+[Route("/v{version:apiVersion}/[controller]")]
 public class BmiController : ControllerBase
 {
     private readonly ILogger<BmiController> _logger;
@@ -13,7 +15,7 @@ public class BmiController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("{bmi}/description", Name = "GetBmiDescription")]
+    [HttpGet("{bmi}/description", Name = "GetBmiDescription"), MapToApiVersion("0.1")]
     public string Get([FromRoute]double bmi)
     {
         var result= BmiResultConverter.GetResult(bmi).ToString();
