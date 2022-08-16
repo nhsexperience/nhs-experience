@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace bpapi.Controllers;
 
@@ -16,19 +17,45 @@ public class BloodPressureController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Retrieves a Blood Pressure result
+    /// </summary>
+    /// <remarks>Awesomeness!</remarks>
+    /// <param name="systolic" example="100">The systolic (top)</param>
+    /// <param name="diastolic" example="75">The diastolic (bottom)</param>
+    /// <response code="200" example="Normal">BP result retrieved</response>
+    /// <example>Normal 1234</example>
+    [Produces("text/plain")]
     [HttpGet("{systolic}/{diastolic}", Name = "GetBloodPressure"), MapToApiVersion("0.1")]
-    public string Get(double systolic, double diastolic)
+    [ProducesResponseType(typeof(string), 200)]
+    public ActionResult<string> Get(double systolic, double diastolic)
     {
         var result = BloodPressureResultConverter.GetResult(new BloodPressure(systolic, diastolic));
         _logger.LogTrace("V0.1 BP Result of {result} for {systolic} over {diastolic}", result, systolic, diastolic);
         return result.ToString();
     }
     
+
+    /// <param name="systolic" example="100"></param>
+    /// <param name="diastolic" example="99"></param>
+    [SwaggerOperation(
+        Summary = "Retrieves a Blood Pressure result.",
+        Description = "Returns a text representation of the Blood Pressure results from the provided values.",
+        OperationId = "GetBpResult",
+        Tags = new[] { "BloodPressure" })]
+    [SwaggerResponse(StatusCodes.Status200OK, "The blood pressure result was returned", typeof(BloodPressureResult))]
+    [SwaggerResponse(StatusCodes.Status400BadRequest, "An error generating the blood pressure result.")]
+    [Produces("application/json")]
     [HttpGet("{systolic}/{diastolic}", Name = "GetBloodPressure"), MapToApiVersion("0.2")]
-    public string GetV1(double systolic, double diastolic)
+    public ActionResult<BloodPressureResult> GetV2(
+        [SwaggerParameter("The systolic (top)", Required = true)]int systolic, 
+        [SwaggerParameter("The diastolic (bottom)", Required = true)]int diastolic)
     {
         var result = BloodPressureResultConverter.GetResult(new BloodPressure(systolic, diastolic));
         _logger.LogTrace("V0.2 BP Result of {result} for {systolic} over {diastolic}", result, systolic, diastolic);
-        return result.ToString();
+        if(result == "Error")
+            return BadRequest();
+
+        return new BloodPressureResult(result.ToString(), systolic, diastolic );
     }
 }

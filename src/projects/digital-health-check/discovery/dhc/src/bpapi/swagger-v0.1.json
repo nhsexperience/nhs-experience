@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Blood Pressure API",
+    "version": "0.1"
+  },
+  "paths": {
+    "/v0.1/BloodPressure/{systolic}/{diastolic}": {
+      "get": {
+        "tags": [
+          "BloodPressure"
+        ],
+        "summary": "Retrieves a Blood Pressure result",
+        "description": "Awesomeness!",
+        "operationId": "GetBloodPressure",
+        "parameters": [
+          {
+            "name": "systolic",
+            "in": "path",
+            "description": "The systolic (top)",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "example": 100
+          },
+          {
+            "name": "diastolic",
+            "in": "path",
+            "description": "The diastolic (bottom)",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "example": 75
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BP result retrieved",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

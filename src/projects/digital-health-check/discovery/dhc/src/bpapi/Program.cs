@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,9 +19,16 @@ builder.Services.AddApiVersioning(options =>
 {
     options.AssumeDefaultVersionWhenUnspecified = true;
     options.ReportApiVersions = true;
-    options.DefaultApiVersion = new ApiVersion(0, 1);
+    options.DefaultApiVersion = new ApiVersion(0, 2);
 });
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c=>
+    {
+        var filePath = Path.Combine(System.AppContext.BaseDirectory, "bpapi.xml");
+        c.IncludeXmlComments(filePath);
+        c.EnableAnnotations();
+    }
+);
+builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
 
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
@@ -33,10 +41,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options=>
     {
-        foreach (var description in provider.ApiVersionDescriptions)
+          var versionDescriptions = provider
+                    .ApiVersionDescriptions
+                    .OrderByDescending(desc => desc.ApiVersion)
+                    .ToList();
+
+        foreach (var description in versionDescriptions)
        {
             options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant()); 
         }
+        options.RoutePrefix ="";
      
     }
     );
