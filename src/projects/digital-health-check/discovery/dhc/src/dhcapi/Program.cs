@@ -33,6 +33,9 @@ builder.Services.AddSwaggerGen(c=>
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
+builder.Services.AddTransient<IHealthCheckDataBuilderBuildFilter, HealthCheckDataBuilderBuildFilterDemographics>();
+builder.Services.AddTransient<IHealthCheckDataBuilderBuildFilter, HealthCheckDataBuilderBuildFilterBloodPressure>();
+builder.Services.AddTransient<IHealthCheckDataBuilder,HealthCheckDataBuilder>();
 builder.Services.AddTransient<HealthCheckDataBuilderProvider>();
 builder.Services.AddTransient<BloodPressureProvider>();
 builder.Services.AddTransient<BmiCalculatorProvider>();

@@ -35,6 +35,9 @@ public class HealthCheckController : ControllerBase
             .Height(data.HeightM)
             .Systolic(data.Systolic)
             .Diastolic(data.Diastolic)
+            .KeyValue("testing", 123)
+            .KeyValue("testing2", 123.3)
+            .KeyValue("testing", 123456789)
             .Build();
     
    
