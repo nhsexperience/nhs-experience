@@ -109,6 +109,23 @@
                 "build"
             ],
             "problemMatcher": []
+        },
+        {
+            "label": "bmi-swagger-gen-v0.2",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "swagger",
+                "tofile",
+                "--output",
+                "${workspaceFolder}/swagger-v0.2.json",
+                "${workspaceFolder}/bin/Debug/net6.0/bmiapi.dll",
+                "v0.2"
+            ],
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
         }
     ]
 }

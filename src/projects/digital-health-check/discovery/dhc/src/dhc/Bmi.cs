@@ -1,8 +1,6 @@
 namespace dhc;
 
-public record Bmi(double bmi)
+public readonly record struct Bmi(decimal BmiValue)
 {
-    public BmiEnum Result => BmiResultConverter.GetResult(bmi);
-
-    public float Value => (float)Math.Round(bmi,1);
+    public readonly BmiEnum BmiDescription => BmiResultConverter.GetResult(BmiValue);
 }

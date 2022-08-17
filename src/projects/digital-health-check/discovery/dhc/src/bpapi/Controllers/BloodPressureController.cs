@@ -11,10 +11,13 @@ public class BloodPressureController : ControllerBase
 {
 
     private readonly ILogger<BloodPressureController> _logger;
-
-    public BloodPressureController(ILogger<BloodPressureController> logger)
+    private readonly BloodPressureProvider _bpProvider;
+    public BloodPressureController(
+        ILogger<BloodPressureController> logger, 
+        BloodPressureProvider bpProvider)
     {
         _logger = logger;
+        _bpProvider = bpProvider;
     }
 
     /// <summary>
@@ -51,11 +54,11 @@ public class BloodPressureController : ControllerBase
         [SwaggerParameter("The systolic (top)", Required = true)]int systolic, 
         [SwaggerParameter("The diastolic (bottom)", Required = true)]int diastolic)
     {
-        var result = BloodPressureResultConverter.GetResult(new BloodPressure(systolic, diastolic));
-        _logger.LogTrace("V0.2 BP Result of {result} for {systolic} over {diastolic}", result, systolic, diastolic);
-        if(result == "Error")
+        var bpResult = _bpProvider.CalculateBloodPressure(systolic,diastolic);
+        _logger.LogTrace("V0.2 BP Result of {result} for {systolic} over {diastolic}", bpResult.Result, systolic, diastolic);
+        if(bpResult.Result == "Error")
             return BadRequest();
 
-        return new BloodPressureResult(result.ToString(), systolic, diastolic );
+        return new BloodPressureResult(bpResult.Result, systolic, diastolic );
     }
 }

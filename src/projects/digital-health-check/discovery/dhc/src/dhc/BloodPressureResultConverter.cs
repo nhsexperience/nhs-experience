@@ -5,8 +5,7 @@ public static class BloodPressureResultConverter
     public static string GetResult(BloodPressure bloodPressure) =>
         (bloodPressure) switch
         {
-            null => "Null Error",
-            var bp when bp.systolic < bp.diastolic => "Something might be wrong with the data, is it the correct way round?",
+            var bp when bp.Systolic < bp.Diastolic => "Something might be wrong with the data, is it the correct way round?",
 
             (<90, <60) => "Low",
             (>=140, >=90) => "High",

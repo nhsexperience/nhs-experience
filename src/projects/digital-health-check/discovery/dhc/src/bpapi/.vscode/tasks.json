@@ -38,7 +38,7 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "swagger-gen-v0.1",
+            "label": "bp-swagger-gen-v0.1",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -55,7 +55,7 @@
             "problemMatcher": []
         },
         {
-            "label": "swagger-gen-v0.2",
+            "label": "bp-swagger-gen-v0.2",
             "command": "dotnet",
             "type": "process",
             "args": [

@@ -35,7 +35,7 @@ public class ConfigureSwaggerOptions
         {
             var info = new OpenApiInfo()
             {
-                Title = "BMI Pressure API",
+                Title = "BMI API",
                 Version = description.ApiVersion.ToString()
             };
 

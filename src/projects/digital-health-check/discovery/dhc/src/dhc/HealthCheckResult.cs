@@ -1,6 +1,6 @@
 namespace dhc;
 
-public record HealthCheckResult
+public readonly record struct HealthCheckResult
 {
 
 }

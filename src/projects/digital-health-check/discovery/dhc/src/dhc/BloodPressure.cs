@@ -1,3 +1,3 @@
 namespace dhc;
 
-public record BloodPressure(double systolic, double diastolic);
+public readonly record struct  BloodPressure(double Systolic, double Diastolic);
