@@ -94,14 +94,14 @@
             }
         },
         {
-            "label": "swagger-gen",
+            "label": "bmi-swagger-gen-v0.1",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "swagger",
                 "tofile",
                 "--output",
-                "${workspaceFolder}/swagger.json",
+                "${workspaceFolder}/swagger-v0.1.json",
                 "${workspaceFolder}/bin/Debug/net6.0/bmiapi.dll",
                 "v0.1"
             ],
