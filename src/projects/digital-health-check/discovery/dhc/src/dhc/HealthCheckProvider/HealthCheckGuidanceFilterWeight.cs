@@ -18,7 +18,7 @@ public class HealthCheckGuidanceFilterWeight: IHealthCheckGuidanceFilter
         if(current.Bmi.BmiDescription!=BmiEnum.Healthy)
         {
             var guidance = current.Guidance;
-            var newGuidance = guidance with {WeightGuidance = new HealthCheckResultGuidanceWeight("You need to sort your weight out")};
+            var newGuidance = guidance with {WeightGuidance = new HealthCheckResultGuidanceWeight("Weight is not in the Normal zone, guidance is to think about looking into this.")};
             _logger.LogDebug("Setting weight guidance to {weightGuidance}", newGuidance.WeightGuidance.Guidance);
             return current with {Guidance = newGuidance};
         }
