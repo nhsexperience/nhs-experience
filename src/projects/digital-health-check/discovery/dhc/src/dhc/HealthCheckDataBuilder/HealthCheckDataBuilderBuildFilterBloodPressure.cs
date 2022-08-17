@@ -5,7 +5,7 @@ public class HealthCheckDataBuilderBuildFilterBloodPressure: IHealthCheckDataBui
     public  HealthCheckData Filter (HealthCheckData currentOutput, HealthCheckDataBuilderData inputData)
     {
         return currentOutput with {BloodPressure =  new BloodPressure(
-            (double)inputData.GetValue("Systolic"),
-            (double)inputData.GetValue("Diastolic"))};        
+            inputData.GetValue<double>("Systolic"),
+            inputData.GetValue<double>("Diastolic"))};        
     }
 }

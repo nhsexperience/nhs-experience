@@ -5,8 +5,6 @@ public class HealthCheckDataBuilderBuildFilterDemographics: IHealthCheckDataBuil
     public  HealthCheckData Filter (HealthCheckData currentOutput, HealthCheckDataBuilderData inputData)
     {
         return currentOutput with {Demographics =  new HealthCheckDemographicData(
-            UnitsNet.Mass.FromKilograms((double)inputData.GetValue("MassKg")),
-             Length.FromMeters((double)inputData.GetValue("HeightM")), 
-             new Age((int)inputData.GetValue("AgeDays")))};
+             new Age(inputData.GetValue<int>("AgeDays")))};
     }
 }

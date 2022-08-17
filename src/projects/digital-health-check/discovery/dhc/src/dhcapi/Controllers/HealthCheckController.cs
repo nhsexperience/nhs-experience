@@ -10,16 +10,16 @@ namespace dhcapi.Controllers;
 public class HealthCheckController : ControllerBase
 {
     private readonly ILogger<HealthCheckController> _logger;
-    private readonly  HealthCheckProvider _healthCheckProvider;
-    private readonly HealthCheckDataBuilderProvider _hcBuilderProvider;
+    private readonly  IHealthCheckProvider _healthCheckProvider;
+    private readonly IHealthCheckRequestDataConverterProvider _hcConverterProvider;
     public HealthCheckController(
         ILogger<HealthCheckController> logger,
-        HealthCheckProvider healthCheckProvider,
-         HealthCheckDataBuilderProvider hcBuilderProvider)
+        IHealthCheckProvider healthCheckProvider,
+        IHealthCheckRequestDataConverterProvider hcConverterProvider)
     {
         _logger = logger;
         _healthCheckProvider = healthCheckProvider;
-        _hcBuilderProvider = hcBuilderProvider;
+        _hcConverterProvider = hcConverterProvider;
     }
 
     [Consumes("application/json")]
@@ -28,19 +28,8 @@ public class HealthCheckController : ControllerBase
     public HealthCheckResult Get(
           [FromBody]HealthCheckRequestData data)
     {
-        var builder = _hcBuilderProvider.Create();
-         var healthCheckData = builder
-            .Age(data.AgeDays)
-            .Mass(data.MassKg)
-            .Height(data.HeightM)
-            .Systolic(data.Systolic)
-            .Diastolic(data.Diastolic)
-            .KeyValue("testing", 123)
-            .KeyValue("testing2", 123.3)
-            .KeyValue("testing", 123456789)
-            .Build();
-    
-   
+        var healthCheckData = _hcConverterProvider.CovertToDhcHealthCheckData(data);
         return _healthCheckProvider.Calculate(healthCheckData);
     }
 }
+

@@ -1,6 +1,7 @@
 namespace dhc;
 
-public interface IHealthCheckDataBuilder : IHealthCheckDataBuilderDemographics, IHealthCheckDataBuilderBloodPressure, IHealthCheckDataBuilderBuild
+public interface IHealthCheckDataBuilder: IHealthCheckDataBuilderBuild
 {
-     HealthCheckDataBuilder KeyValue<T>(string key, T value) where T : struct;
+     IHealthCheckDataBuilder KeyValue<T>(string key, T value) where T : struct;
+     IHealthCheckDataBuilder KeyValue(string key, string value);
 }

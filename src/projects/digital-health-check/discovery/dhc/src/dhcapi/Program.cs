@@ -3,6 +3,7 @@ using dhc;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Swashbuckle.AspNetCore.Filters;
+using dhcapi;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
@@ -33,13 +34,23 @@ builder.Services.AddSwaggerGen(c=>
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
+builder.Services.AddTransient<HealthCheckRequestDataConverterProvider>();
+builder.Services.AddTransient<IHealthCheckDataBuilderBuildFilter, HealthCheckDataBuilderBuildFilterBasicObs>();
 builder.Services.AddTransient<IHealthCheckDataBuilderBuildFilter, HealthCheckDataBuilderBuildFilterDemographics>();
 builder.Services.AddTransient<IHealthCheckDataBuilderBuildFilter, HealthCheckDataBuilderBuildFilterBloodPressure>();
 builder.Services.AddTransient<IHealthCheckDataBuilder,HealthCheckDataBuilder>();
+
 builder.Services.AddTransient<HealthCheckDataBuilderProvider>();
+
 builder.Services.AddTransient<BloodPressureProvider>();
 builder.Services.AddTransient<BmiCalculatorProvider>();
-builder.Services.AddTransient<HealthCheckProvider>();
+
+builder.Services.AddTransient<IHealthCheckProvider, HealthCheckProvider>();
+builder.Services.AddTransient<IHealthCheckFilter, HealthCheckFilterBp>();
+builder.Services.AddTransient<IHealthCheckFilter, HealthCheckFilterBmi>();
+
+builder.Services.AddTransient<IHealthCheckRequestDataConverterProvider, HealthCheckRequestDataConverterProvider>();
+
 
 var app = builder.Build();
 var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
