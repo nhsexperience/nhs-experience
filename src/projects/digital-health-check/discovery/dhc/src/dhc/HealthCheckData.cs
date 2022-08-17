@@ -1,3 +1,4 @@
 namespace dhc;
 
-public record HealthCheckData(Mass mass, Length height, Age age);
+public readonly record struct HealthCheckData(HealthCheckDemographicData Demographics, BloodPressure BloodPressure);
+

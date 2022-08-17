@@ -14,6 +14,9 @@
 		},
 		{
 			"path": "src/bpapi"
+		},
+		{
+			"path": "src/dhcapi"
 		}
 	],
 	"settings": {

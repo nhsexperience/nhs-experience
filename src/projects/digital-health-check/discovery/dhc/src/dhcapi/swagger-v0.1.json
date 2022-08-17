@@ -1,0 +1,123 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Digital Health Check API",
+    "version": "0.1"
+  },
+  "paths": {
+    "/v0.1/HealthCheck": {
+      "post": {
+        "tags": [
+          "HealthCheck"
+        ],
+        "operationId": "GetHealthCheck",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HealthCheckRequestData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheckResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BloodPressure": {
+        "type": "object",
+        "properties": {
+          "systolic": {
+            "type": "number",
+            "format": "double"
+          },
+          "diastolic": {
+            "type": "number",
+            "format": "double"
+          },
+          "bloodPressureDescription": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Bmi": {
+        "type": "object",
+        "properties": {
+          "bmiValue": {
+            "type": "number",
+            "format": "double"
+          },
+          "bmiDescription": {
+            "$ref": "#/components/schemas/BmiEnum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BmiEnum": {
+        "enum": [
+          "Underweight",
+          "Healthy",
+          "Overweight",
+          "Obese",
+          "EObese",
+          "Unknown"
+        ],
+        "type": "string"
+      },
+      "HealthCheckRequestData": {
+        "type": "object",
+        "properties": {
+          "ageDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "massKg": {
+            "type": "number",
+            "format": "double"
+          },
+          "heightM": {
+            "type": "number",
+            "format": "double"
+          },
+          "systolic": {
+            "type": "number",
+            "format": "double"
+          },
+          "diastolic": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HealthCheckResult": {
+        "type": "object",
+        "properties": {
+          "bloodPressure": {
+            "$ref": "#/components/schemas/BloodPressure"
+          },
+          "bmi": {
+            "$ref": "#/components/schemas/Bmi"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

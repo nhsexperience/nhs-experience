@@ -33,7 +33,7 @@ public class BloodPressureController : ControllerBase
     [ProducesResponseType(typeof(string), 200)]
     public ActionResult<string> Get(double systolic, double diastolic)
     {
-        var result = BloodPressureResultConverter.GetResult(new BloodPressure(systolic, diastolic));
+        var result = BloodPressureResultConverter.GetResult(systolic, diastolic);
         _logger.LogTrace("V0.1 BP Result of {result} for {systolic} over {diastolic}", result, systolic, diastolic);
         return result.ToString();
     }
@@ -55,10 +55,10 @@ public class BloodPressureController : ControllerBase
         [SwaggerParameter("The diastolic (bottom)", Required = true)]int diastolic)
     {
         var bpResult = _bpProvider.CalculateBloodPressure(systolic,diastolic);
-        _logger.LogTrace("V0.2 BP Result of {result} for {systolic} over {diastolic}", bpResult.Result, systolic, diastolic);
-        if(bpResult.Result == "Error")
+        _logger.LogTrace("V0.2 BP Result of {result} for {systolic} over {diastolic}", bpResult.BloodPressureDescription, systolic, diastolic);
+        if(bpResult.BloodPressureDescription == "Error")
             return BadRequest();
 
-        return new BloodPressureResult(bpResult.Result, systolic, diastolic );
+        return new BloodPressureResult(bpResult.BloodPressureDescription, systolic, diastolic );
     }
 }

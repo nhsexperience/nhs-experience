@@ -2,10 +2,10 @@ namespace dhc;
 
 public static class BloodPressureResultConverter
 {
-    public static string GetResult(BloodPressure bloodPressure) =>
-        (bloodPressure) switch
+    public static string GetResult(double systolic, double diastolic) =>
+        (systolic, diastolic) switch
         {
-            var bp when bp.Systolic < bp.Diastolic => "Something might be wrong with the data, is it the correct way round?",
+            _ when systolic < diastolic => "Something might be wrong with the data, is it the correct way round?",
 
             (<90, <60) => "Low",
             (>=140, >=90) => "High",

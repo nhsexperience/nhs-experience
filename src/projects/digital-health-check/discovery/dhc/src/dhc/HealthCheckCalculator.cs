@@ -1,5 +1,5 @@
 ﻿namespace dhc;
-public static class HealthCheck
+public static class HealthCheckCalculator
 {
     public static HealthCheckResult CheckHealth(HealthCheckData value)
     {
