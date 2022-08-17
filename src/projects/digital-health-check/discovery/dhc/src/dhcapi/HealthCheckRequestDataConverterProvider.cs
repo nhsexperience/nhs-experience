@@ -16,7 +16,6 @@ public class HealthCheckRequestDataConverterProvider : IHealthCheckRequestDataCo
         var builder = _hcBuilderProvider.Create();
 
         builder
-
             .Age(data.AgeDays)
             .Mass(data.MassKg)
             .Height(data.HeightM)
