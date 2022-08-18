@@ -61,4 +61,22 @@ public class BloodPressureController : ControllerBase
 
         return new BloodPressureResult(bpResult.BloodPressureDescription, systolic, diastolic );
     }
+
+    [Consumes("application/json")]
+    [Produces("application/json")]
+    [HttpPost(Name = "GetBloodPressures"), MapToApiVersion("0.2")]
+    public ActionResult<BloodPressureResult> GetResult(IEnumerable<BloodPressureObservation> bps)
+    {
+        var targetList = bps
+          .Select(x => _bpProvider.CalculateBloodPressure(x.Systolic, x.Diastolic));
+
+        var bpResult = _bpProvider.CalculateBloodPressure(targetList);
+
+        if(bpResult.BloodPressureDescription == "Error")
+            return BadRequest();
+
+        return new BloodPressureResult(bpResult.BloodPressureDescription, (int)Math.Ceiling(bpResult.Systolic), (int)Math.Ceiling(bpResult.Diastolic) );        
+    }
 }
+
+

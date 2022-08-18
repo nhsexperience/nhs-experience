@@ -1,9 +1,16 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options=>
+        options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter()));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddVersionedApiExplorer(setup =>
     {
@@ -18,6 +25,7 @@ builder.Services.AddApiVersioning(options =>
     });
 builder.Services.AddSwaggerGen(c=>
     {
+        c.MapType<DateOnly>(() => new OpenApiSchema { Type = typeof(string).Name, Default = new OpenApiString("2020-01-01"), Format="date"});
         var filePath = Path.Combine(System.AppContext.BaseDirectory, "bpapi.xml");
         c.IncludeXmlComments(filePath);
         c.EnableAnnotations();
@@ -48,6 +56,28 @@ if (app.Environment.IsDevelopment())
     );
 }
 app.UseHttpsRedirection();
+app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
+app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapMetrics();
+    });
+
+app.UseHttpMetrics();
 app.Run();
+
+
+public sealed class DateOnlyJsonConverter : JsonConverter<DateOnly>
+{
+    public override DateOnly Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        return DateOnly.Parse(reader.GetString()!);
+    }
+
+    public override void Write(Utf8JsonWriter writer, DateOnly value, JsonSerializerOptions options)
+    {
+        var isoDate = value.ToString("O");
+        writer.WriteStringValue(isoDate);
+    }
+}

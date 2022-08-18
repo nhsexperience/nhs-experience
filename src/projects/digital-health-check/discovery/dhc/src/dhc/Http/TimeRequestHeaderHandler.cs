@@ -7,11 +7,11 @@ namespace dhc;
 public class TimeRequestHeaderHandler<T> : DelegatingHandler
 {
     private static readonly Counter _c_client_failures =
-        Metrics.CreateCounter("http_client_failures", "Failures for a client",
+        Metrics.CreateCounter("httpclient_request_failures_count", "Failures for a client",
          new CounterConfiguration
          {
              // Here you specify only the names of the labels.
-             LabelNames = new[] { "client", "method", "url" }
+             LabelNames = new[] { "client", "method", "path" }
          });
 
     private Type type;

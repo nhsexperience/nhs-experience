@@ -29,6 +29,7 @@ public static class HealthCheckProviderExtensionMethods
         services.AddTransient<BloodPressureProvider>();
         services.AddTransient<IBmiCalculatorProvider, BmiCalculatorProvider>();
         services.AddTransient<IHealthCheckProvider, LoHealthCheckProvider>();
+        services.AddTransient<SmokingCalculator>();
         return services;
     }
 

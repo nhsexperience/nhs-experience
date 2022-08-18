@@ -21,4 +21,12 @@ public class BloodPressureProvider
         _logger.LogTrace("Result for BP {systolic}/{diastolic} of {bpResult}",systolic,diastolic,bp.BloodPressureDescription);
         return bp;
     }
+
+    public BloodPressure CalculateBloodPressure(IEnumerable<BloodPressure> bloodPressures)
+    {
+
+        return new BloodPressure(
+            bloodPressures.Skip(1).Average(a=>a.Systolic),
+            bloodPressures.Skip(1).Average(a=>a.Diastolic));
+    }
 }

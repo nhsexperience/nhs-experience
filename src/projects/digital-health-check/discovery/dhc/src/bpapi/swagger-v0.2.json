@@ -53,6 +53,38 @@
           }
         }
       }
+    },
+    "/v0.2/BloodPressure": {
+      "post": {
+        "tags": [
+          "BloodPressure"
+        ],
+        "operationId": "GetBloodPressures",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Bp"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BloodPressureResult"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -81,6 +113,20 @@
         },
         "additionalProperties": false,
         "description": "A Blood Pressure result"
+      },
+      "Bp": {
+        "type": "object",
+        "properties": {
+          "s": {
+            "type": "number",
+            "format": "double"
+          },
+          "d": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
       }
     }
   }

@@ -22,6 +22,8 @@ public class HealthCheckRequestDataConverterProvider : IHealthCheckRequestDataCo
             .Systolic(data.Systolic)
             .Diastolic(data.Diastolic)
             .Waist(data.WaistM)
+            .Postcode(data.Postcode)
+            .CigarettesPerDay(data.SmokePerDay)
             .KeyValue("UtcDateTimeCreated", DateTime.UtcNow);
 
         var healthCheckData = builder.Build();

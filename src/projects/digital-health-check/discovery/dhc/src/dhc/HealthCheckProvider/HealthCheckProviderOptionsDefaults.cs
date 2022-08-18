@@ -9,11 +9,14 @@ public static class HealthCheckProviderOptionsDefaults
         var options = new HealthCheckProviderOptions(services);
         options.Filters.Add<HealthCheckFilterBp>();
         options.Filters.Add<HealthCheckFilterBmi>();
+        options.Filters.Add<HealthCheckFilterSmoking>();
         options.GuidanceFilters.Add<HealthCheckGuidanceFilterBp>();
         options.GuidanceFilters.Add<HealthCheckGuidanceFilterWeight>();
+        options.GuidanceFilters.Add<HealthCheckGuidanceFilterSmoking>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterBasicObs>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterDemographics>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterBloodPressure>();
+        options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterSmoking>();
 
         options.SetBmiProvider<BmiCalculatorProvider>();
         return options;

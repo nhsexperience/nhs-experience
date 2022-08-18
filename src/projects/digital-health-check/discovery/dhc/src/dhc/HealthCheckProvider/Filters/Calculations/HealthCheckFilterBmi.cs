@@ -18,3 +18,4 @@ public class HealthCheckFilterBmi: IHealthCheckFilter
         return current with {Bmi = bmi};
     }
 }
+

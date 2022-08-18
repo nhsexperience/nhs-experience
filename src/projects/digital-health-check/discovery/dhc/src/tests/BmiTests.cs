@@ -12,7 +12,7 @@ public class BmiTests
         var bmi = new Bmi(bmiNumber);
 
         //assert
-        var result = bmi.Result;
+        var result = bmi.BmiDescription;
         var expected =  BmiEnum.Obese;
 
         Assert.Equal(expected, result);
@@ -28,7 +28,7 @@ public class BmiTests
         var bmi = new Bmi(bmiNumber);
 
         //assert
-        var result = bmi.Result;
+        var result = bmi.BmiDescription;
         var expected =  BmiEnum.Healthy;
 
         Assert.Equal(expected, result);
@@ -43,7 +43,7 @@ public class BmiTests
         //act
         var bmi = new Bmi(bmiNumber);
         //assert
-        var result = bmi.Result;
+        var result = bmi.BmiDescription;
         var expected =  BmiEnum.Underweight;
 
         Assert.Equal(expected, result);
@@ -59,7 +59,7 @@ public class BmiTests
         var bmi = new Bmi(bmiNumber);
         
         //assert
-        var result = bmi.Result;
+        var result = bmi.BmiDescription;
         var expected =  BmiEnum.Overweight;
 
         Assert.Equal(expected, result);
@@ -75,7 +75,7 @@ public class BmiTests
         var bmi = new Bmi(bmiNumber);
 
         //assert
-        var result = bmi.Result;
+        var result = bmi.BmiDescription;
         var expected =  BmiEnum.EObese;
 
         Assert.Equal(expected, result);

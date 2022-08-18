@@ -20,8 +20,8 @@ public class BmiProviderTests
         var bmi = calculator.CalculateBmi(height, mass);
 
         //assert
-        var result = bmi.Value;
-        var expected =  30.9f;
+        var result = bmi.BmiValue;
+        var expected =  30.9m;
 
         Assert.Equal(expected, result);
     }     

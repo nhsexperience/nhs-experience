@@ -42,7 +42,7 @@ builder.Services.AddHealthChecks()
 builder.Services.AddHealthCheckProvider((config)=>
 {
     
-    config.SetWebBpProvider(builder.Configuration);
+    //config.SetWebBpProvider(builder.Configuration);
 });
 
 
