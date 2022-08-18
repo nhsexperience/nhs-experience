@@ -35,6 +35,8 @@ builder.Services.AddSwaggerGen(c=>
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
+builder.Services.AddHealthChecks().ForwardToPrometheus();
+
 builder.Services.AddHealthCheckProvider((config)=>
 {
     
