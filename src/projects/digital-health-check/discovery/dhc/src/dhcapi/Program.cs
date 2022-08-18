@@ -35,7 +35,9 @@ builder.Services.AddSwaggerGen(c=>
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
-builder.Services.AddHealthChecks().ForwardToPrometheus();
+builder.Services.AddHealthChecks()
+    .AddCheck<SampleHealthCheck>("Sample")
+    .ForwardToPrometheus();
 
 builder.Services.AddHealthCheckProvider((config)=>
 {
@@ -60,6 +62,7 @@ var app = builder.Build();
 var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 if (app.Environment.IsDevelopment())
 {
+    
     app.UseSwagger(options=>
     {
         
@@ -89,8 +92,8 @@ app.UseEndpoints(endpoints =>
         endpoints.MapMetrics();
     });
 
+app.MapHealthChecks("/healthz");
+
 app.UseHttpMetrics();
 
 app.Run();
-
-
