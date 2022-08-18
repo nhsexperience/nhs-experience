@@ -9,6 +9,9 @@ namespace dhcapi.Controllers;
 [Route("/v{version:apiVersion}/[controller]")]
 public class HealthCheckController : ControllerBase
 {
+    private static readonly Counter _c_get_health_check =
+        Metrics.CreateCounter("health_check_api_get_health_check", "Just keeps on ticking");
+
     private readonly ILogger<HealthCheckController> _logger;
     private readonly  IHealthCheckProvider _healthCheckProvider;
     private readonly IHealthCheckRequestDataConverterProvider _hcConverterProvider;
@@ -28,6 +31,7 @@ public class HealthCheckController : ControllerBase
     public HealthCheckResult Get(
           [FromBody]HealthCheckRequestData data)
     {
+        _c_get_health_check.Inc();
         var healthCheckData = _hcConverterProvider.CovertToDhcHealthCheckData(data);
         return _healthCheckProvider.Calculate(healthCheckData);
     }

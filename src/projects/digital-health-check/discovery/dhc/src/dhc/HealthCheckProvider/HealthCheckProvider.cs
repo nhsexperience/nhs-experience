@@ -1,14 +1,14 @@
 namespace dhc;
 
-public class HealthCheckProvider : IHealthCheckProvider
+public class LoHealthCheckProvider : IHealthCheckProvider
 {
     private readonly IEnumerable<IHealthCheckFilter> _filters;
     private readonly IEnumerable<IHealthCheckGuidanceFilter> _guidanceFilters;
 
-    private readonly ILogger<HealthCheckProvider> _logger;
-    public HealthCheckProvider(
+    private readonly ILogger<LoHealthCheckProvider> _logger;
+    public LoHealthCheckProvider(
         IEnumerable<IHealthCheckFilter> filters,
-        ILogger<HealthCheckProvider> logger,
+        ILogger<LoHealthCheckProvider> logger,
         IEnumerable<IHealthCheckGuidanceFilter> guidanceFilters)
     {
         _filters = filters;

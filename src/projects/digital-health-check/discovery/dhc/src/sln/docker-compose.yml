@@ -23,3 +23,15 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development    
       - ASPNETCORE_URLS=http://+:5116      
+
+  dhcapi:
+    image: dhcapi
+    build:
+      context: ../
+      dockerfile: ./dhcapi/Dockerfile
+    ports:
+      - 5118:5118
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5118
+      - BpWebApiSettings__BaseUrl=http://bmiapi:5116/

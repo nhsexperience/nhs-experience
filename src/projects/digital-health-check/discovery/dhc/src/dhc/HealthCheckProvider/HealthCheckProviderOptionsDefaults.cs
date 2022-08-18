@@ -14,6 +14,8 @@ public static class HealthCheckProviderOptionsDefaults
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterBasicObs>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterDemographics>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterBloodPressure>();
+
+        options.SetBmiProvider<BmiCalculatorProvider>();
         return options;
     }
 }

@@ -2,10 +2,10 @@ namespace dhc;
 
 public class HealthCheckFilterBmi: IHealthCheckFilter
 {
-    private readonly BmiCalculatorProvider _bmiCalculatorProvider;
+    private readonly IBmiCalculatorProvider _bmiCalculatorProvider;
 
     public HealthCheckFilterBmi(
-        BmiCalculatorProvider bmiCalculatorProvider
+        IBmiCalculatorProvider bmiCalculatorProvider
     )
     {
         _bmiCalculatorProvider = bmiCalculatorProvider;

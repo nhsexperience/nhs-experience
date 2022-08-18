@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.Extensions.Configuration;
 namespace dhc;
+
 
 public static class HealthCheckProviderExtensionMethods
 {
@@ -17,7 +18,8 @@ public static class HealthCheckProviderExtensionMethods
             .AddHealthCheckProviderFilters(options)
             .AddHealthCheckProviderGuidanceFilters(options)
             .AddHealthCheckHealthCheckDataBuilders(options)
-            .AddOtherRequirements(options);
+            .AddOtherRequirements(options)
+            .AddBmiProvider(options);
     }
 
         private static IServiceCollection AddOtherRequirements(this IServiceCollection services, HealthCheckProviderOptions options)
@@ -25,9 +27,14 @@ public static class HealthCheckProviderExtensionMethods
         services.AddTransient<IHealthCheckDataBuilder,HealthCheckDataBuilder>();
         services.AddTransient<HealthCheckDataBuilderProvider>();
         services.AddTransient<BloodPressureProvider>();
-        services.AddTransient<BmiCalculatorProvider>();
-        services.AddTransient<IHealthCheckProvider, HealthCheckProvider>();
+        services.AddTransient<IBmiCalculatorProvider, BmiCalculatorProvider>();
+        services.AddTransient<IHealthCheckProvider, LoHealthCheckProvider>();
         return services;
+    }
+
+    private static IServiceCollection AddBmiProvider(this IServiceCollection services, HealthCheckProviderOptions options)
+    {
+        return services.AddTransient(typeof(IBmiCalculatorProvider),options.BmiProvider);        
     }
 
     private static IServiceCollection AddHealthCheckProviderFilters(this IServiceCollection services, HealthCheckProviderOptions options)

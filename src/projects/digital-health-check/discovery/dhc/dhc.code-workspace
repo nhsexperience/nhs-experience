@@ -17,6 +17,15 @@
 		},
 		{
 			"path": "src/dhcapi"
+		},
+		{
+			"path": "src/.config"
+		},
+		{
+			"path": "src/.vscode"
+		},
+		{
+			"path": "src/bmiclient"
 		}
 	],
 	"settings": {

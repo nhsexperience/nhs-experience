@@ -1,0 +1,105 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BMI API",
+    "version": "0.2"
+  },
+  "paths": {
+    "/v0.2/Bmi/{height}/{weight}": {
+      "get": {
+        "tags": [
+          "Bmi"
+        ],
+        "operationId": "GetBmi",
+        "parameters": [
+          {
+            "name": "height",
+            "in": "path",
+            "description": "Height (Meters)",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "weight",
+            "in": "path",
+            "description": "Weight/Mass (KG)",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BmiResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v0.2/Bmi/{bmi}/description": {
+      "get": {
+        "tags": [
+          "Bmi"
+        ],
+        "operationId": "GetBmiDescription",
+        "parameters": [
+          {
+            "name": "bmi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BmiResult": {
+        "type": "object",
+        "properties": {
+          "bmi": {
+            "type": "number",
+            "description": "The bmi numerical value.",
+            "format": "double",
+            "example": 26
+          },
+          "bmiDescription": {
+            "type": "string",
+            "description": "The bmi description.",
+            "nullable": true,
+            "example": "Normal"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A BMI result containing numerical and textual description values."
+      }
+    }
+  }
+}

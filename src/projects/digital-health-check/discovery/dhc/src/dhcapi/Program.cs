@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Swashbuckle.AspNetCore.Filters;
 using dhcapi;
+using UnitsNet;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
@@ -36,12 +37,23 @@ builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
 builder.Services.AddHealthCheckProvider((config)=>
 {
-    // example to clear guidance filters, can then add custom ones if needed.
-    //config.GuidanceFilters.Clear();
+    
+    config.SetWebBpProvider(builder.Configuration);
 });
 
-builder.Services.AddTransient<IHealthCheckRequestDataConverterProvider, HealthCheckRequestDataConverterProvider>();   
 
+//builder.Services.AddHealthCheckProvider((config)=>
+//{
+//    var o = new BpWebApiSettings();
+//    builder.Configuration.GetSection<BpWebApiSettings>(BpWebApiSettings.BpWebApiSettings).Bind(o);
+//    config.SetWebBpProvider("http://sln-bpapi-1:5116/");
+    // example to clear guidance filters, can then add custom ones if needed.
+    //config.GuidanceFilters.Clear();
+//});
+
+
+builder.Services.AddTransient<IHealthCheckRequestDataConverterProvider, HealthCheckRequestDataConverterProvider>();   
+//builder.Services.AddRouting();
 var app = builder.Build();
 var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 if (app.Environment.IsDevelopment())
@@ -67,6 +79,16 @@ if (app.Environment.IsDevelopment())
     );
 }
 app.UseHttpsRedirection();
+app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
+app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapMetrics();
+    });
+
+app.UseHttpMetrics();
+
 app.Run();
+
+
