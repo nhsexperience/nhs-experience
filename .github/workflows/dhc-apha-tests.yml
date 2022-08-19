@@ -1,12 +1,12 @@
-name: dhc library build and test
+name: dhc tests build and test
 
 on: [push]
 
 jobs:
-  build-dhc-library:
+  build-dhc-tests:
     defaults:
       run:
-        working-directory: src/projects/digital-health-check/discovery/dhc/src/dhc
+        working-directory: src/projects/digital-health-check/discovery/dhc/src/tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,4 +24,5 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+
 

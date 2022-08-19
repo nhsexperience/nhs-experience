@@ -1,0 +1,25 @@
+name: dhc api docker build
+
+on: [push]
+
+jobs:
+  docker:
+    defaults:
+      run:
+        working-directory: src/projects/digital-health-check/discovery/dhc/src/dhc  
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          file: src/projects/digital-health-check/discovery/dhc/src/dhcapi/Dockerfile
+          context: src/projects/digital-health-check/discovery/dhc/src
+          push: false
+          tags: user/app:latest

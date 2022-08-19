@@ -1,4 +1,4 @@
-name: dhc library build and test
+name: dhc api build and test
 
 on: [push]
 
@@ -6,7 +6,7 @@ jobs:
   build-dhc-library:
     defaults:
       run:
-        working-directory: src/projects/digital-health-check/discovery/dhc/src/dhc
+        working-directory: src/projects/digital-health-check/discovery/dhc/src/dhcapi
     runs-on: ubuntu-latest
     strategy:
       matrix:
