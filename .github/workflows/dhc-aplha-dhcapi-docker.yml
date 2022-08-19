@@ -7,7 +7,7 @@ on:
       - latest
     paths:
       - 'src/projects/digital-health-check/discovery/dhc/src/dhcapi/**'
-
+      - 'src/projects/digital-health-check/discovery/dhc/src/dhc/**'
 jobs:
   docker:
     runs-on: ubuntu-latest

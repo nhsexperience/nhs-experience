@@ -68,7 +68,7 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 ## Project Source
 
 <table>
-<tr><th>Name</th></tr>
+<tr><th>Name</th><th>DockerHub</th><th>Docker Build</th></tr>
 
 {% for project in site.projectlibs %}
 <tr>
@@ -77,10 +77,22 @@ last_modified_date: Jul 15 2022 at 03:39 PM
       {{ project.name }}
     </a>
 </td>
+<td>
+    <a href="https://hub.docker.com/r/{{ project.docker }}">
+      {{ project.docker }}
+    </a>
+
+</td>
+<td>
+  ![Azure CI/CD]({{ site.gh_edit_repository }}/actions/workflows/dhc-aplha-dhcapi-docker.yml/badge.svg?branch={{ site.gh_edit_branch }})
+</td>
 </tr>
 {% endfor %} 
 </table>
 
+
+
+  
 ---
 # Posts
 <ul>
