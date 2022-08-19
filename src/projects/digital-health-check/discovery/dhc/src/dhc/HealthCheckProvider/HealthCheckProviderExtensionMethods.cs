@@ -1,16 +1,18 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using MediatR;
+using FluentValidation;
 namespace dhc;
 
 
 public static class HealthCheckProviderExtensionMethods
 {
-    public static IServiceCollection AddHealthCheckProvider(this IServiceCollection services)
+    public static IServiceCollection AddHealthCheck(this IServiceCollection services)
     {
-        return AddHealthCheckProvider(services, (o)=>{});
+        return AddHealthCheck(services, (o)=>{});
     }
 
-    public static IServiceCollection AddHealthCheckProvider(this IServiceCollection services, Action<HealthCheckProviderOptions> configuration)
+    public static IServiceCollection AddHealthCheck(this IServiceCollection services, Action<HealthCheckProviderOptions> configuration)
     {
         var options = HealthCheckProviderOptionsDefaults.Defaults(services);
         configuration(options);
@@ -19,18 +21,34 @@ public static class HealthCheckProviderExtensionMethods
             .AddHealthCheckProviderGuidanceFilters(options)
             .AddHealthCheckHealthCheckDataBuilders(options)
             .AddOtherRequirements(options)
-            .AddBmiProvider(options);
+            .AddCommandHandlers(options)
+            .AddBmiProvider(options)
+            .AddValidatorsFromAssemblyContaining<HealthCheckProvider>();
     }
 
         private static IServiceCollection AddOtherRequirements(this IServiceCollection services, HealthCheckProviderOptions options)
     {
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
         services.AddTransient<IHealthCheckDataBuilder,HealthCheckDataBuilder>();
         services.AddTransient<HealthCheckDataBuilderProvider>();
         services.AddTransient<BloodPressureProvider>();
         services.AddTransient<IBmiCalculatorProvider, BmiCalculatorProvider>();
-        services.AddTransient<IHealthCheckProvider, LoHealthCheckProvider>();
+        services.AddTransient<IHealthCheckProvider, HealthCheckProvider>();
         services.AddTransient<SmokingCalculator>();
+        
         return services;
+    }
+
+    private static IServiceCollection AddCommandHandlers(this IServiceCollection services, HealthCheckProviderOptions options)
+    {
+        foreach(var t in options.HealthCheckCommandHandlerOptions.Types)
+        {
+             services.AddMediatR(t);
+        }   
+
+        return services;    
+       
     }
 
     private static IServiceCollection AddBmiProvider(this IServiceCollection services, HealthCheckProviderOptions options)

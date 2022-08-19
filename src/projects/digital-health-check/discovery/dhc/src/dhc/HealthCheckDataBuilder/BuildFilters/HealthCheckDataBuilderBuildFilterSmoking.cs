@@ -4,7 +4,7 @@ public class HealthCheckDataBuilderBuildFilterSmoking: IHealthCheckDataBuilderBu
 {
     public  HealthCheckData Filter (HealthCheckData currentOutput, HealthCheckDataBuilderData inputData)
     {
-        return currentOutput with {SmokingData =  new HealthCheckSmokingData(
+        return currentOutput with {SmokingData =  new SmokingData(
             inputData.GetValue<int>("CigarettesPerDay"))};        
     }
 }

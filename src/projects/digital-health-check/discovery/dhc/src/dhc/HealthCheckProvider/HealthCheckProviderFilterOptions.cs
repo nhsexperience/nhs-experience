@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-
+using MediatR;
 namespace dhc;
 
 public class HealthCheckProviderFilterOptions: HealthCheckProviderTypeOptions<IHealthCheckFilter>
@@ -11,3 +11,14 @@ public class HealthCheckProviderFilterOptions: HealthCheckProviderTypeOptions<IH
             
         }
 }
+
+public class HealthCheckCommandHandlerOptions: HealthCheckProviderTypeOptions<object>
+{
+    public HealthCheckCommandHandlerOptions(
+        IServiceCollection serviceProvider,
+        HealthCheckProviderOptions baseOptions):base(serviceProvider, baseOptions)
+        {
+            
+        }
+}
+

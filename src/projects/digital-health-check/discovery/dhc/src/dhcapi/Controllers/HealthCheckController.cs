@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using dhc;
 using Swashbuckle.AspNetCore.Annotations;
-
+using MediatR;
 namespace dhcapi.Controllers;
 
 [ApiController]
@@ -9,31 +9,22 @@ namespace dhcapi.Controllers;
 [Route("/v{version:apiVersion}/[controller]")]
 public class HealthCheckController : ControllerBase
 {
-    private static readonly Counter _c_get_health_check =
-        Metrics.CreateCounter("health_check_api_get_health_check", "Just keeps on ticking");
-
-    private readonly ILogger<HealthCheckController> _logger;
-    private readonly  IHealthCheckProvider _healthCheckProvider;
-    private readonly IHealthCheckRequestDataConverterProvider _hcConverterProvider;
+    private readonly ISender _sender;
     public HealthCheckController(
-        ILogger<HealthCheckController> logger,
-        IHealthCheckProvider healthCheckProvider,
-        IHealthCheckRequestDataConverterProvider hcConverterProvider)
+        ISender sender)
     {
-        _logger = logger;
-        _healthCheckProvider = healthCheckProvider;
-        _hcConverterProvider = hcConverterProvider;
+        _sender = sender;
     }
 
     [Consumes("application/json")]
     [Produces("application/json")]
     [HttpPost(Name = "GetHealthCheck"), MapToApiVersion("0.1")]
-    public HealthCheckResult Get(
+    public async Task<ActionResult<HealthCheckResult>> Get(
           [FromBody]HealthCheckRequestData data)
     {
-        _c_get_health_check.Inc();
-        var healthCheckData = _hcConverterProvider.CovertToDhcHealthCheckData(data);
-        return _healthCheckProvider.Calculate(healthCheckData);
+        var healthCheckData = await _sender.Send(new ConvertHealthCheckCommand(data));
+        var hcResult = await _sender.Send(new CalculateHealthCheckCommand(healthCheckData));
+        return hcResult;
     }
 }
 

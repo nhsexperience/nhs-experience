@@ -10,7 +10,7 @@ public class HealthCheckFilterSmoking: IHealthCheckFilter
     public HealthCheckResult Update(HealthCheckResult current, HealthCheckData data)
     {
         var smoke = _calculator.Calculate(data.SmokingData.CigarettesPerDay);
-        return current with {Smoking = new Smoking(data.SmokingData.CigarettesPerDay, smoke)};
+        return current with {Smoking = new SmokingResult(data.SmokingData.CigarettesPerDay, smoke)};
     }
 }
 
