@@ -22,7 +22,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          file: "{context}/dhcapi/Dockerfile"
-          context: "{defaultContext}/src/projects/digital-health-check/discovery/dhc/src"
+          file: "{{context}}/dhcapi/Dockerfile"
+          context: "{{defaultContext}}/src/projects/digital-health-check/discovery/dhc/src"
           push: false
           tags: user/app:latest
