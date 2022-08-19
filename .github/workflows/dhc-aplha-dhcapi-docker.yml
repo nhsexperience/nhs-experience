@@ -1,12 +1,14 @@
 name: dhc api docker build
 
-on: [push]
+on:
+  push:
+    branches:
+      - latest
+    paths:
+      - 'src/projects/digital-health-check/discovery/dhc/src/dhcapi/**'
 
 jobs:
   docker:
-    defaults:
-      run:
-        working-directory: src/projects/digital-health-check/discovery/dhc/src/dhc  
     runs-on: ubuntu-latest
     steps:
       -

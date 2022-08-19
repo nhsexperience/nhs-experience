@@ -1,6 +1,11 @@
 name: dhc tests build and test
 
-on: [push]
+on:
+  push:
+    branches:
+      - latest
+    paths:
+      - 'src/projects/digital-health-check/discovery/dhc/src/**'
 
 jobs:
   build-dhc-tests:
