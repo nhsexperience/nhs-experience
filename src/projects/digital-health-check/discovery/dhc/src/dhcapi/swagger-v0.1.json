@@ -85,26 +85,86 @@
         "properties": {
           "ageDays": {
             "type": "integer",
+            "description": "Age in days",
             "format": "int32"
           },
           "massKg": {
             "type": "number",
+            "description": "Body Mass (weight) in kg",
             "format": "double"
           },
           "heightM": {
             "type": "number",
+            "description": "Height in meters",
+            "format": "double"
+          },
+          "waistM": {
+            "type": "number",
+            "description": "Waist in meters",
             "format": "double"
           },
           "systolic": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "description": "Required Systolic.",
+            "format": "int32"
           },
           "diastolic": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "description": "Required Systolic.",
+            "format": "int32"
+          },
+          "systolic2": {
+            "type": "integer",
+            "description": "Optional second Systloic.",
+            "format": "int32",
+            "nullable": true
+          },
+          "diastolic2": {
+            "type": "integer",
+            "description": "Optional second Diastolic.",
+            "format": "int32",
+            "nullable": true
+          },
+          "systolic3": {
+            "type": "integer",
+            "description": "Optional third Systloic.",
+            "format": "int32",
+            "nullable": true
+          },
+          "diastolic3": {
+            "type": "integer",
+            "description": "Optional third Diastolic.",
+            "format": "int32",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "description": "UK Postcode",
+            "nullable": true
+          },
+          "smokePerDay": {
+            "type": "integer",
+            "description": "Number smoked per day now.",
+            "format": "int32"
+          },
+          "usedToSmoke": {
+            "type": "boolean",
+            "description": "If used to smoke"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data for a Health Check.",
+        "example": {
+          "AgeDays": 14600,
+          "MassKg": 100,
+          "HeightM": 1.8,
+          "WaistM": 1,
+          "Systolic": 100,
+          "Diastolic": 70,
+          "Postcode": "SW1W 0NY",
+          "SmokePerDay": 0,
+          "UsedToSmoke": false
+        }
       },
       "HealthCheckResult": {
         "type": "object",
@@ -114,6 +174,94 @@
           },
           "bmi": {
             "$ref": "#/components/schemas/Bmi"
+          },
+          "smoking": {
+            "$ref": "#/components/schemas/SmokingResult"
+          },
+          "guidance": {
+            "$ref": "#/components/schemas/HealthCheckResultGuidance"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HealthCheckResultGuidance": {
+        "type": "object",
+        "properties": {
+          "bloodPressureGuidance": {
+            "$ref": "#/components/schemas/HealthCheckResultGuidanceBloodPressure"
+          },
+          "weightGuidance": {
+            "$ref": "#/components/schemas/HealthCheckResultGuidanceWeight"
+          },
+          "smokingGuidance": {
+            "$ref": "#/components/schemas/SmokingGuidance"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HealthCheckResultGuidanceBloodPressure": {
+        "type": "object",
+        "properties": {
+          "guidance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HealthCheckResultGuidanceWeight": {
+        "type": "object",
+        "properties": {
+          "guidance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SmokingData": {
+        "type": "object",
+        "properties": {
+          "cigarettesPerDay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usedToSmoke": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SmokingDescriptionEnum": {
+        "enum": [
+          "None",
+          "Light",
+          "Moderate",
+          "Heavy",
+          "VeryHeavy",
+          "ExSmoker",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "SmokingGuidance": {
+        "type": "object",
+        "properties": {
+          "guidance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SmokingResult": {
+        "type": "object",
+        "properties": {
+          "smokingData": {
+            "$ref": "#/components/schemas/SmokingData"
+          },
+          "description": {
+            "$ref": "#/components/schemas/SmokingDescriptionEnum"
           }
         },
         "additionalProperties": false
