@@ -1,6 +1,7 @@
 name: dhc api docker build
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - latest
