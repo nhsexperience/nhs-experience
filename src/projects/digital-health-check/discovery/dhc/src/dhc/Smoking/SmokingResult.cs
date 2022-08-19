@@ -1,3 +1,3 @@
 namespace dhc;
 
-public readonly record struct SmokingResult(int PerDay, SmokingDescriptionEnum Description);
+public readonly record struct SmokingResult(SmokingData SmokingData, SmokingDescriptionEnum Description);

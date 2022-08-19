@@ -15,17 +15,19 @@ public class HealthCheckGuidanceFilterSmoking: IHealthCheckGuidanceFilter
 
     public HealthCheckResult Update(HealthCheckResult current, HealthCheckData data)
     {
-        if(current.Smoking.PerDay>0)
-        {
-            var guidance = current.Guidance;
-            var newGuidance = guidance with {SmokingGuidance = new SmokingGuidance($"You smoke at a level of {current.Smoking.Description}, guidance is to think about looking into this.")};
-            _logger.LogDebug("Setting smoking guidance to {smokingGuidance}", newGuidance.WeightGuidance.Guidance);
-            return current with {Guidance = newGuidance};
-        }
-        else
-        {
-            return current;
-        }
+        var smokingGuidance =   
+            (current.Smoking.SmokingData) switch
+            {
+                (<=0, true) => new SmokingGuidance($"Great work at quitting smoking, keep it up!"),
+                (>0, _) => new SmokingGuidance($"You smoke at a level of {current.Smoking.Description}, guidance is to think about looking into this."),
+                _ => current.Guidance.SmokingGuidance
+            };
+        
+        var newGuidance = current.Guidance with {SmokingGuidance = smokingGuidance};
+         _logger.LogDebug("Setting smoking guidance to {smokingGuidance}", newGuidance.SmokingGuidance.Guidance);
+
+        return current with {Guidance = newGuidance};
+
         
     }
 }

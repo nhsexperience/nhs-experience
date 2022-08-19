@@ -8,5 +8,11 @@ public static class HealthCheckDataBuilderSmokingExtensions
         return builder;
     }    
 
+   public static IHealthCheckDataBuilder UsedToSmoke(this IHealthCheckDataBuilder builder, bool usedToSmoke)
+    {
+        builder.KeyValue("UsedToSmoke", usedToSmoke);
+        return builder;
+    }        
+
 }
 

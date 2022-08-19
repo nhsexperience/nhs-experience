@@ -24,6 +24,7 @@ public class HealthCheckRequestDataConverterProvider : IHealthCheckRequestDataCo
             .Waist(data.WaistM)
             .Postcode(data.Postcode)
             .CigarettesPerDay(data.SmokePerDay)
+            .UsedToSmoke(data.UsedToSmoke)
             .KeyValue("UtcDateTimeCreated", DateTime.UtcNow);
 
         var healthCheckData = builder.Build();
