@@ -31,6 +31,8 @@ github_username:  nhsexperience
 collections:
   projects: 
     output: false
+  projectlibs: 
+    output: false    
 
 
 # Build settings

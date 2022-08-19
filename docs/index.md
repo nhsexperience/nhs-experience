@@ -65,6 +65,22 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 {% endfor %} 
 </table>
 
+## Project Source
+
+<table>
+<tr><th>Name</th></tr>
+
+{% for project in site.projectlibs %}
+<tr>
+<td>
+    <a href="{{ site.gh_edit_repository }}/tree/{{ site.gh_edit_branch }}/{{project.link}}">
+      {{ project.name }}
+    </a>
+</td>
+</tr>
+{% endfor %} 
+</table>
+
 ---
 # Posts
 <ul>
