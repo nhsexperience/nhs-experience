@@ -23,6 +23,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: ./src/projects/digital-health-check/discovery/dhc/src/dhcapi/Dockerfile
-          context: ./src/projects/digital-health-check/discovery/dhc/src/
+          context: ./src/projects/digital-health-check/discovery/dhc/src
           push: false
           tags: user/app:latest
