@@ -15,7 +15,7 @@ on:
       - 'src/projects/digital-health-check/discovery/dhc/src/dhcapi/**'
 
 jobs:
-  build-dhc-library:
+  build:
     defaults:
       run:
         working-directory: src/projects/digital-health-check/discovery/dhc/src/dhcapi
