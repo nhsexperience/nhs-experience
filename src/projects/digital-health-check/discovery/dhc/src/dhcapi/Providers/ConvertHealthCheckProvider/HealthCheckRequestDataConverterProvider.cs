@@ -4,9 +4,9 @@ namespace dhcapi;
 
 public class HealthCheckRequestDataConverterProvider : IHealthCheckRequestDataConverterProvider
 {
-    private readonly HealthCheckDataBuilderProvider _hcBuilderProvider;
+    private readonly IHealthCheckDataBuilderProvider _hcBuilderProvider;
 
-    public HealthCheckRequestDataConverterProvider(HealthCheckDataBuilderProvider hcBuilderProvider)
+    public HealthCheckRequestDataConverterProvider(IHealthCheckDataBuilderProvider hcBuilderProvider)
     {
         _hcBuilderProvider = hcBuilderProvider;
     }

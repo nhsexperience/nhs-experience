@@ -31,7 +31,7 @@ public static class HealthCheckProviderExtensionMethods
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
         services.AddTransient<IHealthCheckDataBuilder,HealthCheckDataBuilder>();
-        services.AddTransient<HealthCheckDataBuilderProvider>();
+        services.AddTransient<IHealthCheckDataBuilderProvider, HealthCheckDataBuilderProvider>();
         services.AddTransient<BloodPressureProvider>();
         services.AddTransient<IBmiCalculatorProvider, BmiCalculatorProvider>();
         services.AddTransient<IHealthCheckProvider, HealthCheckProvider>();
