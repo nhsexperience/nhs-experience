@@ -32,4 +32,4 @@ jobs:
           file: ./src/projects/digital-health-check/discovery/dhc/src/dhcapi/Dockerfile
           context: ./src/projects/digital-health-check/discovery/dhc/src
           push: true
-          tags: user/app:latest
+          tags: rossbugginsnhs/nhs-dhc:latest
