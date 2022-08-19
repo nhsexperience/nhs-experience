@@ -68,13 +68,18 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 ## Project Source
 
 <table>
-<tr><th>Name</th><th>DockerHub</th><th>Docker Build</th></tr>
+<tr><th>Name</th><th>Try It</th><th>DockerHub</th><th>Docker Build</th></tr>
 
 {% for project in site.projectlibs %}
 <tr>
 <td>
     <a href="{{ site.gh_edit_repository }}/tree/{{ site.gh_edit_branch }}/{{project.link}}">
       {{ project.name }}
+    </a>
+</td>
+<td>
+    <a href="{{ project.deployedlink }}">
+      {{ project.deployedlink }}
     </a>
 </td>
 <td>
@@ -91,7 +96,7 @@ last_modified_date: Jul 15 2022 at 03:39 PM
 </table>
 
 
-
+deployedlink
   
 ---
 # Posts
