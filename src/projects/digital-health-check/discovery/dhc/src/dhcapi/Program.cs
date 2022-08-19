@@ -38,10 +38,11 @@ builder.Services.AddEndpointsApiExplorer()
 .AddHealthChecks()
     .AddCheck<SampleHealthCheck>("Sample")
     .ForwardToPrometheus();
+
 builder.Services.AddHealthCheck((config) =>
 {
     config.Services.AddValidatorsFromAssemblyContaining<ConvertHealthCheckCommandHandler>();   
-    config.HealthCheckCommandHandlerOptions.Add<ConvertHealthCheckCommandHandler>();
+    config.Services.AddMediatR(typeof(ConvertHealthCheckCommandHandler));
     config.Services.AddTransient<IHealthCheckRequestDataConverterProvider, HealthCheckRequestDataConverterProvider>();
     //config.SetWebBpProvider(builder.Configuration);
 });

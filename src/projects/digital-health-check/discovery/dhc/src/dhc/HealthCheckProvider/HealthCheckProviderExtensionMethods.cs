@@ -21,8 +21,8 @@ public static class HealthCheckProviderExtensionMethods
             .AddHealthCheckProviderGuidanceFilters(options)
             .AddHealthCheckHealthCheckDataBuilders(options)
             .AddOtherRequirements(options)
-            .AddCommandHandlers(options)
             .AddBmiProvider(options)
+            .AddMediatR(typeof(HealthCheckProvider))
             .AddValidatorsFromAssemblyContaining<HealthCheckProvider>();
     }
 
@@ -40,16 +40,7 @@ public static class HealthCheckProviderExtensionMethods
         return services;
     }
 
-    private static IServiceCollection AddCommandHandlers(this IServiceCollection services, HealthCheckProviderOptions options)
-    {
-        foreach(var t in options.HealthCheckCommandHandlerOptions.Types)
-        {
-             services.AddMediatR(t);
-        }   
-
-        return services;    
-       
-    }
+ 
 
     private static IServiceCollection AddBmiProvider(this IServiceCollection services, HealthCheckProviderOptions options)
     {

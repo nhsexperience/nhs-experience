@@ -14,7 +14,6 @@ public class HealthCheckProviderOptions
         Filters = new HealthCheckProviderFilterOptions(services, this);
         GuidanceFilters = new HealthCheckProviderGuidanceFilterOptions(services, this);
         HealthCheckDataBuilders = new HealthCheckDataBuilderOptions(services, this);
-        HealthCheckCommandHandlerOptions = new HealthCheckCommandHandlerOptions(services, this);
     }
 
     public void SetBmiProvider<T>() where T : IBmiCalculatorProvider
@@ -28,5 +27,4 @@ public class HealthCheckProviderOptions
     public HealthCheckProviderGuidanceFilterOptions GuidanceFilters{get; init;}
     public HealthCheckDataBuilderOptions HealthCheckDataBuilders{get;init;}
 
-    public HealthCheckCommandHandlerOptions HealthCheckCommandHandlerOptions{get;init;}
 }

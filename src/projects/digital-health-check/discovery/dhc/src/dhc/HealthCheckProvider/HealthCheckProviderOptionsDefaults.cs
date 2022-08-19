@@ -17,8 +17,7 @@ public static class HealthCheckProviderOptionsDefaults
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterDemographics>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterBloodPressure>();
         options.HealthCheckDataBuilders.Add<HealthCheckDataBuilderBuildFilterSmoking>();
-        options.HealthCheckCommandHandlerOptions.Add<CalculateHealthCheckCommandHandler>();
-        options.HealthCheckCommandHandlerOptions.Add<CalculateHealthCheckCommandHandledNotificationHandler1>();
+   
         options.SetBmiProvider<BmiCalculatorProvider>();
         return options;
     }
