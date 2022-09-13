@@ -49,6 +49,8 @@ Brief summaries of the [Existing systems reviews]({% link digital-health-check/e
 
 # Technical Areas Identified
 
+
+
 | Area No | Area to investigate                               | External Dependencies | Estimated Effort for Delta | Summary of Now                                                                            | Ideal Situation                                                                                                                                                                                                      | Delta between now and Ideal                                                                                                                                                                                                                             |
 | ------- | ------------------------------------------------- | --------------------- | -------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1       | Digital Health Check code library                 | No                    | M                          | Southwark code base can be used as a good starting point                                  | A standard library available for providing a standard calculation for a health check                                                                                                                                 | Utilizing the existing code base for calculations and as a testing comparison for an initial code library. Not a case of just redistributing, there is a requirement for designing a library following common patterns and best practices.              |
@@ -62,6 +64,58 @@ Brief summaries of the [Existing systems reviews]({% link digital-health-check/e
 | 9       | Export to GP integration                          | Yes                   | XL                         | Exists with some providers                                                                | Results of DHC automatically added to a patients GP data record.                                                                                                                                                     | Investigate the various ways existing data can be exported, with an aimed understanding of short, medium and long term options. Decide where the south of truth should be                                                                               |
 | 10      | Blood Test Labs / appointment booking integration | No                    | XL                         | Exists in some form                                                                       | Integration to send requests for home blood kits, and to retrieve results from any lab. Book appointments with GPs/pharmacies/other providers for face to face testing, and API to receive results directly.         | Investigate the different providers and ways of integration                                                                                                                                                                                             |
 | 11      | Output guidance - localized customization         | Yes                   | L                          | Basic directory of services                                                               | A GP may want to advertise service x after a health check, a ccg might want to advertise y                                                                                                                           | Investigate what exists in more details & how to manage at multiple levels                                                                                                                                                                              |
+
+
+
+### Component Interaction Process
+
+```mermaid
+sequenceDiagram
+actor HCP
+actor Citizen
+participant MgmtUI as Management UP (7)
+participant Invite as Eligibility and Invites (4)
+participant UI as UI (6)
+participant NHSLogin as NHSLogin (5)
+participant StateMgmt as State Management (3)
+participant PreLoad as Data Import (8)
+participant DHCProcessor as DHC (1,2)
+participant ExternalIntegration as External Integration (9)
+participant GP as GP (9)
+participant Guidance as Guidance (11)
+HCP->>MgmtUI:Configure preferences
+Invite->>Invite: Load Eligible
+Invite->>Citizen: Invite
+Citizen->>UI: Follow Invite
+activate UI
+UI->>NHSLogin: Redirect to Login
+NHSLogin->>Citizen: Request Login
+Citizen->>NHSLogin: Login
+NHSLogin->>UI: Redirect
+deactivate UI
+Citizen->>UI: Start Health Check
+UI->>StateMgmt: Start Health Check
+StateMgmt->>PreLoad: Get data to preload
+StateMgmt->>StateMgmt: Preload imported data
+activate UI
+loop For all available observations
+    Citizen->>UI: Enter observations
+    UI->>StateMgmt: Update State
+end
+Citizen->>UI: Complete Health Check
+UI->>StateMgmt: Complete Health Check
+StateMgmt->>DHCProcessor: Calculate Health Check
+loop For all external resources
+    DHCProcessor->>DHCProcessor: Get results
+end
+DHCProcessor->> StateMgmt: Completed Health Check
+StateMgmt->>UI: Completed
+StateMgmt->>ExternalIntegration: Completed
+UI->>Citizen: Show Results
+deactivate UI
+ExternalIntegration->>GP: Send results
+UI->>Guidance: Get Guidance
+```
 
 ### Component Interaction Considerations
 
