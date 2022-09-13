@@ -15,7 +15,19 @@ nav_order: 20
 ## Pilot Review
 [Southwark Staging Area DHC UI](https://stagingsouthwarkdhctest.qxlva.io) can be accessed publicly for UI review.
 
-
+### Summary of Code Review
+- Razor UI Components for each UI stage
+- Core calculation code base provides an indication of what is required to calculate a Health Check result
+- Core code is not easily extensible to changes or additions in the process
+- UI and process are tightly coupled - should be separated 
+- Areas of code use non standard dotnet patterns, should be corrected
+- State and processing should be separated out from the Web App process, should utilise command bus and eventing
+- Requires version upgrades to frameworks and dependencies
+- Invite management is manual process 
+- No use of NHS Login for proof of identity, custom urls used instead
+- No direct integration to GPs
+- No integration with Labs or Appointment management
+- No CMS for UI customisation, all hard coded values
 
 ## Background 
 
