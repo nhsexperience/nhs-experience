@@ -73,7 +73,7 @@ Brief summaries of the [Existing systems reviews]({% link digital-health-check/e
 sequenceDiagram
     actor HCP
     actor Citizen
-    participant MgmtUI as Management UP (7)
+    participant MgmtUI as Management UI (7)
     participant Invite as Eligibility and Invites (4)
     participant UI as UI (6)
     participant NHSLogin as NHSLogin (5)
