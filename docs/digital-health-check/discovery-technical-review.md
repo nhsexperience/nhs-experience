@@ -193,7 +193,7 @@ A build alpha could aim to making this available in a open source digital form (
 The perceived complexities for a Digital health Check come from where the "Data In" will come from, and where the "Data Out" will go. 
 
 
-> **Area 01** 
+> **Area 01 Summary** 
 > 
 > Idempotent Library for Calculating DHC results from provided prepared data
 
@@ -230,7 +230,7 @@ FHIR has a key place in inter health system communication, but it is likely to b
 An outline of [Health Check Data]({% link digital-health-check/architecture/data.md%}) expands this further.
 
 
-> **Area  02** 
+> **Area  02 Summary** 
 > 
 > API for consuming observation and demographic data, preparing data, and calculating DHC result 
 >
@@ -270,7 +270,7 @@ sequenceDiagram
 
 ```
 
-> **Area 03** 
+> **Area 03 Summary** 
 > 
 > API platform for managing state of a "long lived" Digital Health Check process
 
@@ -288,7 +288,7 @@ For example, a region may want to default to send by default 10 Health Check inv
 Any management system that requires a health professional to use, should utilise existing identity providers so there is not a requirement of yet another login. It is suggested that CIS2 (with existing usernames and smartcards) is the preferred option.
 
 
-> **Area 04** 
+> **Area 04 Summary** 
 > 
 > Platform for managing selection of eligability and digital invites.
 
@@ -300,7 +300,7 @@ With the possibility of this programme requiring both HCP and Citizen login, a s
 
 
 
-> **Area 05** 
+> **Area 05 Summary** 
 > 
 > Platform for allowing logins to the UI componenent from multiple IdPs (NHS Login and CIS2).
 
@@ -324,7 +324,7 @@ There is the [NHS Wellness and Prevention Alpha](https://wp.nhsei.xyz), which ha
 
 There should also be thought into the customising of the User Interface – if a region wants a varied UI – do they create their own and utilised the central APIs, or does the centrally provided UI allow some level of customisation depending on region?
 
-> **Area 06** 
+> **Area 06 Summary** 
 > 
 > Citizen focused UI for completing health checks.
 
@@ -333,7 +333,7 @@ In addition to citizens requiring a UI for completing a Heath check, there is a 
 
 Again, like the citizen user interface, ideally this would be a wrapper over a fully API driven application, allowing ease of integration with other systems, such as GP specific platforms and Business Intelligence platforms.
  
-> **Area 07** 
+> **Area 07 Summary** 
 > 
 > HCP focussed UI for inviten management and reporting of Health Checks.
 
@@ -344,7 +344,7 @@ With a focus on GP systems, this itself is not simple. There is a separate revie
 
 Pre loading of data from a citizens medical record into a digital health check is not just a technical question, but also a process one. If the technical hurdles are overcome, what data should be loaded? Data from wearables? Data from a blood test last week, or last month? Height and weight?
 
-> **Area 08** 
+> **Area 08 Summary** 
 > 
 > Pre loading of data into health check from existing medical record data.
 
@@ -357,7 +357,7 @@ As with reading data from GP IT systems, writing results to them is also not sim
 The technical challenges of centrally writing directly into GP IT systems, there should be consideration into the difference between providing results to a GP through a separate management system vs directly exporting them – how this could be applied to short, medium and long term plans.
 
 
-> **Area 09** 
+> **Area 09 Summary** 
 > 
 > Supplying GPs with results from Digital Health Checks.
 
@@ -370,7 +370,7 @@ The on going management t of this also needs to be considered, should regions be
 
 There needs to be identified a pool of labs that would likely be used, and then further investigation into the integration that is available, both for ordering of kits and getting results.
 
-> **Area 10** 
+> **Area 10 Summary** 
 > 
 > Ordering of test at home kits and collecting of status and results
 
@@ -379,7 +379,9 @@ There needs to be identified a pool of labs that would likely be used, and then 
 ## 11. Output guidance & local customization
 Once a health check is completed, there is a requirement to provide next step guidance. Thought should be given to how localised this guidance needs to be. Should a GP be able to have the ability to signpost those at their surgery that have a high blood pressure to a local clinic or service?
 
-> **Area 11** 
+This possible requirement could lead to a "Multi-tenent" style solution, where different areas and regions appear to be independantly managed, but are run on the same underlying platform.
+
+> **Area 11 Summary** 
 > 
 > Customising output guidance based on local requirements.
 
@@ -397,7 +399,17 @@ For a complete "ideal" end to end Digital Health Check, there are challenges to 
 
 Each of the areas identified can be though of as a Feature (in an Agile Framework). With a benefit hypothesis process undertaken for each of these, the proposed measurable benefit to the citizen and the organisation can be discovered. This can then shape the next phases, through prioritisation and feature estimation.
 
+Initial requirements for "digitizing" a non digtial project often start with a desire to duplicate the existing process, with a belief this will be the easiest option. It is often quite the opposite, and concideration should be given to how digital can shape and refine an existing process. This often brings benefit to both the end user and the organisation.
 
+For an NHS Digital Health Check, a question that could be asked is *"Now the process is Digtal, should the Health Check be open to all? (as apposed to 40+)"*. A benefit to the citizen could be improved health through better prevention from more frequent self testing. This would also lead to more data being collected centrally about invidividials on a more frequent basis. This can then lead to benefits for the organisation through advanced prevention by not only looking at the situation for a citizen now, but by comparing results easily to previous Health Checks, utilising detection of unqiue trends for each citizen individually.
+
+******* Improving the now............ *******
+Citizens
+Us Data
+
+
+
+# Appendix
 
 ## Appendix 1: Additional Technical Considerations
 
