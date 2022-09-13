@@ -7,12 +7,6 @@ grand_parent: NHS Digital Health Check
 nav_order: 1.1
 ---
 
-> ⚠️ **Warning**
->  
-> **Draft Documents**: May not represent real world scenarios, may not be fully accurate or complete.
->
-> Please contact the author for more information.
-
 <details open markdown="block">
   <summary>
     Table of contents
@@ -22,7 +16,7 @@ nav_order: 1.1
 {:toc}
 </details>
 
-## Summary
+# Summary
 
 The Discovery phase (Government Agile Framework) focusses on identifying constraints that may impact delivery of a service.  This report explores the possible technological constraints for delivery of a Digital NHS Health Check. 
 
@@ -300,7 +294,9 @@ Any management system that requires a health professional to use, should utilise
 
 
 ## 05. Authorisation   
-With NHS Login for citizens, and CIS2 for health care professional’s (and even nhs.net for wider NHS staff) all supporting OpenId – there is no need for any new platform to need its own Identity. With the possibility of this programme requiring both HCP and Citizen login, a single authorisation platform should support both of the NHS OpenID IdPs, with it being used to protect the API resources directly.
+With NHS Login for citizens, and CIS2 for health care professional’s (and even nhs.net for wider NHS staff) all supporting OpenId – there is no need for any new platform to need its own Identity. 
+
+With the possibility of this programme requiring both HCP and Citizen login, a single authorisation platform should support both of the NHS OpenID IdPs, with it being used to protect the API resources directly.
 
 
 
@@ -311,9 +307,11 @@ With NHS Login for citizens, and CIS2 for health care professional’s (and even
 
 ## 06. User Interface
 Any digital health check system should be totally platform agnostic. It should work in a web browser or mobile or desktop and also through native apps. This can be supported through an API driven platform.
-There are a number of existing user interfaces that follow the pattern that is needed for a Digital Health Check. There is the [NHS Wellness and Prevention Alpha](https://wp.nhsei.xyz), which has a full responsive UI and also the [Southwark DHC UI](https://stagingsouthwarkdhctest.qxlva.io) which follows the standard GDS layout (with asp dotnet core Blazor components).
+There are a number of existing user interfaces that follow the pattern that is needed for a Digital Health Check. 
 
-> *UI & Integration*
+There is the [NHS Wellness and Prevention Alpha](https://wp.nhsei.xyz), which has a fully responsive UI and also the [Southwark DHC UI](https://stagingsouthwarkdhctest.qxlva.io) which follows the standard GDS layout (with asp dotnet core Blazor components).
+
+> ### UI & Integration
 > 
 > Many NHS digital programme requirements start with statements such as "must integrate with NHS App", or " must integrate with NHS.uk". 
 > 
@@ -324,7 +322,7 @@ There are a number of existing user interfaces that follow the pattern that is n
 > Digital solutions **MUST** be developed with a clear API first focus, that can then be integrated with the NHS app, or any other app (or web site) that may be specified in the future.
 
 
-There should also be thought into the customising of the User Interface – if a region wants a varied UI – do they create there own and utilised the central APIs, or does the centrally provided UI allow some level of customisation depending on region?
+There should also be thought into the customising of the User Interface – if a region wants a varied UI – do they create their own and utilised the central APIs, or does the centrally provided UI allow some level of customisation depending on region?
 
 > **Area 06** 
 > 
@@ -332,6 +330,7 @@ There should also be thought into the customising of the User Interface – if a
 
 ## 07. Health Care Professional UI
 In addition to citizens requiring a UI for completing a Heath check, there is a requirement for HCP to have a UI. This could be used for both ends of the process – both for invite management and also reporting and MI needs.
+
 Again, like the citizen user interface, ideally this would be a wrapper over a fully API driven application, allowing ease of integration with other systems, such as GP specific platforms and Business Intelligence platforms.
  
 > **Area 07** 
@@ -340,7 +339,9 @@ Again, like the citizen user interface, ideally this would be a wrapper over a f
 
 ## 08. Pre loading data service
 The lack of a single source of truth for data inside the NHS leads to problems when looking for data to consume. Can data be loaded from a GP? A Local trust PAS? From central Spine? From NHS Account? Should data be gathered from citizens own collected wearables data?
+
 With a focus on GP systems, this itself is not simple. There is a separate review of [GP integration options](% link digital-health-check/gp-integration.md %) that goes into more detail.
+
 Pre loading of data from a citizens medical record into a digital health check is not just a technical question, but also a process one. If the technical hurdles are overcome, what data should be loaded? Data from wearables? Data from a blood test last week, or last month? Height and weight?
 
 > **Area 08** 
@@ -350,7 +351,9 @@ Pre loading of data from a citizens medical record into a digital health check i
 
 ## 09. Export to GP
 Technical solutions for providing health check results not only should address the technical challenges, but also over what control is given GPs over the consumption of the data. If a fully automatic system was in place centrally, there could be cases where some GPs do don’t want all results to be automatically added to a patients record.
+
 As with reading data from GP IT systems, writing results to them is also not simple. There is a separate review of GP integration options [GP integration options](% link digital-health-check/gp-integration.md %) that goes into more detail.
+
 The technical challenges of centrally writing directly into GP IT systems, there should be consideration into the difference between providing results to a GP through a separate management system vs directly exporting them – how this could be applied to short, medium and long term plans.
 
 
@@ -361,7 +364,10 @@ The technical challenges of centrally writing directly into GP IT systems, there
 
 
 ## 10. Blood Test Labs integration
-The level of integration available with labs providing testing will vary with the level of customisation required. It may be different regions require different labs, and some may use centrally pooled resources. The on going management t of this also needs to be considered, should regions be able to dynamically change the lab in use? There is also a question of if the service could be opened to people outside of the standard age range, and give the option of payment for ordering a test at home lab kit.
+The level of integration available with labs providing testing will vary with the level of customisation required. It may be different regions require different labs, and some may use centrally pooled resources. 
+
+The on going management t of this also needs to be considered, should regions be able to dynamically change the lab in use? There is also a question of if the service could be opened to people outside of the standard age range, and give the option of payment for ordering a test at home lab kit.
+
 There needs to be identified a pool of labs that would likely be used, and then further investigation into the integration that is available, both for ordering of kits and getting results.
 
 > **Area 10** 
@@ -385,25 +391,25 @@ Once a health check is completed, there is a requirement to provide next step gu
 
 ## Appendix 1: Additional Technical Considerations
 
-- Storage Platform
-- Inter service communication / event bus / command handlers etc
-- 
-# Extensibility
+### Extensibility
 - Events and APIs
-- API first, use swagggerhub for api design and bolilerplate 
-- EoL and Versioning
+- API first, use swagggerhub for api design and bolilerplate code generation 
+- EoL and Semantic Versioning
 
-# Deployability
+### Deployability
 - Docker build and deploy files
 - Kubernetes and helm charts
 - Local development, vscode remote container docker compose config - containing all required resources.
 
-# Capacity and Scale Discovery
-Should consider:
+### Capacity and Scale Discovery
+- Inter service communication / event bus / command handlers etc
+- Storage Platform
+  
+#### Should consider
+
 - Find out how many health checks per day
 - How many NHS Logins (total/active)
 - How much use if used as invite only vs accessible to all
-
 
 ## Appendix 2: Example Microservice Design for DHC 
 
