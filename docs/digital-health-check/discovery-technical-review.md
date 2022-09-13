@@ -26,7 +26,7 @@ The technical requirements for the core of Digital Health Check are not novel, o
 
 The challenges that will be faced are likely to be with the integration options with existing providers of required data; providers of required external services, and those that require to be notified of Health Check results.
 
-From the research (of avaliable material) undertaken in discovery, there is no existing platform that currently provides answers to all of the identified areas. If this programme is put to tender, it is advised that any supplier should be able to provide sound technical explanation to how each of these areas are approached.
+From the research (of available material) undertaken in discovery, there is no existing platform that currently provides answers to all of the identified areas. If this programme is put to tender, it is advised that any supplier should be able to provide sound technical explanation to how each of these areas are approached.
 
 The next stage of this programme could include an Alpha phase build - expanding on ideas from existing projects, and exploring areas that have not been addressed in previous work.
 
@@ -39,7 +39,7 @@ The scope for this discovery has been to look at how the current NHS Health Chec
 - Core "Calculation" available from previous work
 - [GP Integration is not easy]({% link digital-health-check/gp-integration.md%})
 
-### Proposed Targeted Outcomes for an Aplha Phase
+### Proposed Targeted Outcomes for an Alpha Phase
 - Not expecting a full end to end PoC from an alpha
 - Investigate and develop possible solutions for each area identified
 - Beta can then take the best options in each area to combine into an end to end Beta solution
@@ -49,12 +49,12 @@ Brief summaries of the [Existing systems reviews]({% link digital-health-check/e
 
 # Technical Areas Identified
 
-| Area No | Area to investigate                               | External Depenancies | Summary of Now                                                                            | Ideal Situation                                                                                                                                                                                                       | Delta between now and Ideal                                                                                                                                                                                                                             |
+| Area No | Area to investigate                               | External Dependencies | Summary of Now                                                                            | Ideal Situation                                                                                                                                                                                                       | Delta between now and Ideal                                                                                                                                                                                                                             |
 | ------- | ------------------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1       | Digital Health Check code library                 | No                   | Southwark code base can be used as a good starting point                                  | A standard library available for providing a standard calculation for a health check                                                                                                                                  | Utilising the existing code base for calculations and as a testing comparison for an initial code library. Not a case of just redistributing, there is a requirement for designing a library following common patterns and best practises.              |
+| 1       | Digital Health Check code library                 | No                   | Southwark code base can be used as a good starting point                                  | A standard library available for providing a standard calculation for a health check                                                                                                                                  | Utilizing the existing code base for calculations and as a testing comparison for an initial code library. Not a case of just redistributing, there is a requirement for designing a library following common patterns and best practices.              |
 | 2       | API for DHC tool                                  | No                   | Doesn’t exist                                                                             | An reusable RESTful API that consumes raw observation and demographic data and provides a health check result                                                                                                         | PoC API for DHC and supporting required APIs                                                                                                                                                                                                            |
 | 3       | API for DHC state management                      | No                   | Doesn’t exist                                                                             | An API platform for managing the ongoing state required for completing a health check over a period of time                                                                                                           | PoC API for managing DHC State                                                                                                                                                                                                                          |
-| 4       | Cohorting / Invite Service                        | Yes                  | Exists for specific systems, with bespoke identity providers. (Exists in GP systems)      | The automatic invititaion of those eligible for a health check. With central provision of the service, but with regional and local management - ie GPs pausing invites or changing frequence and amplitude of invites | Investigate the various ways existing cohort data can be accessed, and how management of invites can be provisioned centrally. PoC API for invite management and how it would work with OHID DHC state management, and standard NHS Identity Providers. |
+| 4       | Eligibility & Invite Service                        | Yes                  | Exists for specific systems, with bespoke identity providers. (Exists in GP systems)      | The automatic invitation of those eligible for a health check. With central provision of the service, but with regional and local management - ie GPs pausing invites or changing frequency and amplitude of invites | Investigate the various ways existing cohort data can be accessed, and how management of invites can be provisioned centrally. PoC API for invite management and how it would work with OHID DHC state management, and standard NHS Identity Providers. |
 | 5       | Authorisation                                     | Yes                  | IdP’s exists, needs api Auth platform. Existing systems use their own identity platforms. | Citizens able to use NHS Login and Health Care Professionals able to use CIS2 for authentication (OpenId) and a standard API authorisation management using OAuth2                                                    | PoC for single Authorisation platform using both NHSLogin and CIS2 as IdPs                                                                                                                                                                              |
 | 6       | End user UI                                       | No                   | Exists in various forms                                                                   | Reactive UI that can be used in mobile or desktop, for complete end to end DHC completion                                                                                                                             | UI that allows configuration for user research of best layout. Existing and previous platforms have UI's that can be adapted for User Research and development                                                                                          |
 | 7       | Health Care Professional UI                       | No                   | Doesn’t exist                                                                             | A UI for HCPs to manage invites to DHCs                                                                                                                                                                               | PoC UI for invite management                                                                                                                                                                                                                            |
@@ -103,13 +103,13 @@ C4Context
             System(appointmentapi, "Appointment booking integration ")
         }            
 
-        Boundary(inviteandcohort, "Inivite and Elegability", "System")
+        Boundary(inviteandcohort, "Invite and Eligibility", "System")
         {
             Boundary(b0, "Invitation", "System") {
                 System(invitemanagement, "Invite Management")
             }
 
-            Boundary(cohorting, "Cohorting", "System") {  
+            Boundary(cohorting, "Eligibility", "System") {  
                 System(identifycitzens, "Identify Citizens")  
             }
         }
@@ -290,7 +290,7 @@ Any management system that requires a health professional to use, should utilise
 
 > **Area 04 Summary** 
 > 
-> Platform for managing selection of eligability and digital invites.
+> Platform for managing selection of eligibility and digital invites.
 
 
 ## 05. Authorisation   
@@ -302,7 +302,7 @@ With the possibility of this programme requiring both HCP and Citizen login, a s
 
 > **Area 05 Summary** 
 > 
-> Platform for allowing logins to the UI componenent from multiple IdPs (NHS Login and CIS2).
+> Platform for allowing logins to the UI component from multiple IdPs (NHS Login and CIS2).
 
 
 ## 06. User Interface
@@ -315,9 +315,9 @@ There is the [NHS Wellness and Prevention Alpha](https://wp.nhsei.xyz), which ha
 > 
 > Many NHS digital programme requirements start with statements such as "must integrate with NHS App", or " must integrate with NHS.uk". 
 > 
-> Requirements such of this can be appreciated, however architectural and development work should think to take this furthur.
+> Requirements such of this can be appreciated, however architectural and development work should think to take this further.
 > 
-> Focus on digital solutions should not just be on where they envisaged to be used right now. The NHS App in it's current form will not be avaliable for ever; neither will the NHS.UK web site. 
+> Focus on digital solutions should not just be on where they envisaged to be used right now. The NHS App in it's current form will not be available for ever; neither will the NHS.UK web site. 
 > 
 > Digital solutions **MUST** be developed with a clear API first focus, that can then be integrated with the NHS app, or any other app (or web site) that may be specified in the future.
 
@@ -335,7 +335,7 @@ Again, like the citizen user interface, ideally this would be a wrapper over a f
  
 > **Area 07 Summary** 
 > 
-> HCP focussed UI for inviten management and reporting of Health Checks.
+> HCP focussed UI for invitation management and reporting of Health Checks.
 
 ## 08. Pre loading data service
 The lack of a single source of truth for data inside the NHS leads to problems when looking for data to consume. Can data be loaded from a GP? A Local trust PAS? From central Spine? From NHS Account? Should data be gathered from citizens own collected wearables data?
@@ -379,13 +379,13 @@ There needs to be identified a pool of labs that would likely be used, and then 
 ## 11. Output guidance & local customization
 Once a health check is completed, there is a requirement to provide next step guidance. Thought should be given to how localised this guidance needs to be. Should a GP be able to have the ability to signpost those at their surgery that have a high blood pressure to a local clinic or service?
 
-This possible requirement could lead to a "Multi-tenent" style solution, where different areas and regions appear to be independantly managed, but are run on the same underlying platform.
+This possible requirement could lead to a "Multi-tenant" style solution, where different areas and regions appear to be independently managed, but are run on the same underlying platform.
 
 > **Area 11 Summary** 
 > 
 > Customising output guidance based on local requirements.
 
-# Conculsion
+# Conclusion
 
 This report has identified key areas to aid in the planning of the technical implementation for a Digital NHS Health Check. If the chosen way forward considers each of these areas, it can then be developed in an iterative and incremental way; helping to future proof itself for change by having extensibility and interoperability at the core of its processes.
 
@@ -393,20 +393,15 @@ Integration with existing NHS systems (and wider health provider platforms) is n
 
 There has been extensive work in previous central programmes (as well as local and commercial offerings) that align with the core aims of the NHS Digital Health Check. Building upon these can provide NHS Digital Health Checks from a central platform that can be managed and configured locally.
 
-Existing projects do already have answers to some identified technical areas, but scoped for a local region only. The requirement for these is how best scale this to work at a national level, but keeping localised management of these features. 
+Existing projects do already have answers to some identified technical areas, but scoped for a local region only. The requirement for these is how best scale this to work at a national level, but keeping localized management of these features. 
 
 For a complete "ideal" end to end Digital Health Check, there are challenges to be overcome (mainly around integration). However, that should not stop the Digital Health Check from being viewed as a viable programme. The areas identified can be approached in an Agile way, with both iterative and incremental advances always aiming to deliver benefit. With clear architecture for an extensible solution, a technical solution can be in place to allow the core components of Digital Health Check to be built upon as integration options allow.
 
 Each of the areas identified can be though of as a Feature (in an Agile Framework). With a benefit hypothesis process undertaken for each of these, the proposed measurable benefit to the citizen and the organisation can be discovered. This can then shape the next phases, through prioritisation and feature estimation.
 
-Initial requirements for "digitizing" a non digtial project often start with a desire to duplicate the existing process, with a belief this will be the easiest option. It is often quite the opposite, and concideration should be given to how digital can shape and refine an existing process. This often brings benefit to both the end user and the organisation.
+Initial requirements for "digitizing" a non digital project often start with a desire to duplicate the existing process, with a belief this will be the easiest option. It is often quite the opposite, and consideration should be given to how digital can shape and refine an existing process. This often brings benefit to both the end user and the organization.
 
-For an NHS Digital Health Check, a question that could be asked is *"Now the process is Digtal, should the Health Check be open to all? (as apposed to 40+)"*. A benefit to the citizen could be improved health through better prevention from more frequent self testing. This would also lead to more data being collected centrally about invidividials on a more frequent basis. This can then lead to benefits for the organisation through advanced prevention by not only looking at the situation for a citizen now, but by comparing results easily to previous Health Checks, utilising detection of unqiue trends for each citizen individually.
-
-******* Improving the now............ *******
-Citizens
-Us Data
-
+For an NHS Digital Health Check, a question that could be asked is *"Now the process is Digital, should the Health Check be open to all? (as opposed to 40+)"*. A benefit to the citizen could be improved health through better prevention from more frequent self testing. This would also lead to more data being collected centrally about individuals on a more frequent basis. This can then lead to benefits for the organisation through advanced prevention by not only looking at the situation for a citizen now, but by comparing results easily to previous Health Checks, utilising detection of unique trends for each citizen individually.
 
 
 # Appendix
@@ -441,7 +436,7 @@ C4Context
 
     System_Ext(SomeSystem, "Example System", "A system consuming DHC API.") 
 
-    Boundary(dhcmicroservice, "Digtial Health Check", "Microservice Namespace")
+    Boundary(dhcmicroservice, "Digital Health Check", "Microservice Namespace")
     {
         Boundary(dhcapi, "DHC API")
         {
@@ -458,7 +453,7 @@ C4Context
         {        
             System(domainandstate, "Domain & State") 
             SystemQueue(eventsourcing, "Event Sourcing State")
-            System(internaleventsourcinghandling, "Event Sourcing Hanlder")    
+            System(internaleventsourcinghandling, "Event Sourcing Handler")    
         }
         
         Boundary(eventsubsys, "Event Sub System")
