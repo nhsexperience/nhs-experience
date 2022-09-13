@@ -122,6 +122,11 @@ sequenceDiagram
 
         Citizen->>UI: Complete Health Check
         UI->>StateMgmt: Complete Health Check
+        par notify
+            StateMgmt-->>UI: Notify processing started
+        and wait
+            StateMgmt-->>StateMgmt: Wait for all results to be available
+        end
         StateMgmt->>DHCProcessor: Calculate Health Check
 
         loop For all external resources
