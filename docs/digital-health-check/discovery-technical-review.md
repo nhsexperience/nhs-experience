@@ -391,6 +391,13 @@ Integration with existing NHS systems (and wider health provider platforms) is n
 
 There has been extensive work in previous central programmes (as well as local and commercial offerings) that align with the core aims of the NHS Digital Health Check. Building upon these can provide NHS Digital Health Checks from a central platform that can be managed and configured locally.
 
+Existing projects do already have answers to some identified technical areas, but scoped for a local region only. The requirement for these is how best scale this to work at a national level, but keeping localised management of these features. 
+
+For a complete "ideal" end to end Digital Health Check, there are challenges to be overcome (mainly around integration). However, that does not stop the Digital Health Check from being a viable programme. The areas identified can be approached in an Agile way, with both iterative and incremental advances. With clear architecture for an extensible soloution, a technical solution can be in place to allow the core components of Digital Health Check to be built upon as integration options allow.
+
+Each of the areas identified can be though of as a Feature (in an Agile Framework). With a benefit hypothesis process undertaken for each of these, the proposed measurable benefit to the citizen and the organisation can be discovered. This can then shape the next phases, through prioritisation and feature estimation.
+
+
 
 ## Appendix 1: Additional Technical Considerations
 
