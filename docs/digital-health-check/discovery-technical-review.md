@@ -385,8 +385,11 @@ Once a health check is completed, there is a requirement to provide next step gu
 
 # Conculsion
 
+This report has identified key areas to aid in the planning of the technical implementation for a Digital NHS Health Check. If the chosen way forward considers each of these areas, it can then be developed in an iterative and incremental way; helping to future proof itself for change by having extensibility and interoperability at the core of its processes.
 
-???????????????????
+Integration with existing NHS systems (and wider health provider platforms) is not as easy as it should/could be. This programme could consider not just what is required (and available now) but what could be required (and made available) into the future.
+
+There has been extensive work in previous central programmes (as well as local and commercial offerings) that align with the core aims of the NHS Digital Health Check. Building upon these can provide NHS Digital Health Checks from a central platform that can be managed and configured locally.
 
 
 ## Appendix 1: Additional Technical Considerations
