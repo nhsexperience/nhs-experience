@@ -30,6 +30,7 @@ nav_order: 20
 - No integration with Labs or Appointment management
 - No CMS for UI customisation, all hard coded values
 - Current version is likely suitable for a local pilot, not for a national production service
+- Discussions in place over future open sourcing of the Southwark code base, however, before this a code review should be completed to ensure code and secrets management are suitable.  
 
 ## Background 
 

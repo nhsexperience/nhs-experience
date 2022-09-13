@@ -71,50 +71,75 @@ Brief summaries of the [Existing systems reviews]({% link digital-health-check/e
 
 ```mermaid
 sequenceDiagram
-actor HCP
-actor Citizen
-participant MgmtUI as Management UP (7)
-participant Invite as Eligibility and Invites (4)
-participant UI as UI (6)
-participant NHSLogin as NHSLogin (5)
-participant StateMgmt as State Management (3)
-participant PreLoad as Data Import (8)
-participant DHCProcessor as DHC (1,2)
-participant ExternalIntegration as External Integration (9)
-participant GP as GP (9)
-participant Guidance as Guidance (11)
-HCP->>MgmtUI:Configure preferences
-Invite->>Invite: Load Eligible
-Invite->>Citizen: Invite
-Citizen->>UI: Follow Invite
-activate UI
-UI->>NHSLogin: Redirect to Login
-NHSLogin->>Citizen: Request Login
-Citizen->>NHSLogin: Login
-NHSLogin->>UI: Redirect
-deactivate UI
-Citizen->>UI: Start Health Check
-UI->>StateMgmt: Start Health Check
-StateMgmt->>PreLoad: Get data to preload
-StateMgmt->>StateMgmt: Preload imported data
-activate UI
-loop For all available observations
-    Citizen->>UI: Enter observations
-    UI->>StateMgmt: Update State
-end
-Citizen->>UI: Complete Health Check
-UI->>StateMgmt: Complete Health Check
-StateMgmt->>DHCProcessor: Calculate Health Check
-loop For all external resources
-    DHCProcessor->>DHCProcessor: Get results
-end
-DHCProcessor->> StateMgmt: Completed Health Check
-StateMgmt->>UI: Completed
-StateMgmt->>ExternalIntegration: Completed
-UI->>Citizen: Show Results
-deactivate UI
-ExternalIntegration->>GP: Send results
-UI->>Guidance: Get Guidance
+    actor HCP
+    actor Citizen
+    participant MgmtUI as Management UP (7)
+    participant Invite as Eligibility and Invites (4)
+    participant UI as UI (6)
+    participant NHSLogin as NHSLogin (5)
+    participant StateMgmt as State Management (3)
+    participant PreLoad as Data Import (8)
+    participant Labs as Lab Integration (10)
+    participant DHCProcessor as DHC (1,2)
+    participant ExternalIntegration as External Integration (9)
+    participant GP as GP (9)
+    participant Guidance as Guidance (11)
+
+    HCP->>MgmtUI:Configure preferences
+    Invite->>Invite: Load Eligible
+    Invite->>Citizen: Invite
+    Citizen->>UI: Follow Invite
+
+    activate UI
+        UI->>NHSLogin: Redirect to Login
+        NHSLogin->>Citizen: Request Login
+        Citizen->>NHSLogin: Login
+        NHSLogin->>UI: Redirect
+    deactivate UI
+
+    Citizen->>UI: Start Health Check
+    UI->>StateMgmt: Start Health Check
+    StateMgmt->>PreLoad: Get data to preload
+    StateMgmt->>StateMgmt: Preload imported data
+
+    activate UI
+        loop For all available observations
+            Citizen->>UI: Enter observations
+            UI->>StateMgmt: Update State
+        end
+
+        Citizen->>UI: Request Home Test Kit
+
+        activate Labs
+            UI->>Labs: Request Kit
+            Labs->>Citizen: Send Kit
+            Citizen->>Citizen: Complete Tests
+            Citizen->>Labs: Send Completed Kit
+            Labs->>Labs: Process Results
+            StateMgmt->>Labs: Request Results
+            Labs->>StateMgmt: Send Results
+        deactivate Labs
+
+        Citizen->>UI: Complete Health Check
+        UI->>StateMgmt: Complete Health Check
+        StateMgmt->>DHCProcessor: Calculate Health Check
+
+        loop For all external resources
+            DHCProcessor->>DHCProcessor: Get results
+        end
+
+        DHCProcessor->> StateMgmt: Completed Health Check
+        par To UI
+            StateMgmt-->>UI: Completed Event
+        and To External
+            StateMgmt-->>ExternalIntegration: Completed Event
+        end
+        UI->>Citizen: Show Results 
+    deactivate UI
+
+    ExternalIntegration->>GP: Send results
+    UI->>Guidance: Get Guidance
+    HCP->>MgmtUI: Use Reporting
 ```
 
 ### Component Interaction Considerations
