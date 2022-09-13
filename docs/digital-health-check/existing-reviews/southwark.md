@@ -22,12 +22,14 @@ nav_order: 20
 - UI and process are tightly coupled - should be separated 
 - Areas of code use non standard dotnet patterns, should be corrected
 - State and processing should be separated out from the Web App process, should utilise command bus and eventing
+- After separation, deployment should aided with docker & docker compose or kubernetes files 
 - Requires version upgrades to frameworks and dependencies
 - Invite management is manual process 
 - No use of NHS Login for proof of identity, custom urls used instead
 - No direct integration to GPs
 - No integration with Labs or Appointment management
 - No CMS for UI customisation, all hard coded values
+- Current version is likely suitable for a local pilot, not for a national production service
 
 ## Background 
 
