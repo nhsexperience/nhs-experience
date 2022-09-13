@@ -1,5 +1,5 @@
 ---
-title: DHC Discovery Phase Outcomes
+title: DHC Discovery - Tech Outcomes
 layout: page
 parent: DHC Discovery - Technical
 has_children: true
@@ -44,14 +44,14 @@ The scope for this discovery has been to look at how the current NHS Health Chec
 - Investigate and develop possible solutions for each area identified
 - Beta can then take the best options in each area to combine into an end to end Beta solution
 
-# Review of Existing work
+# Review of Existing Work
 Brief summaries of the [Existing systems reviews]({% link digital-health-check/existing-reviews/existing-review-summary.md%}) can be read in more details.
 
 # Technical Areas Identified
 
 
 
-| Area No | Area to investigate                               | External Dependencies | Estimated Effort for Delta | Summary of Now                                                                            | Ideal Situation                                                                                                                                                                                                      | Delta between now and Ideal                                                                                                                                                                                                                             |
+| Area No | Area to investigate                               | External dependencies | Estimated effort for delta | Summary of now                                                                            | Ideal situation                                                                                                                                                                                                      | Delta: now to ideal                                                                                                                                                                                                                             |
 | ------- | ------------------------------------------------- | --------------------- | -------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1       | Digital Health Check code library                 | No                    | M                          | Southwark code base can be used as a good starting point                                  | A standard library available for providing a standard calculation for a health check                                                                                                                                 | Utilizing the existing code base for calculations and as a testing comparison for an initial code library. Not a case of just redistributing, there is a requirement for designing a library following common patterns and best practices.              |
 | 2       | API for DHC tool                                  | No                    | S                          | Doesn’t exist                                                                             | An reusable RESTful API that consumes raw observation and demographic data and provides a health check result                                                                                                        | PoC API for DHC and supporting required APIs                                                                                                                                                                                                            |
@@ -314,7 +314,7 @@ FHIR has a key place in inter health system communication, but it is likely to b
 An outline of [Health Check Data]({% link digital-health-check/architecture/data.md%}) expands this further.
 
 
-> **Area  02 Summary** 
+> **Area 02 Summary** 
 > 
 > API for consuming observation and demographic data, preparing data, and calculating DHC result 
 >
@@ -329,7 +329,7 @@ The benefit of this approach is that the User Interface becomes nothing but a gr
 It will also allow for clear reporting for the exact current state of progress for all health checks.
 
 
-### Example sequence for using a state management API for DHC
+### Example Sequence for Using a State Management API for DHC
 ```mermaid
 sequenceDiagram
     UI->>+StateAPI: Start Health Check
@@ -358,7 +358,7 @@ sequenceDiagram
 > 
 > API platform for managing state of a "long lived" Digital Health Check process
 
-## 04. Eligibility & Invite integration
+## 04. Eligibility & Invite Integration
 
 Invite management can be separated into two stages, first the collating who is eligible for a health check (based on age, date of any previous health check, and past medical history). The second stage is then a decision if to send an invite.
 
@@ -429,7 +429,7 @@ Again, like the citizen user interface, ideally this would be a wrapper over a f
 > 
 > HCP focussed UI for invitation management and reporting of Health Checks.
 
-## 08. Pre loading data service
+## 08. Pre-loading Data Service
 The lack of a single source of truth for data inside the NHS leads to problems when looking for data to consume. Can data be loaded from a GP? A Local trust PAS? From central Spine? From NHS Account? Should data be gathered from citizens own collected wearables data?
 
 With a focus on GP systems, this itself is not simple. There is a separate review of [GP integration options](% link digital-health-check/gp-integration.md %) that goes into more detail.
@@ -468,7 +468,7 @@ There needs to be identified a pool of labs that would likely be used, and then 
 
 
 
-## 11. Output guidance & local customization
+## 11. Output Guidance & Local Customization
 Once a health check is completed, there is a requirement to provide next step guidance. Thought should be given to how localised this guidance needs to be. Should a GP be able to have the ability to signpost those at their surgery that have a high blood pressure to a local clinic or service?
 
 This possible requirement could lead to a "Multi-tenant" style solution, where different areas and regions appear to be independently managed, but are run on the same underlying platform.
@@ -485,13 +485,13 @@ Integration with existing NHS systems (and wider health provider platforms) is n
 
 There has been extensive work in previous central programmes (as well as local and commercial offerings) that align with the core aims of the NHS Digital Health Check. Building upon these can provide NHS Digital Health Checks from a central platform that can be managed and configured locally.
 
-Existing projects do already have answers to some identified technical areas, but scoped for a local region only. The requirement for these is how best scale this to work at a national level, but keeping localized management of these features. 
+Existing projects do already have answers to some identified technical areas, but scoped for a local region only. The requirement for these is how best to scale this to work at a national level, but keeping localised management of these features. 
 
 For a complete "ideal" end to end Digital Health Check, there are challenges to be overcome (mainly around integration). However, that should not stop the Digital Health Check from being viewed as a viable programme. The areas identified can be approached in an Agile way, with both iterative and incremental advances always aiming to deliver benefit. With clear architecture for an extensible solution, a technical solution can be in place to allow the core components of Digital Health Check to be built upon as integration options allow.
 
-Each of the areas identified can be though of as a Feature (in an Agile Framework). With a benefit hypothesis process undertaken for each of these, the proposed measurable benefit to the citizen and the organisation can be discovered. This can then shape the next phases, through prioritisation and feature estimation.
+Each of the areas identified can be thought of as a Feature (in an Agile Framework). With a benefit hypothesis process undertaken for each of these, the proposed measurable benefit to the citizen and the organisation can be discovered. This can then shape the next phases, through prioritisation and feature estimation.
 
-Initial requirements for "digitizing" a non digital project often start with a desire to duplicate the existing process, with a belief this will be the easiest option. It is often quite the opposite, and consideration should be given to how digital can shape and refine an existing process. This often brings benefit to both the end user and the organization.
+Initial requirements for "digitising" a non digital project often start with a desire to duplicate the existing process, with a belief this will be the easiest option. It is often quite the opposite, and consideration should be given to how digital can shape and refine an existing process. This often brings benefit to both the end user and the organization.
 
 For an NHS Digital Health Check, a question that could be asked is *"Now the process is Digital, should the Health Check be open to all? (as opposed to 40+)"*. A benefit to the citizen could be improved health through better prevention from more frequent self testing. This would also lead to more data being collected centrally about individuals on a more frequent basis. This can then lead to benefits for the organisation through advanced prevention by not only looking at the situation for a citizen now, but by comparing results easily to previous Health Checks, utilising detection of unique trends for each citizen individually.
 
