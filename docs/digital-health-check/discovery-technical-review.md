@@ -18,17 +18,17 @@ nav_order: 1.1
 
 # Summary
 
-The Discovery phase (Government Agile Framework) focusses on identifying constraints that may impact delivery of a service.  This report explores the possible technological constraints for delivery of a Digital NHS Health Check. 
+The Discovery phase (of the Government Agile Framework) focusses on identifying constraints that may impact the delivery of a service.  This report explores the possible technological constraints.
 
-There are a number of defined technical boundaries identified within the overall scope of this programme. The next stage of this programme could include an Alpha Build - expanding on ideas from existing projects, and exploring areas that have not been addressed in previous work.
+There are 11 key areas that have been identified during Discovery research. It is suggested that these are all taken into consideration during a technical implementation of the NHS Digital Health Check. 
 
-From the research undertaken in discovery, there is no existing platform that can provide a complete solution to all of the areas that have been identified. If this programme is put to tender, it is advised that any supplier should be able to provide sound technical explanation to how each of these areas are approached.
+The technical requirements for the core of Digital Health Check are not novel, or overly complex. A well architected technological implementation should not be a blocker for the progression of this programme. 
 
-There are identified high level boundaries, grouping the identified areas and components. Some of these boundaries contain components that are OHIC DHC specific, others contain components that could be utilised elsewhere / by other programmes in the future.
+The challenges that will be faced are likely to be with the integration options with existing providers of required data; providers of required external services, and those that require to be notified of Health Check results.
 
-The technical requirements for the core of Digital Health Check are not novel, or overly complex. A well architected technological implementation should not be a blocker for the progression of this programme.
+From the research (of avaliable material) undertaken in discovery, there is no existing platform that currently provides answers to all of the identified areas. If this programme is put to tender, it is advised that any supplier should be able to provide sound technical explanation to how each of these areas are approached.
 
-The challenges that will be faced are likely to be with the integration options with existing providers of required data; providers of required services, and those that require to be notified of Health Check results.
+The next stage of this programme could include an Alpha phase build - expanding on ideas from existing projects, and exploring areas that have not been addressed in previous work.
 
 The scope for this discovery has been to look at how the current NHS Health Check can be transformed into a digital form. However, further questions could be asked to how a digital version of the Health Check can improve (and add additional benefit) to the current process.
 
@@ -387,7 +387,7 @@ Once a health check is completed, there is a requirement to provide next step gu
 
 This report has identified key areas to aid in the planning of the technical implementation for a Digital NHS Health Check. If the chosen way forward considers each of these areas, it can then be developed in an iterative and incremental way; helping to future proof itself for change by having extensibility and interoperability at the core of its processes.
 
-Integration with existing NHS systems (and wider health provider platforms) is not as easy as it should/could be. This programme could consider not just what is required (and available now) but what could be required (and made available) into the future.
+Integration with existing NHS systems (and wider health provider platforms) is not as easy as it should/could be. This programme could consider not just what is required (and available) now but what could be required (and made available) into the future.
 
 There has been extensive work in previous central programmes (as well as local and commercial offerings) that align with the core aims of the NHS Digital Health Check. Building upon these can provide NHS Digital Health Checks from a central platform that can be managed and configured locally.
 
@@ -397,7 +397,7 @@ There has been extensive work in previous central programmes (as well as local a
 ### Extensibility
 - Events and APIs
 - API first, use swagggerhub for api design and bolilerplate code generation 
-- EoL and Semantic Versioning
+- EoL and [Semantic Versioning]({% link process/versioning.md %})
 
 ### Deployability
 - Docker build and deploy files
