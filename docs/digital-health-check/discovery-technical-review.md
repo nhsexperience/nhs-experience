@@ -380,6 +380,8 @@ Any management system that requires a health professional to use, should utilise
 
 There are numerous screening services that exist in the NHS (breast, bowel etc), that may have similar requirements for eligibility and invitation management. There is likely learnings that can be found from investigating how these services approach this.
 
+With the Eligibility & Inviting being a separate system to the actual health check - this give rise to the possibilities of non-invited citizens also being able to use the health check, without it being an "official" Health Check (ie data not sent to GP).
+
 > **Area 04 Summary** 
 > 
 > Platform for managing selection of eligibility and digital invites.
@@ -414,7 +416,7 @@ There is the [NHS Wellness and Prevention Alpha](https://wp.nhsei.xyz), which ha
 > Digital solutions **MUST** be developed with a clear API first focus, that can then be integrated with the NHS app, or any other app (or web site) that may be specified in the future.
 
 
-There should also be thought into the customising of the User Interface – if a region wants a varied UI – do they create their own and utilised the central APIs, or does the centrally provided UI allow some level of customisation depending on region?
+There should also be thought into the customising of the User Interface – if a region wants a varied UI – do they create their own and utilised the central APIs, or does the centrally provided UI allow some level of customisation depending on region? For example, some regions may want to include additional Mental Heath questions.
 
 > **Area 06 Summary** 
 > 
@@ -448,6 +450,14 @@ As with reading data from GP IT systems, writing results to them is also not sim
 
 The technical challenges of centrally writing directly into GP IT systems, there should be consideration into the difference between providing results to a GP through a separate management system vs directly exporting them – how this could be applied to short, medium and long term plans.
 
+Exporting to GP will pass clinical accountability to primary care upon the completion of the health check, mirroring how accountability is passed to primary care following a face to face NHS Health Check from a Health Check provider. There will be a need to understand the trigger for this. Furthermore, this needs to take into account:
+
+- How to handle incomplete digital NHS Health Checks
+- Digital Health Checks containing concerning biometric results requiring immediate intervention.
+
+The introduction of the digital NHS Health Check alongside face to face Health Checks must avoid, where possible, generating new manual tasks, in particular around adding the output of a digital NHS Health Check into the GPIT.
+
+To deliver the value of exporting to GP, all primary care providers will need to ensure their local processes, procedures and systems are adapted to pick up any required referral or work coming from a digital NHS Health Check.
 
 > **Area 09 Summary** 
 > 
@@ -455,16 +465,20 @@ The technical challenges of centrally writing directly into GP IT systems, there
 
 
 
-## 10. Blood Test Labs integration
+## 10. Blood Test Labs & Appointment Booking Integration
 The level of integration available with labs providing testing will vary with the level of customisation required. It may be different regions require different labs, and some may use centrally pooled resources. 
 
-The on going management t of this also needs to be considered, should regions be able to dynamically change the lab in use? There is also a question of if the service could be opened to people outside of the standard age range, and give the option of payment for ordering a test at home lab kit.
+The on going management of this also needs to be considered, should regions be able to dynamically change the lab in use? There is also a question of if the service could be opened to people outside of the standard age range, and give the option of payment for ordering a test at home lab kit.
 
 There needs to be identified a pool of labs that would likely be used, and then further investigation into the integration that is available, both for ordering of kits and getting results.
 
+Citizens may also not want to test at home, and want to book an appointment (with GP/pharmacy/3rd party) for completing the tests face to face. Integration would required with these booking systems.
+
+If the Health Check tooling is opened to "non-eligible" citizens, could there be the possibility of citizen's paying for there own test at home kits on an ad hoc basis. If so, this payment option would need to be also integrated.
+
 > **Area 10 Summary** 
 > 
-> Ordering of test at home kits and collecting of status and results
+> Ordering of test at home kits and collecting of status and results.
 
 
 
@@ -472,6 +486,8 @@ There needs to be identified a pool of labs that would likely be used, and then 
 Once a health check is completed, there is a requirement to provide next step guidance. Thought should be given to how localised this guidance needs to be. Should a GP be able to have the ability to signpost those at their surgery that have a high blood pressure to a local clinic or service?
 
 This possible requirement could lead to a "Multi-tenant" style solution, where different areas and regions appear to be independently managed, but are run on the same underlying platform.
+
+There may also be a requirement for booking into these services, directly from the Health Check Results (similar to booking appointments for face to face testing of bloods). 
 
 > **Area 11 Summary** 
 > 

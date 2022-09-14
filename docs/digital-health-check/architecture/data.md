@@ -6,16 +6,13 @@ parent: Architecture
 nav_order: 7
 todo:
     - Complete Data Classes
-    - Complete Data to snowmed mapping table
+    - Complete Data to snomed mapping table
     - 
 ---
 
-> ⚠️ **Warning**
->  
-> **Draft Documents**: May not represent real world scenarios, may not be fully accurate or complete.
->
-> Please contact the author for more information.
-
+# Conciderations
+- Expiry of observation data
+- 
 
 # Interactions
 ```mermaid
@@ -48,8 +45,8 @@ sequenceDiagram
     NHS->>Citizen: Invite
     Citizen->>HP: Complete HC
     HP->>GP: SendResults
-    HP-->Citizen: Send for furthur
-    Citizen-->Pro: Furthur Screening
+    HP-->Citizen: Send for further
+    Citizen-->Pro: Further Screening
     GP->>Record: Update Details
     GP->>HP: Send update
     HP->>Citizen: Discuss Results
