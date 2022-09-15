@@ -366,6 +366,8 @@ Currently this process is performed locally at a GP level. It is suggested that 
 
 The first benefit of moving the identification of eligibility and invite centrally are for reporting purposes. There is then one central clear picture of both historical and real time health check status.  The eligibility and invite management could also be used for tracking non digital health checks.
 
+In addition to reporting purposes after "Go Live" - end to end reporting will allow for quantifiable metrics to be defined - allowing a benefits realisation processes to utilise these in helping to determine the successful outcome of the project development. 
+
 Additionally a centralised eligibility and invitation function simplifies:
 - The management of any eligibility criteria change
 - Handling patients changing GP
