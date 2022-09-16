@@ -36,16 +36,16 @@ The next stage of this programme could include an Alpha phase build - expanding 
 The scope for this discovery has been to look at how the current NHS Health Check can be transformed into a digital form. However, further questions could be asked to how a digital version of the Health Check can improve (and add additional benefit) to the current process.
 
 ### High Level Discovery Outcomes
-- Identified Areas that could be considered as requirements
-- No existing provider can provide all areas identified, in terms of functionality and being able to provide a secure, highly available and scalable manner.
-- Good UI from previous work
-- Core "Calculation" available from previous work
+- Discovered 11 areas suggested for further technical exploration 
+- No existing provider has a solution for all areas identified
+- User Interface from previous work has reuse potential
+- Core "Calculation" available from previous work 
 - [GP Integration is not easy]({% link digital-health-check/gp-integration.md%})
 
 ### Proposed Targeted Outcomes for an Alpha Phase
-- Not expecting a full end to end PoC from an alpha
-- Investigate and develop possible solutions for each area identified
-- Beta can then take the best options in each area to combine into an end to end Beta solution
+- An MVP is not the target for Alpha
+- Develop a number possible solutions for each of the areas identified
+- After Alpha, a Beta could then take the best solutions in each area from Alpha into an MVP, with iterative development towards production.
 
 # Review of Existing Work
 Brief summaries of the [Existing systems reviews]({% link digital-health-check/existing-reviews/existing-review-summary.md%}) can be read in more details.
