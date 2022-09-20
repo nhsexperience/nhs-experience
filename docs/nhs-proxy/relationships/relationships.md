@@ -43,7 +43,7 @@ last_modified_date: Jul 21 2022 at 11:59 PM
 - Parallelogram - Not a rights holder  
  ---
 
-```mermaid!
+```mermaid
 flowchart LR
 Male[/Male/]
 Female((Female))
@@ -62,7 +62,7 @@ MothersRight -.->Child
 *Figure [^motherFatherUnmarried].  Unmarried Mother and Father  (child born after 2003)* 
 
 
-```mermaid!
+```mermaid
 sequenceDiagram
     autonumber
     Father->Mother: Conception
@@ -86,7 +86,7 @@ sequenceDiagram
 
 
 ---
-```mermaid!
+```mermaid
 flowchart LR
 Male[/Male/]
 Female[/Female/]
@@ -117,7 +117,7 @@ MothersRight -.->MarriedFemale
 *Figure [^marriedmotherandfather].  Married Mother and married biological Father* 
 
 ---
-```mermaid!
+```mermaid
 flowchart LR
 Male
 Female
@@ -149,7 +149,7 @@ MothersRight -.->MarriedFemale
 
 ---
 
-```mermaid!
+```mermaid
 flowchart LR
 Male((Male))
 Female((Female))
@@ -178,7 +178,7 @@ FathersRights -.->Child
 *Figure [^motherFatherUnmarried-with-birth-cert].  Unmarried Mother and Father with birth certificate* 
 
 ---
-```mermaid!
+```mermaid
 flowchart LR
 
 Male

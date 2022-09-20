@@ -27,10 +27,14 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  nhsexperience
 
+kramdown:
+  toc_levels: 1..2
 
 collections:
   projects: 
     output: false
+  projectlibs: 
+    output: false    
 
 
 # Build settings
@@ -38,6 +42,13 @@ theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-spaceship
+
+
+webpack:
+  debounce:
+    run_once: true
+  cleanup_files:
+    - node_modules
 
 aux_links:
   "Citizen Experience on GitHub":
@@ -55,7 +66,7 @@ last_edit_timestamp: true # show or hide edit time - page must have `last_modifi
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 # Change the below based on the forked repo's details
-published_url: "https://zealous-beach-05e189903.1.azurestaticapps.net/"
+published_url: "https://ce.nhsei.xyz"
 gh_action_build_file_name: "azure-static-web-apps-zealous-beach-05e189903.yml"
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
@@ -65,9 +76,8 @@ gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 gh_repo_owner: "NHS Experience"
 
-
 # Do not change the below
-source_published_url: "https://zealous-beach-05e189903.1.azurestaticapps.net/"
+source_published_url: "https://ce.nhsei.xyz"
 source_gh_action_build_file_name: "azure-static-web-apps-zealous-beach-05e189903.yml"
 source_gh_edit_link: true # show or hide edit this page link
 source_gh_edit_link_text: "Edit this page on GitHub"
@@ -84,14 +94,11 @@ source_gh_repo_owner: "NHS Experience"
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - src/

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "..\tests\tests.csproj", "{38FB961E-1F07-44FB-99FA-934315020EB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmiapi", "..\bmiapi\bmiapi.csproj", "{F580AE1B-954C-46D6-85E1-2E896B3C6870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dhc", "..\dhc\dhc.csproj", "{B2EA8180-0E5A-4E77-969D-C0A174F46894}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38FB961E-1F07-44FB-99FA-934315020EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FB961E-1F07-44FB-99FA-934315020EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FB961E-1F07-44FB-99FA-934315020EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FB961E-1F07-44FB-99FA-934315020EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F580AE1B-954C-46D6-85E1-2E896B3C6870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F580AE1B-954C-46D6-85E1-2E896B3C6870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F580AE1B-954C-46D6-85E1-2E896B3C6870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F580AE1B-954C-46D6-85E1-2E896B3C6870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2EA8180-0E5A-4E77-969D-C0A174F46894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2EA8180-0E5A-4E77-969D-C0A174F46894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2EA8180-0E5A-4E77-969D-C0A174F46894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2EA8180-0E5A-4E77-969D-C0A174F46894}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

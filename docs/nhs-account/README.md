@@ -1,7 +1,6 @@
 ---
 title: NHS Account
 layout: page
-permalink: /account/
 has_children: true
 nav_order: 2
 ---
@@ -27,7 +26,7 @@ nav_order: 2
   - [Back End Design](#back-end-design)
   - [Authentication](#authentication)
   - [Authorisation](#authorisation)
-  - [Decentralised Identity / Verifyable Credentials](#decentralised-identity--verifiable-credentials)
+  - [Decentralised Identity / Verifiable Credentials](#decentralised-identity--verifiable-credentials)
   - [API Management](#api-management)
   - [API Resource Design](#api-resource-design)
   - [Resource User Access Control](#resource-user-access-control)

@@ -47,6 +47,12 @@ todo:
 
 # Methodology
 
+**2022-08-08**
+
+MS Confirmed that Azure AD B2C cannot use VC directly, as it can't access Key Vault in "parent" tenant and can not have a key vault directly in the B2C tenant.
+
+It *should be* possible via using Azure Lighthouse configuration to allow the B2C to have access to a subscription in the parent.
+
 ## Azure Access
 
 ## Creation of Azure AD B2C

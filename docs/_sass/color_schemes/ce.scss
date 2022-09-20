@@ -1,5 +1,7 @@
 //Other colours at https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/
 
+@import "swagger-ui";
+
 $blue-nhs-blue: #005EB8;
 $blue-nhs-dark-blue: #003087;
 $blue-nhs-bright-blue: #0072CE;
@@ -37,6 +39,30 @@ $media-queries: (
   }
 }
 
+
+blockquote {
+  border-left-color: $blue-nhs-dark-blue;
+  border-left-style: solid;
+  border-left-width: thick;
+  padding-left: 20px;
+  background-color:$grey-nhs-mid-grey;
+  color: $grey-nhs-pale-grey;
+  font-style: italic;
+}
+
+blockquote th{
+  background-color:$blue-nhs-dark-blue;
+}
+
+blockquote td{
+  background-color:$grey-nhs-mid-grey;
+}
+
+blockquote code{
+  color:$grey-nhs-mid-grey;
+}
+
+
 $link-color: $blue-nhs-blue;
 $btn-primary-color: $blue-nhs-bright-blue;
 $base-button-color: $grey-nhs-pale-grey;
@@ -49,3 +75,7 @@ $body-heading-color: $blue-nhs-dark-blue;
 .text-nhs-mid-grey {
     color: $grey-nhs-mid-grey !important;
   }
+
+code svg{
+  height: auto;
+}

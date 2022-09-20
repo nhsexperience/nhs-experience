@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BMI API",
+    "version": "0.1"
+  },
+  "paths": {
+    "/v0.1/Bmi/{bmi}/description": {
+      "get": {
+        "tags": [
+          "Bmi"
+        ],
+        "operationId": "GetBmiDescription",
+        "parameters": [
+          {
+            "name": "bmi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

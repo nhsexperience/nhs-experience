@@ -4,7 +4,7 @@ layout: page
 parent: GP Integration
 grand_parent: NHS Digital Health Check
 nav_order: 3
-mermaid: true
+
 ---
 
 > ⚠️ **Warning**
@@ -72,9 +72,10 @@ Complete research into:
 - User research, wider context of user generated data, perceptions over ownerships and sharing
 
 
+
 ### Components Integration
-```mermaid!
-graph LR;
+```mermaid
+flowchart LR;
     Citizen -->App;
     Citizen -->NHSLogin;
     Citizen -->IdentityServer;
@@ -86,7 +87,7 @@ graph LR;
     Pro -->IdentityServer;
     WebApp -->Api;
     Api -->Authorisation;
-    Api -->DataStore
+    Api -->DataStore;
     Authorisation -->IdentityServer;
     DataStore -->ServiceRoleBasedAccess;
 ```
@@ -158,16 +159,13 @@ Provided by NHSLogin:
 ### Client Secret, Token (JWT) Signing & Key Size
 NHS Login **does not support the use of a client secret** for client authentication. Instead calls to the token endpoint requires the private_key_jwt method [^private-key-jwt].
 
-The key must be in RSA512 format. Note, many authorisation providers that support JWT signing default to expecting RSA256 key size.
-
-
 > | Attribute                   | Required | Description                                                                                                                                  |
 > | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 > | **token_signing_algorithm** | No       | Specifies the signing algorithm to use when token_endpoint_auth_method is set to private_key_jwt. Possible values: **RS256 (default)** or RS512. |
 > 
 > *Azure AD B2C custom policy - Token endpoint metadata* [^azure-b2c-token-endpoint]
 
-
+The key must be in RSA512 format. Note, many authorisation providers that support JWT signing default to expecting RSA256 key size.
 
 > ### ℹ Guidance for generating asymmetric key pair
 > You will need to provide a public key when registering for the service. This is required for the authentication mechanism on the token endpoint. The steps below explain how to generate that public key and corresponding private key.
