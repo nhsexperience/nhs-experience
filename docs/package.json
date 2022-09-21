@@ -4,13 +4,14 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack && bundle install && bundle exec jekyll build"
+    "build": "webpack && bundle install && bundle exec jekyll build",
+    "debug": "bundle exec jekyll serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.4.0",
+    "webpack": "^5.74.0",
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
