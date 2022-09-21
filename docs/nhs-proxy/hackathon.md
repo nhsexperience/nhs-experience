@@ -5,6 +5,10 @@ parent: NHS Account Proxy
 nav_order: 4.2
 ---
 
+## Attendees
+
+## Presentation of claims / creds
+
 good example of complex presentations of different claims: https://www.w3.org/TR/vc-use-cases/#citizenship-by-parentage
 
 https://w3c.github.io/vc-data-integrity/
