@@ -61,11 +61,16 @@ sequenceDiagram
     participant MHPO as MHPO
     participant NHSCred as NHSCredService
     participant SomeNHSService as Any Health Service
+    participant NHSProxyService as NHS Proxy Service
+    participant NHSRoleService as NHS National Citizen Roles Service
+    participant NHSApp as NHS App?
     DVLA->>Alice:Issues Driving Licence
+    MHPO->>Alice: Issues Passport
     MHPO->>Bob: Issues Passport
     Bob-->>Alice: Talk about POA
     Alice->>Bob: Talk about POA
     Bob->>Alice: Sends a presentation of ID
+    Alice->>Alice: V-Presentation combining both her Id's
     Alice->>MOJ: Sends a presentation of both bobs ID presentation and her own
     MOJ->>Alice: Sends the presentation of the 2 creds combined into a relationship Cred
     Alice->>NHSCred: Requests a "Full Proxy Cred" (sends MOJ POA  presentation to NHS)
@@ -78,7 +83,12 @@ sequenceDiagram
     SomeNHSService->>MOJ: Is valid?
     SomeNHSService->>-SomeNHSService:Verified
     SomeNHSService->>Alice: Send back Bobs info
-
+    Bob->>NHSRoleService: Logs in with NHS Login? Submits Identity VC
+    Alice->>NHSRoleService: Logs in with NHS Login? Submits Identity VC  
+    Alice->>NHSProxyService: Submits NHS Proxy Cred
+    NHSProxyService->>NHSRoleService: Updates Roles for Alice to Access Bobs records
+    Alice->>NHSApp:Uses app to access bobs data
+    NHSApp->>NHSRoleService: Checks roles
 
 
 
