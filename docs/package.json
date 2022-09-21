@@ -4,8 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack && bundle install && bundle exec jekyll build",
-    "debug": "bundle exec jekyll serve"
+    "build-production": "JEKYLL_ENV=production webpack && bundle install && bundle exec jekyll build  --config _config.yml,_config_production.yml",
+    "build-staging": "JEKYLL_ENV=staging webpack && bundle install && bundle exec jekyll build --config _config.yml,_config_staging.yml",
+    "build-development": "JEKYLL_ENV=development webpack && bundle install && bundle exec jekyll build --config _config.yml,_config_development.yml",
+    "debug": "JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config_development.yml"
   },
   "keywords": [],
   "author": "",
