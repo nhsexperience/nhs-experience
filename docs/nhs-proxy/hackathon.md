@@ -8,6 +8,20 @@ nav_order: 4.2
 ## Attendees
 - NHS
 
+## Multiparty / delegate VC's
+Interesting discussions on Multiparty / delegate VC''s in latest working group:
+https://www.w3.org/2017/vc/WG/Meetings/Minutes/2022-09-16-vcwg#section3
+ 
+https://docs.google.com/presentation/d/1hrqozY2EGZ8i8y40abyEuJmIb6hCiRS-37pdj6bhBLY/edit#slide=id.g1482ccb90af_0_120
+
+![Multi party creds]({% link /assets/images/multiparty-creds.png %})
+
+https://github.com/w3c/vc-data-model/issues/931
+
+## Other links
+- https://docknetwork.github.io/sdk/tutorials/tutorial_ipv.html#incremental-creation-and-verification-of-verifiable-presentations
+
+
 ## Presentation of claims / creds
 
 good example of complex presentations of different claims: https://www.w3.org/TR/vc-use-cases/#citizenship-by-parentage
