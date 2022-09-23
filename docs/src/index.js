@@ -1,38 +1,51 @@
 import { Canvg, presets} from 'canvg';
 import Reveal from 'reveal.js'
+import RevealMarkdown from 'reveal.js/plugin/markdown/markdown.esm.js'
+import Markdown from  'reveal.js/plugin/markdown/markdown.esm.js'
 import 'reveal.js/dist/reveal.css'
 import 'reveal.js/dist/theme/black.css'
 import '@fontsource/source-sans-pro'
 
 const preset = presets.offscreen()
 
+var x = RevealMarkdown;
 var $ = require("jquery");
 global.jQuery = $;
 global.$ = $;
 window.jQuery = $;
 window.$ = $;
 
-export function UseReveal(deckid)
+export function UseReveal(document, deckid, useMermaid)
 {
-    let deck1 = new Reveal( document.querySelector('.'+ deckid), {
-        embedded: true,
-        keyboardCondition: 'focused',
-        controls: true,
-        controlsTutorial: true,
-        controlsLayout: 'bottom-right',
-        controlsBackArrows: 'faded',
-        progress: true,
-        slideNumber: true,
-        showSlideNumber: 'all',
-        autoSlide: 5000,
-        loop: true
+    $(document).ready(function() {
+        let deck1 = new Reveal( document.querySelector('.'+ deckid), {
+            embedded: true,
+            keyboardCondition: 'focused',
+            controls: true,
+            controlsTutorial: true,
+            controlsLayout: 'bottom-right',
+            controlsBackArrows: 'faded',
+            progress: true,
+            slideNumber: true,
+            showSlideNumber: 'all',
+            autoSlide: 5000,
+            loop: true,
+            plugins: [ RevealMarkdown ],
+            backgroundTransition: 'none',
+            transition: 'none',
+            center: false,
+        } );
+        deck1.initialize().then( () => {
+            if(useMermaid)
+                window.mermaid.init(undefined, document.querySelectorAll('code.mermaid'));
+          } )
 
-      } );
-      deck1.initialize();
+        
+    });
 }
 
 
-function UseMermaid(document)
+export function UseMermaid(document)
 {
     $(document).ready(function() {
         mermaid.initialize({

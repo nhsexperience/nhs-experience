@@ -3,6 +3,7 @@ title: NHS Account Proxy
 layout: page
 has_children: true
 nav_order: 2.1
+regenerate: true
 ---
 
 # What is NHS Proxy?
@@ -18,37 +19,20 @@ NHS Proxy is a term used to define one citizen having the ability to .......
 - Cooperation between organisations
 
 
-{% assign author = site.presentations | where:"id", "p1"  | first %}
+
+## something
 
 
-<div class="reveal reveal2" style="width:100%;padding-bottom:56.25%;">
-  <div class="slides">
-    <section data-auto-animate data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
-      <h2>🍦</h2>
-    </section>
-    <section data-auto-animate>
-        <h1>Slide 1 - Title</h1>
-        <p>Let's make some bullet points!</p>
-        <ul>
-            <li class="fragment">Some info</li>
-            <li class="fragment">Some more info</li>
-            <li class="fragment">Some extra info</li>
-        </ul>
-    </section>
-    <section data-auto-animate>
-      <pre><code data-trim data-noescape data-line-numbers>
-        (def lazy-fib
-          (concat
-          [0 1]
-          ((fn rfib [a b]
-                (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-      </code></pre>
-    </section>
-  </div>
+<div class="reveal reveal4" style="width:100%;padding-bottom:56.25%;">
+<div class="slides">
+<section data-markdown="/_slides/p2.md">
+</section>
+</div>
 </div>
 
 <script>
-    window.nhsce.UseReveal("reveal2");
+    window.nhsce.UseReveal(document, "reveal4", true);
+
 </script>
 
 
