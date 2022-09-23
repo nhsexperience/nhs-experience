@@ -1,4 +1,8 @@
 import { Canvg, presets} from 'canvg';
+import Reveal from 'reveal.js'
+import 'reveal.js/dist/reveal.css'
+import 'reveal.js/dist/theme/black.css'
+import '@fontsource/source-sans-pro'
 
 const preset = presets.offscreen()
 
@@ -7,6 +11,26 @@ global.jQuery = $;
 global.$ = $;
 window.jQuery = $;
 window.$ = $;
+
+export function UseReveal(deckid)
+{
+    let deck1 = new Reveal( document.querySelector('.'+ deckid), {
+        embedded: true,
+        keyboardCondition: 'focused',
+        controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        progress: true,
+        slideNumber: true,
+        showSlideNumber: 'all',
+        autoSlide: 5000,
+        loop: true
+
+      } );
+      deck1.initialize();
+}
+
 
 function UseMermaid(document)
 {
@@ -27,7 +51,7 @@ function UseMermaid(document)
     });
 }
 
- function addLinks(id)
+function addLinks(id)
 {
     var svg = document.getElementById(id);
     var btn = document.createElement('button'); 
