@@ -6,8 +6,7 @@ nav_order: 2.1
 regenerate: true
 ---
 
-
-{% pdf "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx" %}
+{% pdf {{site.url | append: "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}} %}
 
 # What is NHS Proxy?
 
