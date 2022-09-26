@@ -6,6 +6,10 @@ nav_order: 2.1
 regenerate: true
 ---
 
+should have a host base url....
+
+{{site.url | append: "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}}
+
 {% pdf {{site.url | append: "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}} %}
 
 # What is NHS Proxy?
