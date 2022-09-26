@@ -26,7 +26,7 @@ footer_content: "Distributed by an <a href=\"https://github.com/nhsexperience/nh
 plugins:
   - jekyll-feed
   - jekyll-spaceship
-
+  - jekyll-pdf-embed
 jekyll-spaceship:
   # default enabled processors
   processors:

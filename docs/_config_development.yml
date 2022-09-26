@@ -20,3 +20,5 @@ gh_repo_owner: "Ross Buggins"
 jekyll-spaceship:
   # default enabled processors
   processors:
+plugins:
+  - jekyll-pdf-embed

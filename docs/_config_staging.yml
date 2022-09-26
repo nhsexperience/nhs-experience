@@ -21,7 +21,7 @@ gh_repo_owner: "Ross Buggins"
 plugins:
   - jekyll-feed
   - jekyll-spaceship
-
+  - jekyll-pdf-embed
 jekyll-spaceship:
   # default enabled processors
   processors:

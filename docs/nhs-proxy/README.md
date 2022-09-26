@@ -19,6 +19,12 @@ NHS Proxy is a term used to define one citizen having the ability to .......
 - Cooperation between organisations
 
 
+{% pdf "http://img.labnol.org/di/PowerPoint.ppt" %}
+
+ 
+{% pdf "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx" %}
+
+{% pdf "../wellness-prevention/wellness-alpha-report_v1.pdf" %}
 
 ## something
 
