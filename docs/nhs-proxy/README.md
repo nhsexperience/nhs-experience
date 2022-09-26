@@ -6,6 +6,9 @@ nav_order: 2.1
 regenerate: true
 ---
 
+
+{% pdf "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx" %}
+
 # What is NHS Proxy?
 
 NHS Proxy is a term used to define one citizen having the ability to .......
@@ -21,10 +24,6 @@ NHS Proxy is a term used to define one citizen having the ability to .......
 
 {% pdf "http://img.labnol.org/di/PowerPoint.ppt" %}
 
- 
-{% pdf "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx" %}
-
-{% pdf "../wellness-prevention/wellness-alpha-report_v1.pdf" %}
 
 ## something
 
