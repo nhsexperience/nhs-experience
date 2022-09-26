@@ -15,11 +15,11 @@ global.$ = $;
 window.jQuery = $;
 window.$ = $;
 
-export function UseReveal(document, deckid, useMermaid)
+export function UseReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true )
 {
     $(document).ready(function() {
         let deck1 = new Reveal( document.querySelector('.'+ deckid), {
-            embedded: true,
+            embedded: embed,
             keyboardCondition: 'focused',
             controls: true,
             controlsTutorial: true,
@@ -37,7 +37,7 @@ export function UseReveal(document, deckid, useMermaid)
         } );
         deck1.initialize().then( () => {
             if(useMermaid)
-                window.mermaid.init(undefined, document.querySelectorAll('code.mermaid'));
+                window.mermaid.init(undefined, document.querySelectorAll(mermaidSelector));
           } )
 
         

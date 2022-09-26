@@ -5,6 +5,11 @@ has_children: true
 nav_order: 2.1
 regenerate: true
 ---
+{% include slide.html fileName="p2" divName="p2-thefirst" %}
+
+next
+
+{% include slide.html fileName="p2" divName="p2-thesecond" %}
 
 {% capture ghrawurl %}"{{ site.gh_edit_repository }}/raw/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{site.gh_edit_source}}{% endif %}"{% endcapture %}
 
@@ -26,17 +31,7 @@ NHS Proxy is a term used to define one citizen having the ability to .......
 ## something
 
 
-<div class="reveal reveal4" style="width:100%;padding-bottom:56.25%;">
-<div class="slides">
-<section data-markdown="/_slides/p2.md">
-</section>
-</div>
-</div>
 
-<script>
-    window.nhsce.UseReveal(document, "reveal4", true);
-
-</script>
 
 
 

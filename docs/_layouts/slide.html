@@ -1,0 +1,40 @@
+---
+layout: table_wrappers
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    <script type="text/javascript" src="{{ '/assets/js/imageopen.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.5/dist/mermaid.js"></script>
+</head>
+<style>
+    .revealfull
+{
+ width: 100vw; 
+    height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
+    max-height: 100vh;
+    max-width: 177.78vh; /* 16/9 = 1.778 */
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0; /* vertical center */
+    left:0;right:0; /* horizontal center */    
+}
+.revealsmall
+{
+ width: 30vw; 
+}
+</style>
+<body>
+<div class="reveal reveal4 revealfull">
+<div class="slides">
+<section data-markdown="{{page.slide-contents}}">
+</section>
+</div>
+</div>
+<script>
+window.nhsce.UseReveal(document, "reveal4", true, "code.mermaid", true);
+</script> 
+</body>
+</html>
+

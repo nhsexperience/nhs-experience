@@ -5,8 +5,16 @@ collections:
   projects: 
     output: false
   projectlibs: 
-    output: false    
+    output: false   
+  slides:
+    output: true 
 
+defaults:
+  - scope:
+      path: ""
+      type: "slides"
+    values:
+      layout: "slide"
 
 # Build settings
 theme: just-the-docs
@@ -40,6 +48,7 @@ source_gh_repo_owner: "NHS Experience"
 
 include:
   - _slides/
+  - _slidescontent/
 
 exclude:
   - .sass-cache/

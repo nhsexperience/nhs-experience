@@ -31,6 +31,8 @@ GEM
       terminal-table (~> 2.0)
     jekyll-pdf-embed (1.1.2.1)
       jekyll
+    jekyll-random (0.1)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (2.2.0)
       sassc (> 2.0.1, < 3.0)
     jekyll-seo-tag (2.8.0)
@@ -76,6 +78,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
   jekyll-pdf-embed
+  jekyll-random
   jekyll-webpack
   just-the-docs
   tzinfo (~> 1.2)

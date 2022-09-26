@@ -22,3 +22,4 @@ jekyll-spaceship:
   processors:
 plugins:
   - jekyll-pdf-embed
+  - jekyll-random

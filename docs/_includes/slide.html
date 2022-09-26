@@ -1,0 +1,14 @@
+{% capture random %}
+{{ 1 | random_number: 0, 100, 2 }}
+{% endcapture %}
+
+<a href="/slides/{{include.fileName}}.html">Link to {{include.fileName}} slides</a>
+<div class="reveal reveal-{{include.divName}}" style="width:100%;padding-bottom:56.25%;">
+<div class="slides">
+<section data-background-gradient="radial-gradient(#283b95, #17b2c3)" data-markdown="/_slidescontent/{{include.fileName}}.md">
+</section>
+</div>
+</div>  
+<script>
+window.nhsce.UseReveal(document, "reveal-{{include.divName}}", true);
+</script>

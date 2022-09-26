@@ -22,6 +22,7 @@ plugins:
   - jekyll-feed
   - jekyll-spaceship
   - jekyll-pdf-embed
+  - jekyll-random
 jekyll-spaceship:
   # default enabled processors
   processors:
