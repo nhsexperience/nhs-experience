@@ -6,11 +6,8 @@ nav_order: 2.1
 regenerate: true
 ---
 
-should have a host base url....
 
-{{site.url | append: "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}}
-
-{% pdf {{site.url | append: "/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}} %}
+{% pdf {{ghrawurl|append:"/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}} %}
 
 # What is NHS Proxy?
 
@@ -23,10 +20,6 @@ NHS Proxy is a term used to define one citizen having the ability to .......
 
 # Will Need
 - Cooperation between organisations
-
-
-{% pdf "http://img.labnol.org/di/PowerPoint.ppt" %}
-
 
 ## something
 
