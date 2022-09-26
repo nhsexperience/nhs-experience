@@ -6,6 +6,8 @@ nav_order: 2.1
 regenerate: true
 ---
 
+{% capture ghrawurl %}"{{ site.gh_edit_repository }}/raw/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{site.gh_edit_source}}{% endif %}"{% endcapture %}
+
 
 {% pdf {{ghrawurl|append:"/nhs-proxy/Proxy_Architecture_Strawman_v0_3.pptx"}} %}
 
