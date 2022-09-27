@@ -3,7 +3,7 @@
 {% endcapture %}
 
 <style>
-    svg[id^="mermaid-"] 
+    div.reveal svg[id^="mermaid-"] 
     { 
         min-width: 900px;
         min-height: 700px;
@@ -19,6 +19,6 @@
 </div>
 </div>  
 <script>
-window.nhsce.MermaidInit(false);
+
 window.nhsce.UseReveal(document, "reveal-{{include.divName}}", true);
 </script>

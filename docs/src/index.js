@@ -29,7 +29,7 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
 {
     var sleepTime = 100;
     var selectorToUse = 'div.'+ deckid + ' > div.slides > section.present > div.mermaid, div.'+ deckid + ' > div.slides > section.present > pre > code.mermaid';
-
+    var selectorToUseOnSlideChange = 'div.mermaid, code.mermaid';
     let deck1 = new Reveal( document.querySelector('div.'+ deckid), {
         embedded: embed,
         keyboardCondition: 'focused',
@@ -46,19 +46,20 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
         transition: 'none',
         center: false,
     } );
-    deck1.initialize().then( async () => {
+    deck1.initialize().then( () => {
         if(useMermaid)
-            await sleep(sleepTime);
-            UseMermaidNow(document, selectorToUse);
-      } )
+           // await sleep(sleepTime);
+           var currentSlide = deck1.getCurrentSlide();
+            UseMermaidNow(currentSlide, selectorToUseOnSlideChange);
+      } );
 
 
-    deck1.on('slidechanged',  async (event) => {
+    deck1.on('slidechanged',  (event) => {
         if(useMermaid)
         {
-            await sleep(sleepTime);
+            //await sleep(sleepTime);
             RemoveProcessed(event.previousSlide);
-            UseMermaidNow(document, selectorToUse);
+            UseMermaidNow(event.currentSlide, selectorToUseOnSlideChange);
         }
       } );
     
@@ -68,11 +69,11 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
       } );
 }
 
-function RemoveProcessed(deckid)
+function RemoveProcessed(slideToRemoveFrom)
 {
     var processedAttribName = 'data-processed';
-    var selectorToUse = 'div.'+ deckid + ' > div.slides > section > div.mermaid[data-processed], div.'+ deckid + ' > div.slides > section > pre > code.mermaid[data-processed]';
-    var toRender = document.querySelectorAll(selectorToUse);
+    var selectorToUse = 'div.mermaid[data-processed], code.mermaid[data-processed]';
+    var toRender = slideToRemoveFrom.querySelectorAll(selectorToUse);
     toRender.forEach((item)=>
     {
         if(item.hasAttribute(processedAttribName))
@@ -82,20 +83,20 @@ function RemoveProcessed(deckid)
               }
             item.removeAttribute(processedAttribName);        
             
-            var rawCode = item.getAttribute('rawCode');
+            var rawCode = item.rawCode;
             item.innerHTML = rawCode;
         }
     });
-    var toRenderCheck = document.querySelectorAll(selectorToUse);
+    var toRenderCheck = slideToRemoveFrom.querySelectorAll(selectorToUse);
 }
 
 export function MermaidInit(addlinks=true)
 {
     mermaid.initialize({
         logLevel: 1,
-        startOnLoad: true,
         flowchart: { useMaxWidth: false, htmlLabels: false },
         mermaid: {
+            startOnLoad: false,
             callback: function(id) {
                 if(addlinks)
                 {
@@ -107,20 +108,25 @@ export function MermaidInit(addlinks=true)
     });
 }
 
-function UseMermaidNow(document, selector='.language-mermaid', excludeSelector='')
+function UseMermaidNow(useMermaidOn, selector='.language-mermaid')
 {
-    if(excludeSelector!='')
-    {        
-        var toExclude = document.querySelectorAll(excludeSelector);
-    }
-    var toRender = document.querySelectorAll(selector);
-    toRender.forEach(item =>
-        {
-            if(!item.hasAttribute('rawCode'))
-                item.setAttribute('rawCode', item.innerHTML);
-        });
+    
+    var toRender = useMermaidOn.querySelectorAll(selector);
+    if(toRender.length>0)
+    {
+        toRender.forEach(item =>
+            {
+                if(!item.hasOwnProperty('rawCode'))
+                    item.rawCode = item.innerHTML;
+            });
 
-    window.mermaid.init(undefined, toRender);
+        window.mermaid.init(undefined, toRender);
+        var afterRender = useMermaidOn.querySelectorAll(selector);
+        afterRender.forEach(item =>
+            {
+                var x = 1;
+            });
+    }
 }
 
 export function UseMermaid(document, addlinks=true, selector='.language-mermaid', excludeSelector='div.slides > section')

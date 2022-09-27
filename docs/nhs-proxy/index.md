@@ -9,6 +9,7 @@ regenerate: true
 {% include githubrawurl.html %}
 
 # What is NHS Proxy?
+{% include slide.html fileName="proxy-for-techs" divName="p2-first" %}
 
 
 {% include slide.html fileName="p2" divName="p2-thesecond" %}

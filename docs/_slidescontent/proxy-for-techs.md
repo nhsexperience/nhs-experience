@@ -1,10 +1,3 @@
-<div class="mermaid r-stretch">
-flowchart LR;
-SomeExternalProof-->ProxyService;
-ProxyService-->RBAC;
-</div>
-
----
 <!-- .slide: data-background-image="https://images.pexels.com/photos/814544/pexels-photo-814544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" -->
 ## PROXY <!-- .element: class="r-fit-text" style="color:red;" -->
 

@@ -1,6 +1,7 @@
 //Other colours at https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/
 
 @import "swagger-ui";
+@import "support/mixins/_typography";
 
 $blue-nhs-blue: #005EB8;
 $blue-nhs-dark-blue: #003087;
@@ -23,6 +24,10 @@ $media-queries: (
   lg: $content-width + $nav-width,
   xl: 1800px,
 );
+
+section > h2 {
+  all: initial;
+}
 
 .site-fork-warning {
   width: 100%;
