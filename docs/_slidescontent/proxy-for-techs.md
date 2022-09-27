@@ -56,16 +56,19 @@ ProxyService-->RBAC;
 </div>
 
 ---
+
 ### So why is proxy needed?
 
 When if you have RBAC - someone can just give the roles
 
 ---
+
 ### Proxy Service
 
 - Forces an update to those roles
 
 --- 
+
 # The "Proof" is the "easy" part
 
 - Verifyable Creds
@@ -73,12 +76,14 @@ When if you have RBAC - someone can just give the roles
 - Fairly standard Tech now
 
 ---
+
 # A Citizen RBAC on the other hand...
 
 - Assume its been tried before?
 - Can we look at Solid Pods to store the Role assignments?
 
 --- 
+
 # Data Data Data
 
 - "The NHS" - biggest misconception that citizens have?

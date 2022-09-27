@@ -38,6 +38,7 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
         controlsLayout: 'bottom-right',
         controlsBackArrows: 'faded',
         progress: true,
+        autoSlide: 5000,
         slideNumber: true,
         showSlideNumber: 'all',
         loop: true,
