@@ -17,50 +17,117 @@ window.$ = $;
 
 export function UseReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true )
 {
-    $(document).ready(function() {
-        let deck1 = new Reveal( document.querySelector('.'+ deckid), {
-            embedded: embed,
-            keyboardCondition: 'focused',
-            controls: true,
-            controlsTutorial: true,
-            controlsLayout: 'bottom-right',
-            controlsBackArrows: 'faded',
-            progress: true,
-            slideNumber: true,
-            showSlideNumber: 'all',
-            autoSlide: 5000,
-            loop: true,
-            plugins: [ RevealMarkdown ],
-            backgroundTransition: 'none',
-            transition: 'none',
-            center: false,
-        } );
-        deck1.initialize().then( () => {
-            if(useMermaid)
-                window.mermaid.init(undefined, document.querySelectorAll(mermaidSelector));
-          } )
+  
+    $(document).ready(LoadUpReveal(document, deckid, useMermaid, mermaidSelector, embed));
+}
 
-        
+async function sleep(ms) {
+    await new Promise(r => setTimeout(r, ms));
+}
+
+function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true )
+{
+    var sleepTime = 100;
+    var selectorToUse = 'div.'+ deckid + ' > div.slides > section.present > div.mermaid, div.'+ deckid + ' > div.slides > section.present > pre > code.mermaid';
+
+    let deck1 = new Reveal( document.querySelector('div.'+ deckid), {
+        embedded: embed,
+        keyboardCondition: 'focused',
+        controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        progress: true,
+        slideNumber: true,
+        showSlideNumber: 'all',
+        loop: true,
+        plugins: [ RevealMarkdown ],
+        backgroundTransition: 'none',
+        transition: 'none',
+        center: false,
+    } );
+    deck1.initialize().then( async () => {
+        if(useMermaid)
+            await sleep(sleepTime);
+            UseMermaidNow(document, selectorToUse);
+      } )
+
+
+    deck1.on('slidechanged',  async (event) => {
+        if(useMermaid)
+        {
+            await sleep(sleepTime);
+            RemoveProcessed(event.previousSlide);
+            UseMermaidNow(document, selectorToUse);
+        }
+      } );
+    
+    deck1.on('slidetransitionend', event => {
+       
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      } );
+}
+
+function RemoveProcessed(deckid)
+{
+    var processedAttribName = 'data-processed';
+    var selectorToUse = 'div.'+ deckid + ' > div.slides > section > div.mermaid[data-processed], div.'+ deckid + ' > div.slides > section > pre > code.mermaid[data-processed]';
+    var toRender = document.querySelectorAll(selectorToUse);
+    toRender.forEach((item)=>
+    {
+        if(item.hasAttribute(processedAttribName))
+        {
+            while (item.firstChild) {
+                item.removeChild(item.firstChild);
+              }
+            item.removeAttribute(processedAttribName);        
+            
+            var rawCode = item.getAttribute('rawCode');
+            item.innerHTML = rawCode;
+        }
+    });
+    var toRenderCheck = document.querySelectorAll(selectorToUse);
+}
+
+export function MermaidInit(addlinks=true)
+{
+    mermaid.initialize({
+        logLevel: 1,
+        startOnLoad: true,
+        flowchart: { useMaxWidth: false, htmlLabels: false },
+        mermaid: {
+            callback: function(id) {
+                if(addlinks)
+                {
+                    console.log(id);
+                    addLinks(id);
+                }
+            },
+        },
     });
 }
 
+function UseMermaidNow(document, selector='.language-mermaid', excludeSelector='')
+{
+    if(excludeSelector!='')
+    {        
+        var toExclude = document.querySelectorAll(excludeSelector);
+    }
+    var toRender = document.querySelectorAll(selector);
+    toRender.forEach(item =>
+        {
+            if(!item.hasAttribute('rawCode'))
+                item.setAttribute('rawCode', item.innerHTML);
+        });
 
-export function UseMermaid(document)
+    window.mermaid.init(undefined, toRender);
+}
+
+export function UseMermaid(document, addlinks=true, selector='.language-mermaid', excludeSelector='div.slides > section')
 {
     $(document).ready(function() {
-        mermaid.initialize({
-            logLevel: 1,
-            startOnLoad: true,
-            flowchart: { useMaxWidth: true, htmlLabels: false },
-            mermaid: {
-                callback: function(id) {
-                    console.log(id);
-                    addLinks(id);
-                },
-            },
-        });
-       
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+        MermaidInit(addlinks);
+        UseMermaidNow(document, selector, excludeSelector);
     });
 }
 
@@ -183,6 +250,3 @@ function drawCanvas(id, callback)
                     });
         });
 }
-
-
-UseMermaid(document);

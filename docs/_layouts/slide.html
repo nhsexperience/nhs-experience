@@ -10,20 +10,26 @@ layout: table_wrappers
 </head>
 <style>
     .revealfull
-{
- width: 100vw; 
-    height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
-    max-height: 100vh;
-    max-width: 177.78vh; /* 16/9 = 1.778 */
-    margin: auto;
-    position: absolute;
-    top:0;bottom:0; /* vertical center */
-    left:0;right:0; /* horizontal center */    
-}
-.revealsmall
-{
- width: 30vw; 
-}
+    {
+    width: 100vw; 
+        height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
+        max-height: 100vh;
+        max-width: 177.78vh; /* 16/9 = 1.778 */
+        margin: auto;
+        position: absolute;
+        top:0;bottom:0; /* vertical center */
+        left:0;right:0; /* horizontal center */    
+    }
+    .revealsmall
+    {
+        width: 30vw; 
+    }
+    svg[id^="mermaid-"] 
+    { 
+        min-width: 900px;
+        min-height: 700px;
+    }
+
 </style>
 <body>
 <div class="reveal reveal4 revealfull">
@@ -33,7 +39,7 @@ layout: table_wrappers
 </div>
 </div>
 <script>
-window.nhsce.UseReveal(document, "reveal4", true, "code.mermaid", true);
+window.nhsce.UseReveal(document, "reveal4", true, "section.present > div.mermaid, section.present > code.mermaid", true);
 </script> 
 </body>
 </html>

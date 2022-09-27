@@ -10,13 +10,19 @@ regenerate: true
 
 # What is NHS Proxy?
 
+
+{% include slide.html fileName="p2" divName="p2-thesecond" %}
+
 ## The aim
 The goal for NHS Proxy is *"To create a standard approach to allow people to act on behalf of the patients and dependents they care for and to allow users of NHS digital services to share their records with those they trust to act on their behalf"* [^digital-proxy-service-2022]
 
 ## How we got here
 
 ## What data, and where is it?
+
+
 ## Words and Definitions
+
 
 ## Benefits
 
@@ -43,12 +49,6 @@ The goal for NHS Proxy is *"To create a standard approach to allow people to act
 
 
 ---
-
-{% include slide.html fileName="p2" divName="p2-thefirst" %}
-
-next
-
-{% include slide.html fileName="p2" divName="p2-thesecond" %}
 
 
 
