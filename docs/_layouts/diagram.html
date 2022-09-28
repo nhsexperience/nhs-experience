@@ -1,0 +1,48 @@
+---
+layout: table_wrappers
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    <script type="text/javascript" src="{{ '/assets/js/imageopen.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets-webpack/js/main.js' | relative_url }}"></script>
+</head>
+<style>
+    .diag-container
+    { 
+       
+        width: 90vw;
+        height:90vh;
+        position: relative;
+        display: inline-block;
+    }    
+    svg[id^="mermaid-"] 
+    { 
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        max-width: 100% !important;
+        max-height: 100%;
+    }
+    body
+    {
+        text-align: center;
+        background-color: white;
+    }
+</style>
+<body>
+<div class="diag-container">
+{{ content }}
+</div>
+<script>
+window.nhsce.MermaidInit(true);    
+    $(document).ready(function() {
+        
+        window.nhsce.UseMermaidNow(document);
+    });
+
+</script> 
+</body>
+</html>
+

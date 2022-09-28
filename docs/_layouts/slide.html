@@ -6,9 +6,7 @@ layout: table_wrappers
 <head>
     <script type="text/javascript" src="{{ '/assets/js/imageopen.js' | relative_url }}"></script>
     <script type="text/javascript" src="{{ '/assets-webpack/js/main.js' | relative_url }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.5/dist/mermaid.js"></script>
     <link rel="stylesheet" href="{{ '/assets-webpack/css/main.css' | relative_url }}">
-
 </head>
 <style>
     .revealfull
@@ -42,7 +40,8 @@ layout: table_wrappers
 <body>
 <div class="reveal reveal4 revealfull">
 <div class="slides">
-<section data-markdown="{{page.slide-contents}}">
+<section data-markdown="{{page.slide-contents}}" data-separator-notes="^Note:">
+
 </section>
 </div>
 </div>

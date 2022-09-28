@@ -7,6 +7,9 @@ import 'reveal.js/dist/theme/black.css'
 import '@fontsource/source-sans-pro'
 import RevealMenu from 'reveal.js-menu/menu.esm.js'
 import 'reveal.js-menu/menu.css'
+import mermaid from 'mermaid'
+import mermaidAPI from 'mermaid'
+import RevealNotes from 'reveal.js'
 
 const preset = presets.offscreen()
 
@@ -29,10 +32,11 @@ async function sleep(ms) {
 
 function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true, showMenu=false )
 {
-    var pluginsToLoad =[RevealMarkdown];
+    var pluginsToLoad =[];
+    pluginsToLoad.push(RevealMarkdown);
     if(showMenu)
     pluginsToLoad.push(RevealMenu);
-
+    pluginsToLoad.push(RevealNotes);
     var sleepTime = 100;
     var selectorToUse = 'div.'+ deckid + ' > div.slides > section.present > div.mermaid, div.'+ deckid + ' > div.slides > section.present > pre > code.mermaid';
     var selectorToUseOnSlideChange = 'div.mermaid, code.mermaid';
@@ -69,59 +73,36 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
                 custom: false,
                 themes: false,
                 themesPath: 'dist/theme/',
-            
-                // Specifies if the transitions menu panel will be shown.
-                // Set to 'true' to show the transitions menu panel with
-                // the default transitions list. Alternatively, provide an
-                // array to specify the transitions to make available in
-                // the transitions panel, for example...
-                // ['None', 'Fade', 'Slide']
                 transitions: false,
-            
-                // Adds a menu button to the slides to open the menu panel.
-                // Set to 'false' to hide the button.
                 openButton: true,
-            
-                // If 'true' allows the slide number in the presentation to
-                // open the menu panel. The reveal.js slideNumber option must
-                // be displayed for this to take effect
                 openSlideNumber: false,
-            
-       
                 keyboard: true,
-        
                 sticky: true,
-            
-            
                 autoOpen: true,
-            
-          
                 delayInit: false,
-            
-                // If 'true' the menu will be shown when the menu is initialised.
                 openOnInit: false,
-      
-                loadIcons: true
+                loadIcons: true,
+                showNotes: true,
+                preloadIframes: true,
               }
         })
     .then( () => {
         if(useMermaid)
-           // await sleep(sleepTime);
            var currentSlide = deck1.getCurrentSlide();
+           var notes = deck1.getSlideNotes(currentSlide);
             UseMermaidNow(currentSlide, selectorToUseOnSlideChange);
       } );
 
     deck1.on('slidechanged',  (event) => {
         if(useMermaid)
         {
-            //await sleep(sleepTime);
+            var notes = deck1.getSlideNotes(event.currentSlide);
             RemoveProcessed(event.previousSlide);
             UseMermaidNow(event.currentSlide, selectorToUseOnSlideChange);
         }
       } );
     
     deck1.on('slidetransitionend', event => {
-       
         // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       } );
 
@@ -156,6 +137,7 @@ export function MermaidInit(addlinks=true)
     mermaid.initialize({
         logLevel: 1,
         flowchart: { useMaxWidth: false, htmlLabels: false },
+        c4: {useMaxWidth: false, diagramMarginX:10,  diagramMarginX:10, c4ShapeMargin:20, c4ShapePadding:20},
         mermaid: {
             startOnLoad: false,
             callback: function(id) {
@@ -169,7 +151,7 @@ export function MermaidInit(addlinks=true)
     });
 }
 
-function UseMermaidNow(useMermaidOn, selector='.language-mermaid')
+export function UseMermaidNow(useMermaidOn, selector='.language-mermaid')
 {
     
     var toRender = useMermaidOn.querySelectorAll(selector);
@@ -181,7 +163,7 @@ function UseMermaidNow(useMermaidOn, selector='.language-mermaid')
                     item.rawCode = item.innerHTML;
             });
 
-        window.mermaid.init(undefined, toRender);
+        mermaid.init(undefined, toRender);
         var afterRender = useMermaidOn.querySelectorAll(selector);
         afterRender.forEach(item =>
             {

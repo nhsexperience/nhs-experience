@@ -5,30 +5,35 @@ abc { color: pink; }
 .slides h3 { color: white; }
 .slides .quote-text { color: pink; }
 .reveal p, .reveal .slides section {line-height: 1.0;}
+.myiframe {width:960px; height: 500px;}
 </style>
+
 
 <!-- .slide: data-background-image="https://images.pexels.com/photos/814544/pexels-photo-814544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" -->
 ## PROXY <!-- .element: class="proxy-header r-fit-text"  -->
 Acting on behalf<!-- .element: class="proxy-sub-header"  -->
 
----
-## What's the definition?
+Note: 
+A note here
 
-From the OED: <!-- .element: class="fragment" data-fragment-index="1"  -->
+---
+## OED Definition
 
 *"Authority given to a person  
 to act for someone else"* <!-- .element: class="quote-text fragment r-fit-text" data-fragment-index="2"  -->
+Note: 
+A note there
 
 ---
-## What does it mean to the NHS?
+## NHS Definition
 *"Allow people to act on behalf of the  
-patients and dependents they care for  
+patients and dependents they care for,  
 and to allow users of NHS digital  
 services to share their records with  
 those they trust to act on their behalf"* <!-- .element: class="quote-text r-fit-text"  -->
 
 ---
-## What does it mean in Tech?
+## Tech Definition
 *"An intermediary between a client  
 requesting a resource and the server  
 providing that resource,  
@@ -125,7 +130,8 @@ NOT WHAT THEY CAN DO
 ---
 ## Ensuring Login is separate to EVERYTHING
 Login should prove who someone is, and what their **CURENT** NHS number is
-**It should not mean they have access to anything to do with anything to do with that NHS Number**  
+**It should not mean they have access do anything with  
+the data associated with that NHS Number**  
 
 ---
 ## Bringing together "Account" & "Proxy"
@@ -139,8 +145,20 @@ Login should prove who someone is, and what their **CURENT** NHS number is
 - list of who is allowed to do what with each app
 
 ---
+## Account Diag
+<iframe data-src="/diagrams/proxy1.html" frameBorder="0" data-preload></iframe><!-- .element: class="myiframe"  -->
+
+---
 ## All citizen interaction through account
 - EVEN When acting as "proxy"
+
+---
+## So what is account?
+Ideal: A citizen facing single API endpoint  
+ with granular OAUTH controlled  scopes  
+for each API.
+
+Data Model: FHIR **is not** Citizen friendly..
 
 ---
 ## One you have this, everything is easy
@@ -193,7 +211,7 @@ Login should prove who someone is, and what their **CURENT** NHS number is
 - Scans QR code from Bobs phone (dig wallet, Biometrics)
 - Doctors device confirms Bob has authority
 
---
+---
 ## Scenario B: Where did that QR code come from?!
 - Direct from MoJ - a "PoA" VC, Alice Subject, Bob the holder
 - or...
@@ -201,6 +219,7 @@ Login should prove who someone is, and what their **CURENT** NHS number is
 - Maybe this has "Extra Constraints?"
 - i.e. full decision making, but no authority on CPR? 
 
+---
 ## Scenario B: Notes
 - Doctor "could" look up the Alice to Bob roles in account?
 - But needs the VC to prove that person is really Bob
@@ -241,7 +260,6 @@ ProxyService-->RBAC;
 When if you have RBAC - someone can just give the roles
 
 ---
-
 ### Proxy Service
 
 - Forces an update to those roles
@@ -268,3 +286,9 @@ When if you have RBAC - someone can just give the roles
 - "The NHS" - biggest misconception that citizens have?
 - Does this illusion lead to high expectations of citizen data access?
 
+---
+<!-- .slide: data-background-image="https://images.pexels.com/photos/814544/pexels-photo-814544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" -->
+## Thank You <!-- .element: class="proxy-header r-fit-text"  -->
+ross.buggins@england.nhs.uk<!-- .element: class="proxy-sub-header"  -->
+
+github.com/RossBugginsNHS<!-- .element: class="proxy-sub-header"  -->

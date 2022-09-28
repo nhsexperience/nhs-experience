@@ -8,6 +8,10 @@ collections:
     output: false   
   slides:
     output: true 
+  slidescontent:
+    output: false
+  diagrams:
+    output: true
 
 defaults:
   - scope:
@@ -15,6 +19,11 @@ defaults:
       type: "slides"
     values:
       layout: "slide"
+  - scope:
+      path: ""
+      type: "diagrams"
+    values:
+      layout: "diagram"
 
 # Build settings
 theme: just-the-docs
