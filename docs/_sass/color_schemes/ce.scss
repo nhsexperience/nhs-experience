@@ -88,3 +88,15 @@ $body-heading-color: $blue-nhs-dark-blue;
 code svg{
   height: auto;
 }
+
+svg[id^="mermaid-"] 
+{ 
+    min-width: 900px;
+    min-height: 700px;
+}
+.reveal .slide-menu-button 
+{
+    left: 30px !important;
+    top: 30px !important;
+    position: relative !important;
+}

@@ -5,8 +5,10 @@ layout: table_wrappers
 <html lang="{{ site.lang | default: 'en-US' }}">
 <head>
     <script type="text/javascript" src="{{ '/assets/js/imageopen.js' | relative_url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets-webpack/js/main.js' | relative_url }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.5/dist/mermaid.js"></script>
+    <link rel="stylesheet" href="{{ '/assets-webpack/css/main.css' | relative_url }}">
+
 </head>
 <style>
     .revealfull
@@ -29,6 +31,12 @@ layout: table_wrappers
         min-width: 900px;
         min-height: 700px;
     }
+    .reveal .slide-menu-button 
+    {
+        left: 30px !important;
+        top: 30px !important;
+        position: relative !important;
+    }
 
 </style>
 <body>
@@ -40,7 +48,7 @@ layout: table_wrappers
 </div>
 <script>
 window.nhsce.MermaidInit(false);
-window.nhsce.UseReveal(document, "reveal4", true, "section.present > div.mermaid, section.present > code.mermaid", true);
+window.nhsce.UseReveal(document, "reveal4", true, "section.present > div.mermaid, section.present > code.mermaid", true, true);
 </script> 
 </body>
 </html>

@@ -5,6 +5,8 @@ import Markdown from  'reveal.js/plugin/markdown/markdown.esm.js'
 import 'reveal.js/dist/reveal.css'
 import 'reveal.js/dist/theme/black.css'
 import '@fontsource/source-sans-pro'
+import RevealMenu from 'reveal.js-menu/menu.esm.js'
+import 'reveal.js-menu/menu.css'
 
 const preset = presets.offscreen()
 
@@ -15,18 +17,22 @@ global.$ = $;
 window.jQuery = $;
 window.$ = $;
 
-export function UseReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true )
+export function UseReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true, showMenu=false  )
 {
   
-    $(document).ready(LoadUpReveal(document, deckid, useMermaid, mermaidSelector, embed));
+    $(document).ready(LoadUpReveal(document, deckid, useMermaid, mermaidSelector, embed, showMenu));
 }
 
 async function sleep(ms) {
     await new Promise(r => setTimeout(r, ms));
 }
 
-function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true )
+function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true, showMenu=false )
 {
+    var pluginsToLoad =[RevealMarkdown];
+    if(showMenu)
+    pluginsToLoad.push(RevealMenu);
+
     var sleepTime = 100;
     var selectorToUse = 'div.'+ deckid + ' > div.slides > section.present > div.mermaid, div.'+ deckid + ' > div.slides > section.present > pre > code.mermaid';
     var selectorToUseOnSlideChange = 'div.mermaid, code.mermaid';
@@ -42,18 +48,68 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
         slideNumber: true,
         showSlideNumber: 'all',
         loop: true,
-        plugins: [ RevealMarkdown ],
+        plugins: pluginsToLoad,
         backgroundTransition: 'none',
         transition: 'none',
         center: false,
     } );
-    deck1.initialize().then( () => {
+    
+    deck1
+    .initialize(
+        {
+            menu: {
+                path: '/assets-webpack/reveal.js-menu',
+                side: 'left',
+                width: 'normal',
+                numbers: false,
+                titleSelector: 'h1, h2, h3, h4, h5, h6',
+                useTextContentForMissingTitles: false,
+                hideMissingTitles: false,
+                markers: true,
+                custom: false,
+                themes: false,
+                themesPath: 'dist/theme/',
+            
+                // Specifies if the transitions menu panel will be shown.
+                // Set to 'true' to show the transitions menu panel with
+                // the default transitions list. Alternatively, provide an
+                // array to specify the transitions to make available in
+                // the transitions panel, for example...
+                // ['None', 'Fade', 'Slide']
+                transitions: false,
+            
+                // Adds a menu button to the slides to open the menu panel.
+                // Set to 'false' to hide the button.
+                openButton: true,
+            
+                // If 'true' allows the slide number in the presentation to
+                // open the menu panel. The reveal.js slideNumber option must
+                // be displayed for this to take effect
+                openSlideNumber: false,
+            
+       
+                keyboard: true,
+        
+                sticky: true,
+            
+            
+                autoOpen: true,
+            
+          
+                delayInit: false,
+            
+                // If 'true' the menu will be shown when the menu is initialised.
+                openOnInit: false,
+      
+                loadIcons: true
+              }
+        })
+    .then( () => {
         if(useMermaid)
            // await sleep(sleepTime);
            var currentSlide = deck1.getCurrentSlide();
             UseMermaidNow(currentSlide, selectorToUseOnSlideChange);
       } );
-
 
     deck1.on('slidechanged',  (event) => {
         if(useMermaid)
@@ -68,6 +124,10 @@ function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.merm
        
         // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       } );
+
+    deck1.addEventListener('menu-ready', function (event) {
+        // your code
+      });
 }
 
 function RemoveProcessed(slideToRemoveFrom)
