@@ -5,6 +5,15 @@ parent: NHS Account Proxy
 nav_order: 4.31
 ---
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 # Summary
 
 
@@ -15,16 +24,21 @@ nav_order: 4.31
 sequenceDiagram
     actor Delegator
     actor Delegate
+    participant UI as UI (eg nhs app or other)
     participant ProxyService as Proxy Service
+    participant ProxyServiceAuth as Proxy Service Authorisation
     participant NHSLogin
     participant PDS
     actor GP
     participant GPIT as GP IT System
 
-    Delegator->>+ProxyService: Start process to give access to Delegate
+    Delegator->>UI: Access UI
+    UI->>+ProxyService: Start process to give access to Delegate
     ProxyService->>Delegator: Redirect to Login
     Delegator->>+NHSLogin: Delegator Login
     NHSLogin->>-ProxyService: Confirms Delegators Identity
+    ProxyService->>+ProxyServiceAuth: Confirm is user is enabled to use proxy access
+    ProxyServiceAuth->>-ProxyService: Confirmed access
     ProxyService->>+PDS: Request Delegates contact details
     PDS->>-ProxyService: Returns contact details
     par To Delegator
@@ -32,7 +46,8 @@ sequenceDiagram
     and To Delegate
         ProxyService->>Delegate: Notify Delegate that they are being requested to have delegate access
     end
-    Delegate->>+ProxyService: Starts delegation acceptance process
+    Delegate->>UI: Access UI
+    UI->>+ProxyService: Starts delegation acceptance process
     ProxyService->>Delegate: Redirect to Login
     Delegate->>+NHSLogin: Delegates Login
     NHSLogin->>-ProxyService: Confirms Delegates Identity 
@@ -68,6 +83,10 @@ sequenceDiagram
 
 ## External Systems Involved
 
+### User Interface (UI)
+- For minimising dependancies, could be standalone
+- Would be good to integrate into nhs uk / nhs app
+- But should not be a blocker to delivering MVP
 ### NHS Login
 - Used to authenticate the identity of both the delegator and delegate
 
@@ -82,6 +101,9 @@ sequenceDiagram
 
 ### NHS Proxy Service
 Used to orchestrate 
+
+### Proxy Service Authorisation
+- Control Scopes for who is allowed to use proxy service
 
 ## Data Inputs
 
@@ -119,10 +141,18 @@ Supplied from PDS Lookup
 - Action Confirmed by GP (t/f)
 - Action Confirmed by GP Date
 
+## Authorisation Data
+- List of GP Practise codes that are enabled for MVP
 
 ## Commands
 
-### Start Delegate Request
+### Delegate Request
+
+Created when a delegate creates the request to start the delegation process.
+#### Payload
+- Date
+- Delegates NHS Number
+- Delgators NHS Number
 
 ### Accept Delegation Request
 
@@ -143,6 +173,23 @@ Supplied from PDS Lookup
 
 ### Delegation Request Process Declined
 
+### Delegation Request Applied 
+Raised after GP has confirmed they have set proxy access in their system.
+
+## Scopes
+
+### proxy.request.create
+- Required by delegate to be able to create a request
+- Should be based on if delegate is at a GP that supports proxy MVP
+
+### proxy.request.respond
+- Required by delegator to be able to respond to a request
+- Should be based on if delegator is at a GP that supports proxy MVP
+
+### proxy.request.confirm
+- Required by GP staff to be able to update that request has been process
+
+*note: GP staff need to be logged in?*
 
 ## Processing / Validation
 
@@ -154,9 +201,16 @@ Details for delegate that are supplied by delegator (i.e. who to "invite") shoul
 
 ### All email/mesh notifications
 
+## Architectural Recommendations
+- Exposed as a RESTful API
+- Ideally CQRS with clear event and command handling
+- Authorisation server handing scopes to allow access to APIs
+- 
+
 # Todo / To consider
 
 - Delegator Request cancel of Delegation
 - Delegate Request cancel of Delegation
 - GP Manually revoking delegation
-- 
+- Does GP need to be logged in to confirm setting proxy? CIS2?
+
