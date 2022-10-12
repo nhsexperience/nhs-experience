@@ -110,6 +110,7 @@ The person who received the (verified) request and then has to manually update t
 - For minimising dependancies, could be standalone
 - Would be good to integrate into nhs uk / nhs app
 - But should not be a blocker to delivering MVP
+
 ### NHS Login
 - Used to authenticate the identity of both the delegator and delegate
 
@@ -123,10 +124,17 @@ The person who received the (verified) request and then has to manually update t
 ## New Services / System Required
 
 ### NHS Proxy Service
-Used to orchestrate 
+Used to orchestrate and expose the proxy process
+
+#### Could Include microservices of:
+- API
+- Command Handling
+- Event Raising
+- Event Handling
 
 ### Proxy Service Authorisation
 - Control Scopes for who is allowed to use proxy service
+- OAuth Authorisation using NHS Login as external IdP
 
 ### Access Data Store
 - Storing who has access to what
@@ -209,6 +217,9 @@ When a delegate or delgator revoked the delegation
 ### Delegation Request Applied 
 Raised after GP has confirmed they have set proxy access in their system.
 
+### Delegate Request Process Finished
+Raised after everything has been done for the delegation request
+
 ## Scopes
 
 ### proxy.request.create
@@ -249,7 +260,7 @@ Details for delegate that are supplied by delegator (i.e. who to "invite") shoul
 - Authorisation server handing scopes to allow access to APIs
 - 
 
-# Todo / To consider
+# Todo / To consider / Out of scope for MVP?
 
 - Delegator Request cancel of Delegation
 - Delegate Request cancel of Delegation
@@ -257,3 +268,20 @@ Details for delegate that are supplied by delegator (i.e. who to "invite") shoul
 - Does GP need to be logged in to confirm setting proxy? CIS2?
 - Web Service & UI for viewing delegation requests (from the User Access Store) and allowing revoking
 
+# Glossary
+
+- Delegate
+- Delegator
+- Proxy
+- IdP
+- OAuth
+- Scope
+- CIS2
+- NHSLogin
+- Mesh
+- Delegation
+- Authentication
+- Authorisation
+- Verification
+- Validation
+- 
