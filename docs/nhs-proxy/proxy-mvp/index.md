@@ -15,9 +15,27 @@ nav_order: 4.31
 </details>
 
 # Summary
+A small central service to allow citizens to delegate proxy access to their GP record to someone else.
+
+## Non Technical Requirements
+- Allow citizen to delegate proxy access to someone else
+
+## Restrictions
+- List of GP practises to be restricted to those in trial
 
 
-# Non Technical Requirements
+## Benefits
+- Easier for citizen to give access
+- Easier for citizen to receive access
+
+## Non Benefits
+- Process still manual for GP Staff
+
+## Clarifications
+- Only for controlling access to GP records
+- But storing this request centrally (i.e. used in future)
+
+
 
 ## Process Flow
 ```mermaid
@@ -27,6 +45,7 @@ sequenceDiagram
     participant UI as UI (eg nhs app or other)
     participant ProxyService as Proxy Service
     participant ProxyServiceAuth as Proxy Service Authorisation
+    participant UserAccessStore as User Access Store
     participant NHSLogin
     participant PDS
     actor GP
@@ -62,6 +81,7 @@ sequenceDiagram
     end
     GP->>GPIT: Manually configure ACLs
     GP->>-ProxyService: Confirm has set ACLs
+    ProxyService->>UserAccessStore: Update User Access Store
     ProxyService->>Delegator: Notify Delegator that GP has configured Delegation
     GPIT-->>Delegate: Grants Access to Delgators data
     Delegate->>GPIT: Accesses delegators data
@@ -69,17 +89,20 @@ sequenceDiagram
 ```
 
 
-# Benefits
+
 
 # Technical Requirements
 
 ## Actors Involved
 
 ### Delgate
+The citizen who wants to allow someone else to have access to their records.
 
 ### Delegator
+The citizen who will have access to someone else's record.
 
 ### GP Staff
+The person who received the (verified) request and then has to manually update the GP system access controls.
 
 ## External Systems Involved
 
@@ -104,6 +127,10 @@ Used to orchestrate
 
 ### Proxy Service Authorisation
 - Control Scopes for who is allowed to use proxy service
+
+### Access Data Store
+- Storing who has access to what
+
 
 ## Data Inputs
 
@@ -154,11 +181,17 @@ Created when a delegate creates the request to start the delegation process.
 - Delegates NHS Number
 - Delgators NHS Number
 
-### Accept Delegation Request
+### Accept Delegation
 
-### Decline Delegation Request
+### Decline Delegation 
 
+### Revoke Delegation
+When a delegate or delgator revoked the delegation
 
+#### Payload
+- DelegationId
+- Revoker
+- Revoke Requested Date
 
 
 ## Events
@@ -189,6 +222,15 @@ Raised after GP has confirmed they have set proxy access in their system.
 ### proxy.request.confirm
 - Required by GP staff to be able to update that request has been process
 
+### proxy.view
+- View fully details of the proxy request
+  
+### user.roles.view
+- Views list of assigned roles / access - ie the assigned access that happened due to the proxy request (and if it is still active)
+
+
+
+
 *note: GP staff need to be logged in?*
 
 ## Processing / Validation
@@ -213,4 +255,5 @@ Details for delegate that are supplied by delegator (i.e. who to "invite") shoul
 - Delegate Request cancel of Delegation
 - GP Manually revoking delegation
 - Does GP need to be logged in to confirm setting proxy? CIS2?
+- Web Service & UI for viewing delegation requests (from the User Access Store) and allowing revoking
 
