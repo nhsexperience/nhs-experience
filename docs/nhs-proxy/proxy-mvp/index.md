@@ -104,6 +104,11 @@ The citizen who will have access to someone else's record.
 ### GP Staff
 The person who received the (verified) request and then has to manually update the GP system access controls.
 
+## System Interaction
+```mermaid
+
+```
+
 ## External Systems Involved
 
 ### User Interface (UI)
