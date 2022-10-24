@@ -20,8 +20,18 @@ A small central service to allow citizens to delegate proxy access to their GP r
 ## Non Technical Requirements
 - Allow citizen to delegate proxy access to someone else
 
-## Restrictions
+
+## Technical Requirements
+- NHS Login for delgator and delegate authentication
+- Basic web application form
+- 
+
+## Restrictions & Constraints
 - List of GP practises to be restricted to those in trial
+- Only 1 person can be nominated by delgator to be a delegate
+- No requirement for supporting revoking
+- No requirement for proxy relationshiops to expire
+- Not required to be integrated into app or nhs.uk
 
 
 ## Benefits
@@ -34,8 +44,27 @@ A small central service to allow citizens to delegate proxy access to their GP r
 ## Clarifications
 - Only for controlling access to GP records
 - But storing this request centrally (i.e. used in future)
+- GP must manually update GPIT system to grant the proxy access -
 
+## Provided Artifacts
+- Process flows
+- Commands
+- Events
+- Supporting data requirements
 
+## Simple Process Flow
+```mermaid
+sequenceDiagram
+    actor Delegator
+    actor Delegate
+    participant Proxy
+    actor GP
+
+    Delegator->>Proxy: Start Proxy Application
+    Delegate->>Proxy: Confirm acceptance
+    Proxy->>GP: Notify of proxy request
+    GP->>Proxy: Mark as complete
+```
 
 ## Process Flow
 ```mermaid
@@ -104,10 +133,6 @@ The citizen who will have access to someone else's record.
 ### GP Staff
 The person who received the (verified) request and then has to manually update the GP system access controls.
 
-## System Interaction
-```mermaid
-
-```
 
 ## External Systems Involved
 
@@ -186,17 +211,47 @@ Supplied from PDS Lookup
 
 ## Commands
 
-### Delegate Request
+| Command                                                                            | Summary |
+| ---------------------------------------------------------------------------------- | ------- |
+| [Start Delegate Request](http://localhost:4000/nhs-proxy/proxy-mvp/#start-request) |         |
+| Add Delegate Details                                                               |         |
+
+
+### Start Delegate Request
 
 Created when a delegate creates the request to start the delegation process.
 #### Payload
-- Date
-- Delegates NHS Number
-- Delgators NHS Number
+
+| Field              | Data Type | Summary |
+| ------------------ | --------- | ------- |
+| Date               |           |         |
+| Requestors User Id |           |         |
+
+#### Response
+
+| Field                | Data Type | Summary |
+| -------------------- | --------- | ------- |
+| Status               |           |         |
+| Delegeate Request Id |           |         |
+
+
+### Add Delegate Details
+TODO
+
+### Add Delegator Details
+TODO
+
+### Add Support Docs
+TODO
+
+### Submit Request
+TODO
 
 ### Accept Delegation
+TODO
 
 ### Decline Delegation 
+TODO
 
 ### Revoke Delegation
 When a delegate or delgator revoked the delegation
@@ -208,16 +263,22 @@ When a delegate or delgator revoked the delegation
 
 
 ## Events
+TODO
 
 ### Delegate Request Process Started
+TODO
 
 ### Delegate Details Confirmed
+TODO
 
 ### Delegate Contact Details Found
+TODO
 
 ### Delegation Request Process Accepted
+TODO
 
 ### Delegation Request Process Declined
+TODO
 
 ### Delegation Request Applied 
 Raised after GP has confirmed they have set proxy access in their system.
