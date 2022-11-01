@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-01T13:35:21.345Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="WTV56gdxz_phu5e7ucCu" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-01T13:39:21.821Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="s0Z0droiPQf9p1VYkjdE" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2062" dy="2266" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -111,7 +111,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-8" value="Notes.&lt;br&gt;&lt;br&gt;Account doesn&#39;t &quot;use&quot; NHS number provided by NHS Login as the &quot;context&quot;&lt;br&gt;The context of account (NHS Number) is stored in account, &lt;br&gt;supporting proxy as additional &quot;users&quot; stored in account&amp;nbsp;&lt;br&gt;&lt;br&gt;&quot;Account&quot; onboards with NHS Login, not every data source that is exposed via it.&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-8" value="Notes.&lt;br&gt;&lt;br&gt;Account doesn&#39;t &quot;use&quot; NHS number provided by NHS Login as the &quot;context&quot;&lt;br&gt;The context of account (NHS Number) is stored in account, &lt;br&gt;supporting proxy/delegate as additional &quot;users&quot; stored in account&amp;nbsp;&lt;br&gt;&lt;br&gt;&quot;Account&quot; onboards with NHS Login, not every data source that is exposed via it.&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="60" y="-270" width="460" height="110" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-10" value="MoJ - Power of A" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -183,11 +183,11 @@
             <mxPoint x="1015" y="-265" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-26" value="Proving the relationships between people&lt;br&gt;&lt;br&gt;this data is exposed via the standard &quot;Account Data&quot; API&amp;nbsp;&lt;br&gt;&lt;br&gt;Other services could use this to implement there own proxy/delegation in their own Authoirisation layer, but using our list of &quot;trusted realtionships&quot;." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1654" y="-50" width="170" height="160" as="geometry" />
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-26" value="Proving the relationships between people&lt;br&gt;&lt;br&gt;this data is exposed via the standard &quot;Account Data&quot; API&amp;nbsp;&lt;br&gt;&lt;br&gt;Other services could use this to implement there own proxy/delegation in their own Authorisation layer, but using our list of &quot;trusted relationships&quot;.&lt;br&gt;&lt;br&gt;Account uses this to setup Account User Role mappings - ie when the &quot;target&quot; (delegator) is not involved in the process directly, eg its being updated so that some one can have access to anothers records after they have provided a digital Power of Att. cred" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="-50" width="294" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-27" value="Keeping track of what can do what with what data and how they access it&lt;br&gt;&lt;br&gt;&lt;br&gt;Can onboard additional services to expose their data using the standard account Authorisation model&lt;br&gt;&lt;br&gt;Support additional apps / clients to consume data&lt;br&gt;&lt;br&gt;External services could access the roles / users via the Account APIs etc and implement own authorisation based on it" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1660" y="-380" width="170" height="250" as="geometry" />
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-27" value="Keeping track of what can do what with what data and how they access it&lt;br&gt;&lt;br&gt;&lt;br&gt;Can onboard additional services to expose their data using the standard account Authorisation model&lt;br&gt;&lt;br&gt;Support additional apps / clients to consume data&lt;br&gt;&lt;br&gt;External services could access the roles / users via the Account APIs etc and implement own authorisation based on it&lt;br&gt;&lt;br&gt;Citizens can can &quot;self serve&quot; and be empowered to control giving access here, without the need for the proxy service.&amp;nbsp;&lt;br&gt;&lt;br&gt;Also here they can control and revoke what appications there data can be accesed Via" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="-380" width="300" height="250" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-28" value="Consuming Data / Functionality via a standard endpoint and standard Authorisation model&lt;br&gt;&lt;br&gt;Both Citien facing - ie a mobile App or web app.&lt;br&gt;&lt;br&gt;And.. &quot;Background&quot; Services, ie data analysis etc" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1645" y="-870" width="170" height="160" as="geometry" />
@@ -287,6 +287,9 @@
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-52" value="Service for checking invoked VCs?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1025" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-53" value="Citizen Account Control Mgmt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="895" y="-810" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
