@@ -1,109 +1,109 @@
-<mxfile host="app.diagrams.net" modified="2022-11-01T13:14:26.285Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="C4jezh4LnYor6aoQ4D8H" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-01T13:14:54.114Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="5KI1BmIhIWtZKcsAuae_" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
-    <mxGraphModel dx="2889" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2062" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Z410X8xZxEE8sT_p1JDi-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="90" y="-90" width="1280" height="180" as="geometry" />
+          <mxGeometry x="275" y="-870" width="1280" height="180" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="100" y="160" width="1280" height="160" as="geometry" />
+          <mxGeometry x="285" y="-620" width="1280" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-20" value="Account &quot;Data&quot; APIs - exposing Account Control Info &amp;amp; &quot;Account&quot; Data - ie anything through here supports &quot;proxy&quot; use. Other data / services can be on boarded here" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="285" y="130" width="900" height="30" as="geometry" />
+          <mxGeometry x="470" y="-650" width="900" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="404" y="700" width="336" height="110" as="geometry" />
+          <mxGeometry x="589" y="-80" width="336" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="380" width="320" height="280" as="geometry" />
+          <mxGeometry x="595" y="-400" width="320" height="280" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-1" value="Relationship Prooving" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="414" y="725" width="140" height="80" as="geometry" />
+          <mxGeometry x="599" y="-55" width="140" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-2" value="Relationship Recording" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="574" y="725" width="140" height="80" as="geometry" />
+          <mxGeometry x="759" y="-55" width="140" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-3" value="Account Users" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="440" y="410" width="120" height="60" as="geometry" />
+          <mxGeometry x="625" y="-370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-4" value="Account Roles" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="440" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="625" y="-300" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-5" value="Account User / Role Mapping" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="440" y="550" width="120" height="60" as="geometry" />
+          <mxGeometry x="625" y="-230" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-6" value="NHS Number" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="590" y="410" width="120" height="60" as="geometry" />
+          <mxGeometry x="775" y="-370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-7" value="Client / App / Services" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="590" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="775" y="-300" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-10" value="Authorisation - Access Enforcement" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="100" y="180" width="1270" height="20" as="geometry" />
+          <mxGeometry x="285" y="-600" width="1270" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-12" value="Relationship Info" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="110" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="295" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-13" value="Account Info" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="565" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-14" value="Account Users" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="250" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="435" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-15" value="Citizen Generated Health Obs" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="520" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="705" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-16" value="GP Data?" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="660" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="845" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-17" value="NHS Info Updates / etc" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="800" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="985" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-18" value="Proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="534" y="670" width="60" height="30" as="geometry" />
+          <mxGeometry x="719" y="-110" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-19" value="Account &quot;Control&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="510" y="350" width="140" height="30" as="geometry" />
+          <mxGeometry x="695" y="-430" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-24" value="Exposure?&lt;br&gt;&lt;br&gt;Level 1 - Relationships - some other service just wants to read a list of relationships&lt;br&gt;Level 2 - Authorisation / ACL Platform - some other services wants to know who can do what with someone elses data&lt;br&gt;Level 3 - Exposing Data through API Platform with common Auth - some other platform wants to expose their data via the account API endpoint and using the account authorisation platform&lt;br&gt;Level 4 - Consuming Data from Account API Platform - some other app / background service wants to read and/or write data that is exposed via account&lt;br&gt;&lt;br&gt;Notes&lt;br&gt;User consent required for all apps / services / clients that want to read / write to account data e.g. &quot;NHS App wants to write to your blood pressure - approve/deny&quot;." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="100" y="-340" width="1060" height="180" as="geometry" />
+          <mxGeometry x="285" y="-1120" width="1060" height="180" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-25" value="ML / Clever Analytics Service etc&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="930" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="1115" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-26" value="NHS App" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="110" y="-60" width="150" height="110" as="geometry" />
+          <mxGeometry x="295" y="-840" width="150" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-28" value="Account Clients / Apps / Services" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="632.5" y="-130" width="217.5" height="30" as="geometry" />
+          <mxGeometry x="817.5" y="-910" width="217.5" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-29" value="Blood Pressure Analysis Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1100" y="-30" width="120" height="60" as="geometry" />
+          <mxGeometry x="1285" y="-810" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-30" value="Personalisation / Recommendations Service etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="910" y="-35" width="120" height="60" as="geometry" />
+          <mxGeometry x="1095" y="-815" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-31" value="Personalisation ?? s" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1070" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="1255" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-1" value="Proxy to Account &quot;Updater&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="770" y="650" width="120" height="60" as="geometry" />
+          <mxGeometry x="955" y="-130" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-2" value="NHS Login" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-100" y="380" width="120" height="60" as="geometry" />
+          <mxGeometry x="85" y="-400" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-3" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="800" y="300" width="60" height="30" as="geometry" />
+          <mxGeometry x="985" y="-480" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-5" value="Identity Providers" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-100" y="350" width="120" height="30" as="geometry" />
+          <mxGeometry x="85" y="-430" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.036;exitY=0.639;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Z410X8xZxEE8sT_p1JDi-3" target="hIbiF8T3Av8Oy_hxuUIC-2">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="420" as="sourcePoint" />
-            <mxPoint x="40" y="410" as="targetPoint" />
+            <mxPoint x="585" y="-360" as="sourcePoint" />
+            <mxPoint x="225" y="-370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-7" value="1 to Many - 1 Account may have multiple users" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hIbiF8T3Av8Oy_hxuUIC-6">
@@ -112,94 +112,94 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-8" value="Notes.&lt;br&gt;&lt;br&gt;Account doesn&#39;t &quot;use&quot; NHS number provided by NHS Login as the &quot;context&quot;&lt;br&gt;The context of account (NHS Number) is stored in account, &lt;br&gt;supporting proxy as additional &quot;users&quot; stored in account&amp;nbsp;&lt;br&gt;&lt;br&gt;&quot;Account&quot; on boards with NHS Login, not every data source that is exposed via it.&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-125" y="440" width="460" height="110" as="geometry" />
+          <mxGeometry x="60" y="-340" width="460" height="110" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-9" value="&lt;br&gt;Takes changes to relationships and configures &lt;br&gt;the account user / roles mappings to say &quot;what&quot; that person can do" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="820" y="760" width="380" height="60" as="geometry" />
+          <mxGeometry x="1005" y="-20" width="380" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-10" value="MoJ - Power of A" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="130" y="820" width="120" height="60" as="geometry" />
+          <mxGeometry x="315" y="40" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-11" value="GRO - Birth Certs" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="910" width="120" height="60" as="geometry" />
+          <mxGeometry x="405" y="130" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-12" value="GRO - Marriage Certs" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="294" y="1020" width="120" height="60" as="geometry" />
+          <mxGeometry x="479" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-15" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.096;entryY=1.07;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Z410X8xZxEE8sT_p1JDi-9">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="360" y="930" as="sourcePoint" />
-            <mxPoint x="410" y="880" as="targetPoint" />
+            <mxPoint x="545" y="150" as="sourcePoint" />
+            <mxPoint x="595" y="100" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-16" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.007;entryY=0.917;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Z410X8xZxEE8sT_p1JDi-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="260" y="860" as="sourcePoint" />
-            <mxPoint x="310" y="810" as="targetPoint" />
+            <mxPoint x="445" y="80" as="sourcePoint" />
+            <mxPoint x="495" y="30" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="389" y="1000" as="sourcePoint" />
-            <mxPoint x="450" y="830" as="targetPoint" />
+            <mxPoint x="574" y="220" as="sourcePoint" />
+            <mxPoint x="635" y="50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="760" y="775" as="sourcePoint" />
-            <mxPoint x="810" y="725" as="targetPoint" />
+            <mxPoint x="945" y="-5" as="sourcePoint" />
+            <mxPoint x="995" y="-55" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-20" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="810" y="650" as="sourcePoint" />
-            <mxPoint x="750" y="600" as="targetPoint" />
+            <mxPoint x="995" y="-130" as="sourcePoint" />
+            <mxPoint x="935" y="-180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="760" y="380" as="sourcePoint" />
-            <mxPoint x="760" y="330" as="targetPoint" />
+            <mxPoint x="945" y="-400" as="sourcePoint" />
+            <mxPoint x="945" y="-450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-22" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="760" y="380" as="sourcePoint" />
-            <mxPoint x="760" y="330" as="targetPoint" />
+            <mxPoint x="945" y="-400" as="sourcePoint" />
+            <mxPoint x="945" y="-450" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="760" y="350" />
+              <mxPoint x="945" y="-430" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-23" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="260" y="150" as="sourcePoint" />
-            <mxPoint x="260" y="100" as="targetPoint" />
+            <mxPoint x="445" y="-630" as="sourcePoint" />
+            <mxPoint x="445" y="-680" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-24" value="NHS Account - Digital Verifiable Creds Issuer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="470" width="120" height="60" as="geometry" />
+          <mxGeometry x="1025" y="-310" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-25" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="740" y="495" as="sourcePoint" />
-            <mxPoint x="830" y="495" as="targetPoint" />
+            <mxPoint x="925" y="-285" as="sourcePoint" />
+            <mxPoint x="1015" y="-285" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-26" value="Proving the relationships between people&lt;br&gt;&lt;br&gt;this data is exposed via the standard &quot;Account Data&quot; API&amp;nbsp;&lt;br&gt;&lt;br&gt;Other services could use this to implement there own proxy/delegation in their own Authoirisation layer, but using our list of &quot;trusted realtionships&quot;." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1490" y="725" width="170" height="160" as="geometry" />
+          <mxGeometry x="1675" y="-55" width="170" height="160" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-27" value="Keeping track of what can do what with what data and how they access it&lt;br&gt;&lt;br&gt;&lt;br&gt;Can onboard additional services to expose their data using the standard account Authorisation model&lt;br&gt;&lt;br&gt;Support additional apps / clients to consume data&lt;br&gt;&lt;br&gt;External services could access the roles / users via the Account APIs etc and implement own authorisation based on it" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1484" y="370" width="170" height="250" as="geometry" />
+          <mxGeometry x="1669" y="-410" width="170" height="250" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-28" value="Consuming Data / Functionality via a standard endpoint and standard Authorisation model&lt;br&gt;&lt;br&gt;Both Citien facing - ie a mobile App or web app.&lt;br&gt;&lt;br&gt;And.. &quot;Background&quot; Services, ie data analysis etc" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1460" y="-90" width="170" height="160" as="geometry" />
+          <mxGeometry x="1645" y="-870" width="170" height="160" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-29" value="Exposing Data / Functionality via a standard endpoint and standard Authorisation model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1460" y="220" width="170" height="30" as="geometry" />
+          <mxGeometry x="1645" y="-560" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-32" value="etc.. etc..." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1230" y="15" width="120" height="60" as="geometry" />
+          <mxGeometry x="1415" y="-765" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
