@@ -1,1 +1,97 @@
-<mxfile host="app.diagrams.net" modified="2022-11-01T11:40:08.441Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="HnA0FrJYNB-3u8HLRTRI" version="20.5.1" type="github"><diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">3Zpbk6I4FIB/jY9uQSKoj7bal63uWavdqdmaly2EtKYmEDbEVvvX7wkEFIK2UzUINS/dcAIBvnNybrGHp+H+QXjx5oUHhPWQFex7eNZDCFkugn9KctASjHAmWQsaZDL7KFjSD6KFlpZuaUCS0oWScyZpXBb6PIqIL0syTwi+K1/2xln5qbG3JoZg6XvMlH6jgdxk0hEaHuWPhK43+ZNtd5yNhF5+sf6SZOMFfHciwvMengrOZXYU7qeEKXo5l+y++zOjxYsJEslrbvg+sK1/Rvvv+/l8lPz9b2z/OaP9/DvePbbVX6zfVh5yBIJvo4CoWawevtttqCTL2PPV6A60DrKNDBmc2XCopyNCkv3ZF7WLzwfDITwkUhzgEn3DWAPTJtPPz3dH/jYaaeHmFH4u9LTS18XcRy5woNH8BCbb7h4m2ypzst2rOblNccpt/YTTxPcBjOypIfe/rbL2u5knveMZDE0WT4kBFNDIMjWP0XUExz4gIgIECiCFxTrRAyENAnX7nSAJ/fBW6VRKHTGnkUy/1rnrOTM111byJHM3aupECv6DTDnjMO8s4pGa5Y0yVhH9AsW5w4ricI3icI3ecFNqG3fPugfWoARpaJmQMKozbrspSqMOUrLLpoRHV1JCzblKg9IrYZ6kPEo2NIaRBYS8dxqtOwCvYmLIMdfhoAZeY+zQZ+xeic9F0AV4zrBr8PCF0PM1IcIMMDc3uEF5tRartxSxa5g1Fq8HF5i9ckY6yKzGw92WmfOJnaWZzr0GCP9evDjuwoqtknSctkm6Bskvj0sQfNmGK8WxbRc37tpyNYu1KaNEJ9fK5CZxXBwviXinfs0SboFc64s2V93pqt3KDRc0SeMrDPUVPx+AATFrHr1x4ZMwhdu1Qq+W5rAGJ2oM56eZyhMAbMHy7EpCjFp3cvalvKQlSkWZ0B1KlzKR+uyteUwFlu5gMpOPKZX0gygH9kAiIjwJnglZj8Rj8IrI+mvVSgBAnSNnJhsPCzhPW1H4vgVGrts5RmZ+kSVkmZuyvsYBmFdSZBhE+i1wG1md42Z2hhaC7w8GHLOjeW3b8frOZ50CyhnLr1jfuFz9Fy3NEx24NSporINpmy3MusbzlEcAnJ32nn9bFVVbg3XLpK5B05iOkBnj5/uYJ1tBUg/sMkV+BYWfu850U5U8k/d0f9HW6fppzgluyfVChTJaJfHF21Ge7VcqAF1DTZ/h7wJmhhIgPD8L1rOk35AW+FkwQZbcgDbXKvpOFk+luQB+GpV9HobpI9UrnH/EQD8CzDbZhqVnvAkeZgWLNvLqozpWtPTxwLS/wdA17a+5XTxkZk8vz4Xepwyoq+7NJPLYAVauCnS6iM6DXdXCbh78xrhrwQ+d6+KkvYi2rbDiBPt1e6RODa7mdpGQmSwcF3HWzjlmWMDweHK2ofPbxCwXoz+cssJqN0fHzi3Dlpla3DHOVZW1ECRJw5d2Ggkt+Yz2jb/qg9t2FvkLnGbKUNtzgFcNw2qrKwxJFGQR3vTFLdMdV10LrtkAuy1cc+u1Bi5kWirZstrf2rGt4e2CGZwef2qVjp38Yg3P/wc=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-11-01T11:40:53.874Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="GKLTUDXur8E7pw57mcEa" version="20.5.1" type="github">
+  <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
+    <mxGraphModel dx="2062" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="-90" width="1280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="160" width="1280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-20" value="Account &quot;Data&quot; APIs" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="670" y="130" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="404" y="700" width="336" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="380" width="320" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-1" value="Relationship Prooving" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="725" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-2" value="Relationship Recording" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="574" y="725" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-3" value="Account Users" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-4" value="Account Roles" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-5" value="Account User / Role Mapping" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-6" value="NHS Number" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-7" value="Client / App / Services" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-10" value="Authorisation - Access Enforcement" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="180" width="1270" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-12" value="Relationship Info" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-13" value="Account Info" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-14" value="Account Users" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-15" value="Citizen Generated Health Obs" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="520" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-16" value="GP Data?" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="660" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-17" value="NHS Info Updates / etc" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="800" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-18" value="Proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="534" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-19" value="Account &quot;Control&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="510" y="350" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-24" value="Exposure?&lt;br&gt;&lt;br&gt;Level 1 - Relationships&amp;nbsp;&lt;br&gt;Level 2 - Authorisation / ACL Platform&lt;br&gt;Level 3 - Exposing Data through API Platform with common Auth&lt;br&gt;Level 4 - Consuming Data from Account API Platform" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="-340" width="476" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-25" value="ML / Clever Analytics Service etc&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="930" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-26" value="NHS App" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="-60" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-28" value="Account Clients / Apps / Services" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="632.5" y="-130" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-29" value="Blood Pressure Analysis Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="-30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-30" value="Personalisation / Recommendations Service etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="910" y="-35" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-31" value="Personalisation ?? s" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1070" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-1" value="Proxy to Account &quot;Updater&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
