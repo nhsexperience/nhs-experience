@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-11-01T13:17:23.208Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="bG7694T0BsI-gck-G4LQ" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-01T13:19:41.144Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="aRe6cyg5d9ocw02nxN7b" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
-    <mxGraphModel dx="2062" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2062" dy="2266" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,8 +10,8 @@
         <mxCell id="Z410X8xZxEE8sT_p1JDi-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="285" y="-620" width="1280" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="Z410X8xZxEE8sT_p1JDi-20" value="Account &quot;Data&quot; APIs - exposing Account Control Info &amp;amp; &quot;Account&quot; Data - ie anything through here supports &quot;proxy&quot; use. Other data / services can be on boarded here" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="470" y="-650" width="900" height="30" as="geometry" />
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-20" value="&lt;b&gt;Account &quot;Data&quot; &lt;/b&gt;(APIs)&lt;br&gt;&amp;nbsp;exposing Account Control Info &amp;amp; &quot;Account&quot; Data - ie anything through here supports &quot;proxy&quot; use. Other data / services can be on boarded here" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="530" y="-655" width="780" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="589" y="-80" width="336" height="110" as="geometry" />
@@ -61,10 +61,10 @@
         <mxCell id="Z410X8xZxEE8sT_p1JDi-17" value="NHS Info Updates / etc" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="985" y="-530" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Z410X8xZxEE8sT_p1JDi-18" value="Proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-18" value="Proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="719" y="-110" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z410X8xZxEE8sT_p1JDi-19" value="Account &quot;Control&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="Z410X8xZxEE8sT_p1JDi-19" value="Account &quot;Control&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="695" y="-430" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-24" value="Exposure?&lt;br&gt;&lt;br&gt;Level 1 - Relationships - some other service just wants to read a list of relationships&lt;br&gt;Level 2 - Authorisation / ACL Platform - some other services wants to know who can do what with someone elses data&lt;br&gt;Level 3 - Exposing Data through API Platform with common Auth - some other platform wants to expose their data via the account API endpoint and using the account authorisation platform&lt;br&gt;Level 4 - Consuming Data from Account API Platform - some other app / background service wants to read and/or write data that is exposed via account&lt;br&gt;&lt;br&gt;Notes&lt;br&gt;User consent required for all apps / services / clients that want to read / write to account data e.g. &quot;NHS App wants to write to your blood pressure - approve/deny&quot;." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
@@ -233,6 +233,9 @@
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-39" value="Source for DrawIO Diagram on Github&lt;br&gt;https://github.com/RossBugginsNHS/nhs-experience/blob/latest/docs/nhs-account-v2/Proxy%20and%20Account.drawio" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="40" y="330" width="815" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-40" value="Account &amp;amp; Proxy MVP / Alpha / Beta test apps" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="715" y="-780" width="135" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
