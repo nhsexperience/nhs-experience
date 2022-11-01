@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-01T11:58:44.863Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="z_dpod0QW6fczjTweDNV" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-01T13:08:33.949Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="Tkrixi0-zg8Fq3y3PRbQ" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2889" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -185,6 +185,18 @@
             <mxPoint x="740" y="495" as="sourcePoint" />
             <mxPoint x="830" y="495" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-26" value="Proving the relationships between people" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="740" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-27" value="Keeping track of what can do what with what data and how they access it" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="510" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-28" value="Consuming Data / Functionality via a standard endpoint and standard Authorisation model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="-15" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-29" value="Exposing Data / Functionality via a standard endpoint and standard Authorisation model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="220" width="170" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
