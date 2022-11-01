@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-01T11:51:11.053Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="UnqbKGt_Qma7N-SthF9A" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-01T11:58:44.863Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="z_dpod0QW6fczjTweDNV" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2889" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -109,6 +109,81 @@
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-7" value="1 to Many - 1 Account may have multiple users" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hIbiF8T3Av8Oy_hxuUIC-6">
           <mxGeometry x="0.1695" y="-2" relative="1" as="geometry">
             <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-8" value="Notes.&lt;br&gt;&lt;br&gt;Account doesn&#39;t &quot;use&quot; NHS number provided by NHS Login as the &quot;context&quot;&lt;br&gt;The context of account (NHS Number) is stored in account, &lt;br&gt;supporting proxy as additional &quot;users&quot; stored in account&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="450" width="430" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-9" value="&lt;br&gt;Takes changes to relationships and configures &lt;br&gt;the account user / roles mappings to say &quot;what&quot; that person can do" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="820" y="760" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-10" value="MoJ - Power of A" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-11" value="GRO - Birth Certs" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-12" value="GRO - Marriage Certs" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="294" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-15" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.096;entryY=1.07;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Z410X8xZxEE8sT_p1JDi-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="930" as="sourcePoint" />
+            <mxPoint x="410" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-16" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.007;entryY=0.917;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Z410X8xZxEE8sT_p1JDi-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="860" as="sourcePoint" />
+            <mxPoint x="310" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="389" y="1000" as="sourcePoint" />
+            <mxPoint x="450" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="775" as="sourcePoint" />
+            <mxPoint x="810" y="725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-20" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="810" y="650" as="sourcePoint" />
+            <mxPoint x="750" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="380" as="sourcePoint" />
+            <mxPoint x="760" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-22" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="380" as="sourcePoint" />
+            <mxPoint x="760" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="760" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-23" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="150" as="sourcePoint" />
+            <mxPoint x="260" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-24" value="NHS Account - Digital VC Issuer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hIbiF8T3Av8Oy_hxuUIC-25" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="740" y="495" as="sourcePoint" />
+            <mxPoint x="830" y="495" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
