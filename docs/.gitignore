@@ -6,5 +6,4 @@ vendor
 .lock
 Gemfile.lock
 node_modules
-assets/*
 assets-webpack/*
