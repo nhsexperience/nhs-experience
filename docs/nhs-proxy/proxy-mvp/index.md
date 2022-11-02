@@ -57,12 +57,18 @@ A small central service to allow citizens to delegate proxy access to their GP r
 sequenceDiagram
     actor Delegator
     actor Delegate
-    participant Proxy
+    participant Proxy as Proxy Application
+    participant PDS
     actor GP
-
+    participant GPSystem as GP System
     Delegator->>Proxy: Start Proxy Application
+    Proxy->>PDS: Validates details
+    Proxy-->>Delegate: Notify of proxy request
     Delegate->>Proxy: Confirm acceptance
-    Proxy->>GP: Notify of proxy request
+    Proxy-->>Delegate: Notify of acceptance
+    Proxy-->>Delegator: Notify of acceptance
+    Proxy-->>GP: Notify of proxy request
+    GP->>GPSystem: Manually Grants Access
     GP->>Proxy: Mark as complete
 ```
 
