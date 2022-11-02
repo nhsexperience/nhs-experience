@@ -21,7 +21,7 @@
     "mini-css-extract-plugin": "^2.6.1",
     "saas": "^1.0.0",
     "sass": "^1.55.0",
-    "sass-loader": "^13.0.2",
+    "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.2.0"
@@ -30,8 +30,8 @@
     "@fontsource/source-sans-pro": "^4.5.11",
     "canvg": "^4.0.1",
     "jquery": "^3.6.1",
-    "mermaid": "^9.1.7",
-    "reveal.js": "^4.3.1",
+    "mermaid": "^9.2.0",
+    "reveal.js": "^4.4.0",
     "reveal.js-menu": "^2.1.0"
   }
 }
