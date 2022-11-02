@@ -20,6 +20,8 @@ global.$ = $;
 window.jQuery = $;
 window.$ = $;
 
+mermaid.startOnLoad = false;
+
 export function UseReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true, showMenu=false  )
 {
   
@@ -132,6 +134,16 @@ function RemoveProcessed(slideToRemoveFrom)
     var toRenderCheck = slideToRemoveFrom.querySelectorAll(selectorToUse);
 }
 
+function mermaidCb(id, addlinks)
+{
+    console.log("Callback happening from mermaid init being finished");
+    if(addlinks)
+    {
+        console.log(id);
+        addLinks(id);
+    }
+}
+
 export function MermaidInit(addlinks=true)
 {
     mermaid.initialize({
@@ -141,18 +153,13 @@ export function MermaidInit(addlinks=true)
         mermaid: {
             startOnLoad: false,
             callback: function(id) {
-                console.log("Callback happening from mermaid init being finished");
-                if(addlinks)
-                {
-                    console.log(id);
-                    addLinks(id);
-                }
+                mermaidCb(id, addlinks);
             },
         },
     });
 }
 
-export function UseMermaidNow(useMermaidOn, selector='.language-mermaid')
+export function UseMermaidNow(useMermaidOn, selector='.language-mermaid', addlinks=true)
 {
     
     var toRender = useMermaidOn.querySelectorAll(selector);
@@ -164,7 +171,7 @@ export function UseMermaidNow(useMermaidOn, selector='.language-mermaid')
                     item.rawCode = item.innerHTML;
             });
 
-        mermaid.init(undefined, toRender);
+        mermaid.init(undefined, toRender, (id) => {mermaidCb(id, addlinks) });
         var afterRender = useMermaidOn.querySelectorAll(selector);
         afterRender.forEach(item =>
             {
@@ -177,7 +184,7 @@ export function UseMermaid(document, addlinks=true, selector='.language-mermaid'
 {
     $(document).ready(function() {
         MermaidInit(addlinks);
-        UseMermaidNow(document, selector, excludeSelector);
+        UseMermaidNow(document, selector, addlinks);
     });
 }
 
