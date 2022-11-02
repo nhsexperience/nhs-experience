@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "build-production": "webpack && bundle install && JEKYLL_ENV=production bundle exec jekyll build  --config _config.yml,_config_production.yml",
     "build-staging": "webpack && bundle install && JEKYLL_ENV=staging bundle exec jekyll build --config _config.yml,_config_staging.yml",
     "build-development": "webpack --mode=development && bundle install && JEKYLL_ENV=development bundle exec jekyll build --config _config.yml,_config_development.yml",
@@ -33,5 +34,8 @@
     "mermaid": "^9.2.0",
     "reveal.js": "^4.4.0",
     "reveal.js-menu": "^2.1.0"
+  },
+  "resolutions": {
+    "d3-color": "^3.1.0"
   }
 }
