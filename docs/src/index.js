@@ -141,6 +141,7 @@ export function MermaidInit(addlinks=true)
         mermaid: {
             startOnLoad: false,
             callback: function(id) {
+                console.log("Callback happening from mermaid init being finished");
                 if(addlinks)
                 {
                     console.log(id);
