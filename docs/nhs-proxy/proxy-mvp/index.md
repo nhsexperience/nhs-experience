@@ -211,10 +211,10 @@ Supplied from PDS Lookup
 
 ## Commands
 
-| Command                                                                            | Summary |
-| ---------------------------------------------------------------------------------- | ------- |
-| [Start Delegate Request](http://localhost:4000/nhs-proxy/proxy-mvp/#start-request) |         |
-| Add Delegate Details                                                               |         |
+| Command                                           | Summary |
+| ------------------------------------------------- | ------- |
+| [Start Delegate Request](#start-delegate-request) |         |
+| Add Delegate Details                              |         |
 
 
 ### Start Delegate Request
