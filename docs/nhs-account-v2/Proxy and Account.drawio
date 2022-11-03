@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-03T09:45:24.612Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="pu5Z0MICff2VV-5-DA6h" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-03T09:48:18.733Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="0XA3h5_GVJge0deaL5bb" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2302" dy="3502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -386,6 +386,12 @@
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-8" value="Ross Buggins - Oct 2022" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="160" y="-650" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-9" value="NHS Chooses which apps are &quot;avaliable&quot; for citizens to &quot;install&quot; in the context of their account" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="-1835" width="175" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-10" value="Citizen choose what client apps can access what data" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="-1680" width="150" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
