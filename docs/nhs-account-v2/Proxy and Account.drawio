@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-11-03T10:49:43.478Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="urMuolfZSh-bHAJrBZkZ" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-03T10:50:49.151Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="i8IUOnmBUttwC8djLUM9" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
-    <mxGraphModel dx="2180" dy="3064" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2180" dy="4233" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -395,6 +395,9 @@
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-13" value="Default storage options? POD config?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1555" y="-1560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-14" value="&lt;b&gt;Whiteboarding up thoughts for Proxy &amp;amp; Account&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="-2360" width="670" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
