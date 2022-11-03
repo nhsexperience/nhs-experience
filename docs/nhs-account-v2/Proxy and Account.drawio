@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-03T09:41:43.794Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="4Uv6cUA1PfD-xoMuVFza" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-03T09:43:56.578Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="wyIOq72CyB12_vWZqzhp" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2302" dy="3502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -199,7 +199,7 @@
           <mxGeometry x="1535" y="-1795" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-33" value="Some other third party app?" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="625" y="-1840" width="120" height="60" as="geometry" />
+          <mxGeometry x="589" y="-1845" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-34" value="Some other IdP? Gov UK?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="205" y="-1340" width="120" height="60" as="geometry" />
@@ -232,7 +232,7 @@
           <mxGeometry x="160" y="-700" width="815" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-40" value="Account &amp;amp; Proxy MVP / Alpha / Beta test apps" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="764" y="-1823" width="135" height="70" as="geometry" />
+          <mxGeometry x="730" y="-1865" width="135" height="70" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-41" value="etc.. etc..." style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1550" y="-1540" width="120" height="60" as="geometry" />
@@ -289,7 +289,7 @@
           <mxGeometry x="1145" y="-1020" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-53" value="Citizen Account Control Mgmt" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1067" y="-1860" width="120" height="60" as="geometry" />
+          <mxGeometry x="980" y="-1880" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-54" value="Other account core services?&amp;nbsp;&lt;br&gt;&lt;br&gt;Audit&lt;br&gt;Events / Notifications&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=2" parent="1" vertex="1">
           <mxGeometry x="1340" y="-1420" width="120" height="180" as="geometry" />
@@ -370,7 +370,7 @@
           <mxGeometry x="70" y="-1380" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-1" value="OHID Digital Health Check App" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="925" y="-1830" width="120" height="60" as="geometry" />
+          <mxGeometry x="879" y="-1800" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-3" value="&lt;b style=&quot;&quot;&gt;Account &quot;Data&quot;&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;&quot;&gt;(APIs)&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;exposing Account Control Info &amp;amp; &quot;Account&quot; Data via a standard authorisation model from one &quot;endpoint&quot;&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;anything exposed via here supports &quot;proxy&quot; use. Other data / services can be on boarded here&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;Not all &quot;new&quot; data stores - comibination of &quot;new data&quot; eg citizen generated obs, and &quot;wrappers&quot; that pull/expose data that is stored else where&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="435" y="-1680" width="1210" height="30" as="geometry" />
@@ -380,6 +380,9 @@
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-6" value="UMA.." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="880" y="-1170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-7" value="Pan Euro health app? &quot;Patient Summary&quot; Storing data in app for when travelling?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="-1800" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
