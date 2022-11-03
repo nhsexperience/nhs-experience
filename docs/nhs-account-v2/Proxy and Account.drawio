@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-03T09:32:36.970Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="_OT82Pt1_S_oJvs6tRP5" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-03T09:34:19.309Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="SCggTQCxmcccOxKty8sc" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2302" dy="3502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -12,9 +12,6 @@
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="405" y="-1630" width="1280" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="Z410X8xZxEE8sT_p1JDi-20" value="&lt;b&gt;Account &quot;Data&quot;&amp;nbsp;&lt;/b&gt;(APIs)&lt;br&gt;&amp;nbsp;exposing Account Control Info &amp;amp; &quot;Account&quot; Data via a standard authorisation model from one &quot;endpoint&quot; &lt;br&gt;anything exposed via here supports &quot;proxy&quot; use. Other data / services can be on boarded here" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="745" y="-1680" width="580" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="709" y="-1090" width="336" height="110" as="geometry" />
@@ -374,6 +371,9 @@
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-1" value="OHID Digital Health Check App" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="925" y="-1830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-3" value="&lt;b style=&quot;&quot;&gt;Account &quot;Data&quot;&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;&quot;&gt;(APIs)&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;exposing Account Control Info &amp;amp; &quot;Account&quot; Data via a standard authorisation model from one &quot;endpoint&quot;&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;anything exposed via here supports &quot;proxy&quot; use. Other data / services can be on boarded here&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;Not all &quot;new&quot; data stores - comibination of &quot;new data&quot; eg citizen generated obs, and &quot;wrappers&quot; that expose data that is stored else where&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="435" y="-1680" width="1210" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
