@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-03T10:50:49.151Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="i8IUOnmBUttwC8djLUM9" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-03T12:37:27.891Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="AMH1pw9xkIGaYrXvqDxw" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
     <mxGraphModel dx="2180" dy="4233" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -398,6 +398,12 @@
         </mxCell>
         <mxCell id="2C_cEjcNXYXikxWtVfO_-14" value="&lt;b&gt;Whiteboarding up thoughts for Proxy &amp;amp; Account&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="660" y="-2360" width="670" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-15" value="&lt;b&gt;Care Home Example&lt;br&gt;&lt;/b&gt;&lt;br&gt;Staff with CIs2 login (or other in private sector?) being given proxy access, to be able to manage prescriptions?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="828.5" y="-660" width="413" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-16" value="&lt;b&gt;FAQs / Thinking&lt;br&gt;&lt;/b&gt;&lt;br&gt;If patients can access their own records &amp;amp; can print / screen shot - surely proxy access is better as at least there is a digital audit of that sharing?&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1435" y="-620" width="415" height="280" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
