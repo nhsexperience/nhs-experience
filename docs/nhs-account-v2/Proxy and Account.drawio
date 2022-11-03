@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-11-02T10:10:15.218Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="407Nha7G8U0sXXiuX9NY" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-03T09:32:36.970Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="_OT82Pt1_S_oJvs6tRP5" version="20.5.1" type="github">
   <diagram id="DfHSoO7FjMYRVWJBDuWQ" name="Page-1">
-    <mxGraphModel dx="2708" dy="3707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2302" dy="3502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -86,7 +86,7 @@
           <mxGeometry x="1405" y="-1840" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-30" value="Personalisation / Recommendations Service etc" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1215" y="-1845" width="120" height="60" as="geometry" />
+          <mxGeometry x="1241" y="-1850" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Z410X8xZxEE8sT_p1JDi-31" value="Personalisation ?? s" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1335" y="-1560" width="120" height="60" as="geometry" />
@@ -202,7 +202,7 @@
           <mxGeometry x="1535" y="-1795" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-33" value="Some other third party app?" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="670" y="-1830" width="120" height="60" as="geometry" />
+          <mxGeometry x="625" y="-1840" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-34" value="Some other IdP? Gov UK?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="205" y="-1340" width="120" height="60" as="geometry" />
@@ -235,7 +235,7 @@
           <mxGeometry x="160" y="-700" width="815" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-40" value="Account &amp;amp; Proxy MVP / Alpha / Beta test apps" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="835" y="-1810" width="135" height="70" as="geometry" />
+          <mxGeometry x="764" y="-1823" width="135" height="70" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-41" value="etc.. etc..." style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1550" y="-1540" width="120" height="60" as="geometry" />
@@ -292,7 +292,7 @@
           <mxGeometry x="1145" y="-1020" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-53" value="Citizen Account Control Mgmt" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1015" y="-1840" width="120" height="60" as="geometry" />
+          <mxGeometry x="1067" y="-1860" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-54" value="Other account core services?&amp;nbsp;&lt;br&gt;&lt;br&gt;Audit&lt;br&gt;Events / Notifications&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=2" parent="1" vertex="1">
           <mxGeometry x="1340" y="-1420" width="120" height="180" as="geometry" />
@@ -363,14 +363,17 @@
         <mxCell id="hIbiF8T3Av8Oy_hxuUIC-73" value="SCR - Project emerald?" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1460" y="-1560" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="amODOdhTJ2sGS4ZqXd5V-1" value="Additional Notes / Thinking&lt;br&gt;&lt;br&gt;&lt;br&gt;Anything that is exposed as part of &quot;Account&quot; by defacto has &quot;Proxy&quot; support&amp;nbsp;&lt;br&gt;&lt;br&gt;Any new / existing services that are onboarded with &quot;Account&quot; in the future, by defacto has &quot;Proxy&quot; support&lt;br&gt;&lt;br&gt;Anything exposed through Account has support for User controlled consent (and revocation) for both who can access their data, and also via what client application&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Support CIS2 for another IdP? Allow users to choose to share with health professionals? Especially around user generated health data?&lt;br&gt;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="amODOdhTJ2sGS4ZqXd5V-1" value="Additional Notes / Thinking&lt;br&gt;&lt;br&gt;&lt;br&gt;Anything that is exposed as part of &quot;Account&quot; by defacto has &quot;Proxy&quot; support&amp;nbsp;&lt;br&gt;&lt;br&gt;Any new / existing services that are onboarded with &quot;Account&quot; in the future, by defacto has &quot;Proxy&quot; support&lt;br&gt;&lt;br&gt;Anything exposed through Account has support for User controlled consent (and revocation) for both who can access their data, and also via what client application&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Support CIS2 for another IdP? Allow users to choose to share with health professionals? Especially around user generated health data?&lt;br&gt;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="1440" y="-2280" width="510" height="310" as="geometry" />
         </mxCell>
-        <mxCell id="amODOdhTJ2sGS4ZqXd5V-2" value="Notes on Different Levels on functionality exposed by account&lt;br&gt;&lt;br&gt;&lt;br&gt;What account &quot;does&quot; has been very muddled up until now&lt;br&gt;Separate into 2 sections - account control, and account &quot;data&quot;&lt;br&gt;&lt;br&gt;Account &quot;Data&quot; can be made clearer by showing different levels of functionality&lt;br&gt;&lt;br&gt;From the very bottom - data -&amp;nbsp; (the foundation) is exposing existing and new data via a standard authorisation model&lt;br&gt;&lt;br&gt;Next, Information - taking sections from different exposed data, and creating a &quot;summary&quot; or joined up thinking that provides extra &quot;value&quot;&lt;br&gt;&lt;br&gt;Knowledge - this is taking data and information, looking for patterns, or analysis - and exposing this found knowledge for others to use&lt;br&gt;&lt;br&gt;Wisdom - taking knowledge and proactively doing something with it. &quot;Personalising offered services&quot; in an nhs mobile app could be classified as this" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="amODOdhTJ2sGS4ZqXd5V-2" value="Notes on Different Levels on functionality exposed by account&lt;br&gt;&lt;br&gt;&lt;br&gt;What account &quot;does&quot; has been very muddled up until now&lt;br&gt;Separate into 2 sections - account control, and account &quot;data&quot;&lt;br&gt;&lt;br&gt;Account &quot;Data&quot; can be made clearer by showing different levels of functionality&lt;br&gt;&lt;br&gt;From the very bottom - data -&amp;nbsp; (the foundation) is exposing existing and new data via a standard authorisation model&lt;br&gt;&lt;br&gt;Next, Information - taking sections from different exposed data, and creating a &quot;summary&quot; or joined up thinking that provides extra &quot;value&quot;&lt;br&gt;&lt;br&gt;Knowledge - this is taking data and information, looking for patterns, or analysis - and exposing this found knowledge for others to use&lt;br&gt;&lt;br&gt;Wisdom - taking knowledge and proactively doing something with it. &quot;Personalising offered services&quot; in an nhs mobile app could be classified as this" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2740" y="-2010" width="580" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="amODOdhTJ2sGS4ZqXd5V-3" value="CIS2????" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="amODOdhTJ2sGS4ZqXd5V-3" value="CIS2????" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="70" y="-1380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C_cEjcNXYXikxWtVfO_-1" value="OHID Digital Health Check App" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="925" y="-1830" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
