@@ -15,18 +15,22 @@ nav_order: 4.31
 </details>
 
 # Summary
+
 A small central service to allow citizens to delegate proxy access to their GP record to someone else.
 
 ## Non Technical Requirements
+
 - Allow citizen to delegate proxy access to someone else
 
 
 ## Technical Requirements
+
 - NHS Login for delgator and delegate authentication
 - Basic web application form
 - 
 
 ## Restrictions & Constraints
+
 - List of GP practises to be restricted to those in trial
 - Only 1 person can be nominated by delgator to be a delegate
 - No requirement for supporting revoking
