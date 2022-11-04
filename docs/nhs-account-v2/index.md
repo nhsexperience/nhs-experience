@@ -26,6 +26,13 @@ has_children: true
 
 ### Where does NHS Login fit into this?
 
+- NHS Login is just 1 of many different Identity Providers supported
+- Account is the context of NHS Number, **NOT** NHS Login
+- Supports 1 Account having many user accounts with each user account having different levels of access
+- Supports 1 User having many different identities, from many different identity providers
+- A User with an identity does not have any permissions by default
+- Authorisation happens separately, and after, authentication - Permissions are granted by account based on rules, including attributes and roles
+
 ```mermaid
 erDiagram
     NHS-ACCOUNT |o--|{ USER : can_have_many
@@ -44,14 +51,8 @@ erDiagram
         int externalIdentityId
         string externalIdentityProviderName        
     }
-
 ```
 
-- Account is the context of NHS Number, NOT the identity provider
-- Supports 1 Account having many user accounts with each user account having different levels of access
-- Supports 1 User having many different identities, from many different identity providers
-- A User with an identity does not have any permissions by default
-- Authorisation happens separately, and after, authentication - Permissions are granted by account based on rules, including attributes and roles
 
 ## Who is / should be involved?
 
