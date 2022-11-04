@@ -5,6 +5,8 @@ nav_order: 2.01
 has_children: true
 ---
 
+{% include githubrawurl.html %}
+
 ## Account Vision
 
 ## Frequently Asked Questions
@@ -15,7 +17,13 @@ has_children: true
 
 ### Where does NHS Login fit into this?
 
-## Previous
+## Who is / should be involved?
+
+### NHSE Citizen Experiance
+
+### Others...
+
+## History of Account & Proxy
 
 - Account and Proxy separate services
 - Proxy for delegating access to Primary care records
@@ -24,6 +32,10 @@ has_children: true
 - Proxy was proving relationships, recording them, and storing what access was available with them
 
 ## Suggested
+
+## AEG Presentation
+
+{% pdf {{ghrawurl|append:"/blobs/proxy-and-account-2022-09-01.pptx"}} %}
 
 ### Account "Control"
 
@@ -74,7 +86,7 @@ has_children: true
 
 ## Diagram
 
-https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FRossBugginsNHS%2Fnhs-experience%2Flatest%2Fdocs%2Fnhs-account-v2%2FProxy%2520and%2520Account.drawio
+[Latest Version of Whiteboard diagram](https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FRossBugginsNHS%2Fnhs-experience%2Flatest%2Fdocs%2Fnhs-account-v2%2FProxy%2520and%2520Account.drawio)
 
 Note - preview here may not be latest version.
 ![Proxy and Account](ProxyandAccount.svg "Proxy and Account")
