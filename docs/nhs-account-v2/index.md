@@ -53,6 +53,52 @@ erDiagram
     }
 ```
 
+> ## Notes from 07/11/2022
+>
+> NHS Account
+>
+> NHS Account Access Control
+> NHS Account Graph (NHS Account "Data")
+>
+> NHS Account Client Apps
+> NHS Account Data Connectors
+>
+> Authorisation as a Service
+>
+> - Make NHS Login "Contextless"
+>
+> Account Access control - this has:
+>
+> - Controlling who has access to what
+> - NHS Login is the "Who"
+> - Account Access Control is the "Who has access to What"
+> - Proxy "updates" the Access Control automatically
+>
+>
+> Support more than NHS Login
+>
+> - CIS2 - sharing with Staff
+> - OneGov - other ID provider
+> - For Digital VCs (Proxy) We Need this multiple IdP support for credential proving
+> 
+> NHS Account Access Control (AAC) - Authorisation as a Service
+>
+> - Multiple IdP support
+> - NHS Account keeps context of the NHS Number
+> - Allows NHS Login is Contextless
+> - Removes the need for NHS login to be modified
+> - In Future, apps and platforms onboard with NHS Account, NOT NHS Login
+>
+> Authentication as a Service
+>
+> - Single gateway for Access Control. GP Connect, SCR, App, UK, Primary and Secondary
+> - Supports User Consented Sharing of data between citizens, and citizens to health professionals
+>
+> It's the "Missing Link" Between IdPs (NHS Login), Client Apps (NHS England Mobile App), and data sources (GP Connect, PDS etc).
+>
+> NHS Account Graph
+>
+> Data and functionality exposed to the citizen, in the context of the NHS Account. IE anything exposed as part of NHS Account Graph has support for "Proxy" and User consented access sharing
 
 ## Who is / should be involved?
 
