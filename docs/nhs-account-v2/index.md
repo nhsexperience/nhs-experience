@@ -22,8 +22,27 @@ has_children: true
 
 ### How does Proxy fit into this?
 
+- Proving legal relationships
+
 ### Safeguarding & IG
 
+- Account deals with Authorisation & data "routing" / storage
+- Applications of Account, need to deal with "Usage"
+- Developer Apps - only have context of the developers account
+- Apps need approval to be avaliable to all from NHS
+- Citizen consents to any app using any Account data - in a granular way
+
+### How does this help developers?
+
+Make life easier for developers = Better Products and Better Services
+  
+- Standard authorisation model
+- Data Exposed by Account is already covered by IG
+- IG implications are on the App, on how they use it, but only once "released"
+- Allow developers to onboard their own apps, for testing and development - restricted to the context of their "Developer" NHS Account
+- Allow Beta groups - ie apps enabled for subsets of users
+- Remove need to onboard an app with Login, and CIS, and nhs.net - no need to worry about the IdP that is to be used
+  
 ### Where does NHS Login fit into this?
 
 - NHS Login is just 1 of many different Identity Providers supported
@@ -52,6 +71,28 @@ erDiagram
         string externalIdentityProviderName        
     }
 ```
+
+## Who is / should be involved?
+
+### NHSE Citizen Experience
+
+### IAM
+
+### "Platform" - NHS App & NHS uk
+
+### Data & Interop
+
+### NHS E Innovation
+
+### Who does what
+
+### SCR
+
+### NHS Login
+
+### GPIT / GP Connect
+
+### Others?
 
 > ## Notes from 07/11/2022
 >
@@ -99,12 +140,6 @@ erDiagram
 > NHS Account Graph
 >
 > Data and functionality exposed to the citizen, in the context of the NHS Account. IE anything exposed as part of NHS Account Graph has support for "Proxy" and User consented access sharing
-
-## Who is / should be involved?
-
-### NHSE Citizen Experience
-
-### Others...
 
 ## History of Account & Proxy
 
