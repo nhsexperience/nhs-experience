@@ -16,7 +16,41 @@ has_children: true
 {:toc}
 </details>
 
-## Account Vision
+## Account Vision - Giving Data Context
+
+### What is Context?
+
+
+
+## NHS Preparing for NHS TGR
+
+https://architecture.digital.nhs.uk/trg
+
+TRG submissions are made up of two main artefacts, the Solution Design Overview (SDO) and Key Architecture Decision (KAD). 
+
+### Solution Design Overview (SDO)
+
+### Key Architecture Decision (KAD)
+
+### CCCs
+
+They will look to gauge your awareness of and alignment to policies and standards and your consideration and engagement with each of these areas within your proposed programme/activity. They may require further information.
+
+The CCC owner will review what is on the portal and will either approve, ignore (if it isn’t relevant), reject or ask questions for clarification. It is your responsibility to respond to any CCC questions or concerns in a timely manner to ensure no delays at TRG.
+
+- Data
+- Development
+- Enterpise Architecture
+- Infrastructure
+- Interoperability
+- Live Services SM
+- Security
+- Solution Assurance
+- Sustainability 
+- Usability 
+- Accessibility
+
+
 
 ## Frequently Asked Questions
 
