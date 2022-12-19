@@ -1,6 +1,7 @@
 //Other colours at https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/
 
 @import "swagger-ui";
+@import "support/mixins/_typography";
 
 $blue-nhs-blue: #005EB8;
 $blue-nhs-dark-blue: #003087;
@@ -23,6 +24,10 @@ $media-queries: (
   lg: $content-width + $nav-width,
   xl: 1800px,
 );
+
+section > h2 {
+  all: initial;
+}
 
 .site-fork-warning {
   width: 100%;
@@ -62,6 +67,10 @@ blockquote code{
   color:$grey-nhs-mid-grey;
 }
 
+section pre code{
+  color:$grey-nhs-mid-grey;
+}
+
 
 $link-color: $blue-nhs-blue;
 $btn-primary-color: $blue-nhs-bright-blue;
@@ -78,4 +87,16 @@ $body-heading-color: $blue-nhs-dark-blue;
 
 code svg{
   height: auto;
+}
+
+svg[id^="mermaid-"] 
+{ 
+    min-width: 900px;
+    min-height: 700px;
+}
+.reveal .slide-menu-button 
+{
+    left: 30px !important;
+    top: 30px !important;
+    position: relative !important;
 }

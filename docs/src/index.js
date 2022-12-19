@@ -1,33 +1,194 @@
 import { Canvg, presets} from 'canvg';
+import Reveal from 'reveal.js'
+import RevealMarkdown from 'reveal.js/plugin/markdown/markdown.esm.js'
+import Markdown from  'reveal.js/plugin/markdown/markdown.esm.js'
+import 'reveal.js/dist/reveal.css'
+import 'reveal.js/dist/theme/black.css'
+import '@fontsource/source-sans-pro'
+import RevealMenu from 'reveal.js-menu/menu.esm.js'
+import 'reveal.js-menu/menu.css'
+import mermaid from 'mermaid'
+import mermaidAPI from 'mermaid'
+import RevealNotes from 'reveal.js'
 
 const preset = presets.offscreen()
 
+var x = RevealMarkdown;
 var $ = require("jquery");
 global.jQuery = $;
 global.$ = $;
 window.jQuery = $;
 window.$ = $;
 
-function UseMermaid(document)
+mermaid.startOnLoad = false;
+
+export function UseReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true, showMenu=false  )
 {
-    $(document).ready(function() {
-        mermaid.initialize({
-            logLevel: 1,
-            startOnLoad: true,
-            flowchart: { useMaxWidth: true, htmlLabels: false },
-            mermaid: {
-                callback: function(id) {
-                    console.log(id);
-                    addLinks(id);
-                },
+  
+    $(document).ready(LoadUpReveal(document, deckid, useMermaid, mermaidSelector, embed, showMenu));
+}
+
+async function sleep(ms) {
+    await new Promise(r => setTimeout(r, ms));
+}
+
+function LoadUpReveal(document, deckid, useMermaid, mermaidSelector = 'code.mermaid', embed = true, showMenu=false )
+{
+    var pluginsToLoad =[];
+    pluginsToLoad.push(RevealMarkdown);
+    if(showMenu)
+    pluginsToLoad.push(RevealMenu);
+    pluginsToLoad.push(RevealNotes);
+    var sleepTime = 100;
+    var selectorToUse = 'div.'+ deckid + ' > div.slides > section.present > div.mermaid, div.'+ deckid + ' > div.slides > section.present > pre > code.mermaid';
+    var selectorToUseOnSlideChange = 'div.mermaid, code.mermaid';
+    let deck1 = new Reveal( document.querySelector('div.'+ deckid), {
+        embedded: embed,
+        keyboardCondition: 'focused',
+        controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        progress: true,
+        autoSlide: 5000,
+        slideNumber: true,
+        showSlideNumber: 'all',
+        loop: true,
+        plugins: pluginsToLoad,
+        backgroundTransition: 'none',
+        transition: 'none',
+        center: false,
+    } );
+    
+    deck1
+    .initialize(
+        {
+            menu: {
+                path: '/assets-webpack/reveal.js-menu',
+                side: 'left',
+                width: 'normal',
+                numbers: false,
+                titleSelector: 'h1, h2, h3, h4, h5, h6',
+                useTextContentForMissingTitles: false,
+                hideMissingTitles: false,
+                markers: true,
+                custom: false,
+                themes: false,
+                themesPath: 'dist/theme/',
+                transitions: false,
+                openButton: true,
+                openSlideNumber: false,
+                keyboard: true,
+                sticky: true,
+                autoOpen: true,
+                delayInit: false,
+                openOnInit: false,
+                loadIcons: true,
+                showNotes: true,
+                preloadIframes: true,
+              }
+        })
+    .then( () => {
+        if(useMermaid)
+           var currentSlide = deck1.getCurrentSlide();
+           var notes = deck1.getSlideNotes(currentSlide);
+            UseMermaidNow(currentSlide, selectorToUseOnSlideChange);
+      } );
+
+    deck1.on('slidechanged',  (event) => {
+        if(useMermaid)
+        {
+            var notes = deck1.getSlideNotes(event.currentSlide);
+            RemoveProcessed(event.previousSlide);
+            UseMermaidNow(event.currentSlide, selectorToUseOnSlideChange);
+        }
+      } );
+    
+    deck1.on('slidetransitionend', event => {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      } );
+
+    deck1.addEventListener('menu-ready', function (event) {
+        // your code
+      });
+}
+
+function RemoveProcessed(slideToRemoveFrom)
+{
+    var processedAttribName = 'data-processed';
+    var selectorToUse = 'div.mermaid[data-processed], code.mermaid[data-processed]';
+    var toRender = slideToRemoveFrom.querySelectorAll(selectorToUse);
+    toRender.forEach((item)=>
+    {
+        if(item.hasAttribute(processedAttribName))
+        {
+            while (item.firstChild) {
+                item.removeChild(item.firstChild);
+              }
+            item.removeAttribute(processedAttribName);        
+            
+            var rawCode = item.rawCode;
+            item.innerHTML = rawCode;
+        }
+    });
+    var toRenderCheck = slideToRemoveFrom.querySelectorAll(selectorToUse);
+}
+
+function mermaidCb(id, addlinks)
+{
+    console.log("Callback happening from mermaid init being finished");
+    if(addlinks)
+    {
+        console.log(id);
+        addLinks(id);
+    }
+}
+
+export function MermaidInit(addlinks=true)
+{
+    mermaid.initialize({
+        logLevel: 1,
+        flowchart: { useMaxWidth: false, htmlLabels: false },
+        c4: {useMaxWidth: false, diagramMarginX:10,  diagramMarginX:10, c4ShapeMargin:20, c4ShapePadding:20},
+        mermaid: {
+            startOnLoad: false,
+            callback: function(id) {
+                mermaidCb(id, addlinks);
             },
-        });
-       
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+        },
     });
 }
 
- function addLinks(id)
+export function UseMermaidNow(useMermaidOn, selector='.language-mermaid', addlinks=true)
+{
+    
+    var toRender = useMermaidOn.querySelectorAll(selector);
+    if(toRender.length>0)
+    {
+        toRender.forEach(item =>
+            {
+                if(!item.hasOwnProperty('rawCode'))
+                    item.rawCode = item.innerHTML;
+            });
+
+        mermaid.init(undefined, toRender, (id) => {mermaidCb(id, addlinks) });
+        var afterRender = useMermaidOn.querySelectorAll(selector);
+        afterRender.forEach(item =>
+            {
+                var x = 1;
+            });
+    }
+}
+
+export function UseMermaid(document, addlinks=true, selector='.language-mermaid', excludeSelector='div.slides > section')
+{
+    $(document).ready(function() {
+        MermaidInit(addlinks);
+        UseMermaidNow(document, selector, addlinks);
+    });
+}
+
+function addLinks(id)
 {
     var svg = document.getElementById(id);
     var btn = document.createElement('button'); 
@@ -146,6 +307,3 @@ function drawCanvas(id, callback)
                     });
         });
 }
-
-
-UseMermaid(document);

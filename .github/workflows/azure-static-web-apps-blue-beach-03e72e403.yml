@@ -31,7 +31,10 @@ jobs:
           app_location: "/docs" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "_site" # Built app content directory - optional
+          app_build_command: npm run build-staging
           ###### End of Repository/Build Configurations ######
+        env:
+          JEKYLL_ENV: staging
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -44,3 +47,5 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_BEACH_03E72E403 }}
           action: "close"
+        env:
+          JEKYLL_ENV: staging

@@ -19,6 +19,8 @@ gem 'jekyll-webpack'
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem 'jekyll-spaceship'
+  gem "jekyll-pdf-embed"
+  gem 'jekyll-random'
   #gem "jekyll-drawio", "~> 0.0.6", path: "/home/rb/source/jekyll-drawio"
 end
 

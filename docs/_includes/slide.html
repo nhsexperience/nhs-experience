@@ -1,0 +1,24 @@
+{% capture random %}
+{{ 1 | random_number: 0, 100, 2 }}
+{% endcapture %}
+
+<style>
+    div.reveal svg[id^="mermaid-"] 
+    { 
+        min-width: 900px;
+        min-height: 700px;
+    }
+
+</style>
+
+<a href="/slides/{{include.fileName}}.html">Link to {{include.fileName}} slides</a>
+<div class="reveal reveal-{{include.divName}}" style="width:100%;padding-bottom:56.25%;">
+<div class="slides">
+<section data-markdown="/_slidescontent/{{include.fileName}}.md">
+</section>
+</div>
+</div>  
+<script>
+
+window.nhsce.UseReveal(document, "reveal-{{include.divName}}", true);
+</script>

@@ -1,5 +1,8 @@
 <script type="text/javascript" src="{{ '/assets/js/imageopen.js' | relative_url }}"></script>
-<script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<script type="text/javascript" src="{{ '/assets-webpack/js/main.js' | relative_url }}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.5/dist/mermaid.js"></script>
 
+<script>
+    window.nhsce.UseMermaid(document);
+</script>
+<link rel="stylesheet" href="{{ '/assets-webpack/css/main.css' | relative_url }}">

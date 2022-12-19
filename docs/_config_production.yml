@@ -1,0 +1,34 @@
+title: NHS Citizen Experience Architecture
+email: ross.buggins@nhs.net
+description: >- # this means to ignore newlines until "baseurl:"
+  NHS Transformation Directorate, NHS England and Improvement. Giving patients, service users and carers the tools to access information and services directly.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: 
+github_username:  nhsexperience
+
+published_url: "https://ce.nhsei.xyz"
+gh_action_build_file_name: "azure-static-web-apps-zealous-beach-05e189903.yml"
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/nhsexperience/nhs-experience" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+gh_repo_owner: "NHS Experience"
+
+aux_links:
+  "Citizen Experience on GitHub":
+    - "//github.com/nhsexperience/nhs-experience"
+
+footer_content: "Distributed by an <a href=\"https://github.com/nhsexperience/nhs-experience/blob/main/LICENSE.md\">Open Government Licence v3.0</a>"
+
+plugins:
+  - jekyll-feed
+  - jekyll-spaceship
+  - jekyll-pdf-embed
+  - jekyll-random  
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - table-processor

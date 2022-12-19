@@ -439,7 +439,7 @@ Again, like the citizen user interface, ideally this would be a wrapper over a f
 ## 08. Pre-loading Data Service
 The lack of a single source of truth for data inside the NHS leads to problems when looking for data to consume. Can data be loaded from a GP? A Local trust PAS? From central Spine? From NHS Account? Should data be gathered from citizens own collected wearables data?
 
-With a focus on GP systems, this itself is not simple. There is a separate review of [GP integration options](% link digital-health-check/gp-integration.md %) that goes into more detail.
+With a focus on GP systems, this itself is not simple. There is a separate review of [GP integration options]({% link digital-health-check/gp-integration.md %}) that goes into more detail.
 
 Pre loading of data from a citizens medical record into a digital health check is not just a technical question, but also a process one. If the technical hurdles are overcome, what data should be loaded? Data from wearables? Data from a blood test last week, or last month? Height and weight?
 
@@ -451,7 +451,7 @@ Pre loading of data from a citizens medical record into a digital health check i
 ## 09. Export to GP
 Technical solutions for providing health check results not only should address the technical challenges, but also over what control is given GPs over the consumption of the data. If a fully automatic system was in place centrally, there could be cases where some GPs do don’t want all results to be automatically added to a patients record.
 
-As with reading data from GP IT systems, writing results to them is also not simple. There is a separate review of GP integration options [GP integration options](% link digital-health-check/gp-integration.md %) that goes into more detail.
+As with reading data from GP IT systems, writing results to them is also not simple. There is a separate review of GP integration options [GP integration options]({% link digital-health-check/gp-integration.md %}) that goes into more detail.
 
 The technical challenges of centrally writing directly into GP IT systems, there should be consideration into the difference between providing results to a GP through a separate management system vs directly exporting them – how this could be applied to short, medium and long term plans.
 

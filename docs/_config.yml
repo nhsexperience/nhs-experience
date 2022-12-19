@@ -1,32 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: NHS Citizen Experience Architecture
-email: ross.buggins@nhs.net
-description: >- # this means to ignore newlines until "baseurl:"
-  NHS Transformation Directorate, NHS England and Improvement. Giving patients, service users and carers the tools to access information and services directly.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
-github_username:  nhsexperience
-
 kramdown:
   toc_levels: 1..2
 
@@ -34,14 +5,28 @@ collections:
   projects: 
     output: false
   projectlibs: 
-    output: false    
+    output: false   
+  slides:
+    output: true 
+  slidescontent:
+    output: false
+  diagrams:
+    output: true
 
+defaults:
+  - scope:
+      path: ""
+      type: "slides"
+    values:
+      layout: "slide"
+  - scope:
+      path: ""
+      type: "diagrams"
+    values:
+      layout: "diagram"
 
 # Build settings
 theme: just-the-docs
-plugins:
-  - jekyll-feed
-  - jekyll-spaceship
 
 
 webpack:
@@ -49,12 +34,6 @@ webpack:
     run_once: true
   cleanup_files:
     - node_modules
-
-aux_links:
-  "Citizen Experience on GitHub":
-    - "//github.com/nhsexperience/nhs-experience"
-    
-footer_content: "Distributed by an <a href=\"https://github.com/nhsexperience/nhs-experience/blob/main/LICENSE.md\">Open Government Licence v3.0</a>"
 
 back_to_top: true
 back_to_top_text: "Back to top"
@@ -64,17 +43,6 @@ color_scheme: ce
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
-
-# Change the below based on the forked repo's details
-published_url: "https://ce.nhsei.xyz"
-gh_action_build_file_name: "azure-static-web-apps-zealous-beach-05e189903.yml"
-gh_edit_link: true # show or hide edit this page link
-gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/nhsexperience/nhs-experience" # the github URL for your repo
-gh_edit_branch: "main" # the branch that your docs is served from
-gh_edit_source: docs # the source that your files originate from
-gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
-gh_repo_owner: "NHS Experience"
 
 # Do not change the below
 source_published_url: "https://ce.nhsei.xyz"
@@ -86,14 +54,11 @@ source_gh_edit_branch: "main" # the branch that your docs is served from
 source_gh_edit_source: docs # the source that your files originate from
 source_gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 source_gh_repo_owner: "NHS Experience"
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
+
+include:
+  - _slides/
+  - _slidescontent/
+
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -102,3 +67,4 @@ exclude:
   - Gemfile.lock
   - node_modules/
   - src/
+  - blobs/

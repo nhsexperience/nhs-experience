@@ -1,0 +1,54 @@
+---
+layout: table_wrappers
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    <script type="text/javascript" src="{{ '/assets/js/imageopen.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets-webpack/js/main.js' | relative_url }}"></script>
+    <link rel="stylesheet" href="{{ '/assets-webpack/css/main.css' | relative_url }}">
+</head>
+<style>
+    .revealfull
+    {
+    width: 100vw; 
+        height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
+        max-height: 100vh;
+        max-width: 177.78vh; /* 16/9 = 1.778 */
+        margin: auto;
+        position: absolute;
+        top:0;bottom:0; /* vertical center */
+        left:0;right:0; /* horizontal center */    
+    }
+    .revealsmall
+    {
+        width: 30vw; 
+    }
+    svg[id^="mermaid-"] 
+    { 
+        min-width: 900px;
+        min-height: 700px;
+    }
+    .reveal .slide-menu-button 
+    {
+        left: 30px !important;
+        top: 30px !important;
+        position: relative !important;
+    }
+
+</style>
+<body>
+<div class="reveal reveal4 revealfull">
+<div class="slides">
+<section data-markdown="{{page.slide-contents}}" data-separator-notes="^Note:">
+
+</section>
+</div>
+</div>
+<script>
+window.nhsce.MermaidInit(false);
+window.nhsce.UseReveal(document, "reveal4", true, "section.present > div.mermaid, section.present > code.mermaid", true, true);
+</script> 
+</body>
+</html>
+
